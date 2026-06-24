@@ -1,75 +1,60 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 import { MARQUEE } from "@/lib/content/home";
 
 /**
- * Modern infinite marquee — gold-outlined glass chips drifting across a dark
- * band with a soft animated gold glow. Sleek, minimal, brand-aligned.
+ * Elegant single-row marquee — large serif service names separated by gold
+ * star accents, drifting infinitely across a refined dark band.
  */
-function Row({
-  reverse = false,
-  duration = 32,
-}: {
-  reverse?: boolean;
-  duration?: number;
-}) {
+export default function MarqueeStrip() {
   const items = [...MARQUEE, ...MARQUEE];
 
   return (
-    <motion.div
-      className="flex w-max items-center gap-4"
-      animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
-      transition={{ duration, repeat: Infinity, ease: "linear" }}
-    >
-      {items.map((word, i) => (
-        <span
-          key={`${word}-${i}`}
-          className="group inline-flex items-center gap-2.5 whitespace-nowrap rounded-full border border-revival-gold/25 bg-white/[0.04] px-5 py-2.5 backdrop-blur-sm transition-colors duration-300 hover:border-revival-gold/60 hover:bg-revival-gold/10"
-        >
-          <Sparkles className="h-3.5 w-3.5 shrink-0 text-revival-gold" />
-          <span className="text-[0.8rem] font-medium uppercase tracking-[0.18em] text-revival-cream/85 transition-colors group-hover:text-revival-gold">
-            {word}
-          </span>
-        </span>
-      ))}
-    </motion.div>
-  );
-}
-
-export default function MarqueeStrip() {
-  return (
-    <section className="relative overflow-hidden bg-revival-dark py-10">
-      {/* animated gold glow */}
+    <section className="relative overflow-hidden border-y border-revival-gold/15 bg-revival-dark py-7">
+      {/* soft animated gold glow */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 h-40 w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-32 w-[44rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(201,169,110,0.18), transparent 70%)",
+            "radial-gradient(circle, rgba(201,169,110,0.14), transparent 70%)",
         }}
-        animate={{ opacity: [0.5, 0.85, 0.5], scale: [1, 1.1, 1] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-      />
-      {/* top & bottom hairlines */}
-      <span
-        aria-hidden
-        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-revival-gold/40 to-transparent"
-      />
-      <span
-        aria-hidden
-        className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-revival-gold/40 to-transparent"
+        animate={{ opacity: [0.5, 0.85, 0.5] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* edge fades */}
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-revival-dark to-transparent sm:w-40" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-revival-dark to-transparent sm:w-40" />
 
-      <div className="relative flex flex-col gap-3">
-        <Row duration={34} />
-        <Row reverse duration={40} />
-      </div>
+      <motion.div
+        className="flex w-max items-center"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
+      >
+        {items.map((word, i) => (
+          <span key={`${word}-${i}`} className="flex items-center whitespace-nowrap">
+            <span className="font-heading text-xl font-normal tracking-wide text-revival-cream/85 md:text-2xl">
+              {word}
+            </span>
+            <Star />
+          </span>
+        ))}
+      </motion.div>
     </section>
+  );
+}
+
+function Star() {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      className="mx-8 h-3.5 w-3.5 shrink-0 text-revival-gold/70 md:mx-10"
+      fill="currentColor"
+    >
+      <path d="M12 0c.5 5.8 4.2 9.5 12 12-7.8 2.5-11.5 6.2-12 12-.5-5.8-4.2-9.5-12-12 7.8-2.5 11.5-6.2 12-12z" />
+    </svg>
   );
 }

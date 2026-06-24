@@ -134,13 +134,27 @@ export default function Footer() {
       >
         {/* Col 1 — Brand */}
         <motion.div variants={fadeInUp} className="lg:col-span-4">
-          <Image
-            src="/images/revival-logo-dark.png"
-            alt="Revival Health & Wellness"
-            width={180}
-            height={48}
-            className="h-11 w-auto object-contain"
-          />
+          <Link
+            href="/"
+            className="flex items-center gap-3"
+            aria-label="Revival Health & Wellness home"
+          >
+            <Image
+              src="/images/brand/logo.png"
+              alt="Revival Health & Wellness"
+              width={221}
+              height={300}
+              className="h-12 w-auto object-contain"
+            />
+            <span className="flex flex-col leading-none">
+              <span className="font-heading text-xl font-medium uppercase tracking-[0.18em] text-revival-warm-white sm:text-2xl">
+                Revival
+              </span>
+              <span className="mt-1 text-[0.6rem] font-light uppercase tracking-[0.35em] text-revival-gold">
+                Health &amp; Wellness
+              </span>
+            </span>
+          </Link>
           <p className="mt-5 max-w-xs font-heading text-lg leading-snug text-revival-warm-white/85">
             Revival Health and Wellness – A Modern Approach to Healing &amp;
             Vitality

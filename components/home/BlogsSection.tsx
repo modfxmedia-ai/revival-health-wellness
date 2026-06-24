@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Calendar, Newspaper } from "lucide-react";
 import { BLOGS } from "@/lib/content/home";
@@ -102,8 +103,19 @@ export default function BlogsSection() {
           <motion.article variants={item}>
             <Link
               href={featured.href}
-              className="group relative flex h-full min-h-[420px] flex-col justify-end overflow-hidden rounded-3xl border border-revival-gold/20 bg-gradient-to-br from-[#1c150c] to-[#0f0d0a] p-8 lg:p-10"
+              className="group relative flex h-full min-h-[420px] flex-col justify-end overflow-hidden rounded-3xl border border-revival-gold/20 bg-revival-dark p-8 lg:p-10"
             >
+              {/* Featured background image */}
+              <Image
+                src={featured.image}
+                alt={featured.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              {/* Dark gradient for legibility */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-revival-dark via-revival-dark/80 to-revival-dark/30" />
+
               {/* Animated gold mesh */}
               <div className="pointer-events-none absolute inset-0">
                 <motion.div
@@ -111,20 +123,10 @@ export default function BlogsSection() {
                   className="absolute -right-10 -top-10 h-64 w-64 rounded-full blur-[90px]"
                   style={{
                     background:
-                      "radial-gradient(circle, rgba(201,169,110,0.5), transparent 70%)",
+                      "radial-gradient(circle, rgba(201,169,110,0.35), transparent 70%)",
                   }}
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.6, 0.9, 0.6] }}
                   transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <motion.div
-                  aria-hidden
-                  className="absolute -bottom-10 -left-10 h-64 w-64 rounded-full blur-[90px]"
-                  style={{
-                    background:
-                      "radial-gradient(circle, rgba(138,90,43,0.55), transparent 70%)",
-                  }}
-                  animate={{ scale: [1.1, 1, 1.1], opacity: [0.6, 0.9, 0.6] }}
-                  transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
                 />
               </div>
 
@@ -155,8 +157,17 @@ export default function BlogsSection() {
               <motion.article key={post.title} variants={item}>
                 <Link
                   href={post.href}
-                  className="group flex items-center gap-5 rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-revival-gold/40 hover:bg-white/[0.07]"
+                  className="group flex items-center gap-5 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-revival-gold/40 hover:bg-white/[0.07]"
                 >
+                  <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-xl">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      sizes="96px"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-3 text-xs">
                       <span className="rounded-full bg-revival-gold/15 px-2.5 py-0.5 font-medium uppercase tracking-wide text-revival-gold">

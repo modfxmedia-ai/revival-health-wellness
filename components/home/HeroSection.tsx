@@ -8,6 +8,8 @@ import {
   AnimatePresence,
   useScroll,
   useTransform,
+  useMotionValue,
+  useSpring,
 } from "framer-motion";
 import { ArrowRight, ChevronDown, Star, Sparkles, MapPin } from "lucide-react";
 import { HERO, ZENOTI } from "@/lib/content/home";
@@ -43,6 +45,28 @@ export default function HeroSection() {
     );
     return () => clearInterval(t);
   }, []);
+
+  // Mouse-driven 3D tilt for the showcase card
+  const showcaseRef = useRef<HTMLDivElement>(null);
+  const tiltX = useMotionValue(0);
+  const tiltY = useMotionValue(0);
+  const rotateX = useSpring(tiltX, { stiffness: 150, damping: 18 });
+  const rotateY = useSpring(tiltY, { stiffness: 150, damping: 18 });
+
+  function handleTilt(e: React.MouseEvent<HTMLDivElement>) {
+    const el = showcaseRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    tiltY.set(px * 14);
+    tiltX.set(-py * 14);
+  }
+
+  function resetTilt() {
+    tiltX.set(0);
+    tiltY.set(0);
+  }
 
   return (
     <section
@@ -209,58 +233,223 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* ── Floating glass info cards (over the background) ───────────── */}
-        <div className="relative hidden h-[34rem] lg:block">
-          {/* Rotating dashed gold rings */}
+        {/* ── Modern visual showcase (over the background) ──────────────── */}
+        <div
+          ref={showcaseRef}
+          onMouseMove={handleTilt}
+          onMouseLeave={resetTilt}
+          className="relative hidden h-[40rem] lg:block"
+          style={{ perspective: 1400 }}
+        >
+          {/* Soft layered glow behind everything */}
+          <motion.div
+            aria-hidden
+            animate={{ scale: [1, 1.1, 1], opacity: [0.45, 0.75, 0.45] }}
+            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute right-6 top-1/2 h-[28rem] w-[24rem] -translate-y-1/2 rounded-[3.5rem] bg-revival-gold/20 blur-[100px]"
+          />
+
+          {/* Counter-rotating dashed rings */}
           <motion.div
             aria-hidden
             animate={{ rotate: 360 }}
-            transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
-            className="absolute right-6 top-8 h-56 w-56 rounded-full border border-dashed border-revival-gold/25"
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            className="absolute right-0 top-1/2 h-[32rem] w-[32rem] -translate-y-1/2 rounded-full border border-dashed border-revival-gold/15"
           />
           <motion.div
             aria-hidden
             animate={{ rotate: -360 }}
-            transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-10 right-28 h-40 w-40 rounded-full border border-dashed border-revival-gold/15"
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="absolute -right-4 top-1/2 h-[34rem] w-[34rem] -translate-y-1/2 rounded-full opacity-70"
+            style={{
+              background:
+                "conic-gradient(from 0deg, transparent 0deg, rgba(201,169,110,0.6) 55deg, transparent 120deg, transparent 245deg, rgba(232,213,176,0.45) 305deg, transparent 360deg)",
+              maskImage:
+                "radial-gradient(circle, transparent 62%, black 63%, black 64%, transparent 65%)",
+              WebkitMaskImage:
+                "radial-gradient(circle, transparent 62%, black 63%, black 64%, transparent 65%)",
+            }}
           />
 
-          {/* Featured framed image card */}
+          {/* Orbiting particle accents */}
+          {[0, 1, 2].map((i) => (
+            <motion.div
+              key={i}
+              aria-hidden
+              animate={{ rotate: 360 }}
+              transition={{
+                duration: 18 + i * 6,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="absolute right-0 top-1/2 h-[32rem] w-[32rem] -translate-y-1/2"
+              style={{ rotate: i * 120 }}
+            >
+              <span
+                className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-revival-gold"
+                style={{
+                  boxShadow: "0 0 16px 3px rgba(201,169,110,0.7)",
+                }}
+              />
+            </motion.div>
+          ))}
+
+          {/* 3D tilt stage */}
           <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 0.45, duration: 1, ease: EASE }}
-            className="absolute right-0 top-6 h-[24rem] w-[18rem] overflow-hidden rounded-[2rem] border border-revival-gold/30 shadow-2xl"
+            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+            className="absolute inset-0"
           >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, scale: 1.08 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1, ease: EASE }}
-                className="absolute inset-0"
-              >
-                <Image
-                  src={HERO.gallery[(active + 1) % HERO.gallery.length]}
-                  alt="Aesthetic treatment showcase"
-                  fill
-                  sizes="288px"
-                  className="object-cover"
-                />
-              </motion.div>
-            </AnimatePresence>
-            <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/60 via-transparent to-transparent" />
-            <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/10" />
-            <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-1.5">
-              {HERO.gallery.map((_, i) => (
-                <span
-                  key={i}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${
-                    i === active ? "w-6 bg-revival-gold" : "w-1.5 bg-white/40"
-                  }`}
-                />
-              ))}
+            {/* Secondary overlapping image card (depth, back layer) */}
+            <motion.div
+              initial={{ opacity: 0, x: -40, rotate: -10 }}
+              animate={{ opacity: 1, x: 0, rotate: -7 }}
+              transition={{ delay: 0.55, duration: 1, ease: EASE }}
+              style={{ transform: "translateZ(40px)" }}
+              className="absolute left-0 top-1/2 h-[17rem] w-[12.5rem] -translate-y-[68%] overflow-hidden rounded-[2rem] border border-white/20 shadow-2xl"
+            >
+              <Image
+                src="/images/services/aesthetics-2.jpg"
+                alt=""
+                fill
+                sizes="200px"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/10" />
+            </motion.div>
+
+            {/* Main featured image card */}
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.94 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 0.4, duration: 1, ease: EASE }}
+              style={{ transform: "translateZ(90px)" }}
+              className="absolute right-2 top-1/2 h-[30rem] w-[21.5rem] -translate-y-1/2"
+            >
+              {/* Gradient border wrapper */}
+              <div className="relative h-full w-full rounded-[2.5rem] bg-gradient-to-br from-revival-gold/80 via-revival-gold/15 to-transparent p-[1.5px] shadow-[0_30px_70px_-18px_rgba(0,0,0,0.75)]">
+                <div className="relative h-full w-full overflow-hidden rounded-[2.4rem] bg-revival-dark">
+                  <AnimatePresence mode="popLayout">
+                    <motion.div
+                      key={active}
+                      initial={{ opacity: 0, scale: 1.12 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 1.05 }}
+                      transition={{
+                        opacity: { duration: 1.1, ease: EASE },
+                        scale: { duration: 6, ease: "easeOut" },
+                      }}
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        src={SHOWCASE[active % SHOWCASE.length]}
+                        alt="Revival treatment showcase"
+                        fill
+                        sizes="344px"
+                        className="object-cover"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+
+                  {/* Readability gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/85 via-transparent to-revival-dark/20" />
+                  <div className="absolute inset-0 rounded-[2.4rem] ring-1 ring-inset ring-white/10" />
+
+                  {/* Animated diagonal shine sweep */}
+                  <motion.div
+                    aria-hidden
+                    initial={{ x: "-120%" }}
+                    animate={{ x: "120%" }}
+                    transition={{
+                      duration: 5,
+                      repeat: Infinity,
+                      repeatDelay: 3,
+                      ease: "easeInOut",
+                    }}
+                    className="pointer-events-none absolute inset-y-0 -inset-x-1/2 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/15 to-transparent"
+                  />
+
+                  {/* Top glass category chip */}
+                  <div className="absolute inset-x-5 top-5 flex items-center justify-between">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-revival-dark/40 px-3 py-1.5 text-[0.6rem] font-medium uppercase tracking-[0.18em] text-white backdrop-blur-md">
+                      <Sparkles className="h-3 w-3 text-revival-gold" />
+                      Revival
+                    </span>
+                    <span className="flex items-center gap-1.5 rounded-full border border-white/20 bg-revival-dark/40 px-3 py-1.5 text-[0.6rem] font-medium text-white backdrop-blur-md">
+                      <span className="relative flex h-2 w-2">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-revival-gold opacity-75" />
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-revival-gold" />
+                      </span>
+                      Now Booking
+                    </span>
+                  </div>
+
+                  {/* Caption */}
+                  <div className="absolute inset-x-6 bottom-14">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={active}
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -12 }}
+                        transition={{ duration: 0.5, ease: EASE }}
+                      >
+                        <p className="text-[0.6rem] font-light uppercase tracking-[0.25em] text-revival-gold">
+                          Signature Service
+                        </p>
+                        <p className="mt-1 font-heading text-xl font-medium text-white drop-shadow">
+                          {SHOWCASE_LABELS[active % SHOWCASE_LABELS.length]}
+                        </p>
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Progress dots */}
+                  <div className="absolute bottom-6 left-6 flex gap-1.5">
+                    {SHOWCASE.map((_, i) => (
+                      <span
+                        key={i}
+                        className={`h-1.5 rounded-full transition-all duration-500 ${
+                          i === active % SHOWCASE.length
+                            ? "w-7 bg-revival-gold"
+                            : "w-1.5 bg-white/40"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Interactive thumbnail filmstrip */}
+            <div
+              style={{ transform: "translateZ(120px)" }}
+              className="absolute -right-5 top-1/2 flex -translate-y-1/2 flex-col gap-2.5"
+            >
+              {SHOWCASE.map((src, i) => {
+                const isActive = i === active % SHOWCASE.length;
+                return (
+                  <button
+                    key={src}
+                    type="button"
+                    onClick={() => setActive(i)}
+                    aria-label={SHOWCASE_LABELS[i]}
+                    className={`relative h-12 w-12 overflow-hidden rounded-xl border transition-all duration-300 ${
+                      isActive
+                        ? "scale-110 border-revival-gold shadow-[0_0_16px_-2px_rgba(201,169,110,0.7)]"
+                        : "border-white/15 opacity-60 hover:opacity-100"
+                    }`}
+                  >
+                    <Image
+                      src={src}
+                      alt=""
+                      fill
+                      sizes="48px"
+                      className="object-cover"
+                    />
+                  </button>
+                );
+              })}
             </div>
           </motion.div>
 
@@ -273,7 +462,7 @@ export default function HeroSection() {
               scale: { delay: 1, duration: 0.7, ease: EASE },
               y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.6 },
             }}
-            className="absolute left-0 top-24 z-20 flex items-center gap-3 rounded-2xl border border-revival-gold/25 bg-revival-charcoal/70 px-4 py-3 shadow-xl backdrop-blur-xl"
+            className="absolute -left-2 top-12 z-20 flex items-center gap-3 rounded-2xl border border-revival-gold/25 bg-revival-charcoal/70 px-4 py-3 shadow-xl backdrop-blur-xl"
           >
             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-revival-gold/15">
               <Sparkles className="h-5 w-5 text-revival-gold" />
@@ -297,7 +486,7 @@ export default function HeroSection() {
               scale: { delay: 1.2, duration: 0.7, ease: EASE },
               y: { duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 },
             }}
-            className="absolute bottom-6 left-6 z-20 flex items-center gap-3 rounded-2xl border border-revival-gold/25 bg-revival-charcoal/70 px-4 py-3 shadow-xl backdrop-blur-xl"
+            className="absolute bottom-10 left-1 z-20 flex items-center gap-3 rounded-2xl border border-revival-gold/25 bg-revival-charcoal/70 px-4 py-3 shadow-xl backdrop-blur-xl"
           >
             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-revival-gold/15">
               <Star className="h-5 w-5 fill-revival-gold text-revival-gold" />
@@ -338,6 +527,20 @@ export default function HeroSection() {
 }
 
 /* ── Floating gold sparks ──────────────────────────────────────────────── */
+
+const SHOWCASE = [
+  "/images/services/aesthetics-2.jpg",
+  "/images/services/emsculpt-neo.webp",
+  "/images/services/prp-facial.jpg",
+  "/images/services/weight-loss-couple.jpg",
+];
+
+const SHOWCASE_LABELS = [
+  "Aesthetics & Injectables",
+  "Body Contouring",
+  "PRP & Skin Rejuvenation",
+  "Medical Weight Loss",
+];
 
 const SPARKS = [
   { left: "12%", top: "26%", size: 6, delay: 0, duration: 7 },

@@ -245,6 +245,7 @@ export type BlogPost = {
   date: string;
   href: string;
   excerpt: string;
+  image: string;
 };
 
 export const BLOGS: BlogPost[] = [
@@ -255,6 +256,7 @@ export const BLOGS: BlogPost[] = [
     href: "https://revivalhealthandwellnessgroup.com/break-weight-loss-plateau/",
     excerpt:
       "Stop the plateau spiral and restart fat loss. You are eating cleaner and moving more — here's what your labs reveal and how to break through.",
+    image: "/images/blog/weight-loss-plateau.jpg",
   },
   {
     title: "Las Vegas ED Treatment Roadmap: Step-by-Step Guide to Personalized Options",
@@ -263,6 +265,7 @@ export const BLOGS: BlogPost[] = [
     href: "https://revivalhealthandwellnessgroup.com/ed-treatment-roadmap-guide/",
     excerpt:
       "Take control of ED and reclaim confidence. Erectile dysfunction is common and it is medical — here is a clear, personalized path forward.",
+    image: "/images/blog/ed-treatment-roadmap.jpg",
   },
   {
     title: "Unlocking Hormone Therapy in Las Vegas for Stubborn Weight",
@@ -271,6 +274,7 @@ export const BLOGS: BlogPost[] = [
     href: "https://revivalhealthandwellnessgroup.com/unlocking-hormone-therapy-for-stubborn-weight/",
     excerpt:
       "Resetting stubborn weight is not just about eating less and moving more. For many, hormones are the missing piece that keeps results out of reach.",
+    image: "/images/blog/hormone-stubborn-weight.jpg",
   },
   {
     title: "Summer-Ready GainsWave for Women in Las Vegas Explained",
@@ -279,6 +283,7 @@ export const BLOGS: BlogPost[] = [
     href: "https://revivalhealthandwellnessgroup.com/summer-ready-gainswave-for-women/",
     excerpt:
       "Feel confident in your body this summer. GainsWave for women is a non-invasive way to boost sensitivity, circulation, and intimacy.",
+    image: "/images/blog/gainswave-women.jpg",
   },
   {
     title: "Inside Medical Weight Loss in Las Vegas: What Actually Happens",
@@ -287,6 +292,7 @@ export const BLOGS: BlogPost[] = [
     href: "https://revivalhealthandwellnessgroup.com/inside-medical-weight-loss-what-actually-happens/",
     excerpt:
       "Medical weight loss is about more than a smaller number on the scale. Step inside the process and see what a real, supported plan looks like.",
+    image: "/images/blog/medical-weight-loss.jpg",
   },
   {
     title: "Why Hormone Therapy in Las Vegas Feels Different in Your 40s and 50s",
@@ -295,5 +301,96 @@ export const BLOGS: BlogPost[] = [
     href: "https://revivalhealthandwellnessgroup.com/hormone-therapy-in-your-40s-and-50s/",
     excerpt:
       "Hormone therapy can feel very different in your 40s and 50s than it did before. Here's why — and how to tailor it to this stage of life.",
+    image: "/images/blog/hormone-40s-50s.jpg",
   },
 ];
+
+/* Our Philosophy — before/after comparison + headline stats */
+export const PHILOSOPHY = {
+  eyebrow: "Our Philosophy",
+  titleLines: [
+    { text: "Science-led", accent: true },
+    { text: "wellness.", accent: false },
+    { text: "Visible", accent: true },
+    { text: "results.", accent: false },
+  ],
+  body: "Every body is different. Our medically supervised treatments respect your physiology, goals, and timeline — combining advanced therapies with personalized care to deliver real, lasting transformation.",
+  cta: { label: "View Patient Results", href: "/about-us/" },
+  before: "/images/home/84-before.webp",
+  after: "/images/home/84-after.webp",
+  stats: [
+    { value: "5★", label: "Average rating" },
+    { value: "243+", label: "Five-star reviews" },
+    { value: "30+", label: "Treatments offered" },
+    { value: "2", label: "Las Vegas locations" },
+  ],
+};
+
+/* Investment / Pricing guide */
+export type PriceItem = { name: string; price: string };
+export type PriceCard = {
+  title: string;
+  image: string;
+  href: string;
+  items: PriceItem[];
+};
+
+export const PRICING = {
+  eyebrow: "Treatment Guide",
+  title: "Invest in",
+  titleAccent: "your best self",
+  subtitle: "Transparent guidance. Personalized plans. Exceptional results.",
+  cards: [
+    {
+      title: "Aesthetics & Skin",
+      image: "/images/services/aesthetics.jpg",
+      href: "/aesthetics/",
+      items: [
+        { name: "Botox / Wrinkle Relaxers", price: "from $12/unit" },
+        { name: "Dermal Fillers", price: "from $650" },
+        { name: "Microneedling", price: "from $300" },
+        { name: "PRP Facial", price: "from $450" },
+        { name: "PDO Thread Lift", price: "from $900" },
+        { name: "Laser Skin Rejuvenation", price: "from $320" },
+      ],
+    },
+    {
+      title: "Wellness & Body",
+      image: "/images/services/emsculpt-neo.webp",
+      href: "/weight-loss/",
+      items: [
+        { name: "Medical Weight Loss (GLP-1)", price: "from $299/mo" },
+        { name: "Hormone Therapy (HRT)", price: "from $199/mo" },
+        { name: "Emsculpt NEO", price: "from $750/session" },
+        { name: "IV Hydration Drips", price: "from $150" },
+        { name: "Sexual Wellness (P/O-Shot)", price: "from $900" },
+        { name: "Vitamin Injections", price: "from $35" },
+      ],
+    },
+  ] as PriceCard[],
+};
+
+/* Signature — interactive body contouring map */
+export type Hotspot = { label: string; top: string; left: string };
+
+export const SIGNATURE = {
+  eyebrow: "Signature Treatment",
+  title: "Body contouring &",
+  titleAccent: "Emsculpt NEO",
+  body: "Build muscle and burn fat at the same time. Our non-invasive body sculpting targets stubborn areas with FDA-cleared technology — up to 25% more muscle and 30% less fat in just four 30-minute sessions.",
+  cta: { label: "Book a Consultation", href: ZENOTI },
+  image: "/images/services/defined-body.webp",
+  hotspots: [
+    { label: "Waistline", top: "20%", left: "34%" },
+    { label: "Abdomen", top: "32%", left: "52%" },
+    { label: "Hip Contouring", top: "52%", left: "22%" },
+    { label: "Inner Thighs", top: "74%", left: "46%" },
+    { label: "Outer Thighs", top: "70%", left: "74%" },
+  ] as Hotspot[],
+  features: [
+    "FDA-Cleared Technology",
+    "Expert Medical Providers",
+    "Zero Downtime",
+    "Personalized Treatment",
+  ],
+};

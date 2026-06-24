@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import { ZENOTI } from "@/lib/content/home";
@@ -18,6 +19,18 @@ export default function CTASection() {
 
   return (
     <section className="relative overflow-hidden bg-revival-dark py-24 lg:py-32">
+      {/* Background image */}
+      <Image
+        src="/images/hero/hero-2.png"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
+      {/* Readability overlays */}
+      <div className="pointer-events-none absolute inset-0 bg-revival-dark/80" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-revival-dark via-revival-dark/70 to-revival-dark/85" />
+
       {/* Animated gold mesh */}
       <motion.div
         aria-hidden

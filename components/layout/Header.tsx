@@ -325,7 +325,7 @@ function DesktopNavItem({
     ? "text-revival-warm-white/90"
     : "text-revival-charcoal";
 
-  const sizing = "px-3.5 py-2 text-[0.74rem] font-medium uppercase tracking-[0.18em] font-heading";
+  const sizing = "px-3.5 py-2 text-[0.8rem] font-semibold tracking-[0.04em] font-sans";
 
   /* Shared sliding gold pill that animates between items on hover. */
   const Highlight = () =>

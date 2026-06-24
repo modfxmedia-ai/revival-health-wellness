@@ -8,16 +8,16 @@ import { GALLERY } from "@/lib/content/home";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-/** Bento span classes for up to 8 tiles (cycles if more). */
+/** Bento span classes for 8 tiles — tessellates cleanly on a 4-col grid. */
 const SPANS = [
-  "sm:col-span-2 sm:row-span-2", // large feature
-  "sm:col-span-1 sm:row-span-1",
-  "sm:col-span-1 sm:row-span-1",
-  "sm:col-span-2 sm:row-span-1", // wide
-  "sm:col-span-1 sm:row-span-1",
-  "sm:col-span-1 sm:row-span-2", // tall
-  "sm:col-span-2 sm:row-span-1", // wide
-  "sm:col-span-1 sm:row-span-1",
+  "col-span-2 row-span-2 sm:col-span-2 sm:row-span-2", // 0 — large feature
+  "col-span-1 row-span-1", // 1
+  "col-span-1 row-span-1", // 2
+  "col-span-2 row-span-1 sm:col-span-2 sm:row-span-1", // 3 — wide
+  "col-span-1 row-span-2 sm:col-span-1 sm:row-span-2", // 4 — tall
+  "col-span-1 row-span-1", // 5
+  "col-span-2 row-span-2 sm:col-span-2 sm:row-span-2", // 6 — large feature
+  "col-span-1 row-span-1", // 7
 ];
 
 const container = {
@@ -93,7 +93,7 @@ export default function GalleryCarousel() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-14 grid auto-rows-[150px] grid-cols-2 gap-4 sm:auto-rows-[170px] sm:grid-cols-4 lg:auto-rows-[200px]"
+          className="mt-14 grid grid-flow-row-dense auto-rows-[160px] grid-cols-2 gap-4 sm:auto-rows-[180px] sm:grid-cols-4 lg:auto-rows-[210px]"
         >
           {GALLERY.map((src, i) => (
             <motion.button

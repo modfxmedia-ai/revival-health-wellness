@@ -3,6 +3,9 @@ import HeroSection from "@/components/home/HeroSection";
 import MarqueeStrip from "@/components/home/MarqueeStrip";
 import ServicesGrid from "@/components/home/ServicesGrid";
 import ApproachSection from "@/components/home/ApproachSection";
+import PhilosophySection from "@/components/home/PhilosophySection";
+import SignatureSection from "@/components/home/SignatureSection";
+import PricingSection from "@/components/home/PricingSection";
 import StatsSection from "@/components/home/StatsSection";
 import WhyChooseSection from "@/components/home/WhyChooseSection";
 import GalleryCarousel from "@/components/home/GalleryCarousel";
@@ -26,10 +29,13 @@ export default function Home() {
       <HeroSection />
       <MarqueeStrip />
       <ServicesGrid />
+      <PhilosophySection />
       <ApproachSection />
+      <SignatureSection />
       <StatsSection />
       <WhyChooseSection />
       <GalleryCarousel />
+      <PricingSection />
       <BlogsSection />
       <TestimonialsSection />
       <CTASection />

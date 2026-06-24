@@ -17,7 +17,7 @@ const ICONS = [Star, Users, MapPin, Sparkles];
 
 export default function StatsSection() {
   return (
-    <section className="relative overflow-hidden bg-revival-dark py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-revival-dark py-12 lg:py-16">
       {/* Animated gold aura */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <motion.div
@@ -63,20 +63,20 @@ export default function StatsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: EASE, delay: i * 0.1 }}
               whileHover={{ y: -6 }}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-center backdrop-blur-sm transition-colors duration-300 hover:border-revival-gold/40 lg:p-8"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-center backdrop-blur-sm transition-colors duration-300 hover:border-revival-gold/40 lg:p-5"
             >
               {/* hover gold glow */}
-              <div className="pointer-events-none absolute -inset-px rounded-3xl bg-gradient-to-br from-revival-gold/0 via-revival-gold/0 to-revival-gold/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-revival-gold/0 via-revival-gold/0 to-revival-gold/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-              <span className="relative mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-revival-gold to-[#8a5a2b] text-revival-dark shadow-lg transition-transform duration-300 group-hover:scale-110">
-                <Icon className="h-5 w-5" />
+              <span className="relative mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-revival-gold to-[#8a5a2b] text-revival-dark shadow-lg transition-transform duration-300 group-hover:scale-110">
+                <Icon className="h-4 w-4" />
               </span>
 
-              <div className="relative mt-5 flex items-baseline justify-center font-heading text-5xl font-medium text-revival-gold lg:text-6xl">
+              <div className="relative mt-3 flex items-baseline justify-center font-heading text-3xl font-medium text-revival-gold lg:text-4xl">
                 <Counter value={stat.value} />
                 <span>{stat.suffix}</span>
               </div>
-              <p className="relative mt-3 text-xs font-light uppercase tracking-[0.2em] text-revival-cream/70">
+              <p className="relative mt-2 text-[0.65rem] font-light uppercase tracking-[0.18em] text-revival-cream/70">
                 {stat.label}
               </p>
             </motion.div>
