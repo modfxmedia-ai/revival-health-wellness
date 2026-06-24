@@ -5,6 +5,7 @@ import ServicesGrid from "@/components/home/ServicesGrid";
 import ApproachSection from "@/components/home/ApproachSection";
 import PhilosophySection from "@/components/home/PhilosophySection";
 import SignatureSection from "@/components/home/SignatureSection";
+import BodyTransformSection from "@/components/home/BodyTransformSection";
 import PricingSection from "@/components/home/PricingSection";
 import StatsSection from "@/components/home/StatsSection";
 import WhyChooseSection from "@/components/home/WhyChooseSection";
@@ -32,6 +33,7 @@ export default function Home() {
       <PhilosophySection />
       <ApproachSection />
       <SignatureSection />
+      <BodyTransformSection />
       <StatsSection />
       <WhyChooseSection />
       <GalleryCarousel />
