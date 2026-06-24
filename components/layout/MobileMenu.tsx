@@ -1,0 +1,261 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { Menu, X, ChevronDown, ExternalLink } from "lucide-react";
+import { PRIMARY_NAV, SECONDARY_NAV, CTA } from "./nav";
+import { cn } from "@/lib/utils";
+
+const LUXURY_EASE = [0.22, 1, 0.36, 1] as const;
+
+const panelVariants: Variants = {
+  hidden: { x: "100%" },
+  visible: {
+    x: 0,
+    transition: { duration: 0.4, ease: LUXURY_EASE, when: "beforeChildren" },
+  },
+  exit: { x: "100%", transition: { duration: 0.3, ease: LUXURY_EASE } },
+};
+
+const listVariants: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, x: 40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5, ease: LUXURY_EASE },
+  },
+};
+
+type MobileMenuProps = {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  scrolled?: boolean;
+};
+
+export default function MobileMenu({
+  open,
+  onOpenChange,
+  scrolled = false,
+}: MobileMenuProps) {
+  const [expanded, setExpanded] = useState<string | null>(null);
+
+  // Lock body scroll while the full-screen menu is open.
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const close = () => onOpenChange(false);
+
+  return (
+    <div className="lg:hidden">
+      <button
+        type="button"
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
+        onClick={() => onOpenChange(!open)}
+        className={cn(
+          "flex h-10 w-10 items-center justify-center rounded-full transition-colors",
+          scrolled ? "text-revival-warm-white" : "text-revival-dark",
+        )}
+      >
+        {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+      </button>
+
+      <AnimatePresence>
+        {open ? (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={close}
+              className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+            />
+
+            {/* Slide-in panel */}
+            <motion.aside
+              variants={panelVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="fixed inset-y-0 right-0 z-50 flex w-[88%] max-w-sm flex-col overflow-y-auto bg-revival-dark px-6 pb-10 pt-6 text-revival-warm-white"
+            >
+              <div className="mb-8 flex items-center justify-between">
+                <Link
+                  href="/"
+                  onClick={close}
+                  className="flex items-center gap-2.5"
+                  aria-label="Revival Health & Wellness home"
+                >
+                  <Image
+                    src="/images/brand/logo.png"
+                    alt="Revival Health & Wellness"
+                    width={221}
+                    height={300}
+                    className="h-10 w-auto object-contain"
+                  />
+                  <span className="flex flex-col leading-none">
+                    <span className="font-heading text-lg font-medium uppercase tracking-[0.18em] text-revival-warm-white">
+                      Revival
+                    </span>
+                    <span className="mt-0.5 text-[0.55rem] font-light uppercase tracking-[0.3em] text-revival-gold">
+                      Health &amp; Wellness
+                    </span>
+                  </span>
+                </Link>
+                <button
+                  type="button"
+                  aria-label="Close menu"
+                  onClick={close}
+                  className="flex h-10 w-10 items-center justify-center rounded-full text-revival-warm-white transition-colors hover:text-revival-gold"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+
+              <motion.nav
+                variants={listVariants}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col"
+              >
+                {PRIMARY_NAV.map((item) => (
+                  <motion.div
+                    key={item.label}
+                    variants={itemVariants}
+                    className="border-b border-revival-warm-white/10"
+                  >
+                    {item.children ? (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setExpanded((prev) =>
+                              prev === item.label ? null : item.label,
+                            )
+                          }
+                          className="flex w-full items-center justify-between py-4 text-left font-heading text-lg text-revival-warm-white"
+                        >
+                          {item.label}
+                          <ChevronDown
+                            className={cn(
+                              "h-4 w-4 text-revival-gold transition-transform",
+                              expanded === item.label && "rotate-180",
+                            )}
+                          />
+                        </button>
+                        <AnimatePresence initial={false}>
+                          {expanded === item.label ? (
+                            <motion.ul
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3, ease: LUXURY_EASE }}
+                              className="overflow-hidden pb-2 pl-4"
+                            >
+                              {item.children.map((child) => (
+                                <li key={child.href}>
+                                  <Link
+                                    href={child.href}
+                                    target={child.external ? "_blank" : undefined}
+                                    rel={
+                                      child.external
+                                        ? "noopener noreferrer"
+                                        : undefined
+                                    }
+                                    onClick={close}
+                                    className="flex items-center gap-1.5 py-2 text-sm font-medium text-revival-warm-white/90 transition-colors hover:text-revival-gold"
+                                  >
+                                    {child.label}
+                                    {child.external ? (
+                                      <ExternalLink className="h-3 w-3" />
+                                    ) : null}
+                                  </Link>
+                                  {child.children?.length ? (
+                                    <ul className="mb-1 ml-3 border-l border-revival-warm-white/10 pl-3">
+                                      {child.children.map((leaf) => (
+                                        <li key={leaf.href}>
+                                          <Link
+                                            href={leaf.href}
+                                            onClick={close}
+                                            className="block py-1.5 text-[0.8rem] font-light text-revival-warm-white/60 transition-colors hover:text-revival-gold"
+                                          >
+                                            {leaf.label}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  ) : null}
+                                </li>
+                              ))}
+                            </motion.ul>
+                          ) : null}
+                        </AnimatePresence>
+                      </>
+                    ) : item.external ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={close}
+                        className="flex items-center gap-1.5 py-4 font-heading text-lg text-revival-warm-white transition-colors hover:text-revival-gold"
+                      >
+                        {item.label}
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={close}
+                        className="block py-4 font-heading text-lg text-revival-warm-white transition-colors hover:text-revival-gold"
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+                  </motion.div>
+                ))}
+              </motion.nav>
+
+              {/* Secondary links */}
+              <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+                {SECONDARY_NAV.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={close}
+                    className="text-sm font-light text-revival-warm-white/70 transition-colors hover:text-revival-gold"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <a
+                href={CTA.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={close}
+                className="mt-8 inline-flex items-center justify-center rounded-full bg-revival-gold px-6 py-3.5 text-sm font-medium text-revival-dark transition-transform duration-200 hover:scale-105 hover:bg-revival-gold-light"
+              >
+                {CTA.label}
+              </a>
+            </motion.aside>
+          </>
+        ) : null}
+      </AnimatePresence>
+    </div>
+  );
+}
