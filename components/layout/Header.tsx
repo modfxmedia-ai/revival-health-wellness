@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -60,6 +60,24 @@ export default function Header() {
   const [hovered, setHovered] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+
+  // Grace period before closing a dropdown so the cursor can travel
+  // from the trigger to a (potentially detached) panel without it shutting.
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cancelClose = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  };
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimerRef.current = setTimeout(() => {
+      setOpenMenu(null);
+      setHovered(null);
+    }, 220);
+  };
+  useEffect(() => () => cancelClose(), []);
 
   const isActive = (href: string) =>
     href === "/"
@@ -204,10 +222,10 @@ export default function Header() {
                 transition={{ type: "spring", stiffness: 300, damping: 16 }}
               >
                 <Image
-                  src="/images/brand/logo.png"
+                  src="/images/brand/revival-logo-full-color.png"
                   alt="Revival Health & Wellness"
-                  width={221}
-                  height={300}
+                  width={1600}
+                  height={2167}
                   priority
                   className={cn(
                     "w-auto object-contain transition-all duration-500",
@@ -260,10 +278,8 @@ export default function Header() {
           {/* Tier 2 — centered unified nav (primary + secondary) */}
           <nav
             className="mt-2.5 hidden flex-wrap items-center justify-center xl:flex"
-            onMouseLeave={() => {
-              setOpenMenu(null);
-              setHovered(null);
-            }}
+            onMouseEnter={cancelClose}
+            onMouseLeave={scheduleClose}
           >
             {PRIMARY_NAV.map((item) => (
               <DesktopNavItem
@@ -274,9 +290,12 @@ export default function Header() {
                 open={openMenu === item.label}
                 hovered={hovered === item.label}
                 onOpen={() => {
+                  cancelClose();
                   setOpenMenu(item.label);
                   setHovered(item.label);
                 }}
+                onPanelHover={cancelClose}
+                onPanelLeave={scheduleClose}
               />
             ))}
 
@@ -290,9 +309,12 @@ export default function Header() {
                 hovered={hovered === item.label}
                 secondary
                 onOpen={() => {
+                  cancelClose();
                   setOpenMenu(item.label);
                   setHovered(item.label);
                 }}
+                onPanelHover={cancelClose}
+                onPanelLeave={scheduleClose}
               />
             ))}
           </nav>
@@ -312,6 +334,8 @@ function DesktopNavItem({
   hovered,
   secondary = false,
   onOpen,
+  onPanelHover,
+  onPanelLeave,
 }: {
   item: NavItem;
   scrolled: boolean;
@@ -320,6 +344,8 @@ function DesktopNavItem({
   hovered: boolean;
   secondary?: boolean;
   onOpen: () => void;
+  onPanelHover?: () => void;
+  onPanelLeave?: () => void;
 }) {
   const baseColor = scrolled
     ? "text-revival-warm-white/90"
@@ -379,8 +405,34 @@ function DesktopNavItem({
   const grouped = item.children.some((c) => c.children && c.children.length);
   const wide = grouped || item.children.length > 6;
 
+  // For grouped mega-menus, count the on-screen columns so the grid
+  // keeps every category on a single row.
+  const groupedCols = grouped
+    ? (item.children.some((c) => !c.children?.length) ? 1 : 0) +
+      item.children.filter((c) => c.children?.length).length
+    : 0;
+
+  // Grouped panels break out of the nav-item box and re-anchor to the
+  // viewport so they stay centered and never overflow on small laptops.
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const [panelTop, setPanelTop] = useState(0);
+  useEffect(() => {
+    if (!grouped || !open) return;
+    const measure = () => {
+      const r = triggerRef.current?.getBoundingClientRect();
+      if (r) setPanelTop(r.bottom);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    window.addEventListener("scroll", measure, true);
+    return () => {
+      window.removeEventListener("resize", measure);
+      window.removeEventListener("scroll", measure, true);
+    };
+  }, [grouped, open, scrolled]);
+
   return (
-    <div className="relative" onMouseEnter={onOpen}>
+    <div ref={triggerRef} className="relative" onMouseEnter={onOpen}>
       <Link
         href={item.href}
         className={cn(
@@ -409,11 +461,26 @@ function DesktopNavItem({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.24, ease: LUXURY_EASE }}
+            onMouseEnter={onPanelHover}
+            onMouseLeave={onPanelLeave}
             className={cn(
-              "absolute top-full pt-4",
-              item.label === "Aesthetics" ? "right-0" : "left-0",
-              grouped ? "w-[44rem]" : wide ? "w-[34rem]" : "w-72",
+              grouped
+                ? "fixed left-1/2 z-50 -translate-x-1/2 pt-2"
+                : cn(
+                    "absolute top-full pt-4",
+                    item.label === "Aesthetics" ? "right-0" : "left-0",
+                  ),
+              !grouped && (wide ? "w-[34rem]" : "w-72"),
             )}
+            style={
+              grouped
+                ? {
+                    top: panelTop,
+                    // Roughly 15rem per column + container padding, clamped to viewport.
+                    width: `min(${groupedCols * 15 + 2}rem, calc(100vw - 2rem))`,
+                  }
+                : undefined
+            }
           >
             <div className="overflow-hidden rounded-2xl border border-revival-gold/15 bg-revival-charcoal/95 p-4 shadow-2xl backdrop-blur-xl">
               <span
@@ -421,7 +488,7 @@ function DesktopNavItem({
                 className="mb-2 block h-px bg-gradient-to-r from-transparent via-revival-gold/60 to-transparent"
               />
               {grouped ? (
-                <MegaMenu item={item} />
+                <MegaMenu item={item} cols={groupedCols} />
               ) : (
                 <ul
                   className={cn(
@@ -455,13 +522,16 @@ function DesktopNavItem({
 
 /* ── Grouped mega-menu (Sexual Wellness, Aesthetics) ───────────────────── */
 
-function MegaMenu({ item }: { item: NavItem }) {
+function MegaMenu({ item, cols }: { item: NavItem; cols: number }) {
   const children = item.children ?? [];
   const standalone = children.filter((c) => !c.children?.length);
   const groups = children.filter((c) => c.children?.length);
 
   return (
-    <div className="grid grid-cols-3 gap-x-6 gap-y-1">
+    <div
+      className="grid gap-x-6 gap-y-1"
+      style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}
+    >
       {standalone.length ? (
         <div className="flex flex-col">
           <p className="px-3 pb-1.5 text-tagline text-[0.65rem] text-revival-gold">

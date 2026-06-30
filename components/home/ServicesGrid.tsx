@@ -10,12 +10,12 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 /** Short on-brand tagline per service. */
 const TAGLINES: Record<string, string> = {
-  "Medical Weight Loss": "Look & feel lighter",
+  "Medical Weight Loss": "Look & feel healthier",
   "Hormone Therapy": "Restore your balance",
   "Sexual Wellness": "Reignite confidence",
   Aesthetics: "Natural radiance",
   "IV Hydration": "Replenish & glow",
-  "Emsculpt NEO": "Sculpt & define",
+  "Body Contouring": "Sculpt & define",
 };
 
 /** Bento spans — first card is the tall feature. */

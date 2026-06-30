@@ -3,7 +3,6 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { organizationSchema, websiteSchema, jsonLd } from "@/lib/schema";
 import Header from "@/components/layout/Header";
-import MapSection from "@/components/layout/MapSection";
 import Footer from "@/components/layout/Footer";
 
 const playfair = Playfair_Display({
@@ -67,7 +66,6 @@ export default function RootLayout({
         />
         <Header />
         <main className="flex-1 pt-[150px]">{children}</main>
-        <MapSection />
         <Footer />
       </body>
     </html>

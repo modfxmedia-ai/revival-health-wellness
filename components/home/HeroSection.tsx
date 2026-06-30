@@ -136,7 +136,7 @@ export default function HeroSection() {
           variants={container}
           initial="hidden"
           animate="visible"
-          className="relative z-10 max-w-2xl"
+          className="relative z-10 mx-auto max-w-2xl text-center lg:mx-0 lg:text-left"
         >
           <motion.span
             variants={item}
@@ -167,14 +167,14 @@ export default function HeroSection() {
 
           <motion.p
             variants={item}
-            className="mt-7 max-w-lg text-lg font-light leading-relaxed text-revival-cream/90"
+            className="mx-auto mt-7 max-w-lg text-lg font-light leading-relaxed text-revival-cream/90 lg:mx-0"
           >
             {HERO.description}
           </motion.p>
 
           <motion.div
             variants={item}
-            className="mt-9 flex flex-wrap items-center gap-4"
+            className="mt-9 flex flex-wrap items-center justify-center gap-4 lg:justify-start"
           >
             <a
               href={ZENOTI}
@@ -199,7 +199,7 @@ export default function HeroSection() {
 
           <motion.div
             variants={item}
-            className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4"
+            className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 lg:justify-start"
           >
             <div className="flex items-center gap-2">
               <span className="flex">
@@ -211,7 +211,7 @@ export default function HeroSection() {
                 ))}
               </span>
               <span className="text-sm font-light text-revival-cream/80">
-                Rated 5.0 by 240+ patients
+                Rated 5 star by 500+
               </span>
             </div>
             <span className="inline-flex items-center gap-2 text-sm font-light text-revival-cream/80">
@@ -222,7 +222,7 @@ export default function HeroSection() {
 
           <motion.div
             variants={item}
-            className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-tagline text-xs text-revival-gold/90"
+            className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-tagline text-xs text-revival-gold/90 lg:justify-start"
           >
             {HERO.words.map((w, i) => (
               <span key={w} className="flex items-center gap-4">
@@ -329,6 +329,12 @@ export default function HeroSection() {
               {/* Gradient border wrapper */}
               <div className="relative h-full w-full rounded-[2.5rem] bg-gradient-to-br from-revival-gold/80 via-revival-gold/15 to-transparent p-[1.5px] shadow-[0_30px_70px_-18px_rgba(0,0,0,0.75)]">
                 <div className="relative h-full w-full overflow-hidden rounded-[2.4rem] bg-revival-dark">
+                  {/* Click anywhere on the card to visit the active service */}
+                  <Link
+                    href={SHOWCASE_HREFS[active % SHOWCASE_HREFS.length]}
+                    aria-label={`Explore ${SHOWCASE_LABELS[active % SHOWCASE_LABELS.length]}`}
+                    className="absolute inset-0 z-30"
+                  />
                   <AnimatePresence mode="popLayout">
                     <motion.div
                       key={active}
@@ -429,10 +435,17 @@ export default function HeroSection() {
               {SHOWCASE.map((src, i) => {
                 const isActive = i === active % SHOWCASE.length;
                 return (
-                  <button
+                  <Link
                     key={src}
-                    type="button"
-                    onClick={() => setActive(i)}
+                    href={SHOWCASE_HREFS[i]}
+                    onClick={(e) => {
+                      // First click: just switch active slide. Second click on the
+                      // already-active thumb navigates.
+                      if (!isActive) {
+                        e.preventDefault();
+                        setActive(i);
+                      }
+                    }}
                     aria-label={SHOWCASE_LABELS[i]}
                     className={`relative h-12 w-12 overflow-hidden rounded-xl border transition-all duration-300 ${
                       isActive
@@ -447,7 +460,7 @@ export default function HeroSection() {
                       sizes="48px"
                       className="object-cover"
                     />
-                  </button>
+                  </Link>
                 );
               })}
             </div>
@@ -496,7 +509,7 @@ export default function HeroSection() {
                 5.0
               </p>
               <p className="text-[0.6rem] font-light uppercase tracking-[0.2em] text-revival-cream/65">
-                240+ Reviews
+                500+ Reviews
               </p>
             </div>
           </motion.div>
@@ -529,10 +542,10 @@ export default function HeroSection() {
 /* ── Floating gold sparks ──────────────────────────────────────────────── */
 
 const SHOWCASE = [
-  "/images/services/aesthetics-2.jpg",
-  "/images/services/emsculpt-neo.webp",
-  "/images/services/prp-facial.jpg",
-  "/images/services/weight-loss-couple.jpg",
+  "/images/services/aesthetics-and-injectables.jpeg",
+  "/images/services/body-contouring.webp",
+  "/images/services/prp-rejuvenation.jpeg",
+  "/images/services/medical-weight-loss.jpeg",
 ];
 
 const SHOWCASE_LABELS = [
@@ -540,6 +553,13 @@ const SHOWCASE_LABELS = [
   "Body Contouring",
   "PRP & Skin Rejuvenation",
   "Medical Weight Loss",
+];
+
+const SHOWCASE_HREFS = [
+  "/aesthetics/",
+  "/body-contouring/",
+  "/prp-hair-restoration/",
+  "/weight-loss/",
 ];
 
 const SPARKS = [

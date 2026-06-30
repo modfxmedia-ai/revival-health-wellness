@@ -15,6 +15,7 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CTASection from "@/components/home/CTASection";
 import AboutSection from "@/components/home/AboutSection";
 import PlanOfferSection from "@/components/home/PlanOfferSection";
+import MapSection from "@/components/layout/MapSection";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -43,6 +44,7 @@ export default function Home() {
       <CTASection />
       <AboutSection />
       <PlanOfferSection />
+      <MapSection />
     </>
   );
 }

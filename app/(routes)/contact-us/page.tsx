@@ -2,6 +2,7 @@ import { buildMetadata, SITE } from "@/lib/metadata";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Button from "@/components/ui/Button";
+import MapSection from "@/components/layout/MapSection";
 
 export const metadata = buildMetadata({
   title: "Contact Us",
@@ -80,6 +81,7 @@ export default function ContactUsPage() {
           </form>
         </div>
       </section>
+      <MapSection />
     </>
   );
 }

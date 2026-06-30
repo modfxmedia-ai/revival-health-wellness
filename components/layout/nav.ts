@@ -77,22 +77,35 @@ export const PRIMARY_NAV: NavItem[] = [
     label: "Aesthetics",
     href: "/aesthetics/",
     children: [
-      { label: "Emsculpt NEO", href: "/emsculpt-neo/" },
       { label: "Botox", href: "/botox/" },
       { label: "Derma Filler", href: "/derma-filler/" },
       { label: "Dysport", href: "/dysport/" },
       { label: "Xeomin", href: "/xeomin/" },
       { label: "Kybella", href: "/kybella/" },
       { label: "Sculptra", href: "/sculptra/" },
+      { label: "Aura 3D", href: "/aura-3d/" },
+      {
+        label: "Body Contouring",
+        href: "/body-contouring/",
+        children: [
+          { label: "OctoPro (ONDA)", href: "/octopro-onda/" },
+          { label: "Emsculpt NEO", href: "/emsculpt-neo/" },
+          {
+            label: "Everesse RF Skin Tightening and Rejuvenation",
+            href: "/everesse-rf-skin-tightening-and-rejuvenation/",
+          },
+        ],
+      },
       {
         label: "Skin",
         href: "/skin/",
         children: [
+          { label: "OctoPro (ONDA)", href: "/octopro-onda/" },
           { label: "Microneedling", href: "/microneedling/" },
           { label: "Under eye treatment", href: "/under-eye-treatment/" },
           {
-            label: "Everesse RF Skin Tightening and Rejuvenation",
-            href: "/everesse-rf-skin-tightening-and-rejuvenation/",
+            label: "Xerf — Skin Tightening, Lifting & Rejuvenation",
+            href: "/xerf/",
           },
           { label: "PDO Thread lifts", href: "/pdo-thread-lifts/" },
           { label: "Scar Camouflage", href: "/scar-camouflage/" },

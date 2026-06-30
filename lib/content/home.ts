@@ -8,7 +8,7 @@
 export const ZENOTI = "https://revivalhealth.zenoti.com/webstorenew";
 
 export const HERO = {
-  eyebrow: "Las Vegas Medical Spa & Wellness",
+  eyebrow: "Las Vegas Leading Medical Health & Wellness Clinic",
   title: "Take the first step towards a vibrant and fulfilling future",
   description:
     "We specialize in weight loss, hormone replacement therapy, body contouring, and aesthetics. Unlock your path to a healthier, more confident you.",
@@ -22,14 +22,14 @@ export const HERO = {
   ],
 };
 
-export const MARQUEE = [
-  "Medical Weight Loss",
-  "Hormone Therapy",
-  "Sexual Wellness",
-  "Aesthetics & Injectables",
-  "IV Hydration",
-  "Body Contouring",
-  "Telehealth",
+export const MARQUEE: { label: string; href: string }[] = [
+  { label: "Medical Weight Loss", href: "/weight-loss/" },
+  { label: "Hormone Therapy", href: "/hormone-therapy/" },
+  { label: "Sexual Wellness", href: "/sexual-wellness/" },
+  { label: "Aesthetics & Injectables", href: "/aesthetics/" },
+  { label: "IV Hydration", href: "/iv-hydration/" },
+  { label: "Body Contouring", href: "/body-contouring/" },
+  { label: "Telehealth", href: "/telehealth/" },
 ];
 
 export type Service = {
@@ -50,21 +50,21 @@ export const SERVICES: Service[] = [
   {
     name: "Hormone Therapy",
     href: "/hormone-therapy/",
-    image: "/images/services/hormone-therapy.webp",
+    image: "/images/services/hormone-therapy.jpg",
     blurb:
       "Restore balance and vitality with customized HRT for men and women, plus growth hormone optimization.",
   },
   {
     name: "Sexual Wellness",
     href: "/sexual-wellness/",
-    image: "/images/services/sexual-wellness.png",
+    image: "/images/services/sexual-wellness.jpg",
     blurb:
       "Safe, proven treatments for men and women — P-Shot, O-Shot, GainsWave, Emsella, and more.",
   },
   {
     name: "Aesthetics",
     href: "/aesthetics/",
-    image: "/images/services/aesthetics.jpg",
+    image: "/images/services/sexual-wellness.png",
     blurb:
       "Botox, dermal fillers, microneedling, PDO threads, and PRP — natural, beautiful, confidence-restoring results.",
   },
@@ -76,11 +76,11 @@ export const SERVICES: Service[] = [
       "Rehydrate, replenish, and revitalize with custom IV drips delivered straight to your bloodstream.",
   },
   {
-    name: "Emsculpt NEO",
-    href: "/emsculpt-neo/",
+    name: "Body Contouring",
+    href: "/body-contouring/",
     image: "/images/services/emsculpt-neo.webp",
     blurb:
-      "Build muscle and burn fat simultaneously — up to 25% more muscle and 30% less fat in 30 minutes.",
+      "Non-invasive sculpting and skin tightening — OctoPro (ONDA), Emsculpt NEO, and Everesse RF for a stronger, more defined silhouette.",
   },
 ];
 
@@ -110,7 +110,7 @@ export const APPROACH = {
 
 export const STATS = [
   { value: 5, suffix: "★", label: "Average patient rating" },
-  { value: 243, suffix: "+", label: "Five-star reviews" },
+  { value: 500, suffix: "+", label: "Five-star reviews" },
   { value: 2, suffix: "", label: "Las Vegas locations" },
   { value: 30, suffix: "+", label: "Treatments & therapies" },
 ];
@@ -235,7 +235,7 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const REVIEWS = {
   rating: 5,
-  count: 243,
+  count: 500,
   badge: "EXCELLENT",
 };
 
@@ -320,7 +320,7 @@ export const PHILOSOPHY = {
   after: "/images/home/84-after.webp",
   stats: [
     { value: "5★", label: "Average rating" },
-    { value: "243+", label: "Five-star reviews" },
+    { value: "500+", label: "Five-star reviews" },
     { value: "30+", label: "Treatments offered" },
     { value: "2", label: "Las Vegas locations" },
   ],

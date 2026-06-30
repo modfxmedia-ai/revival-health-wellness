@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { MARQUEE } from "@/lib/content/home";
 
@@ -33,11 +34,17 @@ export default function MarqueeStrip() {
         animate={{ x: ["0%", "-50%"] }}
         transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
       >
-        {items.map((word, i) => (
-          <span key={`${word}-${i}`} className="flex items-center whitespace-nowrap">
-            <span className="font-heading text-xl font-normal tracking-wide text-revival-cream/85 md:text-2xl">
-              {word}
-            </span>
+        {items.map((item, i) => (
+          <span
+            key={`${item.href}-${i}`}
+            className="flex items-center whitespace-nowrap"
+          >
+            <Link
+              href={item.href}
+              className="font-heading text-xl font-normal tracking-wide text-revival-cream/85 transition-colors duration-300 hover:text-revival-gold md:text-2xl"
+            >
+              {item.label}
+            </Link>
             <Star />
           </span>
         ))}
