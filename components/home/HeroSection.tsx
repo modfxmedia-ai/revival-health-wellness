@@ -124,10 +124,12 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Floating gold sparks */}
-      {SPARKS.map((s, i) => (
-        <Spark key={i} {...s} />
-      ))}
+      {/* Floating gold sparks (desktop only) */}
+      <div className="pointer-events-none absolute inset-0 hidden lg:block">
+        {SPARKS.map((s, i) => (
+          <Spark key={i} {...s} />
+        ))}
+      </div>
 
       {/* ── Content ────────────────────────────────────────────────────── */}
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-4 py-28 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
@@ -238,7 +240,7 @@ export default function HeroSection() {
           ref={showcaseRef}
           onMouseMove={handleTilt}
           onMouseLeave={resetTilt}
-          className="relative mx-auto h-[34rem] w-full max-w-[24rem] overflow-hidden lg:mx-0 lg:h-[40rem] lg:max-w-none lg:overflow-visible"
+          className="relative mx-auto h-[32rem] w-full max-w-[24rem] overflow-hidden lg:mx-0 lg:h-[40rem] lg:max-w-none lg:overflow-visible"
           style={{ perspective: 1400 }}
         >
           {/* Soft layered glow behind everything */}
@@ -249,18 +251,18 @@ export default function HeroSection() {
             className="absolute right-6 top-1/2 h-[28rem] w-[24rem] -translate-y-1/2 rounded-[3.5rem] bg-revival-gold/20 blur-[100px]"
           />
 
-          {/* Counter-rotating dashed rings */}
+          {/* Counter-rotating dashed rings (desktop only) */}
           <motion.div
             aria-hidden
             animate={{ rotate: 360 }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-            className="absolute right-0 top-1/2 h-[32rem] w-[32rem] -translate-y-1/2 rounded-full border border-dashed border-revival-gold/15"
+            className="absolute right-0 top-1/2 hidden h-[32rem] w-[32rem] -translate-y-1/2 rounded-full border border-dashed border-revival-gold/15 lg:block"
           />
           <motion.div
             aria-hidden
             animate={{ rotate: -360 }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="absolute -right-4 top-1/2 h-[34rem] w-[34rem] -translate-y-1/2 rounded-full opacity-70"
+            className="absolute -right-4 top-1/2 hidden h-[34rem] w-[34rem] -translate-y-1/2 rounded-full opacity-70 lg:block"
             style={{
               background:
                 "conic-gradient(from 0deg, transparent 0deg, rgba(201,169,110,0.6) 55deg, transparent 120deg, transparent 245deg, rgba(232,213,176,0.45) 305deg, transparent 360deg)",
@@ -271,7 +273,7 @@ export default function HeroSection() {
             }}
           />
 
-          {/* Orbiting particle accents */}
+          {/* Orbiting particle accents (desktop only) */}
           {[0, 1, 2].map((i) => (
             <motion.div
               key={i}
@@ -282,7 +284,7 @@ export default function HeroSection() {
                 repeat: Infinity,
                 ease: "linear",
               }}
-              className="absolute right-0 top-1/2 h-[32rem] w-[32rem] -translate-y-1/2"
+              className="absolute right-0 top-1/2 hidden h-[32rem] w-[32rem] -translate-y-1/2 lg:block"
               style={{ rotate: i * 120 }}
             >
               <span
@@ -475,7 +477,7 @@ export default function HeroSection() {
               scale: { delay: 1, duration: 0.7, ease: EASE },
               y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.6 },
             }}
-            className="absolute -left-2 top-12 z-20 flex items-center gap-3 rounded-2xl border border-revival-gold/25 bg-revival-charcoal/70 px-4 py-3 shadow-xl backdrop-blur-xl"
+            className="absolute -left-2 top-12 z-20 hidden items-center gap-3 rounded-2xl border border-revival-gold/25 bg-revival-charcoal/70 px-4 py-3 shadow-xl backdrop-blur-xl lg:flex"
           >
             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-revival-gold/15">
               <Sparkles className="h-5 w-5 text-revival-gold" />
@@ -499,7 +501,7 @@ export default function HeroSection() {
               scale: { delay: 1.2, duration: 0.7, ease: EASE },
               y: { duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 },
             }}
-            className="absolute bottom-10 left-1 z-20 flex items-center gap-3 rounded-2xl border border-revival-gold/25 bg-revival-charcoal/70 px-4 py-3 shadow-xl backdrop-blur-xl"
+            className="absolute bottom-10 left-1 z-20 hidden items-center gap-3 rounded-2xl border border-revival-gold/25 bg-revival-charcoal/70 px-4 py-3 shadow-xl backdrop-blur-xl lg:flex"
           >
             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-revival-gold/15">
               <Star className="h-5 w-5 fill-revival-gold text-revival-gold" />

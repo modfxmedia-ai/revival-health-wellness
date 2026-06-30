@@ -185,7 +185,7 @@ export default function Header() {
         <div
           className={cn(
             "mx-auto max-w-[90rem] px-4 transition-all duration-500 sm:px-6 lg:px-8",
-            scrolled ? "py-2" : "py-3",
+            scrolled ? "pb-2 pt-2.5" : "py-3",
           )}
         >
           {/* Tier 1 — phone · centered logo · CTA */}
@@ -222,10 +222,14 @@ export default function Header() {
                 transition={{ type: "spring", stiffness: 300, damping: 16 }}
               >
                 <Image
-                  src="/images/brand/revival-logo-full-color.png"
+                  src={
+                    scrolled
+                      ? "/images/brand/revival-logo-mobile.png"
+                      : "/images/brand/revival-logo-full-color.png"
+                  }
                   alt="Revival Health & Wellness"
-                  width={742}
-                  height={1005}
+                  width={scrolled ? 221 : 742}
+                  height={scrolled ? 300 : 1005}
                   priority
                   className={cn(
                     "w-auto object-contain transition-all duration-500",
