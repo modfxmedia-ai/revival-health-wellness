@@ -343,7 +343,7 @@ export const PRICING = {
   cards: [
     {
       title: "Aesthetics & Skin",
-      image: "/images/services/aesthetics.jpg",
+      image: "/images/services/aesthetics-skin-facial.webp",
       href: "/aesthetics/",
       items: [
         { name: "Botox / Wrinkle Relaxers", price: "from $12/unit" },
@@ -356,7 +356,7 @@ export const PRICING = {
     },
     {
       title: "Wellness & Body",
-      image: "/images/services/emsculpt-neo.webp",
+      image: "/images/services/body-aesthetics.png",
       href: "/weight-loss/",
       items: [
         { name: "Medical Weight Loss (GLP-1)", price: "from $299/mo" },
