@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "Botox";
 const PATH = "/botox";
 const DESCRIPTION =
-  "Discover Botox at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover Botox at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

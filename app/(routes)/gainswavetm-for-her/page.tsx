@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "GAINSWave™ for Her";
 const PATH = "/gainswavetm-for-her";
 const DESCRIPTION =
-  "Discover GAINSWave™ for Her at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover GAINSWave™ for Her at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

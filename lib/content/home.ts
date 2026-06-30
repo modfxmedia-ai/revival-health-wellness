@@ -45,7 +45,7 @@ export const SERVICES: Service[] = [
     href: "/weight-loss/",
     image: "/images/services/weight-loss-couple.jpg",
     blurb:
-      "A scientific, personalized plan built around your body — GLP-1, phentermine, and vitamin injections with ongoing medical support.",
+      "A scientific, personalized plan built around your body, GLP-1, phentermine, and vitamin injections with ongoing medical support.",
   },
   {
     name: "Hormone Therapy",
@@ -59,14 +59,14 @@ export const SERVICES: Service[] = [
     href: "/sexual-wellness/",
     image: "/images/services/sexual-wellness.jpg",
     blurb:
-      "Safe, proven treatments for men and women — P-Shot, O-Shot, GainsWave, Emsella, and more.",
+      "Safe, proven treatments for men and women, P-Shot, O-Shot, GainsWave, Emsella, and more.",
   },
   {
     name: "Aesthetics",
     href: "/aesthetics/",
     image: "/images/services/sexual-wellness.png",
     blurb:
-      "Botox, dermal fillers, microneedling, PDO threads, and PRP — natural, beautiful, confidence-restoring results.",
+      "Botox, dermal fillers, microneedling, PDO threads, and PRP, natural, beautiful, confidence-restoring results.",
   },
   {
     name: "IV Hydration",
@@ -80,14 +80,14 @@ export const SERVICES: Service[] = [
     href: "/body-contouring/",
     image: "/images/services/emsculpt-neo.webp",
     blurb:
-      "Non-invasive sculpting and skin tightening — OctoPro (ONDA), Emsculpt NEO, and Everesse RF for a stronger, more defined silhouette.",
+      "Non-invasive sculpting and skin tightening, OctoPro (ONDA), Emsculpt NEO, and Everesse RF for a stronger, more defined silhouette.",
   },
 ];
 
 export const APPROACH = {
   eyebrow: "A Modern Luxury Experience",
   title: "A synergistic, multi-pronged approach",
-  body: "At Revival Health and Wellness, everything we do is centered around you and your journey to becoming the best version of yourself. We believe in a comprehensive approach to wellness — revitalizing your mind, body, and spirit through personalized, results-driven care.",
+  body: "At Revival Health and Wellness, everything we do is centered around you and your journey to becoming the best version of yourself. We believe in a comprehensive approach to wellness, revitalizing your mind, body, and spirit through personalized, results-driven care.",
   points: [
     {
       title: "Results-driven care",
@@ -99,7 +99,7 @@ export const APPROACH = {
     },
     {
       title: "Whole-person wellness",
-      text: "We treat the whole person — physical, mental, and emotional — for lasting, meaningful results.",
+      text: "We treat the whole person, physical, mental, and emotional, for lasting, meaningful results.",
     },
   ],
   images: [
@@ -125,7 +125,7 @@ export const WHY_CHOOSE = {
     },
     {
       title: "An expert medical team",
-      text: "Working with our expert medical team ensures personalized care — we listen to each patient and recommend the treatments that best meet your individual needs.",
+      text: "Working with our expert medical team ensures personalized care, we listen to each patient and recommend the treatments that best meet your individual needs.",
     },
     {
       title: "A real personal connection",
@@ -158,7 +158,7 @@ export const ABOUT = {
   title: "Everything we do is centered around you",
   body: [
     "At Revival Health and Wellness, everything we do is centered around you and your journey to becoming the best version of yourself. Our mission is to provide top-tier care that empowers you to achieve your goals and feel your best, through personalized health solutions tailored to your unique needs.",
-    "We believe in a comprehensive approach to wellness — focusing on revitalizing your mind, body, and spirit. Our dedicated team genuinely cares about your health and future, and we are committed to helping you lead a longer, happier, and healthier life.",
+    "We believe in a comprehensive approach to wellness, focusing on revitalizing your mind, body, and spirit. Our dedicated team genuinely cares about your health and future, and we are committed to helping you lead a longer, happier, and healthier life.",
     "Join us and take the first step towards a vibrant and fulfilling future. Let us help you unlock your potential and embrace a healthier, more vibrant you.",
   ],
   href: "/about-us/",
@@ -199,13 +199,13 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Coltyn Simmons",
     treatment: "Weight Loss",
     quote:
-      "This was such an easy and powerful way for me to get my health and body on the right path! I started seeing results immediately. I was out of shape and unhealthy, and now I'm in the best shape of my life. I can honestly say they saved my life — thank you from the bottom of my heart!",
+      "This was such an easy and powerful way for me to get my health and body on the right path! I started seeing results immediately. I was out of shape and unhealthy, and now I'm in the best shape of my life. I can honestly say they saved my life, thank you from the bottom of my heart!",
   },
   {
     name: "Nura Sadeghian",
     treatment: "Weight Loss & Aesthetics",
     quote:
-      "As a new mom I came in wanting guidance. The provider and staff are absolutely amazing — caring, kind, and genuinely want to help. I started a weight loss program and then got some Botox and filler and I LOVE it all! They're honest and don't sell something that won't benefit you.",
+      "As a new mom I came in wanting guidance. The provider and staff are absolutely amazing, caring, kind, and genuinely want to help. I started a weight loss program and then got some Botox and filler and I LOVE it all! They're honest and don't sell something that won't benefit you.",
   },
   {
     name: "jobu",
@@ -217,7 +217,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Jessica Dominguez",
     treatment: "Weight Loss",
     quote:
-      "Wanting to lose weight, Revival Health and Wellness helped me achieve my goal in 3 months! The staff is super nice and friendly and they make you feel so comfortable. Ready for a change? You MUST contact them — they'll have the right plan for you.",
+      "Wanting to lose weight, Revival Health and Wellness helped me achieve my goal in 3 months! The staff is super nice and friendly and they make you feel so comfortable. Ready for a change? You MUST contact them, they'll have the right plan for you.",
   },
   {
     name: "Jennifer Laluangphet",
@@ -255,7 +255,7 @@ export const BLOGS: BlogPost[] = [
     date: "June 21, 2026",
     href: "https://revivalhealthandwellnessgroup.com/break-weight-loss-plateau/",
     excerpt:
-      "Stop the plateau spiral and restart fat loss. You are eating cleaner and moving more — here's what your labs reveal and how to break through.",
+      "Stop the plateau spiral and restart fat loss. You are eating cleaner and moving more, here's what your labs reveal and how to break through.",
     image: "/images/blog/weight-loss-plateau.jpg",
   },
   {
@@ -264,7 +264,7 @@ export const BLOGS: BlogPost[] = [
     date: "June 14, 2026",
     href: "https://revivalhealthandwellnessgroup.com/ed-treatment-roadmap-guide/",
     excerpt:
-      "Take control of ED and reclaim confidence. Erectile dysfunction is common and it is medical — here is a clear, personalized path forward.",
+      "Take control of ED and reclaim confidence. Erectile dysfunction is common and it is medical, here is a clear, personalized path forward.",
     image: "/images/blog/ed-treatment-roadmap.jpg",
   },
   {
@@ -300,12 +300,12 @@ export const BLOGS: BlogPost[] = [
     date: "April 26, 2026",
     href: "https://revivalhealthandwellnessgroup.com/hormone-therapy-in-your-40s-and-50s/",
     excerpt:
-      "Hormone therapy can feel very different in your 40s and 50s than it did before. Here's why — and how to tailor it to this stage of life.",
+      "Hormone therapy can feel very different in your 40s and 50s than it did before. Here's why, and how to tailor it to this stage of life.",
     image: "/images/blog/hormone-40s-50s.jpg",
   },
 ];
 
-/* Our Philosophy — before/after comparison + headline stats */
+/* Our Philosophy, before/after comparison + headline stats */
 export const PHILOSOPHY = {
   eyebrow: "Our Philosophy",
   titleLines: [
@@ -314,7 +314,7 @@ export const PHILOSOPHY = {
     { text: "Visible", accent: true },
     { text: "results.", accent: false },
   ],
-  body: "Every body is different. Our medically supervised treatments respect your physiology, goals, and timeline — combining advanced therapies with personalized care to deliver real, lasting transformation.",
+  body: "Every body is different. Our medically supervised treatments respect your physiology, goals, and timeline, combining advanced therapies with personalized care to deliver real, lasting transformation.",
   cta: { label: "View Patient Results", href: "/about-us/" },
   before: "/images/home/84-before.webp",
   after: "/images/home/84-after.webp",
@@ -370,14 +370,14 @@ export const PRICING = {
   ] as PriceCard[],
 };
 
-/* Signature — interactive body contouring map */
+/* Signature, interactive body contouring map */
 export type Hotspot = { label: string; top: string; left: string };
 
 export const SIGNATURE = {
   eyebrow: "Signature Treatment",
   title: "Body contouring &",
   titleAccent: "Emsculpt NEO",
-  body: "Build muscle and burn fat at the same time. Our non-invasive body sculpting targets stubborn areas with FDA-cleared technology — up to 25% more muscle and 30% less fat in just four 30-minute sessions.",
+  body: "Build muscle and burn fat at the same time. Our non-invasive body sculpting targets stubborn areas with FDA-cleared technology, up to 25% more muscle and 30% less fat in just four 30-minute sessions.",
   cta: { label: "Book a Consultation", href: ZENOTI },
   image: "/images/services/defined-body.webp",
   hotspots: [

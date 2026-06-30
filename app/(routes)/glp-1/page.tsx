@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "GLP-1 Weight Loss";
 const PATH = "/glp-1";
 const DESCRIPTION =
-  "Discover GLP-1 Weight Loss at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover GLP-1 Weight Loss at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

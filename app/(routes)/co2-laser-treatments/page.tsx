@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "CO2 Laser Treatments";
 const PATH = "/co2-laser-treatments";
 const DESCRIPTION =
-  "Discover CO2 Laser Treatments at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover CO2 Laser Treatments at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

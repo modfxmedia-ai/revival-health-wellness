@@ -19,7 +19,7 @@ export type NavItem = {
 };
 
 /**
- * Primary navigation — mirrors the live site menu exactly:
+ * Primary navigation, mirrors the live site menu exactly:
  * https://revivalhealthandwellnessgroup.com/
  */
 export const PRIMARY_NAV: NavItem[] = [
@@ -104,7 +104,7 @@ export const PRIMARY_NAV: NavItem[] = [
           { label: "Microneedling", href: "/microneedling/" },
           { label: "Under eye treatment", href: "/under-eye-treatment/" },
           {
-            label: "Xerf — Skin Tightening, Lifting & Rejuvenation",
+            label: "Xerf, Skin Tightening, Lifting & Rejuvenation",
             href: "/xerf/",
           },
           { label: "PDO Thread lifts", href: "/pdo-thread-lifts/" },

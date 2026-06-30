@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "Weight Loss";
 const PATH = "/weight-loss";
 const DESCRIPTION =
-  "Discover Weight Loss at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover Weight Loss at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

@@ -132,7 +132,7 @@ export default function Footer() {
         variants={staggerContainer}
         className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-12 lg:px-8"
       >
-        {/* Col 1 — Brand */}
+        {/* Col 1, Brand */}
         <motion.div variants={fadeInUp} className="lg:col-span-4">
           <Link
             href="/"
@@ -160,7 +160,7 @@ export default function Footer() {
             Vitality
           </p>
 
-          {/* Newsletter (Webflow form endpoint — preserve hidden fields) */}
+          {/* Newsletter (Webflow form endpoint, preserve hidden fields) */}
           <form
             name="email-form"
             method="post"
@@ -216,25 +216,25 @@ export default function Footer() {
           </div>
         </motion.div>
 
-        {/* Col 2 — Quick Links */}
+        {/* Col 2, Quick Links */}
         <motion.div variants={fadeInUp} className="lg:col-span-2">
           <FooterHeading>Quick Links</FooterHeading>
           <FooterLinks links={QUICK_LINKS} />
         </motion.div>
 
-        {/* Col 3 — Aesthetic Services */}
+        {/* Col 3, Aesthetic Services */}
         <motion.div variants={fadeInUp} className="lg:col-span-2">
           <FooterHeading>Aesthetic Services</FooterHeading>
           <FooterLinks links={AESTHETIC_LINKS} />
         </motion.div>
 
-        {/* Col 4 — Company */}
+        {/* Col 4, Company */}
         <motion.div variants={fadeInUp} className="lg:col-span-2">
           <FooterHeading>Company</FooterHeading>
           <FooterLinks links={COMPANY_LINKS} />
         </motion.div>
 
-        {/* Col 5 — Locations */}
+        {/* Col 5, Locations */}
         <motion.div variants={fadeInUp} className="lg:col-span-2">
           <FooterHeading>Locations</FooterHeading>
           <div className="space-y-6">

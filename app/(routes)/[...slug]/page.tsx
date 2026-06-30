@@ -9,7 +9,7 @@ export function generateStaticParams() {
   return getAllGeoPages().map((page) => ({ slug: [page.slug] }));
 }
 
-// Geo pages are a known, finite set — reject anything else.
+// Geo pages are a known, finite set, reject anything else.
 export const dynamicParams = false;
 
 type GeoRouteProps = { params: Promise<{ slug: string[] }> };

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/metadata";
 import { getAllGeoPages } from "@/lib/locations";
 
-/** Primary service pillars — priority 0.9. */
+/** Primary service pillars, priority 0.9. */
 const PILLAR_SERVICES = [
   "weight-loss",
   "hormone-therapy",
@@ -12,7 +12,7 @@ const PILLAR_SERVICES = [
   "telehealth",
 ];
 
-/** Sub-service / treatment pages — priority 0.8. */
+/** Sub-service / treatment pages, priority 0.8. */
 const SUB_SERVICES = [
   "botox",
   "co2-laser-treatments",
@@ -51,20 +51,20 @@ const SUB_SERVICES = [
   "xeomin",
 ];
 
-/** Editorial / company pages — priority 0.7. */
+/** Editorial / company pages, priority 0.7. */
 const CONTENT_PAGES = ["about-us", "contact-us", "blogs"];
 
-/** Latest blog posts — priority 0.7. */
+/** Latest blog posts, priority 0.7. */
 const BLOG_POSTS: { slug: string; lastModified: string }[] = [
   { slug: "break-weight-loss-plateau", lastModified: "2026-06-21" },
   { slug: "ed-treatment-roadmap-guide", lastModified: "2026-06-14" },
   { slug: "unlocking-hormone-therapy-for-stubborn-weight", lastModified: "2026-06-07" },
 ];
 
-/** Utility pages — priority 0.6. */
+/** Utility pages, priority 0.6. */
 const UTILITY_PAGES = ["quiz"];
 
-/** Low-priority legal pages — priority 0.3. */
+/** Low-priority legal pages, priority 0.3. */
 const LOW_PRIORITY_PAGES = ["privacy-policy"];
 
 function url(path: string): string {

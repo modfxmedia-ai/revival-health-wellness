@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "Dysport";
 const PATH = "/dysport";
 const DESCRIPTION =
-  "Discover Dysport at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover Dysport at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

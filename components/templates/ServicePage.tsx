@@ -62,7 +62,7 @@ export default function ServicePage({
           <div>
             <h2 className="text-3xl text-revival-dark">What to expect</h2>
             <p className="mt-4 text-revival-charcoal/80">
-              Our team will guide you through every step — from your initial
+              Our team will guide you through every step, from your initial
               consultation and personalized plan to treatment and ongoing
               support. Here&apos;s what sets this experience apart:
             </p>

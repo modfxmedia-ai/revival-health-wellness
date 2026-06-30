@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "Scar Camouflage";
 const PATH = "/scar-camouflage";
 const DESCRIPTION =
-  "Discover Scar Camouflage at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover Scar Camouflage at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

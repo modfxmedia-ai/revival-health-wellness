@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { MARQUEE } from "@/lib/content/home";
 
 /**
- * Elegant single-row marquee — large serif service names separated by gold
+ * Elegant single-row marquee, large serif service names separated by gold
  * star accents, drifting infinitely across a refined dark band.
  */
 export default function MarqueeStrip() {

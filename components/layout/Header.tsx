@@ -188,7 +188,7 @@ export default function Header() {
             scrolled ? "pb-2 pt-2.5" : "py-3",
           )}
         >
-          {/* Tier 1 — phone · centered logo · CTA */}
+          {/* Tier 1, phone · centered logo · CTA */}
           <div className="grid grid-cols-2 items-center xl:grid-cols-[1fr_auto_1fr]">
             {/* Left: phone (desktop only) */}
             <div className="hidden justify-start xl:flex">
@@ -266,7 +266,7 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Tier 2 — centered unified nav (primary + secondary) */}
+          {/* Tier 2, centered unified nav (primary + secondary) */}
           <nav
             className="mt-2.5 hidden flex-wrap items-center justify-center xl:flex"
             onMouseEnter={cancelClose}

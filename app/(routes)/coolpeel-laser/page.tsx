@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "CoolPeel Laser";
 const PATH = "/coolpeel-laser";
 const DESCRIPTION =
-  "Discover CoolPeel Laser at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover CoolPeel Laser at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "Priapus Toxin";
 const PATH = "/priapus-toxin";
 const DESCRIPTION =
-  "Discover Priapus Toxin at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover Priapus Toxin at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

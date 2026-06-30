@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "P-Long";
 const PATH = "/p-long";
 const DESCRIPTION =
-  "Discover P-Long at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover P-Long at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

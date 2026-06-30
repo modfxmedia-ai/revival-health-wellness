@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "Sexual Wellness";
 const PATH = "/sexual-wellness";
 const DESCRIPTION =
-  "Discover Sexual Wellness at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover Sexual Wellness at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

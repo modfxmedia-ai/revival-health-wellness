@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "P-Shot™";
 const PATH = "/p-shot-tm";
 const DESCRIPTION =
-  "Discover P-Shot™ at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover P-Shot™ at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

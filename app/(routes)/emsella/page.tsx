@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "EMSELLA";
 const PATH = "/emsella";
 const DESCRIPTION =
-  "Discover EMSELLA at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover EMSELLA at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

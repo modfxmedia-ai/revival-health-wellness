@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "IV Hydration";
 const PATH = "/iv-hydration";
 const DESCRIPTION =
-  "Discover IV Hydration at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover IV Hydration at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

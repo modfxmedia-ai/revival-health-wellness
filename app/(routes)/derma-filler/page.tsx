@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "Derma Filler";
 const PATH = "/derma-filler";
 const DESCRIPTION =
-  "Discover Derma Filler at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover Derma Filler at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

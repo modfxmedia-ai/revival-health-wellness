@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "Hair";
 const PATH = "/hair";
 const DESCRIPTION =
-  "Discover Hair at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover Hair at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

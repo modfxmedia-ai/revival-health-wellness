@@ -35,7 +35,7 @@ const FEATURES = [
   {
     icon: Activity,
     title: "Body Contouring",
-    text: "Sculpt and define your waistline, abdomen, and thighs — no downtime.",
+    text: "Sculpt and define your waistline, abdomen, and thighs, no downtime.",
   },
 ];
 
@@ -306,7 +306,7 @@ export default function BodyTransformSection() {
           >
             Drag the slider to preview your journey. Our medical weight-loss and
             body-contouring programs reduce stubborn fat while building lean
-            muscle — for a stronger, more confident you.
+            muscle, for a stronger, more confident you.
           </motion.p>
 
           {/* Before / After slider */}

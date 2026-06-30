@@ -8,15 +8,15 @@ import { GALLERY } from "@/lib/content/home";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-/** Bento span classes for 8 tiles — tessellates cleanly on a 4-col grid. */
+/** Bento span classes for 8 tiles, tessellates cleanly on a 4-col grid. */
 const SPANS = [
-  "col-span-2 row-span-2 sm:col-span-2 sm:row-span-2", // 0 — large feature
+  "col-span-2 row-span-2 sm:col-span-2 sm:row-span-2", // 0, large feature
   "col-span-1 row-span-1", // 1
   "col-span-1 row-span-1", // 2
-  "col-span-2 row-span-1 sm:col-span-2 sm:row-span-1", // 3 — wide
-  "col-span-1 row-span-2 sm:col-span-1 sm:row-span-2", // 4 — tall
+  "col-span-2 row-span-1 sm:col-span-2 sm:row-span-1", // 3, wide
+  "col-span-1 row-span-2 sm:col-span-1 sm:row-span-2", // 4, tall
   "col-span-1 row-span-1", // 5
-  "col-span-2 row-span-2 sm:col-span-2 sm:row-span-2", // 6 — large feature
+  "col-span-2 row-span-2 sm:col-span-2 sm:row-span-2", // 6, large feature
   "col-span-1 row-span-1", // 7
 ];
 
@@ -82,7 +82,7 @@ export default function GalleryCarousel() {
             </span>
           </h2>
           <p className="mt-5 text-lg font-light text-revival-dark/65">
-            Step inside our Las Vegas locations — designed for comfort,
+            Step inside our Las Vegas locations, designed for comfort,
             privacy, and a true luxury experience.
           </p>
         </motion.div>

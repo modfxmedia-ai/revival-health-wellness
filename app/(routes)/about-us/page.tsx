@@ -7,7 +7,7 @@ import CTABanner from "@/components/ui/CTABanner";
 export const metadata = buildMetadata({
   title: "About Us",
   description:
-    "Learn about Revival Health & Wellness — our mission, our physician-led team, and our concierge approach to modern health and aesthetics.",
+    "Learn about Revival Health & Wellness, our mission, our physician-led team, and our concierge approach to modern health and aesthetics.",
   path: "/about-us",
 });
 

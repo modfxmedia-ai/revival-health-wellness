@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "EMSCULPT NEO";
 const PATH = "/emsculpt-neo";
 const DESCRIPTION =
-  "Discover EMSCULPT NEO at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover EMSCULPT NEO at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

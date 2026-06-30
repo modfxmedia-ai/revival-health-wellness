@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "Hormone Therapy";
 const PATH = "/hormone-therapy";
 const DESCRIPTION =
-  "Discover Hormone Therapy at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover Hormone Therapy at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

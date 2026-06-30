@@ -17,7 +17,7 @@ export type City = {
 };
 
 export type GeoService = {
-  /** Parent service slug — also the canonical target, e.g. "botox". */
+  /** Parent service slug, also the canonical target, e.g. "botox". */
   slug: string;
   /** Display name, e.g. "Botox". */
   name: string;
@@ -85,7 +85,7 @@ export const GEO_SERVICES: GeoService[] = [
     highlights: [
       "Non-invasive, drug-free acoustic wave therapy",
       "Improves blood flow and sensitivity",
-      "No downtime — return to your day immediately",
+      "No downtime, return to your day immediately",
       "Discreet, concierge-level care for {city} men",
     ],
   },
@@ -110,7 +110,7 @@ export const GEO_SERVICES: GeoService[] = [
       "Strengthen your pelvic floor and regain bladder control with Emsella in {city}. Sit fully clothed while this breakthrough technology delivers thousands of supramaximal contractions.",
     highlights: [
       "Non-invasive treatment for incontinence and pelvic strength",
-      "Stay fully clothed — no surgery, no downtime",
+      "Stay fully clothed, no surgery, no downtime",
       "Thousands of pelvic-floor contractions per session",
       "Trusted by {city} patients seeking lasting relief",
     ],

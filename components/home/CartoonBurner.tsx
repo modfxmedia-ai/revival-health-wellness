@@ -5,7 +5,7 @@ import { motion, useTransform, type MotionValue } from "framer-motion";
 /**
  * Detailed original cartoon character that morphs from chubby → slim as
  * `progress` goes 0 → 1, with animated fat-burning flames. Pure SVG +
- * Framer Motion — fully original, no external/stock assets.
+ * Framer Motion, fully original, no external/stock assets.
  */
 export default function CartoonBurner({
   progress,
@@ -211,7 +211,7 @@ export default function CartoonBurner({
         {/* smile */}
         <path d="M136,174 Q150,188 164,174" stroke="#7a3b28" strokeWidth="4" strokeLinecap="round" fill="none" />
 
-        {/* sweat drop — fades as fitter */}
+        {/* sweat drop, fades as fitter */}
         <motion.path
           d="M196,150 q6,11 0,18 q-6,-7 0,-18 Z"
           fill="#9fd3ff"

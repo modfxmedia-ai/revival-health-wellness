@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "Growth Hormone Optimization";
 const PATH = "/growth-hormone-optimization";
 const DESCRIPTION =
-  "Discover Growth Hormone Optimization at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover Growth Hormone Optimization at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

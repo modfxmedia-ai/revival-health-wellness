@@ -59,7 +59,7 @@ export default function CTASection() {
             Begin your revival today
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg font-light leading-relaxed text-revival-cream/80">
-            Join our community for wellness insights and exclusive offers — or
+            Join our community for wellness insights and exclusive offers, or
             book your free consultation and take the first step toward a more
             vibrant you.
           </p>
@@ -72,7 +72,7 @@ export default function CTASection() {
               className="mx-auto mt-10 flex max-w-md items-center justify-center gap-3 rounded-full border border-revival-gold/40 bg-revival-gold/10 px-6 py-4 text-revival-cream"
             >
               <Check className="h-5 w-5 text-revival-gold" />
-              Thank you — you&rsquo;re on the list.
+              Thank you, you&rsquo;re on the list.
             </motion.div>
           ) : (
             <form

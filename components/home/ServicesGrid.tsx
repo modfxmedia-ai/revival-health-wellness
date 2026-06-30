@@ -18,7 +18,7 @@ const TAGLINES: Record<string, string> = {
   "Body Contouring": "Sculpt & define",
 };
 
-/** Bento spans — first card is the tall feature. */
+/** Bento spans, first card is the tall feature. */
 const SPANS = [
   "lg:col-span-3 lg:row-span-2",
   "lg:col-span-3",

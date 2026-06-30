@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "TetraPro CO2 Laser";
 const PATH = "/tetra-pro-co2-laser";
 const DESCRIPTION =
-  "Discover TetraPro CO2 Laser at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover TetraPro CO2 Laser at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "Under Eye Treatment";
 const PATH = "/under-eye-treatment";
 const DESCRIPTION =
-  "Discover Under Eye Treatment at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover Under Eye Treatment at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

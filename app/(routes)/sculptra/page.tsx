@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "Sculptra";
 const PATH = "/sculptra";
 const DESCRIPTION =
-  "Discover Sculptra at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover Sculptra at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,

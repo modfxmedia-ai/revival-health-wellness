@@ -21,7 +21,7 @@ const POSTS: BlogPost[] = [
   {
     title: "Signs Your Hormones May Be Out of Balance",
     excerpt:
-      "Fatigue, low libido, brain fog — when to consider hormone optimization.",
+      "Fatigue, low libido, brain fog, when to consider hormone optimization.",
     slug: "hormone-imbalance-signs",
     category: "Hormone Therapy",
     date: "Coming soon",

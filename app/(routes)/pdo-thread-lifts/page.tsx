@@ -5,7 +5,7 @@ import ServicePage from "@/components/templates/ServicePage";
 const TITLE = "PDO Thread Lifts";
 const PATH = "/pdo-thread-lifts";
 const DESCRIPTION =
-  "Discover PDO Thread Lifts at Revival Health & Wellness — a personalized, physician-led approach designed to help you look and feel your best.";
+  "Discover PDO Thread Lifts at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
 
 export const metadata = buildMetadata({
   title: TITLE,
