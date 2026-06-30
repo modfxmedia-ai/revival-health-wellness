@@ -21,7 +21,7 @@ export default function ApproachSection() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-revival-warm-white py-24 lg:py-32"
+      className="relative overflow-hidden bg-revival-warm-white py-14 lg:py-32"
     >
       {/* Animated gold ambiance */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">

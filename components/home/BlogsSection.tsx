@@ -23,7 +23,7 @@ export default function BlogsSection() {
   const side = rest.slice(0, 4);
 
   return (
-    <section className="relative overflow-hidden bg-revival-dark py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-revival-dark py-14 lg:py-32">
       {/* Animated gold ambiance */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <motion.div

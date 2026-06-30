@@ -12,7 +12,7 @@ export default function SignatureSection() {
   const [active, setActive] = useState<number | null>(0);
 
   return (
-    <section className="relative overflow-hidden bg-revival-dark py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-revival-dark py-14 lg:py-32">
       {/* Ambiance */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <motion.div

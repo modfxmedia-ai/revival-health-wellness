@@ -18,7 +18,7 @@ const item = {
 
 export default function PlanOfferSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#15100a] via-[#0f0f0f] to-[#15100a] py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#15100a] via-[#0f0f0f] to-[#15100a] py-14 lg:py-32">
       {/* Animated gold mesh */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <motion.div

@@ -71,7 +71,7 @@ export default function HeroSection() {
   return (
     <section
       ref={ref}
-      className="relative flex items-center overflow-hidden bg-revival-dark pb-6 pt-2 lg:min-h-[100svh] lg:py-0"
+      className="relative flex items-center overflow-hidden bg-revival-dark py-0 lg:min-h-[100svh]"
     >
       {/* ── Full-bleed cinematic background slideshow ──────────────────── */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
@@ -132,7 +132,7 @@ export default function HeroSection() {
       </div>
 
       {/* ── Content ────────────────────────────────────────────────────── */}
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-4 py-28 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 px-4 pb-12 pt-[68px] sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:px-8 lg:py-28">
         <motion.div
           style={{ y: contentY }}
           variants={container}
@@ -240,7 +240,7 @@ export default function HeroSection() {
           ref={showcaseRef}
           onMouseMove={handleTilt}
           onMouseLeave={resetTilt}
-          className="relative mx-auto h-[32rem] w-full max-w-[24rem] overflow-hidden lg:mx-0 lg:h-[40rem] lg:max-w-none lg:overflow-visible"
+          className="relative mx-auto h-[30rem] w-full max-w-[24rem] overflow-hidden lg:mx-0 lg:h-[40rem] lg:max-w-none lg:overflow-visible"
           style={{ perspective: 1400 }}
         >
           {/* Soft layered glow behind everything */}

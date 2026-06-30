@@ -20,7 +20,7 @@ const card = {
 
 export default function WhyChooseSection() {
   return (
-    <section className="relative overflow-hidden bg-revival-cream py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-revival-cream py-14 lg:py-32">
       {/* Animated gold ambiance */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <motion.div

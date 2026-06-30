@@ -20,7 +20,7 @@ const card = {
 
 export default function PricingSection() {
   return (
-    <section className="relative overflow-hidden bg-revival-charcoal py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-revival-charcoal py-14 lg:py-32">
       {/* Ambiance */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <motion.div

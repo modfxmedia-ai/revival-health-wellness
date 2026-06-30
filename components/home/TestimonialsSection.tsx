@@ -18,7 +18,7 @@ const card = {
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-revival-cream via-revival-warm-white to-revival-cream py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-b from-revival-cream via-revival-warm-white to-revival-cream py-14 lg:py-32">
       {/* Animated gold ambiance */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <motion.div

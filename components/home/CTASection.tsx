@@ -18,7 +18,7 @@ export default function CTASection() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-revival-dark py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-revival-dark py-14 lg:py-32">
       {/* Background image */}
       <Image
         src="/images/hero/hero-2.png"
