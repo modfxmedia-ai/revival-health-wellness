@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
@@ -45,6 +46,11 @@ export default function MobileMenu({
   scrolled = false,
 }: MobileMenuProps) {
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Lock body scroll while the full-screen menu is open.
   useEffect(() => {
@@ -56,64 +62,42 @@ export default function MobileMenu({
 
   const close = () => onOpenChange(false);
 
-  return (
-    <div className="lg:hidden">
-      <button
-        type="button"
-        aria-label={open ? "Close menu" : "Open menu"}
-        aria-expanded={open}
-        onClick={() => onOpenChange(!open)}
-        className={cn(
-          "flex h-10 w-10 items-center justify-center rounded-full transition-colors",
-          scrolled ? "text-revival-warm-white" : "text-revival-dark",
-        )}
-      >
-        {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-      </button>
+  const overlay = (
+    <AnimatePresence>
+      {open ? (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={close}
+            className="fixed inset-0 z-[90] bg-black/60 backdrop-blur-sm"
+          />
 
-      <AnimatePresence>
-        {open ? (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onClick={close}
-              className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
-            />
-
-            {/* Slide-in panel */}
-            <motion.aside
-              variants={panelVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              className="fixed inset-y-0 right-0 z-50 flex w-[88%] max-w-sm flex-col overflow-y-auto bg-revival-dark px-6 pb-10 pt-6 text-revival-warm-white"
-            >
+          {/* Slide-in panel */}
+          <motion.aside
+            variants={panelVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="fixed inset-y-0 right-0 z-[100] block w-full overflow-y-auto overscroll-contain bg-revival-dark px-6 pb-10 pt-6 text-revival-warm-white [touch-action:pan-y] sm:w-[88%] sm:max-w-sm"
+          >
               <div className="mb-8 flex items-center justify-between">
                 <Link
                   href="/"
                   onClick={close}
-                  className="flex items-center gap-2.5"
+                  className="flex items-center"
                   aria-label="Revival Health & Wellness home"
                 >
                   <Image
-                    src="/images/brand/logo.png"
+                    src="/images/brand/revival-logo-mobile.png"
                     alt="Revival Health & Wellness"
                     width={221}
                     height={300}
-                    className="h-10 w-auto object-contain"
+                    className="h-16 w-auto object-contain"
                   />
-                  <span className="flex flex-col leading-none">
-                    <span className="font-heading text-lg font-medium uppercase tracking-[0.18em] text-revival-warm-white">
-                      Revival
-                    </span>
-                    <span className="mt-0.5 text-[0.55rem] font-light uppercase tracking-[0.3em] text-revival-gold">
-                      Health &amp; Wellness
-                    </span>
-                  </span>
                 </Link>
                 <button
                   type="button"
@@ -256,6 +240,23 @@ export default function MobileMenu({
           </>
         ) : null}
       </AnimatePresence>
-    </div>
+  );
+
+  return (
+    <>
+      <button
+        type="button"
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
+        onClick={() => onOpenChange(!open)}
+        className={cn(
+          "flex h-10 w-10 items-center justify-center rounded-full transition-colors",
+          scrolled ? "text-revival-warm-white" : "text-revival-dark",
+        )}
+      >
+        {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+      </button>
+      {mounted ? createPortal(overlay, document.body) : null}
+    </>
   );
 }

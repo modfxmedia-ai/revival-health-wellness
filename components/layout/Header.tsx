@@ -210,10 +210,10 @@ export default function Header() {
               </a>
             </div>
 
-            {/* Center: logo emblem + wordmark */}
+            {/* Center: logo (wordmark is baked into the artwork) */}
             <Link
               href="/"
-              className="group flex items-center gap-3 justify-self-start xl:justify-self-center"
+              className="group flex items-center justify-self-start xl:justify-self-center"
               aria-label="Revival Health & Wellness home"
             >
               <motion.span
@@ -224,28 +224,15 @@ export default function Header() {
                 <Image
                   src="/images/brand/revival-logo-full-color.png"
                   alt="Revival Health & Wellness"
-                  width={1600}
-                  height={2167}
+                  width={742}
+                  height={1005}
                   priority
                   className={cn(
                     "w-auto object-contain transition-all duration-500",
-                    scrolled ? "h-9" : "h-12",
+                    scrolled ? "h-10" : "h-14",
                   )}
                 />
               </motion.span>
-              <span className="flex flex-col leading-none">
-                <span
-                  className={cn(
-                    "font-heading text-xl font-medium uppercase tracking-[0.18em] transition-colors duration-500 sm:text-2xl",
-                    scrolled ? "text-revival-warm-white" : "text-revival-dark",
-                  )}
-                >
-                  Revival
-                </span>
-                <span className="mt-1 text-[0.6rem] font-light uppercase tracking-[0.35em] text-revival-gold">
-                  Health &amp; Wellness
-                </span>
-              </span>
             </Link>
 
             {/* Right: CTA + mobile trigger */}

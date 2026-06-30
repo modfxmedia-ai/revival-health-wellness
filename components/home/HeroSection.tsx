@@ -71,7 +71,7 @@ export default function HeroSection() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-revival-dark"
+      className="relative flex items-center overflow-hidden bg-revival-dark pb-6 pt-2 lg:min-h-[100svh] lg:py-0"
     >
       {/* ── Full-bleed cinematic background slideshow ──────────────────── */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
@@ -238,7 +238,7 @@ export default function HeroSection() {
           ref={showcaseRef}
           onMouseMove={handleTilt}
           onMouseLeave={resetTilt}
-          className="relative hidden h-[40rem] lg:block"
+          className="relative mx-auto h-[34rem] w-full max-w-[24rem] overflow-hidden lg:mx-0 lg:h-[40rem] lg:max-w-none lg:overflow-visible"
           style={{ perspective: 1400 }}
         >
           {/* Soft layered glow behind everything */}
@@ -430,7 +430,7 @@ export default function HeroSection() {
             {/* Interactive thumbnail filmstrip */}
             <div
               style={{ transform: "translateZ(120px)" }}
-              className="absolute -right-5 top-1/2 flex -translate-y-1/2 flex-col gap-2.5"
+              className="absolute right-1 top-1/2 flex -translate-y-1/2 flex-col gap-2.5 lg:-right-5"
             >
               {SHOWCASE.map((src, i) => {
                 const isActive = i === active % SHOWCASE.length;
@@ -524,7 +524,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 0.8 }}
-        className="absolute bottom-7 left-1/2 -translate-x-1/2"
+        className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 lg:block"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
