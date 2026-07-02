@@ -107,7 +107,7 @@ export default function WomensHormoneTherapyPage() {
             "Hormone therapy safely replaces the hormones your body can no longer produce on its own during perimenopause, menopause, and beyond. Every treatment is personalized to your labs, symptoms, and goals.",
             "By restoring hormones to a more youthful range, HRT eases the physical and emotional shifts that make daily life feel harder than it should—without the guesswork of trying to power through them.",
           ],
-          image: "/images/hormone/womens-hormone-hero.png",
+          image: "/images/hormone/hormone-couple-sunset.jpg",
         }}
       />
 
@@ -165,7 +165,7 @@ export default function WomensHormoneTherapyPage() {
         eyebrow="Key benefits"
         heading="What hormone therapy can help you feel"
         items={BENEFITS}
-        image="/images/hormone/womens-hormone-secondary.jpg"
+        image="/images/hormone/hormone-couple-bedroom.webp"
       />
 
       <PillarsGrid

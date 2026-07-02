@@ -120,7 +120,7 @@ export default function GrowthHormoneOptimizationPage() {
             "Growth hormone, produced by the pituitary gland at the base of the brain, plays a crucial role in regulating body composition, fluids, muscle and bone growth, and mental function.",
             "When someone has a growth hormone deficiency, the pituitary isn't producing enough to meet the body's needs. That can lead to a range of medical issues\u2014but growth hormone replacement can significantly improve many of the associated symptoms.",
           ],
-          image: "/images/hormone/growth-hormone-hero.jpg",
+          image: "/images/hormone/hormone-optimization.webp",
         }}
       />
 
@@ -174,7 +174,7 @@ export default function GrowthHormoneOptimizationPage() {
             "At Revival Health and Wellness, we carefully determine the appropriate dosage of growth hormone optimization tailored to your specific needs. Treatment is administered via injections directly into the fat tissue beneath the skin.",
             "Every plan is built around your baseline labs and reviewed regularly to make sure the dose is right for your body.",
           ],
-          image: "/images/hormone/growth-hormone-secondary.jpg",
+          image: "/images/hormone/growth-hormone-optimization.png",
           bullets: CAUSES.map((c) => c),
         }}
       />

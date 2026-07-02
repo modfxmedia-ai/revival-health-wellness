@@ -1,40 +1,43 @@
-import { buildMetadata } from "@/lib/metadata";
+import { buildMetadata, SITE } from "@/lib/metadata";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
-import BlogCard, { type BlogPost } from "@/components/ui/BlogCard";
+import PageHero from "@/components/ui/PageHero";
+import CTABanner from "@/components/ui/CTABanner";
+import BlogsIndex from "@/components/blog/BlogsIndex";
+import { BLOG_POSTS } from "@/lib/content/blog";
+
+const LIVE_ORIGIN = "https://revivalhealthandwellnessgroup.com";
+const TITLE = "Blog";
+const META_TITLE = "Blog | Treatment Tips, Advice, and Wellness Insights";
+const PATH = "/blogs/";
+const DESCRIPTION =
+  "Visit our blog for the latest treatment tips and wellness insights. Revival Health and Wellness shares helpful guides to support your health and beauty journey.";
 
 export const metadata = buildMetadata({
-  title: "Blog",
-  description:
-    "Wellness insights, treatment guides, and expert advice from the Revival Health & Wellness team.",
-  path: "/blogs",
+  title: META_TITLE,
+  description: DESCRIPTION,
+  path: PATH,
 });
 
-const POSTS: BlogPost[] = [
-  {
-    title: "GLP-1 Medications: What to Know Before You Start",
-    excerpt:
-      "A clear, science-backed guide to how GLP-1s work and who they're right for.",
-    slug: "glp-1-what-to-know",
-    category: "Weight Loss",
-    date: "Coming soon",
+const blogCollectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "Revival Health & Wellness Blog",
+  description:
+    "Expert health tips, treatment guides, and wellness insights from Revival Health and Wellness in Las Vegas.",
+  url: `${LIVE_ORIGIN}/blogs/`,
+  publisher: {
+    "@type": "Organization",
+    name: "Revival Health and Wellness",
+    url: LIVE_ORIGIN,
   },
-  {
-    title: "Signs Your Hormones May Be Out of Balance",
-    excerpt:
-      "Fatigue, low libido, brain fog, when to consider hormone optimization.",
-    slug: "hormone-imbalance-signs",
-    category: "Hormone Therapy",
-    date: "Coming soon",
-  },
-  {
-    title: "The Aesthetics Glossary: Botox, Filler, and Beyond",
-    excerpt:
-      "Demystifying the most popular treatments and what results to expect.",
-    slug: "aesthetics-glossary",
-    category: "Aesthetics",
-    date: "Coming soon",
-  },
-];
+  blogPost: BLOG_POSTS.map((p) => ({
+    "@type": "BlogPosting",
+    headline: p.title,
+    url: p.canonical ?? `${LIVE_ORIGIN}/${p.slug}/`,
+    datePublished: p.publishDate ?? p.date,
+    image: p.ogImage ?? p.cover,
+  })),
+};
 
 export default function BlogsPage() {
   return (
@@ -42,27 +45,37 @@ export default function BlogsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: jsonLd(
+          __html: jsonLd([
+            blogCollectionSchema,
             breadcrumbSchema([
               { name: "Home", path: "/" },
-              { name: "Blog", path: "/blogs" },
+              { name: TITLE, path: PATH },
             ]),
-          ),
+          ]),
         }}
       />
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <span className="text-sm font-semibold uppercase tracking-wider text-revival-gold">
-          The Journal
-        </span>
-        <h1 className="mt-4 text-4xl text-revival-dark md:text-5xl">
-          Insights to help you thrive
-        </h1>
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {POSTS.map((post) => (
-            <BlogCard key={post.slug} post={post} />
-          ))}
-        </div>
-      </section>
+
+      <PageHero
+        eyebrow="Insights & Guides"
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Blog" }]}
+        title={
+          <>
+            The Revival{" "}
+            <span className="italic text-revival-gold">Journal</span>
+          </>
+        }
+        description="Wellness insights, treatment guides, and expert advice from the Revival Health & Wellness medical team."
+        secondary={{ label: "Book a Consultation", href: "/contact-us/" }}
+      />
+
+      <BlogsIndex />
+
+      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <CTABanner
+          title="Have a specific question?"
+          subtitle="Skip the search bar and talk to our medical team. Free consultations, real answers."
+        />
+      </div>
     </>
   );
 }

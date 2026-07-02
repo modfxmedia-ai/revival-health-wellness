@@ -89,7 +89,7 @@ export default function HormoneTherapyPage() {
             "Hormone replacement therapy relieves many of the natural side effects of aging—low mood and libido in men, and menopause symptoms in women. By replacing what your body no longer produces in adequate amounts, HRT restores balance and helps you feel your best.",
             "There is no one-size-fits-all HRT. We build a plan around your labs, symptoms, goals, and lifestyle so the specific hormones, doses, and delivery method are matched to you.",
           ],
-          image: "/images/hormone/hormone-therapy-hero.png",
+          image: "/images/hormone/hormone-couple-park.avif",
         }}
       />
 
@@ -125,7 +125,7 @@ export default function HormoneTherapyPage() {
             "HRT is patient-dependent. We select the right hormones, method, and dose to address your symptoms while accounting for your lifestyle, goals, and habits.",
             "Common delivery methods include bio-identical hormone pellets (implanted in the hip or buttock area), testosterone injections, topical creams, and oral therapies. Pellets slowly release hormones over months, keeping levels steady and predictable.",
           ],
-          image: "/images/hormone/hormone-therapy-secondary.png",
+          image: "/images/hormone/hormone-couple-fit.jpg",
           bullets: [
             "Comprehensive lab panel to establish your baseline",
             "Physician-led plan tailored to your body",

@@ -105,7 +105,7 @@ export default function MensHormoneTherapyPage() {
             "Weight gain, loss of muscle mass, trouble sleeping, erectile dysfunction, and persistent fatigue are commonly linked to age-related hormonal shifts. By restoring testosterone to a healthy range with targeted therapy, many of these symptoms can be significantly reduced\u2014or eliminated.",
             "Our advanced bio-identical testosterone therapy gives your body the tools it needs to combat aging and feel your best, without the guesswork of over-the-counter fixes.",
           ],
-          image: "/images/hormone/mens-hormone-hero.jpg",
+          image: "/images/hormone/testosterone-therapy.jpeg",
         }}
       />
 
@@ -153,7 +153,7 @@ export default function MensHormoneTherapyPage() {
         eyebrow="What you can expect"
         heading="Real, measurable results"
         items={BENEFITS}
-        image="/images/hormone/mens-hormone-secondary.jpg"
+        image="/images/hormone/hormone-couple-cuddle.jpg"
       />
 
       <OverviewBlock
