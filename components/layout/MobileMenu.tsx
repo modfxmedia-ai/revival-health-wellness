@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
-import { Menu, X, ChevronDown, ExternalLink } from "lucide-react";
+import { Menu, X, ChevronDown, ExternalLink, CalendarCheck } from "lucide-react";
 import { PRIMARY_NAV, SECONDARY_NAV, CTA } from "./nav";
 import { cn } from "@/lib/utils";
 
@@ -184,6 +184,22 @@ export default function MobileMenu({
                                   ) : null}
                                 </li>
                               ))}
+
+                              {/* Persistent Book Appointment CTA inside every dropdown */}
+                              <li className="mt-2 pt-2">
+                                <a
+                                  href={CTA.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={close}
+                                  className="group flex items-center justify-between gap-2 rounded-xl bg-gradient-to-r from-revival-gold to-revival-gold-light px-3 py-2.5 text-sm font-semibold text-revival-dark shadow-[0_6px_16px_-6px_rgba(201,169,110,0.55)]"
+                                >
+                                  <span className="flex items-center gap-2">
+                                    <CalendarCheck className="h-4 w-4" />
+                                    Book Appointment
+                                  </span>
+                                </a>
+                              </li>
                             </motion.ul>
                           ) : null}
                         </AnimatePresence>

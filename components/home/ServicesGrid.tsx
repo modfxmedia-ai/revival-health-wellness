@@ -178,6 +178,18 @@ export default function ServicesGrid() {
                     >
                       {service.blurb}
                     </p>
+
+                    {/* Learn more affordance — reveals on hover */}
+                    <span
+                      className={`mt-0 flex items-center gap-1.5 overflow-hidden text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-revival-gold opacity-0 transition-all duration-500 ${
+                        featured
+                          ? "max-h-6 opacity-100"
+                          : "max-h-0 group-hover:mt-4 group-hover:max-h-6 group-hover:opacity-100"
+                      }`}
+                    >
+                      Learn more
+                      <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
                   </div>
                 </Link>
               </motion.div>

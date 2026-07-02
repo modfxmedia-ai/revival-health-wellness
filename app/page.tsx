@@ -15,6 +15,8 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CTASection from "@/components/home/CTASection";
 import AboutSection from "@/components/home/AboutSection";
 import PlanOfferSection from "@/components/home/PlanOfferSection";
+import ProviderSnippetSection from "@/components/home/ProviderSnippetSection";
+import ContactFormSection from "@/components/home/ContactFormSection";
 import MapSection from "@/components/layout/MapSection";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -35,6 +37,7 @@ export default function Home() {
       <ApproachSection />
       <SignatureSection />
       <BodyTransformSection />
+      <ProviderSnippetSection />
       <StatsSection />
       <WhyChooseSection />
       <GalleryCarousel />
@@ -44,6 +47,7 @@ export default function Home() {
       <CTASection />
       <AboutSection />
       <PlanOfferSection />
+      <ContactFormSection />
       <MapSection />
     </>
   );

@@ -13,7 +13,7 @@ export const HERO = {
   description:
     "We specialize in weight loss, hormone replacement therapy, body contouring, and aesthetics. Unlock your path to a healthier, more confident you.",
   image: "/images/home/Image_20250829_162859_344.jpeg",
-  words: ["Revitalize", "Rebalance", "Reveal Your Best"],
+  words: ["Revitalize", "Rebalance", "Revel Your Best"],
   gallery: [
     "/images/hero/hero-3.png",
     "/images/hero/hero-4.png",

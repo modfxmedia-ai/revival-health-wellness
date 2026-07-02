@@ -20,6 +20,13 @@ type BuildMetadataInput = {
   keywords?: string[];
 };
 
+/** Ensure a path has a single trailing slash (matches next.config trailingSlash). */
+function withTrailingSlash(path: string): string {
+  if (!path.startsWith("/")) path = `/${path}`;
+  if (path === "/") return "/";
+  return path.endsWith("/") ? path : `${path}/`;
+}
+
 /**
  * Shared metadata builder. Produces canonical, OpenGraph, and Twitter tags
  * with sensible Revival Health & Wellness defaults.
@@ -32,9 +39,10 @@ export function buildMetadata({
   noIndex = false,
   keywords,
 }: BuildMetadataInput): Metadata {
-  const url = new URL(path, SITE.url).toString();
+  const normalizedPath = withTrailingSlash(path);
+  const url = new URL(normalizedPath, SITE.url).toString();
   const fullTitle =
-    path === "/"
+    normalizedPath === "/"
       ? `${SITE.name} | Weight Loss & Aesthetic Solutions`
       : `${title} | ${SITE.name}`;
 

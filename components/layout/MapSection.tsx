@@ -10,7 +10,8 @@ type Location = {
   name: string;
   address: string;
   phone: string;
-  mapHref: string;
+  /** Full address used to build a cross-platform directions URL. */
+  directionsAddress: string;
   embed: string;
 };
 
@@ -19,8 +20,8 @@ const LOCATIONS: Location[] = [
     name: "Henderson / Southwest",
     address: "7220 S. Cimarron Road, Suite #140, Las Vegas, NV 89113",
     phone: "(702) 963-1154",
-    mapHref:
-      "https://www.google.com/maps/place/Revival+Health+and+Wellness/@36.0569688,-115.2693326,15z/",
+    directionsAddress:
+      "7220 S Cimarron Road Suite 140, Las Vegas, NV 89113",
     embed:
       "https://www.google.com/maps?q=7220+S+Cimarron+Road+Suite+140+Las+Vegas+NV+89113&output=embed",
   },
@@ -28,12 +29,21 @@ const LOCATIONS: Location[] = [
     name: "Summerlin / Northwest",
     address: "2585 Box Canyon Drive, Suite #150, Las Vegas, NV 89128",
     phone: "(702) 725-1588",
-    mapHref:
-      "https://www.google.com/maps/dir//2585+Box+Canyon+Dr+Suite+150+Las+Vegas,+NV+89128/",
+    directionsAddress:
+      "2585 Box Canyon Drive Suite 150, Las Vegas, NV 89128",
     embed:
       "https://www.google.com/maps?q=2585+Box+Canyon+Drive+Suite+150+Las+Vegas+NV+89128&output=embed",
   },
 ];
+
+/**
+ * Universal directions URL. On iOS/Android this launches Google Maps (or the
+ * device's default map app via OS handoff); on desktop it opens Google Maps
+ * with a pre-filled route from the user's current location.
+ */
+function directionsUrl(address: string) {
+  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
+}
 
 export default function MapSection() {
   const [active, setActive] = useState(0);
@@ -130,9 +140,10 @@ export default function MapSection() {
             </div>
 
             <a
-              href={loc.mapHref}
+              href={directionsUrl(loc.directionsAddress)}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Get directions to ${loc.name} in your map app`}
               className="group mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-revival-dark px-6 py-3 text-sm font-medium text-revival-warm-white transition-colors hover:bg-revival-charcoal"
             >
               <Navigation className="h-4 w-4 text-revival-gold transition-transform duration-300 group-hover:rotate-45" />
@@ -166,6 +177,18 @@ export default function MapSection() {
                 className="absolute inset-0 h-full w-full grayscale-[0.2] [filter:sepia(0.12)_grayscale(0.2)]"
               />
             </AnimatePresence>
+
+            {/* Floating Get Directions button overlaid on the map */}
+            <a
+              href={directionsUrl(loc.directionsAddress)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Get directions to ${loc.name} in your map app`}
+              className="group absolute bottom-4 right-4 z-20 inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2.5 text-sm font-semibold text-revival-dark shadow-[0_12px_28px_-10px_rgba(0,0,0,0.4)] ring-1 ring-revival-gold/25 backdrop-blur-md transition-transform hover:scale-[1.03]"
+            >
+              <Navigation className="h-4 w-4 text-revival-gold transition-transform duration-300 group-hover:rotate-45" />
+              Get Directions
+            </a>
           </motion.div>
         </div>
       </div>

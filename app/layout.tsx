@@ -4,6 +4,7 @@ import "./globals.css";
 import { organizationSchema, websiteSchema, jsonLd } from "@/lib/schema";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import StickyBookBar from "@/components/layout/StickyBookBar";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -67,6 +68,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 pt-[96px] xl:pt-[150px]">{children}</main>
         <Footer />
+        <StickyBookBar />
       </body>
     </html>
   );

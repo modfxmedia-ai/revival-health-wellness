@@ -138,6 +138,17 @@ export function geoBusinessSchema(input: {
   };
 }
 
+/** Normalize a path so schema URLs match the live site's trailing-slash format. */
+function pathWithSlash(path: string): string {
+  if (!path.startsWith("/") && !/^https?:\/\//i.test(path)) path = `/${path}`;
+  if (/^https?:\/\//i.test(path)) return path;
+  if (path === "/") return "/";
+  // Preserve hash and query while ensuring the pathname ends with "/".
+  const [base, ...rest] = path.split(/([#?])/);
+  const normalized = base.endsWith("/") ? base : `${base}/`;
+  return normalized + rest.join("");
+}
+
 /** JSON-LD MedicalWebPage for an individual service page. */
 export function medicalWebPageSchema(input: {
   name: string;
@@ -149,7 +160,7 @@ export function medicalWebPageSchema(input: {
     "@type": "MedicalWebPage",
     name: input.name,
     description: input.description,
-    url: new URL(input.path, SITE.url).toString(),
+    url: new URL(pathWithSlash(input.path), SITE.url).toString(),
     about: {
       "@type": "MedicalBusiness",
       "@id": `${SITE.url}/#business`,
@@ -191,7 +202,7 @@ export function breadcrumbSchema(items: { name: string; path: string }[]): Json 
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: new URL(item.path, SITE.url).toString(),
+      item: new URL(pathWithSlash(item.path), SITE.url).toString(),
     })),
   };
 }

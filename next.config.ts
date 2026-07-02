@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Mirror the live site: every URL ends with a trailing slash.
+  trailingSlash: true,
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [

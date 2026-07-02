@@ -1,6 +1,6 @@
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import CTABanner from "@/components/ui/CTABanner";
-import Button from "@/components/ui/Button";
+import PageHero from "@/components/ui/PageHero";
 import { CheckCircle2 } from "lucide-react";
 
 export type ServicePageProps = {
@@ -30,27 +30,14 @@ export default function ServicePage({
 }: ServicePageProps) {
   return (
     <>
-      <section className="bg-revival-cream">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <span className="text-sm font-semibold uppercase tracking-wider text-revival-gold">
-            {eyebrow}
-          </span>
-          <h1 className="mt-4 max-w-3xl text-4xl text-revival-dark md:text-5xl">
-            {title}
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-revival-charcoal/80">
-            {intro}
-          </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Button href="/contact-us" size="lg">
-              Book a Consultation
-            </Button>
-            <Button href="/quiz" variant="outline" size="lg">
-              Take the Quiz
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow={eyebrow}
+        title={title}
+        description={intro}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: eyebrow }]}
+        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        compact
+      />
 
       <AnimatedSection className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">

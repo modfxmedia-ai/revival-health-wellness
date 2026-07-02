@@ -68,7 +68,10 @@ const UTILITY_PAGES = ["quiz"];
 const LOW_PRIORITY_PAGES = ["privacy-policy"];
 
 function url(path: string): string {
-  return new URL(path, SITE.url).toString();
+  // Always append a trailing slash so sitemap URLs match the live site and the
+  // next.config `trailingSlash: true` setting.
+  const p = path.endsWith("/") ? path : `${path}/`;
+  return new URL(p, SITE.url).toString();
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -84,49 +87,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const pillars: MetadataRoute.Sitemap = PILLAR_SERVICES.map((slug) => ({
-    url: url(`/${slug}`),
+    url: url(`/${slug}/`),
     lastModified: now,
     changeFrequency: "weekly",
     priority: 0.9,
   }));
 
   const subServices: MetadataRoute.Sitemap = SUB_SERVICES.map((slug) => ({
-    url: url(`/${slug}`),
+    url: url(`/${slug}/`),
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.8,
   }));
 
   const content: MetadataRoute.Sitemap = CONTENT_PAGES.map((slug) => ({
-    url: url(`/${slug}`),
+    url: url(`/${slug}/`),
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.7,
   }));
 
   const blogPosts: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
-    url: url(`/${post.slug}`),
+    url: url(`/${post.slug}/`),
     lastModified: new Date(post.lastModified),
     changeFrequency: "monthly",
     priority: 0.7,
   }));
 
   const geo: MetadataRoute.Sitemap = getAllGeoPages().map((page) => ({
-    url: url(`/${page.slug}`),
+    url: url(`/${page.slug}/`),
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.6,
   }));
 
   const utility: MetadataRoute.Sitemap = UTILITY_PAGES.map((slug) => ({
-    url: url(`/${slug}`),
+    url: url(`/${slug}/`),
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.6,
   }));
 
   const lowPriority: MetadataRoute.Sitemap = LOW_PRIORITY_PAGES.map((slug) => ({
-    url: url(`/${slug}`),
+    url: url(`/${slug}/`),
     lastModified: now,
     changeFrequency: "yearly",
     priority: 0.3,

@@ -233,7 +233,7 @@ export default function Header() {
                   priority
                   className={cn(
                     "w-auto object-contain transition-all duration-500",
-                    scrolled ? "h-10" : "h-14",
+                    scrolled ? "h-14" : "h-20 sm:h-24",
                   )}
                 />
               </motion.span>
@@ -503,6 +503,8 @@ function DesktopNavItem({
                   ))}
                 </ul>
               )}
+
+              <DropdownBookCta />
             </div>
           </motion.div>
         ) : null}
@@ -547,6 +549,27 @@ function MegaMenu({ item, cols }: { item: NavItem; cols: number }) {
           ))}
         </div>
       ))}
+    </div>
+  );
+}
+
+/* ── Persistent "Book Appointment" CTA appended to every dropdown ─────── */
+
+function DropdownBookCta() {
+  return (
+    <div className="mt-3 border-t border-revival-gold/15 pt-3">
+      <a
+        href={CTA.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex items-center justify-between gap-3 rounded-xl bg-gradient-to-r from-revival-gold to-revival-gold-light px-3.5 py-2.5 text-sm font-semibold text-revival-dark shadow-[0_6px_20px_-6px_rgba(201,169,110,0.6)] transition-transform hover:scale-[1.01]"
+      >
+        <span className="flex items-center gap-2">
+          <CalendarCheck className="h-4 w-4" />
+          Book Appointment
+        </span>
+        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+      </a>
     </div>
   );
 }
