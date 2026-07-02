@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import {
   PRIMARY_NAV,
-  SECONDARY_NAV,
   CTA,
   type NavItem,
   type NavLeaf,
@@ -28,13 +27,6 @@ import { cn } from "@/lib/utils";
 const LUXURY_EASE = [0.22, 1, 0.36, 1] as const;
 const PHONE = "(702) 963-1154";
 const EMAIL = "info@revivalhealthandwellnessgroup.com";
-
-/** Secondary links promoted into the single unified menu. */
-const SECONDARY_ITEMS: NavItem[] = SECONDARY_NAV.map((s) => ({
-  label: s.label,
-  href: s.href,
-  external: s.external,
-}));
 
 const SOCIALS = [
   {
@@ -104,7 +96,7 @@ export default function Header() {
               animate={{ x: [0, 120, 0], opacity: [0.4, 0.7, 0.4] }}
               transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
             />
-            <div className="relative mx-auto flex h-10 max-w-[90rem] items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+            <div className="relative mx-auto flex h-10 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
               {/* Left: email + locations */}
               <div className="flex items-center gap-5 text-[0.7rem] font-medium uppercase tracking-[0.12em]">
                 <a
@@ -145,15 +137,13 @@ export default function Header() {
                   aria-hidden
                   className="hidden h-4 w-px bg-white/10 sm:block"
                 />
-                <a
-                  href={CTA.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contact-us/"
                   className="hidden items-center gap-1.5 text-[0.7rem] font-medium uppercase tracking-[0.12em] text-revival-warm-white/75 transition-colors hover:text-revival-gold sm:inline-flex"
                 >
                   <CalendarCheck className="h-3.5 w-3.5 text-revival-gold" />
-                  Book Online
-                </a>
+                  Contact Us
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -184,36 +174,16 @@ export default function Header() {
 
         <div
           className={cn(
-            "mx-auto max-w-[90rem] px-4 transition-all duration-500 sm:px-6 lg:px-8",
-            scrolled ? "pb-2 pt-2.5" : "py-3",
+            "mx-auto max-w-7xl px-4 transition-all duration-500 sm:px-6 lg:px-8",
+            scrolled ? "py-2" : "py-3",
           )}
         >
-          {/* Tier 1, phone · centered logo · CTA */}
-          <div className="grid grid-cols-2 items-center xl:grid-cols-[1fr_auto_1fr]">
-            {/* Left: phone (desktop only) */}
-            <div className="hidden justify-start xl:flex">
-              <a
-                href={`tel:${PHONE.replace(/[^\d]/g, "")}`}
-                className={cn(
-                  "group inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-[0.72rem] font-semibold tracking-[0.08em] transition-colors",
-                  scrolled
-                    ? "border-white/10 text-revival-warm-white/80 hover:border-revival-gold/40 hover:text-revival-gold"
-                    : "border-revival-dark/10 text-revival-charcoal hover:border-revival-gold/50 hover:text-revival-gold",
-                )}
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-revival-gold/60" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-revival-gold" />
-                </span>
-                <Phone className="h-3.5 w-3.5 text-revival-gold" />
-                {PHONE}
-              </a>
-            </div>
-
-            {/* Center: logo (wordmark is baked into the artwork) */}
+          {/* Single row: logo · centered nav · phone (+ mobile trigger). */}
+          <div className="flex items-center gap-6">
+            {/* Logo (wordmark is baked into the artwork) */}
             <Link
               href="/"
-              className="group flex items-center justify-self-start xl:justify-self-center"
+              className="group flex shrink-0 items-center"
               aria-label="Revival Health & Wellness home"
             >
               <motion.span
@@ -233,27 +203,54 @@ export default function Header() {
                   priority
                   className={cn(
                     "w-auto object-contain transition-all duration-500",
-                    scrolled ? "h-14" : "h-20 sm:h-24",
+                    scrolled ? "h-12" : "h-16 sm:h-20",
                   )}
                 />
               </motion.span>
             </Link>
 
-            {/* Right: CTA + mobile trigger */}
-            <div className="flex items-center justify-end gap-3">
-              <a
-                href={CTA.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative hidden overflow-hidden rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-2.5 text-[0.75rem] font-semibold uppercase tracking-[0.12em] text-revival-dark shadow-[0_4px_20px_-6px_rgba(201,169,110,0.6)] transition-transform duration-300 hover:scale-[1.04] sm:inline-flex sm:items-center sm:gap-2"
-              >
-                {/* shimmer sweep */}
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+            {/* Center: unified primary nav */}
+            <nav
+              className="hidden flex-1 flex-wrap items-center justify-center xl:flex"
+              onMouseEnter={cancelClose}
+              onMouseLeave={scheduleClose}
+            >
+              {PRIMARY_NAV.map((item) => (
+                <DesktopNavItem
+                  key={item.label}
+                  item={item}
+                  scrolled={scrolled}
+                  active={isActive(item.href)}
+                  open={openMenu === item.label}
+                  hovered={hovered === item.label}
+                  onOpen={() => {
+                    cancelClose();
+                    setOpenMenu(item.label);
+                    setHovered(item.label);
+                  }}
+                  onPanelHover={cancelClose}
+                  onPanelLeave={scheduleClose}
                 />
-                <span className="relative">{CTA.label}</span>
-                <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+              ))}
+            </nav>
+
+            {/* Right: phone (desktop) + mobile trigger */}
+            <div className="ml-auto flex shrink-0 items-center gap-3 xl:ml-0">
+              <a
+                href={`tel:${PHONE.replace(/[^\d]/g, "")}`}
+                className={cn(
+                  "group hidden items-center gap-2 rounded-full border px-3.5 py-2 text-[0.72rem] font-semibold tracking-[0.08em] transition-colors xl:inline-flex",
+                  scrolled
+                    ? "border-white/10 text-revival-warm-white/80 hover:border-revival-gold/40 hover:text-revival-gold"
+                    : "border-revival-dark/10 text-revival-charcoal hover:border-revival-gold/50 hover:text-revival-gold",
+                )}
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-revival-gold/60" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-revival-gold" />
+                </span>
+                <Phone className="h-3.5 w-3.5 text-revival-gold" />
+                {PHONE}
               </a>
 
               <div className="xl:hidden">
@@ -265,50 +262,6 @@ export default function Header() {
               </div>
             </div>
           </div>
-
-          {/* Tier 2, centered unified nav (primary + secondary) */}
-          <nav
-            className="mt-2.5 hidden flex-wrap items-center justify-center xl:flex"
-            onMouseEnter={cancelClose}
-            onMouseLeave={scheduleClose}
-          >
-            {PRIMARY_NAV.map((item) => (
-              <DesktopNavItem
-                key={item.label}
-                item={item}
-                scrolled={scrolled}
-                active={isActive(item.href)}
-                open={openMenu === item.label}
-                hovered={hovered === item.label}
-                onOpen={() => {
-                  cancelClose();
-                  setOpenMenu(item.label);
-                  setHovered(item.label);
-                }}
-                onPanelHover={cancelClose}
-                onPanelLeave={scheduleClose}
-              />
-            ))}
-
-            {SECONDARY_ITEMS.map((item) => (
-              <DesktopNavItem
-                key={item.label}
-                item={item}
-                scrolled={scrolled}
-                active={isActive(item.href)}
-                open={openMenu === item.label}
-                hovered={hovered === item.label}
-                secondary
-                onOpen={() => {
-                  cancelClose();
-                  setOpenMenu(item.label);
-                  setHovered(item.label);
-                }}
-                onPanelHover={cancelClose}
-                onPanelLeave={scheduleClose}
-              />
-            ))}
-          </nav>
         </div>
       </div>
     </header>

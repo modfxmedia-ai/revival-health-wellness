@@ -78,6 +78,12 @@ export default function HormoneTherapyPage() {
         }
         description="Hormones fluctuate as we age, and even small shifts can leave you feeling off. Our personalized HRT restores balance to your unique body chemistry so you can feel like yourself again."
         secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        gallery={[
+          "/images/hormone/hormone-couple-park.avif",
+          "/images/hormone/hormone-couple-fit.jpg",
+          "/images/hormone/hormone-couple-sunset.jpg",
+          "/images/hormone/hormone-couple-bedroom.webp",
+        ]}
         compact
       />
 

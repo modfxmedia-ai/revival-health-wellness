@@ -66,6 +66,12 @@ export default function BlogsPage() {
         }
         description="Wellness insights, treatment guides, and expert advice from the Revival Health & Wellness medical team."
         secondary={{ label: "Book a Consultation", href: "/contact-us/" }}
+        gallery={[
+          "/images/blog/iv-hydration-therapy-does-beyond-hangovers.jpg",
+          "/images/blog/hormone-therapy-in-your-40s-and-50s.jpg",
+          "/images/blog/medical-weight-loss-options-las-vegas.jpg",
+          "/images/blog/ed-treatment-roadmap-guide.jpg",
+        ]}
       />
 
       <BlogsIndex />

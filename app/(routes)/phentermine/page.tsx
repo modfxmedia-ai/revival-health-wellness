@@ -132,6 +132,11 @@ export default function PhenterminePage() {
         }
         description="A clinically proven appetite suppressant with a mild energy boost, delivered under medical supervision in Las Vegas."
         secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        gallery={[
+          "/images/weight-loss/phentermine-hero.jpg",
+          "/images/weight-loss/phentermine-medication.webp",
+          "/images/weight-loss/phentermine-secondary.png",
+        ]}
       />
 
       <OverviewBlock

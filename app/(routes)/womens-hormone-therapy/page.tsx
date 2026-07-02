@@ -96,6 +96,11 @@ export default function WomensHormoneTherapyPage() {
         }
         description="Aging doesn't have to mean losing your glow. Our women's hormone therapy gently restores your body's natural balance so you feel like yourself again."
         secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        gallery={[
+          "/images/hormone/hormone-couple-sunset.jpg",
+          "/images/hormone/hormone-couple-bedroom.webp",
+          "/images/hormone/hormone-couple-park.avif",
+        ]}
         compact
       />
 

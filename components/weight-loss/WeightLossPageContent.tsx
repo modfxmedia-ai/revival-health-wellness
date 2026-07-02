@@ -282,7 +282,7 @@ function TimelineRow({
 export default function WeightLossPageContent() {
   return (
     <>
-      {/* Hero (reused cinematic bg from homepage) */}
+      {/* Hero — uses weight-loss imagery that appears elsewhere on the page. */}
       <PageHero
         eyebrow="Medical Weight Loss"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Weight Loss" }]}
@@ -304,6 +304,12 @@ export default function WeightLossPageContent() {
           external: true,
         }}
         secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        gallery={[
+          "/images/weight-loss/weight-loss-hero.png",
+          "/images/weight-loss/weight-loss-approach.png",
+          "/images/services/medical-weight-loss.jpeg",
+          "/images/services/weight-loss-couple.jpg",
+        ]}
         compact
       />
 

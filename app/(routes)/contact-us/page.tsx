@@ -122,6 +122,12 @@ export default function ContactUsPage() {
         }
         description="Ready to start your journey? Reach out and we'll help you take the first step—by phone, text, or online."
         secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        gallery={[
+          "/images/services/telehealth.jpg",
+          "/images/services/hormone-therapy.jpg",
+          "/images/services/aesthetics.jpg",
+          "/images/about/client-results-1.jpg",
+        ]}
       />
 
       <PillarsGrid

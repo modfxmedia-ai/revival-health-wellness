@@ -18,6 +18,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { BlogPost } from "@/lib/content/blog";
 import { getRelatedPosts } from "@/lib/content/blog";
 import PortraitFrame from "@/components/ui/PortraitFrame";
+import RichContent, { extractHeadings } from "./RichContent";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -59,7 +60,8 @@ function categorySlug(category: BlogPost["category"]) {
 export default function BlogPostContent({ post }: { post: BlogPost }) {
   const related = getRelatedPosts(post.slug);
 
-  // TOC: prefer explicit `headings` list, fall back to body[].heading.
+  // TOC: prefer explicit `headings`, then derive from raw `content`, else
+  // fall back to `body[].heading`.
   const toc = useMemo<{ id: string; text: string; level: "h2" | "h3" }[]>(() => {
     if (post.headings && post.headings.length > 0) {
       return post.headings.map((h) => ({
@@ -68,6 +70,9 @@ export default function BlogPostContent({ post }: { post: BlogPost }) {
         level: h.level,
       }));
     }
+    if (post.content) {
+      return extractHeadings(post.content);
+    }
     return (post.body ?? [])
       .filter((s) => s.heading)
       .map((s) => ({
@@ -75,7 +80,7 @@ export default function BlogPostContent({ post }: { post: BlogPost }) {
         text: s.heading as string,
         level: "h2" as const,
       }));
-  }, [post.headings, post.body]);
+  }, [post.headings, post.body, post.content]);
 
   const [activeId, setActiveId] = useState<string | null>(
     toc[0]?.id ?? null,
@@ -235,7 +240,14 @@ export default function BlogPostContent({ post }: { post: BlogPost }) {
               {post.intro ?? post.excerpt}
             </motion.p>
 
-            {post.body?.map((section, i) => (
+            {/* Raw-text article body (takes precedence over structured body). */}
+            {post.content ? (
+              <div className="mt-10">
+                <RichContent content={post.content} />
+              </div>
+            ) : null}
+
+            {!post.content && post.body?.map((section, i) => (
               <motion.div
                 key={i}
                 variants={fadeUp}
@@ -279,7 +291,7 @@ export default function BlogPostContent({ post }: { post: BlogPost }) {
             ))}
 
             {/* Rich hub card for posts without a full-length local body. */}
-            {(!post.body || post.body.length === 0) && (
+            {!post.content && (!post.body || post.body.length === 0) && (
               <motion.div
                 variants={fadeUp}
                 initial="hidden"

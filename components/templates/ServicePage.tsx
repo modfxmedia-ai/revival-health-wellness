@@ -10,7 +10,123 @@ export type ServicePageProps = {
   intro: string;
   /** Bullet points describing benefits / what's included. */
   highlights?: string[];
+  /**
+   * Optional hero background gallery. When omitted, the service-specific
+   * fallback below is used based on the page title. Never falls back to the
+   * homepage hero images.
+   */
+  gallery?: string[];
 };
+
+/**
+ * Default hero gallery when a service has no title-specific match. Mixes
+ * treatment imagery so no page shows homepage hero slides.
+ */
+const DEFAULT_SERVICE_GALLERY = [
+  "/images/services/aesthetics-and-injectables.jpeg",
+  "/images/services/hormone-therapy.jpg",
+  "/images/services/emsculpt-neo.webp",
+  "/images/services/sexual-wellness.jpg",
+];
+
+/**
+ * Ordered keyword→gallery lookup. First substring match on the lowercased
+ * page title wins, so services get imagery that actually lives on their page.
+ */
+const SERVICE_GALLERY_MATCHERS: Array<[RegExp, string[]]> = [
+  [/emsculpt/i, [
+    "/images/services/emsculpt-neo.webp",
+    "/images/services/defined-body.webp",
+    "/images/services/defined-body-full.webp",
+    "/images/services/body-contouring.webp",
+  ]],
+  [/emsella/i, [
+    "/images/services/sexual-wellness.png",
+    "/images/services/sexual-wellness.jpg",
+    "/images/services/body-contouring.webp",
+  ]],
+  [/iv[\s-]?hydration|iv[\s-]?therapy/i, [
+    "/images/services/iv-hydration.jpeg",
+  ]],
+  [/botox|xeomin|dysport/i, [
+    "/images/services/botox.webp",
+    "/images/services/aesthetics-and-injectables.jpeg",
+  ]],
+  [/derma[\s-]?filler|filler|kybella|sculptra/i, [
+    "/images/services/aesthetics-and-injectables.jpeg",
+    "/images/services/aesthetics.jpg",
+    "/images/services/aesthetics-2.jpg",
+  ]],
+  [/micro[\s-]?needling|prp[\s-]?facial|under[\s-]?eye/i, [
+    "/images/services/prp-facial.jpg",
+    "/images/services/prp-rejuvenation.jpeg",
+    "/images/services/aesthetics-skin-facial.webp",
+  ]],
+  [/prp[\s-]?hair|hair[\s-]?restoration|finasteride|hair/i, [
+    "/images/services/prp-rejuvenation.jpeg",
+    "/images/services/prp-facial.jpg",
+  ]],
+  [/co2|coolpeel|tetra|everesse|thread|scar|skin/i, [
+    "/images/services/aesthetics-skin-facial.webp",
+    "/images/services/skincare-neck-chin.jpg",
+    "/images/services/prp-facial.jpg",
+  ]],
+  [/o[\s-]?shot|p[\s-]?shot|p[\s-]?long|priapus/i, [
+    "/images/services/sexual-wellness.jpg",
+    "/images/services/sexual-wellness.png",
+  ]],
+  [/trimix|viagra|gainswave/i, [
+    "/images/services/sexual-wellness.jpg",
+    "/images/services/sexual-wellness.png",
+  ]],
+  [/sexual[\s-]?wellness|men'?s?[\s-]?(sexual|health)/i, [
+    "/images/services/sexual-wellness.jpg",
+    "/images/services/sexual-wellness.png",
+  ]],
+  [/men\b|male/i, [
+    "/images/services/defined-body.webp",
+    "/images/services/defined-body-full.webp",
+    "/images/services/xray-body.jpg",
+  ]],
+  [/women\b|female/i, [
+    "/images/services/hormone-therapy.jpg",
+    "/images/services/aesthetics-skin-facial.webp",
+    "/images/services/sexual-wellness.jpg",
+  ]],
+  [/hormone|testosterone|hrt/i, [
+    "/images/services/hormone-therapy.jpg",
+    "/images/services/hormone-therapy.webp",
+  ]],
+  [/glp[\s-]?1|weight[\s-]?loss|phentermine|semaglutide|tirzepatide/i, [
+    "/images/services/glp-1-program.png",
+    "/images/services/glp-1-measuring-tape.avif",
+    "/images/services/medical-weight-loss.jpeg",
+    "/images/services/weight-loss-couple.jpg",
+  ]],
+  [/telehealth|virtual/i, [
+    "/images/services/telehealth.jpg",
+    "/images/telehealth/telehealth-consult.jpg",
+  ]],
+  [/aesthetic|beauty|injectable/i, [
+    "/images/services/aesthetics.jpg",
+    "/images/services/aesthetics-and-injectables.jpeg",
+    "/images/services/aesthetics-2.jpg",
+    "/images/services/aesthetics-skin-facial.webp",
+  ]],
+  [/body[\s-]?contouring|body\b/i, [
+    "/images/services/body-contouring.webp",
+    "/images/services/emsculpt-neo.webp",
+    "/images/services/defined-body.webp",
+  ]],
+];
+
+function resolveGallery(title: string, override?: string[]): string[] {
+  if (override && override.length > 0) return override;
+  for (const [pattern, imgs] of SERVICE_GALLERY_MATCHERS) {
+    if (pattern.test(title)) return imgs;
+  }
+  return DEFAULT_SERVICE_GALLERY;
+}
 
 /**
  * Shared layout for service / treatment landing pages. Provides a hero,
@@ -27,7 +143,9 @@ export default function ServicePage({
     "Comfortable, discreet, concierge-level care",
     "In-clinic and telehealth options available",
   ],
+  gallery,
 }: ServicePageProps) {
+  const heroGallery = resolveGallery(title, gallery);
   return (
     <>
       <PageHero
@@ -36,6 +154,7 @@ export default function ServicePage({
         description={intro}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: eyebrow }]}
         secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        gallery={heroGallery}
         compact
       />
 

@@ -109,6 +109,11 @@ export default function GrowthHormoneOptimizationPage() {
         }
         description="When adults develop growth hormone deficiency, the risks compound quickly. HGH optimization helps you regain control of your body composition and overall health."
         secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        gallery={[
+          "/images/hormone/growth-hormone-optimization.png",
+          "/images/hormone/hormone-optimization.webp",
+          "/images/hormone/hormone-couple-fit.jpg",
+        ]}
         compact
       />
 

@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { Menu, X, ChevronDown, ExternalLink, CalendarCheck } from "lucide-react";
-import { PRIMARY_NAV, SECONDARY_NAV, CTA } from "./nav";
+import { PRIMARY_NAV, CTA } from "./nav";
 import { cn } from "@/lib/utils";
 
 const LUXURY_EASE = [0.22, 1, 0.36, 1] as const;
@@ -227,20 +227,6 @@ export default function MobileMenu({
                   </motion.div>
                 ))}
               </motion.nav>
-
-              {/* Secondary links */}
-              <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
-                {SECONDARY_NAV.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={close}
-                    className="text-sm font-light text-revival-warm-white/70 transition-colors hover:text-revival-gold"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
 
               {/* CTA */}
               <a

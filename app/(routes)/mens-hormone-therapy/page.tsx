@@ -94,6 +94,11 @@ export default function MensHormoneTherapyPage() {
         }
         description="With age, men often experience a decline in strength, energy, and libido. Advanced bio-identical testosterone therapy helps you rebalance and live at full capacity again."
         secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        gallery={[
+          "/images/hormone/testosterone-therapy.jpeg",
+          "/images/hormone/hormone-couple-cuddle.jpg",
+          "/images/hormone/hormone-couple-fit.jpg",
+        ]}
         compact
       />
 

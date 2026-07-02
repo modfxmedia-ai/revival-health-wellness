@@ -126,19 +126,30 @@ export const PRIMARY_NAV: NavItem[] = [
     ],
   },
   {
-    label: "Lab Testing",
-    href: "https://labs.revivalhealthandwellnessgroup.com/",
-    external: true,
+    label: "Telehealth",
+    href: "/telehealth/",
+  },
+  {
+    label: "More",
+    href: "/about-us/",
+    children: [
+      { label: "About Us", href: "/about-us/" },
+      { label: "Blogs", href: "/blogs/" },
+      {
+        label: "Lab Testing",
+        href: "https://labs.revivalhealthandwellnessgroup.com/",
+        external: true,
+      },
+      { label: "Contact Us", href: "/contact-us/" },
+    ],
   },
 ];
 
-/** Secondary navigation (top-right utility bar). */
-export const SECONDARY_NAV: NavLeaf[] = [
-  { label: "Telehealth", href: "/telehealth/" },
-  { label: "Blogs", href: "/blogs/" },
-  { label: "About Us", href: "/about-us/" },
-  { label: "Contact Us", href: "/contact-us/" },
-];
+/**
+ * Kept for backwards compatibility. Items now live inside the primary
+ * "More" dropdown so the header renders on a single row.
+ */
+export const SECONDARY_NAV: NavLeaf[] = [];
 
 /** Primary call-to-action (Zenoti booking). */
 export const CTA = {
