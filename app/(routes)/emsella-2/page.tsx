@@ -4,7 +4,7 @@ import { serviceSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
 import SexualWellnessPage from "@/components/sexual-wellness/SexualWellnessPage";
 import { SW_CONTENT } from "@/lib/content/sexual-wellness";
 
-const SLUG = "viagra";
+const SLUG = "emsella-2";
 const data = SW_CONTENT[SLUG];
 
 export const metadata: Metadata = buildMetadata({

@@ -1,16 +1,16 @@
+import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { serviceSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
-import ServicePage from "@/components/templates/ServicePage";
+import SexualWellnessPage from "@/components/sexual-wellness/SexualWellnessPage";
+import { SW_CONTENT } from "@/lib/content/sexual-wellness";
 
-const TITLE = "P-Shot™";
-const PATH = "/p-shot-tm";
-const DESCRIPTION =
-  "Discover P-Shot™ at Revival Health & Wellness, a personalized, physician-led approach designed to help you look and feel your best.";
+const SLUG = "p-shot-tm";
+const data = SW_CONTENT[SLUG];
 
-export const metadata = buildMetadata({
-  title: TITLE,
-  description: DESCRIPTION,
-  path: PATH,
+export const metadata: Metadata = buildMetadata({
+  title: data.meta.title,
+  description: data.meta.description,
+  path: `/${SLUG}/`,
 });
 
 export default function Page() {
@@ -20,15 +20,21 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: jsonLd([
-            serviceSchema({ name: TITLE, description: DESCRIPTION, path: PATH }),
-            breadcrumbSchema([
-              { name: "Home", path: "/" },
-              { name: TITLE, path: PATH },
-            ]),
+            serviceSchema({
+              name: data.schema.medicalTherapyName,
+              description: data.meta.description,
+              path: `/${SLUG}/`,
+            }),
+            breadcrumbSchema(
+              data.breadcrumbs.map((b) => ({
+                name: b.label,
+                path: b.href ?? `/${SLUG}/`,
+              })),
+            ),
           ]),
         }}
       />
-      <ServicePage eyebrow="Sexual Wellness" title={TITLE} intro={DESCRIPTION} />
+      <SexualWellnessPage data={data} contentMap={SW_CONTENT} />
     </>
   );
 }
