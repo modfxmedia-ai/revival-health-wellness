@@ -32,6 +32,7 @@ const AESTHETIC_LINKS = [
 
 const COMPANY_LINKS = [
   { label: "About Us", href: "/about-us/" },
+  { label: "Areas We Serve", href: "/areas-we-serve/" },
   { label: "Contact Us", href: "/contact-us/" },
   {
     label: "Book Now",
@@ -39,6 +40,8 @@ const COMPANY_LINKS = [
     external: true,
   },
   { label: "Blogs", href: "/blogs/" },
+  { label: "Patient Financing (Cherry)", href: "/cherry/" },
+  { label: "Sitemap", href: "/sitemap-page/" },
   { label: "Privacy Policy", href: "/privacy-policy/" },
   {
     label: "Zenoti's Privacy",
@@ -287,7 +290,8 @@ export default function Footer() {
       <div className="border-t border-revival-warm-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-6 text-center text-xs font-light text-revival-warm-white/55 sm:flex-row sm:px-6 lg:px-8">
           <p>
-            © Revival Health &amp; Wellness. All Rights Reserved 2025
+            © Revival Health &amp; Wellness. All Rights Reserved{" "}
+            {new Date().getFullYear()}
           </p>
           <p>
             Powered By{" "}

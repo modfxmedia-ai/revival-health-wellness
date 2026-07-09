@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/metadata";
 import { getAllGeoPages } from "@/lib/locations";
+import { getLiveCities, getLiveAreaPages } from "@/lib/areas";
 import { BLOG_POSTS as BLOG_POST_DATA } from "@/lib/content/blog";
 
 /** Primary service pillars, priority 0.9. */
@@ -15,13 +16,17 @@ const PILLAR_SERVICES = [
 
 /** Sub-service / treatment pages, priority 0.8. */
 const SUB_SERVICES = [
+  "aura-3d",
   "botox",
+  "cherry",
   "co2-laser-treatments",
+  "coolpeel",
   "coolpeel-laser",
   "derma-filler",
   "dysport",
   "emsculpt-neo",
   "emsella",
+  "emsella-2",
   "everesse-rf-skin-tightening-and-rejuvenation",
   "finasteride",
   "gainswave-tm",
@@ -34,9 +39,11 @@ const SUB_SERVICES = [
   "mens-hormone-therapy",
   "microneedling",
   "o-shot-tm",
+  "octopro-onda",
   "p-long",
   "p-shot-tm",
   "pdo-thread-lifts",
+  "phentermine",
   "priapus-toxin",
   "prp-hair-restoration",
   "scar-camouflage",
@@ -50,10 +57,11 @@ const SUB_SERVICES = [
   "women",
   "womens-hormone-therapy",
   "xeomin",
+  "xerf",
 ];
 
 /** Editorial / company pages, priority 0.7. */
-const CONTENT_PAGES = ["about-us", "contact-us", "blogs"];
+const CONTENT_PAGES = ["about-us", "contact-us", "blogs", "sitemap-page"];
 
 /** Utility pages, priority 0.6. */
 const UTILITY_PAGES = ["quiz"];
@@ -116,6 +124,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  // ── Nested /areas-we-serve/[city]/[service]/ programmatic SEO grid ──
+  // Only cities + services flagged `live: true` in lib/areas.ts appear here,
+  // so you can stage rollout in batches via Google Search Console.
+  const areasHub: MetadataRoute.Sitemap = [
+    {
+      url: url("/areas-we-serve/"),
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+  ];
+
+  const cityHubs: MetadataRoute.Sitemap = getLiveCities().map((city) => ({
+    url: url(`/areas-we-serve/${city.slug}/`),
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  const cityServiceLeaves: MetadataRoute.Sitemap = getLiveAreaPages().map(
+    ({ city, service }) => ({
+      url: url(`/areas-we-serve/${city.slug}/${service.slug}/`),
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.65,
+    }),
+  );
+
   const utility: MetadataRoute.Sitemap = UTILITY_PAGES.map((slug) => ({
     url: url(`/${slug}/`),
     lastModified: now,
@@ -137,6 +173,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...content,
     ...blogPosts,
     ...geo,
+    ...areasHub,
+    ...cityHubs,
+    ...cityServiceLeaves,
     ...utility,
     ...lowPriority,
   ];

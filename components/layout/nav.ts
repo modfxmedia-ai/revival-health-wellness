@@ -133,6 +133,7 @@ export const PRIMARY_NAV: NavItem[] = [
     href: "/about-us/",
     children: [
       { label: "About Us", href: "/about-us/" },
+      { label: "Areas We Serve", href: "/areas-we-serve/" },
       { label: "Blogs", href: "/blogs/" },
       {
         label: "Lab Testing",
