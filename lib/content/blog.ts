@@ -90,26 +90,26 @@ export const BLOG_POSTS: BlogPost[] = [
     featured: true,
     tags: ["IV", "Recovery", "Immunity"],
     intro:
-      "IV hydration got famous as the smart morning-after fix, but the real utility is a lot broader. When vitamins, electrolytes, and antioxidants skip the digestive system and go straight into your bloodstream, absorption jumps from roughly 30\u201350% to nearly 100%. One 45-minute drip can move the needle on energy, recovery, and immunity in ways weeks of oral supplements often can't.",
+      "IV hydration got famous as the smart morning-after fix, but the real utility is a lot broader. When vitamins, electrolytes, and antioxidants skip the digestive system and go straight into your bloodstream, absorption jumps from roughly 30–50% to nearly 100%. One 45-minute drip can move the needle on energy, recovery, and immunity in ways weeks of oral supplements often can't.",
     body: [
       {
         heading: "Why bypassing digestion changes the math",
         paragraphs: [
-          "Every oral supplement has to survive the stomach, the liver, and a first-pass metabolism before your cells get a chance to use it. For fat-soluble vitamins, minerals, and hydrophilic antioxidants like glutathione, the losses are significant\u2014often more than half the dose.",
+          "Every oral supplement has to survive the stomach, the liver, and a first-pass metabolism before your cells get a chance to use it. For fat-soluble vitamins, minerals, and hydrophilic antioxidants like glutathione, the losses are significant—often more than half the dose.",
           "IV delivery skips all of that. The active ingredients enter systemic circulation directly, at a controlled rate, in a form your cells can use right away. That's why patients frequently notice a difference within the same day of a session rather than several weeks in.",
         ],
       },
       {
         heading: "Uses that go well beyond a hangover",
         paragraphs: [
-          "Concierge IV therapy has become part of the routine for a much wider group\u2014athletes chasing recovery windows, professionals cutting jet lag before international travel, patients managing chronic fatigue or long-COVID symptoms, and anyone looking for a targeted immune boost heading into a demanding season.",
-          "The right protocol changes with the goal. Recovery drips lean into electrolytes and amino acids; immunity drips stack Vitamin C, zinc, and glutathione; the classic \u201cbeauty\u201d drip layers biotin and antioxidants on top of hydration.",
+          "Concierge IV therapy has become part of the routine for a much wider group—athletes chasing recovery windows, professionals cutting jet lag before international travel, patients managing chronic fatigue or long-COVID symptoms, and anyone looking for a targeted immune boost heading into a demanding season.",
+          "The right protocol changes with the goal. Recovery drips lean into electrolytes and amino acids; immunity drips stack Vitamin C, zinc, and glutathione; the classic “beauty” drip layers biotin and antioxidants on top of hydration.",
         ],
       },
       {
         heading: "What's actually in a Revival drip",
         paragraphs: [
-          "Every drip starts with a sterile base of lactated Ringer's or normal saline, plus electrolytes. From there we build the protocol around your goals\u2014B-complex and B12 for energy, magnesium and taurine for recovery, glutathione for antioxidant support, Vitamin C for immunity, and amino acids like lysine or NAC when they're indicated.",
+          "Every drip starts with a sterile base of lactated Ringer's or normal saline, plus electrolytes. From there we build the protocol around your goals—B-complex and B12 for energy, magnesium and taurine for recovery, glutathione for antioxidant support, Vitamin C for immunity, and amino acids like lysine or NAC when they're indicated.",
         ],
         bullets: [
           "Base fluids: lactated Ringer's or normal saline",
@@ -122,22 +122,22 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "Choosing the right protocol",
         paragraphs: [
           "During your first visit we review your goals, current supplements, and any conditions worth knowing about. Most patients start with a targeted drip weekly or bi-weekly for the first month, then move to monthly maintenance. Some come in more often around events, travel, or heavy training blocks.",
-          "If you're not sure where to start, the honest answer is \u201cnot on the internet.\u201d The right drip depends on labs and lifestyle\u2014not on TikTok trends.",
+          "If you're not sure where to start, the honest answer is “not on the internet.” The right drip depends on labs and lifestyle—not on TikTok trends.",
         ],
       },
       {
         heading: "What a session looks like",
         paragraphs: [
-          "Sessions run 30\u201345 minutes in a private, comfortable room. Our nursing team places the IV, monitors you throughout, and you leave immediately after with no downtime. Bring a book, take a call, or just close your eyes\u2014it's a small window that quietly resets you for the week.",
+          "Sessions run 30–45 minutes in a private, comfortable room. Our nursing team places the IV, monitors you throughout, and you leave immediately after with no downtime. Bring a book, take a call, or just close your eyes—it's a small window that quietly resets you for the week.",
         ],
       },
     ],
     keyTakeaways: [
       "IV delivery bypasses digestion for near-complete absorption of vitamins and antioxidants.",
-      "Uses stretch well beyond a hangover fix\u2014recovery, immunity, jet lag, chronic fatigue, and skin.",
+      "Uses stretch well beyond a hangover fix—recovery, immunity, jet lag, chronic fatigue, and skin.",
       "Protocols are tailored to your goal, not sold off a menu.",
       "Weekly or bi-weekly to start, then monthly maintenance for most patients.",
-      "Sessions run 30\u201345 minutes with zero downtime after.",
+      "Sessions run 30–45 minutes with zero downtime after.",
     ],
     content: `## Why Las Vegas Locals Are Turning to IV Hydration
 
@@ -403,12 +403,12 @@ If you are ready to address fatigue, mood changes, or stubborn weight gain, our 
     author: DEFAULT_AUTHOR,
     tags: ["ED", "GainsWave", "P-Shot"],
     intro:
-      "ED is medical, not personal. It's almost always one of three things\u2014hormonal, vascular, or neurologic\u2014and treating the actual underlying cause is what makes results stick. Here's the roadmap we walk every patient through, from the first phone call to a plan that works.",
+      "ED is medical, not personal. It's almost always one of three things—hormonal, vascular, or neurologic—and treating the actual underlying cause is what makes results stick. Here's the roadmap we walk every patient through, from the first phone call to a plan that works.",
     body: [
       {
         heading: "Step 1: Rule out the medical causes",
         paragraphs: [
-          "Before anything else we look under the hood. That means a physical, a full hormone panel (testosterone, thyroid, prolactin, cortisol), cardiovascular risk markers, and a review of medications that commonly interfere\u2014blood-pressure drugs, some antidepressants, and finasteride are frequent culprits.",
+          "Before anything else we look under the hood. That means a physical, a full hormone panel (testosterone, thyroid, prolactin, cortisol), cardiovascular risk markers, and a review of medications that commonly interfere—blood-pressure drugs, some antidepressants, and finasteride are frequent culprits.",
           "ED is often the first symptom of a cardiovascular issue that hasn't declared itself yet. Not always. But often enough that skipping this step is a bad idea.",
         ],
       },
@@ -424,31 +424,31 @@ If you are ready to address fatigue, mood changes, or stubborn weight gain, our 
           "For most patients, we start with the least invasive option that will actually work and step up only if needed.",
         ],
         bullets: [
-          "Oral medications (sildenafil, tadalafil) \u2014 first-line for most patients",
-          "GainsWave (shockwave) \u2014 6-treatment series, restores circulation, no drugs",
-          "P-Shot (PRP) \u2014 platelet-rich plasma injection, boosts tissue quality",
-          "TriMix injections \u2014 highly effective when oral meds stop working",
-          "Vacuum devices, penile implants \u2014 for specific clinical indications",
+          "Oral medications (sildenafil, tadalafil) — first-line for most patients",
+          "GainsWave (shockwave) — 6-treatment series, restores circulation, no drugs",
+          "P-Shot (PRP) — platelet-rich plasma injection, boosts tissue quality",
+          "TriMix injections — highly effective when oral meds stop working",
+          "Vacuum devices, penile implants — for specific clinical indications",
         ],
       },
       {
         heading: "Step 4: Measure and adjust",
         paragraphs: [
-          "Progress is monitored objectively\u2014partner feedback, IIEF questionnaire scores, morning erections, and where relevant, follow-up labs. If the initial plan isn't delivering after 6\u20138 weeks, we don't wait it out. We adjust.",
+          "Progress is monitored objectively—partner feedback, IIEF questionnaire scores, morning erections, and where relevant, follow-up labs. If the initial plan isn't delivering after 6–8 weeks, we don't wait it out. We adjust.",
         ],
       },
       {
         heading: "What to expect at your first visit",
         paragraphs: [
-          "The first visit is 45\u201360 minutes and is completely discreet. We walk through your history, run the necessary labs (many can be same-day), and\u2014once results come back\u2014design a plan. Most patients start treatment within a week of the initial consultation.",
+          "The first visit is 45–60 minutes and is completely discreet. We walk through your history, run the necessary labs (many can be same-day), and—once results come back—design a plan. Most patients start treatment within a week of the initial consultation.",
         ],
       },
     ],
     keyTakeaways: [
       "ED is medical: usually hormonal, vascular, or neurologic.",
-      "Skip the guesswork\u2014labs and history first, treatment second.",
+      "Skip the guesswork—labs and history first, treatment second.",
       "Options run from oral meds and GainsWave to P-Shot, TriMix, and beyond.",
-      "If the first plan isn't delivering by week 6\u20138, adjust\u2014don't wait.",
+      "If the first plan isn't delivering by week 6–8, adjust—don't wait.",
       "First visits are discreet and typically end with same-day labs and a plan.",
     ],
     content: `## Take Control of ED and Reclaim Confidence
@@ -1161,19 +1161,19 @@ If you are ready for a personalized, medically guided approach to losing weight,
     author: DEFAULT_AUTHOR,
     tags: ["GLP-1", "Emsculpt NEO"],
     intro:
-      "Medical weight loss isn't a single treatment\u2014it's a plan. The right plan for you depends on labs, lifestyle, and goals, and it usually combines a couple of tools. Here's a plain-English tour of the main options we use at Revival, when each one shines, and how we decide which combination is right for your body.",
+      "Medical weight loss isn't a single treatment—it's a plan. The right plan for you depends on labs, lifestyle, and goals, and it usually combines a couple of tools. Here's a plain-English tour of the main options we use at Revival, when each one shines, and how we decide which combination is right for your body.",
     body: [
       {
         heading: "Start with labs, not the scale",
         paragraphs: [
-          "Before we prescribe anything, we run a thorough panel: fasting glucose, HbA1c, insulin, a full lipid panel, thyroid, sex hormones, inflammatory markers, and vitamin levels. Roughly half the patients who walk in for \u201cweight loss\u201d turn out to have thyroid issues, insulin resistance, or hormone shifts driving the problem.",
+          "Before we prescribe anything, we run a thorough panel: fasting glucose, HbA1c, insulin, a full lipid panel, thyroid, sex hormones, inflammatory markers, and vitamin levels. Roughly half the patients who walk in for “weight loss” turn out to have thyroid issues, insulin resistance, or hormone shifts driving the problem.",
           "Skipping the labs is how people end up cycling through medications that don't fit. Data first, then a plan.",
         ],
       },
       {
         heading: "GLP-1 medications",
         paragraphs: [
-          "GLP-1s (semaglutide, tirzepatide) are the biggest shift in medical weight loss in a generation. They regulate appetite and blood sugar, slow gastric emptying, and\u2014for most patients\u2014make eating in a healthy calorie balance stop feeling like a constant fight against biology.",
+          "GLP-1s (semaglutide, tirzepatide) are the biggest shift in medical weight loss in a generation. They regulate appetite and blood sugar, slow gastric emptying, and—for most patients—make eating in a healthy calorie balance stop feeling like a constant fight against biology.",
           "At Revival we prescribe compounded GLP-1 with proper dose titration, weekly check-ins, and nutrition guidance built in. Medication alone drifts back; medication plus support sticks.",
         ],
       },
@@ -1186,7 +1186,7 @@ If you are ready for a personalized, medically guided approach to losing weight,
       {
         heading: "Vitamin and Lipo injections",
         paragraphs: [
-          "Vitamin B12, Lipo-B (methionine, inositol, choline), and Vitamin D injections don't replace a weight-loss plan\u2014they support it. Patients report better energy, sharper focus, and improved metabolic markers, and the delivery route makes them reliable even when oral absorption is compromised.",
+          "Vitamin B12, Lipo-B (methionine, inositol, choline), and Vitamin D injections don't replace a weight-loss plan—they support it. Patients report better energy, sharper focus, and improved metabolic markers, and the delivery route makes them reliable even when oral absorption is compromised.",
         ],
       },
       {
@@ -1203,7 +1203,7 @@ If you are ready for a personalized, medically guided approach to losing weight,
       },
     ],
     keyTakeaways: [
-      "Medical weight loss is a plan combining medication, nutrition, and follow-up\u2014not a single pill.",
+      "Medical weight loss is a plan combining medication, nutrition, and follow-up—not a single pill.",
       "GLP-1s and phentermine each shine in different situations; the right choice depends on your labs.",
       "Vitamin injections support energy and metabolism without replacing the core plan.",
       "Body-composition tools like Emsculpt NEO fill the gap between losing weight and looking the way you want.",
@@ -1326,26 +1326,26 @@ If you are ready for a safe, medically guided approach to lasting results, our t
     author: DEFAULT_AUTHOR,
     tags: ["Perimenopause", "Menopause", "HRT"],
     intro:
-      "The rules change in perimenopause. Estrogen, progesterone, testosterone, cortisol, and thyroid all shift\u2014often in different directions\u2014and the plans that worked in your 30s stop delivering. If you're feeling that, you're not imagining it, and generic advice usually misses the mark. Here's what actually helps.",
+      "The rules change in perimenopause. Estrogen, progesterone, testosterone, cortisol, and thyroid all shift—often in different directions—and the plans that worked in your 30s stop delivering. If you're feeling that, you're not imagining it, and generic advice usually misses the mark. Here's what actually helps.",
     body: [
       {
         heading: "What perimenopause actually is",
         paragraphs: [
           "Perimenopause is the four-to-ten-year window before menopause when your ovaries wind down production gradually and unevenly. Some months your estrogen swings high; others it drops. Progesterone drops earlier and faster. Testosterone slowly slips too.",
-          "That's why the symptoms feel inconsistent\u2014one week is fine, the next week is night sweats, mood swings, and 3 a.m. wakeups. It's biology, not a personal failing.",
+          "That's why the symptoms feel inconsistent—one week is fine, the next week is night sweats, mood swings, and 3 a.m. wakeups. It's biology, not a personal failing.",
         ],
       },
       {
         heading: "Symptoms most women mistake for stress",
         paragraphs: [
-          "Fatigue that sleep doesn't fix. Weight gain around the midsection you can't diet away. Anxiety that's new. Brain fog. Reduced libido. Dry skin. Hot flashes at the wrong times. All of it can be hormonal\u2014and all of it responds to the right protocol.",
+          "Fatigue that sleep doesn't fix. Weight gain around the midsection you can't diet away. Anxiety that's new. Brain fog. Reduced libido. Dry skin. Hot flashes at the wrong times. All of it can be hormonal—and all of it responds to the right protocol.",
         ],
       },
       {
         heading: "Why bio-identical pellets are our default",
         paragraphs: [
-          "Bio-identical hormones are molecular copies of what your body already makes, so they fit the receptor exactly. Pellets inserted under the skin release small, steady doses over three to four months\u2014no daily creams or pills, no weekly rollercoaster.",
-          "For many women that steadiness is the difference between \u201cthis works\u201d and \u201cthis is another thing to manage.\u201d",
+          "Bio-identical hormones are molecular copies of what your body already makes, so they fit the receptor exactly. Pellets inserted under the skin release small, steady doses over three to four months—no daily creams or pills, no weekly rollercoaster.",
+          "For many women that steadiness is the difference between “this works” and “this is another thing to manage.”",
         ],
       },
       {
@@ -1363,13 +1363,13 @@ If you are ready for a safe, medically guided approach to lasting results, our t
       {
         heading: "What to expect month-to-month",
         paragraphs: [
-          "Most patients notice sleep improve in the first two weeks. Energy and mood follow around week 3\u20134. Libido and body-composition changes tend to show up in months 2\u20133. We retest labs at 8\u201312 weeks and adjust from there.",
+          "Most patients notice sleep improve in the first two weeks. Energy and mood follow around week 3–4. Libido and body-composition changes tend to show up in months 2–3. We retest labs at 8–12 weeks and adjust from there.",
         ],
       },
       {
         heading: "When it's the wrong fit",
         paragraphs: [
-          "Hormone therapy isn't for everyone. Certain cancers, active clotting disorders, or unmanaged cardiovascular risk factors change the calculus. That's what the consultation is for\u2014honest yes-or-no, not sales.",
+          "Hormone therapy isn't for everyone. Certain cancers, active clotting disorders, or unmanaged cardiovascular risk factors change the calculus. That's what the consultation is for—honest yes-or-no, not sales.",
         ],
       },
     ],
@@ -1378,7 +1378,7 @@ If you are ready for a safe, medically guided approach to lasting results, our t
       "Bio-identical pellets deliver steady dosing without the daily-cream rollercoaster.",
       "Labs first: estradiol, progesterone, testosterone, thyroid, cortisol, Vitamin D.",
       "Sleep improves first; energy, mood, libido, and body composition follow.",
-      "HRT isn't universally appropriate\u2014honest evaluation matters.",
+      "HRT isn't universally appropriate—honest evaluation matters.",
     ],
     content: `## Why Hormone Therapy Feels Different After 40
 
@@ -3591,25 +3591,25 @@ With expert providers, personalized treatment plans, and two convenient Las Vega
     author: DEFAULT_AUTHOR,
     tags: ["Emsculpt NEO"],
     intro:
-      "Emsculpt NEO does two things in 30 minutes that a normal workout can't match\u2014it builds muscle with supramaximal electromagnetic contractions and eliminates fat with simultaneous radiofrequency heating. Four sessions. No downtime. Actual results you can see and measure.",
+      "Emsculpt NEO does two things in 30 minutes that a normal workout can't match—it builds muscle with supramaximal electromagnetic contractions and eliminates fat with simultaneous radiofrequency heating. Four sessions. No downtime. Actual results you can see and measure.",
     body: [
       {
         heading: "The science: HIFEM+ radiofrequency",
         paragraphs: [
-          "HIFEM (high-intensity focused electromagnetic) technology drives roughly 20,000 supramaximal muscle contractions in one 30-minute session\u2014a rate no voluntary workout can produce. Radiofrequency heating simultaneously raises the fat layer above the muscle to a level where fat cells break down and are cleared by the body.",
+          "HIFEM (high-intensity focused electromagnetic) technology drives roughly 20,000 supramaximal muscle contractions in one 30-minute session—a rate no voluntary workout can produce. Radiofrequency heating simultaneously raises the fat layer above the muscle to a level where fat cells break down and are cleared by the body.",
           "The muscle-building and fat-loss happen in the same session, on the same area. That's what makes Emsculpt NEO different from cryolipolysis (fat-only) or older EMS treatments (muscle-only).",
         ],
       },
       {
         heading: "What you feel during a session",
         paragraphs: [
-          "The contractions feel intense but not painful\u2014like a very committed workout compressed into 30 minutes. The RF layer warms the area to a temperature similar to a warm massage. Most patients read, work, or watch something on their phone.",
+          "The contractions feel intense but not painful—like a very committed workout compressed into 30 minutes. The RF layer warms the area to a temperature similar to a warm massage. Most patients read, work, or watch something on their phone.",
         ],
       },
       {
         heading: "Where it works best",
         paragraphs: [
-          "The FDA-cleared treatment areas are the abdomen, glutes, arms (biceps and triceps), thighs (quads, hamstrings, adductors), and calves. In practice, patients most often ask for the abdomen and glutes\u2014that's where the visual change is fastest and most obvious.",
+          "The FDA-cleared treatment areas are the abdomen, glutes, arms (biceps and triceps), thighs (quads, hamstrings, adductors), and calves. In practice, patients most often ask for the abdomen and glutes—that's where the visual change is fastest and most obvious.",
         ],
         bullets: [
           "Abdomen (front and obliques)",
@@ -3622,14 +3622,14 @@ With expert providers, personalized treatment plans, and two convenient Las Vega
       {
         heading: "Who it's for, who it isn't",
         paragraphs: [
-          "Emsculpt NEO shines for someone who already exercises but can't get the last inch, or who has \u201cskinny fat\u201d\u2014low overall weight but not much muscle definition. It also works well as the finishing tool on a weight-loss journey once the scale has stopped moving.",
+          "Emsculpt NEO shines for someone who already exercises but can't get the last inch, or who has “skinny fat”—low overall weight but not much muscle definition. It also works well as the finishing tool on a weight-loss journey once the scale has stopped moving.",
           "It's not a weight-loss substitute. If you have 30+ pounds to lose, we recommend starting with a medical weight-loss plan first, then adding Emsculpt NEO for definition.",
         ],
       },
       {
         heading: "Session count and timeline",
         paragraphs: [
-          "The standard protocol is 4 sessions, one per week, on the target area. Results start becoming visible around week 2\u20133 and continue improving for about 12 weeks post-treatment as your body clears the fat cells. Many patients add a maintenance session every 3\u20136 months.",
+          "The standard protocol is 4 sessions, one per week, on the target area. Results start becoming visible around week 2–3 and continue improving for about 12 weeks post-treatment as your body clears the fat cells. Many patients add a maintenance session every 3–6 months.",
         ],
       },
     ],
@@ -3638,7 +3638,7 @@ With expert providers, personalized treatment plans, and two convenient Las Vega
       "About 20,000 supramaximal contractions per 30-minute treatment.",
       "Best on abdomen, glutes, arms, thighs, and calves.",
       "4 sessions, one per week, then results continue for 12 weeks after.",
-      "Not a substitute for a weight-loss plan\u2014a finishing tool for definition.",
+      "Not a substitute for a weight-loss plan—a finishing tool for definition.",
     ],
     content: `Have you ever felt like no matter how hard you push yourself at the gym, your body just isn’t responding the way you want? You eat right, you sweat it out, yet certain areas—maybe your lower belly, thighs, or arms—just don’t budge. It’s frustrating, discouraging, and can make you feel like all your hard work is wasted. At Revival Health and Wellness, we understand that feeling intimately, and we’ve seen countless people experience the same struggle. That’s why we offer Emsculpt NEO—a revolutionary treatment that eliminates fat and builds muscle simultaneously in just 30 minutes. It’s not a replacement for your effort; it’s a shortcut that helps your body finally reflect it.
 
@@ -4223,7 +4223,7 @@ Note: While vitamin booster injections offer numerous benefits, they should comp
     author: DEFAULT_AUTHOR,
     tags: ["Clinic", "Concierge"],
     intro:
-      "Revival Health & Wellness was built around a simple idea\u2014that modern medicine and aesthetic care should work together to treat the whole person. Here's how that plays out day-to-day: what makes our approach different, why patients stay, and what a first visit actually looks like.",
+      "Revival Health & Wellness was built around a simple idea—that modern medicine and aesthetic care should work together to treat the whole person. Here's how that plays out day-to-day: what makes our approach different, why patients stay, and what a first visit actually looks like.",
     body: [
       {
         heading: "The concierge model, explained",
@@ -4235,34 +4235,34 @@ Note: While vitamin booster injections offer numerous benefits, they should comp
       {
         heading: "Physician-led, always",
         paragraphs: [
-          "Every plan is designed and reviewed by our medical team\u2014not automated portals, not affiliates. Labs get read by a human. Doses get adjusted based on how your body responds. Follow-ups actually happen.",
+          "Every plan is designed and reviewed by our medical team—not automated portals, not affiliates. Labs get read by a human. Doses get adjusted based on how your body responds. Follow-ups actually happen.",
         ],
       },
       {
         heading: "Where medicine meets aesthetics",
         paragraphs: [
-          "We operate under one roof: weight loss, hormone therapy, sexual wellness, aesthetics, and body contouring. That matters because most goals live at the intersection\u2014the patient losing weight also wants their skin to tighten as it happens; the patient starting HRT often wants a subtle refresh at the same time. Coordinating between clinics slows results. Doing it in one place accelerates them.",
+          "We operate under one roof: weight loss, hormone therapy, sexual wellness, aesthetics, and body contouring. That matters because most goals live at the intersection—the patient losing weight also wants their skin to tighten as it happens; the patient starting HRT often wants a subtle refresh at the same time. Coordinating between clinics slows results. Doing it in one place accelerates them.",
         ],
       },
       {
         heading: "Two Las Vegas locations",
         paragraphs: [
-          "Henderson / Southwest at 7220 S. Cimarron Road, Suite #140, and Summerlin / Northwest at 2585 Box Canyon Drive, Suite #150. Both locations run the full menu of services, and both operate on the same schedule (Mon 9\u20131, Tues\u2013Thurs 9\u20137, Fri\u2013Sat 9\u20135).",
+          "Henderson / Southwest at 7220 S. Cimarron Road, Suite #140, and Summerlin / Northwest at 2585 Box Canyon Drive, Suite #150. Both locations run the full menu of services, and both operate on the same schedule (Mon 9–1, Tues–Thurs 9–7, Fri–Sat 9–5).",
         ],
       },
       {
         heading: "What your first visit looks like",
         paragraphs: [
-          "It starts with a real conversation. We ask about your goals, your history, and what's been getting in the way. If labs make sense, we order them (usually same day). At the end of the visit you'll have a written plan\u2014not a sales pitch.",
+          "It starts with a real conversation. We ask about your goals, your history, and what's been getting in the way. If labs make sense, we order them (usually same day). At the end of the visit you'll have a written plan—not a sales pitch.",
           "Every consultation is free. If we're not the right fit for what you need, we'll tell you honestly and point you toward someone who is.",
         ],
       },
     ],
     keyTakeaways: [
-      "Concierge, cash-pay, physician-led\u2014designed for real time and real follow-through.",
+      "Concierge, cash-pay, physician-led—designed for real time and real follow-through.",
       "Weight loss, hormones, sexual wellness, aesthetics, and body contouring under one roof.",
       "Two Las Vegas locations serving Henderson/Southwest and Summerlin/Northwest.",
-      "Every plan starts with labs and a written plan\u2014no pressure.",
+      "Every plan starts with labs and a written plan—no pressure.",
       "Consultations are always free.",
     ],
     content: `As the years pass, many men find themselves facing new challenges, particularly when it comes to their sexual health and overall vitality. It’s a common part of life’s journey, but it doesn’t mean you have to simply accept a decline in your well-being. Today, we delve into a world of advanced solutions designed to help you reclaim your energy, confidence, and intimacy. We’re talking about comprehensive men’s health options like Hormone Therapy, P Shot, GAINSWave, Trimix, Priapus Toxin, and even trusted medications like Viagra. For those seeking to revitalize their lives, Revival Health & Wellness in vibrant Las Vegas, NV, stands as a beacon of hope and innovative care. They offer a holistic approach to help you feel like yourself again.

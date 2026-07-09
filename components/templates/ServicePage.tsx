@@ -46,7 +46,8 @@ const SERVICE_GALLERY_MATCHERS: Array<[RegExp, string[]]> = [
     "/images/services/body-contouring.webp",
   ]],
   [/iv[\s-]?hydration|iv[\s-]?therapy/i, [
-    "/images/services/iv-hydration.jpeg",
+    "/images/services/image-of-iv-infusion-in-wellness-clinic.jpg",
+    "/images/services/vitamin-booster-injection.jpg",
   ]],
   [/botox|xeomin|dysport/i, [
     "/images/services/botox.webp",
@@ -98,7 +99,7 @@ const SERVICE_GALLERY_MATCHERS: Array<[RegExp, string[]]> = [
     "/images/services/hormone-therapy.webp",
   ]],
   [/glp[\s-]?1|weight[\s-]?loss|phentermine|semaglutide|tirzepatide/i, [
-    "/images/services/glp-1-program.png",
+    "/images/services/semaglutide-glp1.jpg",
     "/images/services/glp-1-measuring-tape.avif",
     "/images/services/medical-weight-loss.jpeg",
     "/images/services/weight-loss-couple.jpg",

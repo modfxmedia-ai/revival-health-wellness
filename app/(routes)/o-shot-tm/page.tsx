@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { serviceSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
-import SexualWellnessPage from "@/components/sexual-wellness/SexualWellnessPage";
-import { SW_CONTENT } from "@/lib/content/sexual-wellness";
+import OShotPageContent from "@/components/sexual-wellness/OShotPageContent";
 
 const SLUG = "o-shot-tm";
-const data = SW_CONTENT[SLUG];
+const TITLE = "O-Shot® (Orgasm Shot®) PRP Therapy";
+const DESCRIPTION =
+  "Improve your sensitivity & health w/ O-Shot treatment in Las Vegas. Revival Health and Wellness offers the O-Shot™ to enhance pleasure, function, and confidence.";
 
 export const metadata: Metadata = buildMetadata({
-  title: data.meta.title,
-  description: data.meta.description,
+  title: "O-Shot Treatment for Women",
+  description: DESCRIPTION,
   path: `/${SLUG}/`,
 });
 
@@ -21,20 +22,19 @@ export default function Page() {
         dangerouslySetInnerHTML={{
           __html: jsonLd([
             serviceSchema({
-              name: data.schema.medicalTherapyName,
-              description: data.meta.description,
+              name: TITLE,
+              description: DESCRIPTION,
               path: `/${SLUG}/`,
             }),
-            breadcrumbSchema(
-              data.breadcrumbs.map((b) => ({
-                name: b.label,
-                path: b.href ?? `/${SLUG}/`,
-              })),
-            ),
+            breadcrumbSchema([
+              { name: "Home", path: "/" },
+              { name: "For Women", path: "/women/" },
+              { name: "O-Shot®", path: `/${SLUG}/` },
+            ]),
           ]),
         }}
       />
-      <SexualWellnessPage data={data} contentMap={SW_CONTENT} />
+      <OShotPageContent />
     </>
   );
 }

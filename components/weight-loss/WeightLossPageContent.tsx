@@ -305,10 +305,9 @@ export default function WeightLossPageContent() {
         }}
         secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
-          "/images/weight-loss/weight-loss-hero.png",
-          "/images/weight-loss/weight-loss-approach.png",
-          "/images/services/medical-weight-loss.jpeg",
-          "/images/services/weight-loss-couple.jpg",
+          "/images/page-banners/weight-loss-banner-1.jpg",
+          "/images/page-banners/weight-loss-banner-2.jpg",
+          "/images/page-banners/weight-loss-banner-3.jpg",
         ]}
         compact
       />

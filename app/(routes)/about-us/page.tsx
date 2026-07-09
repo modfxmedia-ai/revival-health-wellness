@@ -2,7 +2,6 @@ import { buildMetadata } from "@/lib/metadata";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import PageHero from "@/components/ui/PageHero";
 import CTABanner from "@/components/ui/CTABanner";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
 import {
   AboutIntroSection,
   CoreValuesSection,
@@ -10,6 +9,8 @@ import {
   MissionSection,
   VisionSection,
   TestimonialsIntroSection,
+  TestimonialsGallerySection,
+  ClientResultsSection,
 } from "@/components/about/AboutSections";
 
 export const metadata = buildMetadata({
@@ -53,10 +54,8 @@ export default function AboutUsPage() {
         description="Revival Health & Wellness is a Las Vegas center where modern medicine meets luxury care. Weight loss, hormone therapy, sexual wellness, and aesthetics—delivered by a team that treats you like family."
         secondary={{ label: "Meet Our Team", href: "#team" }}
         gallery={[
-          "/images/about/client-results-1.jpg",
-          "/images/services/hormone-therapy.jpg",
-          "/images/services/aesthetics.jpg",
-          "/images/services/iv-hydration.jpeg",
+          "/images/home/Image_20250829_162858_851.jpeg",
+          "/images/home/Image_20250829_162858_851.jpeg",
         ]}
       />
 
@@ -66,7 +65,8 @@ export default function AboutUsPage() {
         <MeetTeamSection />
       </section>
       <TestimonialsIntroSection />
-      <TestimonialsSection />
+      <TestimonialsGallerySection />
+      <ClientResultsSection />
       <MissionSection />
       <VisionSection />
 

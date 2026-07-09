@@ -71,7 +71,7 @@ export const SERVICES: Service[] = [
   {
     name: "IV Hydration",
     href: "/iv-hydration/",
-    image: "/images/services/iv-hydration.jpeg",
+    image: "/images/services/image-of-iv-infusion-in-wellness-clinic.jpg",
     blurb:
       "Rehydrate, replenish, and revitalize with custom IV drips delivered straight to your bloodstream.",
   },

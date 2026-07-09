@@ -7,7 +7,6 @@ import {
 } from "@/lib/schema";
 import PageHero from "@/components/ui/PageHero";
 import CTABanner from "@/components/ui/CTABanner";
-import MotionShowcase from "@/components/motion/MotionShowcase";
 import {
   OverviewBlock,
   PillarsGrid,
@@ -30,62 +29,77 @@ export const metadata = buildMetadata({
 
 const HOW_IT_WORKS = [
   {
-    title: "Suppresses appetite",
-    text: "Stimulates neurotransmitters that reduce hunger signals so smaller meals feel satisfying.",
+    title: "Dopamine & norepinephrine",
+    text: "Targets your brain and nervous system, releasing two neurotransmitters that stimulate metabolism and suppress hunger.",
+    icon: "brain" as const,
+  },
+  {
+    title: "Adrenaline & epinephrine",
+    text: "Triggers the release of adrenaline and epinephrine outside the brain — hormones known for powerful fat-burning properties.",
+    icon: "flame" as const,
+  },
+  {
+    title: "Sustained appetite control",
+    text: "Taken once daily in the morning, it suppresses appetite from breakfast to dessert, peaking in 3–5 hours and gradually declining.",
     icon: "utensils" as const,
   },
   {
-    title: "Boosts energy",
-    text: "A mild stimulant effect that makes movement, workouts, and daily activity feel easier.",
-    icon: "zap" as const,
-  },
-  {
-    title: "Kickstarts momentum",
-    text: "Fast, tangible early results help build the habits that carry the rest of your journey.",
-    icon: "timer" as const,
-  },
-  {
-    title: "Physician-supervised",
-    text: "Baseline labs, dose adjustments, and progress reviews keep the plan safe and effective.",
-    icon: "shieldCheck" as const,
+    title: "Proven, measurable results",
+    text: "37.5 mg daily for 12 weeks typically results in an average weight loss of about 16 pounds when paired with a well-planned diet.",
+    icon: "target" as const,
   },
 ];
 
 const CANDIDATES_BULLETS = [
-  "BMI of 30 or higher, or 27+ with weight-related conditions",
-  "Struggled to lose weight through diet and exercise alone",
-  "Cleared for a short- to mid-term appetite-suppressant program",
-  "Wants a fast-acting kickstart alongside lifestyle changes",
+  "BMI greater than 25 (unhealthy height-to-weight ratio)",
+  "Struggled with diet-and-exercise-only approaches",
+  "Cleared for a stimulant-class weight-loss medication",
+  "Ready to combine medication with lifestyle changes",
+  "Not currently pregnant, breastfeeding, or under 18",
+];
+
+const CONTRAINDICATIONS = [
+  "Coronary heart disease",
+  "Uncontrolled high blood pressure",
+  "Hyperthyroidism",
+  "History of drug abuse",
 ];
 
 const SIDE_EFFECTS = [
-  "Increased heart rate or blood pressure",
   "Dry mouth",
-  "Difficulty sleeping if taken late in the day",
-  "Restlessness or jitters",
-  "Constipation or GI upset",
+  "Increased heart rate",
+  "Increased blood pressure",
+  "Temporary diarrhea",
+  "Insomnia",
+  "Constipation",
+  "Nervousness",
 ];
 
 const FAQS = [
   {
     question: "What is Phentermine?",
     answer:
-      "Phentermine is a prescription appetite suppressant used to support weight loss. It's typically prescribed short- to mid-term alongside a medically supervised plan and lifestyle changes.",
+      "Phentermine is an FDA-approved prescription weight-loss medication used for long-term weight management, often in combination with topiramate. It's a remarkably safe, non-addictive medication that has been trusted for over 50 years and is prescribed in three-month cycles.",
   },
   {
     question: "How does Phentermine work?",
     answer:
-      "It stimulates the release of neurotransmitters that reduce hunger signals, so you feel full sooner and can comfortably eat in a lower calorie range. It also gives a mild energy boost.",
+      "Phentermine targets your brain and nervous system, releasing dopamine and norepinephrine to stimulate metabolism and suppress hunger. It also triggers adrenaline and epinephrine outside the brain — hormones with powerful fat-burning properties. Taken once daily in the morning, it peaks in 3–5 hours and continues supporting weight loss throughout the day.",
   },
   {
     question: "Is Phentermine right for me?",
     answer:
-      "Phentermine is a good fit for adults with a BMI of 30+ (or 27+ with weight-related conditions) who have struggled with diet and exercise alone. A short consultation and lab review confirms whether it's safe for you.",
+      "Phentermine is typically prescribed for adults with a BMI greater than 25. Our specialists review your medical history and perform a physical exam during your consultation, then tailor your dose to your needs. Many patients also take Topiramate alongside Phentermine to enhance the effectiveness of the plan.",
+  },
+  {
+    question: "Who should not take Phentermine?",
+    answer:
+      "Phentermine is not suitable for individuals with coronary heart disease, uncontrolled high blood pressure, hyperthyroidism, or a history of drug abuse. During your consultation we'll confirm it's safe for you before writing a prescription.",
   },
   {
     question: "Will Phentermine give me side effects?",
     answer:
-      "Some patients experience increased heart rate, dry mouth, trouble sleeping if taken late, or restlessness. Our team monitors you throughout the program and adjusts dose or timing to minimize side effects.",
+      "Phentermine acts partially as a stimulant, so monitoring blood pressure is important. Common side effects include dry mouth, increased heart rate, increased blood pressure, temporary diarrhea, insomnia, constipation, and nervousness. Our team monitors you throughout the program and adjusts dose or timing to minimize side effects.",
   },
 ];
 
@@ -130,13 +144,14 @@ export default function PhenterminePage() {
             to kickstart your journey
           </>
         }
-        description="A clinically proven appetite suppressant with a mild energy boost, delivered under medical supervision in Las Vegas."
+        description="A potent, FDA-approved weight-loss medication trusted for over 50 years. Substantial results within the first few weeks — under medical supervision in Las Vegas."
         secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
-          "/images/weight-loss/phentermine-hero.jpg",
-          "/images/weight-loss/phentermine-medication.webp",
-          "/images/weight-loss/phentermine-secondary.png",
+          "/images/weight-loss/phentermine-thumbs-up.png",
+          "/images/weight-loss/phentermine-treatment.jpg",
+          "/images/weight-loss/phentermine-pill.webp",
         ]}
+        compact
       />
 
       <OverviewBlock
@@ -144,33 +159,18 @@ export default function PhenterminePage() {
           eyebrow: "Weight Loss with Phentermine",
           heading: "What is the Phentermine treatment?",
           paragraphs: [
-            "Phentermine is a prescription appetite suppressant used to support short- to mid-term weight loss. It's most effective as part of a medically supervised plan that also addresses nutrition, movement, and lifestyle.",
-            "At Revival, we start with a consultation and baseline labs, confirm you're a good candidate, and monitor your progress week-over-week so the dose stays right and side effects stay manageable.",
+            "Phentermine is more than just an appetite suppressant — it's a potent weight-loss medication that delivers substantial results for those looking to shed a significant amount of weight within the first few weeks.",
+            "FDA-approved for long-term weight management and often combined with topiramate, Phentermine is a remarkably safe, non-addictive medication that has been trusted for over 50 years. Prescribed in three-month cycles, it has demonstrated a very high success rate when used correctly.",
           ],
-          image: "/images/weight-loss/phentermine-hero.jpg",
+          image: "/images/weight-loss/phentermine-treatment.jpg",
         }}
       />
 
       <PillarsGrid
         eyebrow="How it works"
         heading="How does Phentermine work?"
-        intro="Four ways Phentermine supports the momentum that turns a weight-loss plan into real results."
+        intro="Phentermine works through four coordinated mechanisms — the medication doesn't do the work for you, but it makes sticking to your plan dramatically easier."
         pillars={HOW_IT_WORKS}
-      />
-
-      <MotionShowcase
-        eyebrow="The Mechanism"
-        heading="Appetite down. Energy up."
-        body="Phentermine works on the appetite-signaling pathway while giving you the energy to move more—a two-lever effect that jumpstarts weight loss."
-        centerIcon="zap"
-        centerLabel="Appetite Control"
-        orbitLabels={["Focus", "Energy", "Appetite", "Metabolism"]}
-        cornerBadges={[
-          { icon: "flame", label: "Fat Loss" },
-          { icon: "activity", label: "Movement" },
-          { icon: "timer", label: "Kickstart" },
-        ]}
-        tone="dark"
       />
 
       <OverviewBlock
@@ -180,15 +180,15 @@ export default function PhenterminePage() {
           eyebrow: "Is it right for you?",
           heading: "Is Phentermine right for you?",
           paragraphs: [
-            "Phentermine works best for adults who are ready to combine medication with lifestyle changes. If diet-and-exercise-only approaches have stalled and you're cleared for a stimulant-class medication, it may be a strong option.",
-            "During your consultation we'll review your medical history, current medications, and goals to confirm it's the right fit before writing a prescription.",
+            "The best way to know is a consultation with our specialists. We'll review your medical history and perform a physical exam to confirm Phentermine is a suitable choice, then schedule a follow-up shortly after starting so we can verify the medication is working with your body.",
+            "Our specialists tailor your Phentermine dosage to your specific needs. Many of our patients also take Topiramate alongside Phentermine — an anticonvulsant and nerve-pain medication that enhances the effectiveness of your weight-loss regimen.",
           ],
-          image: "/images/weight-loss/phentermine-medication.webp",
+          image: "/images/weight-loss/phentermine-thumbs-up.png",
           bullets: [
             "Medical history and medication review",
-            "Baseline labs and vitals",
-            "Personalized dose and timing",
-            "Weekly check-ins during the program",
+            "Baseline labs, vitals, and physical exam",
+            "Personalized dose (often paired with Topiramate)",
+            "Follow-up appointments to fine-tune your plan",
           ],
         }}
       />
@@ -197,20 +197,60 @@ export default function PhenterminePage() {
         eyebrow="Who it's for"
         heading="Candidates for Phentermine"
         items={CANDIDATES_BULLETS}
-        image="/images/weight-loss/phentermine-secondary.png"
+        image="/images/weight-loss/phentermine-pill.webp"
       />
 
-      <PillarsGrid
-        tone="cream"
-        eyebrow="Safety"
-        heading="Will Phentermine give me side effects?"
-        intro="Most patients tolerate Phentermine well, especially with medical supervision. Common effects to know about:"
-        pillars={SIDE_EFFECTS.map((s) => ({
-          title: s,
-          text: "We monitor and adjust to keep this manageable throughout your program.",
-          icon: "shieldCheck" as const,
-        }))}
-      />
+      {/* Compact "Not for everyone" + Side effects — combined into one dense band */}
+      <section className="relative bg-revival-warm-white py-12 lg:py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
+          <div>
+            <span className="text-tagline text-xs text-revival-gold">
+              Safety
+            </span>
+            <h3 className="mt-3 font-heading text-2xl leading-tight text-revival-dark sm:text-3xl">
+              Not suitable for everyone
+            </h3>
+            <p className="mt-4 text-revival-charcoal/85">
+              Phentermine is not appropriate for individuals with:
+            </p>
+            <ul className="mt-4 space-y-2 text-revival-charcoal/85">
+              {CONTRAINDICATIONS.map((c) => (
+                <li key={c} className="flex items-start gap-2">
+                  <span
+                    aria-hidden
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-revival-gold"
+                  />
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <span className="text-tagline text-xs text-revival-gold">
+              Common side effects
+            </span>
+            <h3 className="mt-3 font-heading text-2xl leading-tight text-revival-dark sm:text-3xl">
+              What to monitor
+            </h3>
+            <p className="mt-4 text-revival-charcoal/85">
+              Phentermine acts partially as a stimulant, so monitoring your
+              blood pressure is essential. Our team tracks your response and
+              adjusts dose or timing to keep side effects manageable.
+            </p>
+            <ul className="mt-4 grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
+              {SIDE_EFFECTS.map((s) => (
+                <li
+                  key={s}
+                  className="rounded-xl bg-white px-3.5 py-2.5 text-revival-charcoal/85 shadow-sm ring-1 ring-revival-gold/15"
+                >
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
 
       <FAQSection faqs={FAQS} />
 
@@ -237,10 +277,10 @@ export default function PhenterminePage() {
         ]}
       />
 
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14 lg:px-8">
         <CTABanner
           title="Ready to kickstart your plan?"
-          subtitle="Book a free consultation. We'll check your labs and confirm Phentermine is right for you."
+          subtitle="Book a free consultation. We'll review your labs and confirm Phentermine is right for you."
         />
       </div>
     </>

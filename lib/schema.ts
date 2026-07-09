@@ -225,5 +225,5 @@ export function faqSchema(faqs: { question: string; answer: string }[]): Json {
  * Escapes "<" to prevent breaking out of the script tag (XSS safety).
  */
 export function jsonLd(schema: Json | Json[]): string {
-  return JSON.stringify(schema).replace(/</g, "\\u003c");
+  return JSON.stringify(schema).replace(/</g, "\<");
 }

@@ -1,7 +1,13 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  type MotionValue,
+} from "framer-motion";
 import HormoneMotionGraphic from "./HormoneMotionGraphic";
 import { AnimatedPortraitFrame } from "@/components/ui/PortraitFrame";
 import {
@@ -38,8 +44,7 @@ import {
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Icon registry (Lucide components can't cross the server → client boundary,
-// so pages send a string key and this map resolves it inside the client).
+// Icon registry — pages send a string key; the map resolves it on the client.
 // ─────────────────────────────────────────────────────────────────────────────
 
 const ICONS = {
@@ -73,7 +78,7 @@ const ICONS = {
 export type IconKey = keyof typeof ICONS;
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Section types
+// Public API types (shape unchanged — dozens of pages consume these)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type OverviewSection = {
@@ -81,6 +86,8 @@ export type OverviewSection = {
   heading: string;
   paragraphs: string[];
   image?: string;
+  /** Frame aspect for the image — default portrait 4:5. Use "landscape" for wide banner images (2:1 or wider) and "square" for 1:1 sources. */
+  imageAspect?: "portrait" | "landscape" | "square";
   bullets?: string[];
 };
 
@@ -92,18 +99,153 @@ export type PillarBlock = {
 
 export type FAQ = { question: string; answer: string };
 
+type Tone = "light" | "dark" | "cream";
+
+/** Map imageAspect → Tailwind aspect class. Default is portrait 4/5. */
+function aspectClass(v?: "portrait" | "landscape" | "square"): string {
+  switch (v) {
+    case "landscape":
+      return "aspect-[5/3]";
+    case "square":
+      return "aspect-square";
+    case "portrait":
+    default:
+      return "aspect-[4/5]";
+  }
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
-// Reusable sub-components
+// Editorial primitives
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Two blurred gold radial orbs that drift slowly and translate on page scroll
+ * to give each section a subtle "living background" feel.
+ */
+function AmbientOrbs({
+  tone = "light",
+  parallax,
+}: {
+  tone?: Tone;
+  parallax?: MotionValue<string>;
+}) {
+  const color =
+    tone === "dark" ? "rgba(201,169,110,0.22)" : "rgba(201,169,110,0.16)";
+  return (
+    <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <motion.div
+        aria-hidden
+        style={{
+          background: `radial-gradient(circle, ${color}, transparent 70%)`,
+          y: parallax,
+        }}
+        className="absolute -left-24 top-4 h-[26rem] w-[26rem] rounded-full blur-[140px]"
+        animate={{ x: [0, 30, 0], scale: [1, 1.08, 1] }}
+        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        aria-hidden
+        style={{
+          background: `radial-gradient(circle, ${color}, transparent 70%)`,
+          y: parallax,
+        }}
+        className="absolute -right-24 bottom-4 h-[22rem] w-[22rem] rounded-full blur-[140px]"
+        animate={{ x: [0, -30, 0], scale: [1, 1.05, 1] }}
+        transition={{
+          duration: 28,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 4,
+        }}
+      />
+    </div>
+  );
+}
+
+/** Editorial eyebrow: uppercase gold label flanked by thin gold hairlines. */
+function EditorialEyebrow({
+  children,
+  align = "left",
+}: {
+  children: React.ReactNode;
+  align?: "left" | "center";
+}) {
+  return (
+    <div
+      className={`flex items-center gap-3 ${
+        align === "center" ? "justify-center" : ""
+      }`}
+    >
+      <span className="h-px w-8 bg-gradient-to-r from-transparent via-revival-gold to-revival-gold/60 sm:w-12" />
+      <span className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-revival-gold sm:text-xs">
+        {children}
+      </span>
+      <span className="h-px w-8 bg-gradient-to-l from-transparent via-revival-gold to-revival-gold/60 sm:w-12" />
+    </div>
+  );
+}
+
+/** Editorial heading with generous serif type. */
+function EditorialHeading({
+  children,
+  tone = "light",
+  className = "",
+}: {
+  children: React.ReactNode;
+  tone?: Tone;
+  className?: string;
+}) {
+  const color = tone === "dark" ? "text-white" : "text-revival-dark";
+  return (
+    <h2
+      className={`font-heading font-light leading-[1.05] ${color} ${className}`}
+      style={{ fontSize: "clamp(2rem, 3.6vw, 3.15rem)", letterSpacing: "-0.01em" }}
+    >
+      {children}
+    </h2>
+  );
+}
+
+/**
+ * Wraps its child with a scroll-linked Y translation so framed images and
+ * motion graphics drift subtly with the page.
+ */
+function ParallaxFrame({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["24px", "-24px"]);
+
+  return (
+    <motion.div ref={ref} style={{ y }} className={className}>
+      {children}
+    </motion.div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// OverviewBlock — editorial 2-col with lead-paragraph rule, parallax image.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function OverviewBlock({
   section,
   reverse = false,
   tone = "light",
+  stickyImage = false,
 }: {
   section: OverviewSection;
   reverse?: boolean;
-  tone?: "light" | "dark" | "cream";
+  tone?: Tone;
+  /** Sticks the image column while the copy column scrolls past. */
+  stickyImage?: boolean;
 }) {
   const bg =
     tone === "dark"
@@ -111,74 +253,104 @@ export function OverviewBlock({
       : tone === "cream"
         ? "bg-revival-cream"
         : "bg-revival-warm-white";
-  const textColor =
-    tone === "dark" ? "text-revival-cream/85" : "text-revival-charcoal/85";
-  const headingColor = tone === "dark" ? "text-white" : "text-revival-dark";
+  const bodyColor =
+    tone === "dark" ? "text-revival-cream/85" : "text-revival-charcoal/80";
+
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const orbY = useTransform(scrollYProgress, [0, 1], ["-40px", "40px"]);
 
   return (
-    <section className={`relative overflow-hidden ${bg} py-16 lg:py-24`}>
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <motion.div
-          aria-hidden
-          className="absolute -left-20 top-10 h-[24rem] w-[24rem] rounded-full blur-[140px]"
-          style={{
-            background:
-              tone === "dark"
-                ? "radial-gradient(circle, rgba(201,169,110,0.22), transparent 70%)"
-                : "radial-gradient(circle, rgba(201,169,110,0.18), transparent 70%)",
-          }}
-          animate={{ x: [0, 40, 0], y: [0, 30, 0], scale: [1, 1.1, 1] }}
-          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
+    <section
+      ref={sectionRef}
+      className={`relative overflow-clip ${bg} py-20 lg:py-28`}
+    >
+      <AmbientOrbs tone={tone} parallax={orbY} />
 
       <div
-        className={`mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:gap-16 lg:px-8 ${
-          section.image ? "lg:grid-cols-2" : ""
-        }`}
+        className={`mx-auto grid max-w-7xl grid-cols-1 gap-14 px-4 sm:px-6 lg:gap-20 lg:px-8 ${
+          stickyImage ? "items-start" : "items-center"
+        } ${section.image ? "lg:grid-cols-[0.95fr_1.05fr]" : ""}`}
       >
-        {section.image && (
-          <AnimatedPortraitFrame
-            src={section.image}
-            className={reverse ? "lg:order-2" : ""}
-            aspect="aspect-[4/5]"
-          />
-        )}
+        {section.image &&
+          (stickyImage ? (
+            <div
+              className={`lg:sticky lg:top-24 lg:self-start ${
+                reverse ? "lg:order-2" : ""
+              }`}
+            >
+              <AnimatedPortraitFrame
+                src={section.image}
+                aspect={aspectClass(section.imageAspect)}
+                cover
+              />
+            </div>
+          ) : (
+            <ParallaxFrame className={reverse ? "lg:order-2" : ""}>
+              <AnimatedPortraitFrame
+                src={section.image}
+                aspect={aspectClass(section.imageAspect)}
+                cover
+              />
+            </ParallaxFrame>
+          ))}
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.9, ease: EASE }}
+          className="max-w-xl lg:max-w-none"
         >
           {section.eyebrow && (
-            <span className="text-tagline text-xs text-revival-gold">
-              {section.eyebrow}
-            </span>
+            <div className="mb-6">
+              <EditorialEyebrow>{section.eyebrow}</EditorialEyebrow>
+            </div>
           )}
-          <h2
-            className={`mt-3 font-heading font-medium leading-[1.1] ${headingColor}`}
-            style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.75rem)" }}
-          >
-            {section.heading}
-          </h2>
-          <div className={`mt-6 space-y-5 ${textColor}`}>
+
+          <EditorialHeading tone={tone}>{section.heading}</EditorialHeading>
+
+          <div className="mt-8 space-y-6">
             {section.paragraphs.map((p, i) => (
-              <p key={i} className="text-base font-light leading-relaxed sm:text-lg">
+              <p
+                key={i}
+                className={
+                  i === 0
+                    ? `relative border-l-2 border-revival-gold/40 pl-5 text-lg font-light leading-[1.7] sm:text-xl sm:leading-[1.65] ${
+                        tone === "dark"
+                          ? "text-revival-cream/95"
+                          : "text-revival-charcoal/90"
+                      }`
+                    : `text-base font-light leading-relaxed sm:text-lg ${bodyColor}`
+                }
+              >
                 {p}
               </p>
             ))}
           </div>
+
           {section.bullets && section.bullets.length > 0 && (
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-              {section.bullets.map((b) => (
-                <li
+            <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+              {section.bullets.map((b, i) => (
+                <motion.li
                   key={b}
-                  className={`flex items-start gap-3 text-sm ${textColor}`}
+                  initial={{ opacity: 0, x: -8 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.55, delay: i * 0.04, ease: EASE }}
+                  className={`flex items-start gap-3 text-sm sm:text-[0.95rem] ${bodyColor}`}
                 >
-                  <CheckCircle2 className="mt-0.5 h-4.5 w-4.5 shrink-0 text-revival-gold" />
+                  <span
+                    aria-hidden
+                    className="mt-1 font-heading text-xs italic text-revival-gold"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <span>{b}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
           )}
@@ -187,6 +359,10 @@ export function OverviewBlock({
     </section>
   );
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PillarsGrid — magazine cards with serif numerals & gold-hairline hover.
+// ─────────────────────────────────────────────────────────────────────────────
 
 export function PillarsGrid({
   eyebrow,
@@ -199,7 +375,7 @@ export function PillarsGrid({
   heading: string;
   intro?: string;
   pillars: PillarBlock[];
-  tone?: "light" | "dark" | "cream";
+  tone?: Tone;
 }) {
   const bg =
     tone === "dark"
@@ -209,63 +385,89 @@ export function PillarsGrid({
         : "bg-revival-warm-white";
   const cardBg =
     tone === "dark"
-      ? "bg-white/[0.03] border-white/10"
-      : "bg-white border-revival-gold/15";
-  const textColor =
-    tone === "dark" ? "text-revival-cream/80" : "text-revival-charcoal/80";
-  const headingColor = tone === "dark" ? "text-white" : "text-revival-dark";
+      ? "bg-white/[0.04] border-white/10 hover:border-revival-gold/40 hover:bg-white/[0.06]"
+      : "bg-white border-revival-gold/15 hover:border-revival-gold/40";
+  const bodyColor =
+    tone === "dark" ? "text-revival-cream/75" : "text-revival-charcoal/75";
+  const titleColor = tone === "dark" ? "text-white" : "text-revival-dark";
+
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const orbY = useTransform(scrollYProgress, [0, 1], ["-30px", "30px"]);
 
   return (
-    <section className={`relative overflow-hidden ${bg} py-16 lg:py-24`}>
+    <section
+      ref={sectionRef}
+      className={`relative overflow-clip ${bg} py-20 lg:py-28`}
+    >
+      <AmbientOrbs tone={tone} parallax={orbY} />
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           {eyebrow && (
-            <span className="text-tagline text-xs text-revival-gold">
-              {eyebrow}
-            </span>
+            <div className="mb-6">
+              <EditorialEyebrow align="center">{eyebrow}</EditorialEyebrow>
+            </div>
           )}
-          <h2
-            className={`mt-3 font-heading font-medium leading-[1.1] ${headingColor}`}
-            style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.75rem)" }}
-          >
+          <EditorialHeading tone={tone} className="text-center">
             {heading}
-          </h2>
+          </EditorialHeading>
           {intro && (
-            <p className={`mt-5 text-base font-light leading-relaxed sm:text-lg ${textColor}`}>
+            <p
+              className={`mx-auto mt-6 max-w-2xl text-base font-light leading-relaxed sm:text-lg ${bodyColor}`}
+            >
               {intro}
             </p>
           )}
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {pillars.map((p, i) => {
             const Icon = ICONS[p.icon];
             return (
               <motion.article
                 key={p.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, delay: i * 0.06, ease: EASE }}
-                className={`group relative overflow-hidden rounded-[1.75rem] border p-7 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${cardBg}`}
+                className={`group relative overflow-hidden rounded-[1.75rem] border p-8 shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_80px_-30px_rgba(15,15,15,0.35)] ${cardBg}`}
               >
-                <div
-                  className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
-                    tone === "dark"
-                      ? "bg-revival-gold text-revival-dark"
-                      : "bg-revival-dark text-revival-gold"
-                  }`}
-                >
-                  <Icon className="h-5 w-5" />
+                {/* Gold hairline reveal on hover */}
+                <span
+                  aria-hidden
+                  className="absolute inset-x-8 top-0 h-px origin-left scale-x-0 bg-gradient-to-r from-revival-gold via-revival-gold/70 to-transparent transition-transform duration-500 group-hover:scale-x-100"
+                />
+
+                <div className="flex items-start justify-between gap-4">
+                  <div
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
+                      tone === "dark"
+                        ? "bg-revival-gold text-revival-dark"
+                        : "bg-revival-dark text-revival-gold"
+                    }`}
+                  >
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <span
+                    aria-hidden
+                    className="font-heading text-3xl italic leading-none text-revival-gold/50 sm:text-4xl"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
+
                 <h3
-                  className={`mt-5 font-heading text-xl ${
-                    tone === "dark" ? "text-white" : "text-revival-dark"
-                  }`}
+                  className={`mt-6 font-heading text-xl leading-tight sm:text-2xl ${titleColor}`}
                 >
                   {p.title}
                 </h3>
-                <p className={`mt-3 text-sm font-light leading-relaxed ${textColor}`}>
+                <p
+                  className={`mt-3 text-[0.95rem] font-light leading-relaxed ${bodyColor}`}
+                >
                   {p.text}
                 </p>
               </motion.article>
@@ -277,57 +479,85 @@ export function PillarsGrid({
   );
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// BenefitsList — editorial two-column list with parallax image / motion graphic.
+// ─────────────────────────────────────────────────────────────────────────────
+
 export function BenefitsList({
   eyebrow,
   heading,
   items,
   image,
+  imageAspect,
   motionGraphic = false,
+  stickyImage = false,
 }: {
   eyebrow?: string;
   heading: string;
   items: string[];
   image?: string;
-  /** When true (and no image is provided), renders the animated hormone motion graphic on the right. */
+  imageAspect?: "portrait" | "landscape" | "square";
   motionGraphic?: boolean;
+  /** Sticks the image column while the benefit chips column scrolls past. */
+  stickyImage?: boolean;
 }) {
   const hasVisual = Boolean(image) || motionGraphic;
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const orbY = useTransform(scrollYProgress, [0, 1], ["-40px", "40px"]);
+
   return (
-    <section className="relative overflow-hidden bg-revival-cream py-16 lg:py-24">
+    <section
+      ref={sectionRef}
+      className="relative overflow-clip bg-revival-cream py-20 lg:py-28"
+    >
+      <AmbientOrbs tone="cream" parallax={orbY} />
+
       <div
         className={
-          "mx-auto grid max-w-7xl grid-cols-1 items-start gap-12 px-4 sm:px-6 lg:gap-16 lg:px-8 " +
+          "mx-auto grid max-w-7xl grid-cols-1 items-start gap-14 px-4 sm:px-6 lg:gap-20 lg:px-8 " +
           (hasVisual ? "lg:grid-cols-[1.05fr_0.95fr]" : "")
         }
       >
         {image ? (
-          <AnimatedPortraitFrame
-            src={image}
-            className="lg:order-1"
-            aspect="aspect-[4/5]"
-          />
+          stickyImage ? (
+            <div className="lg:sticky lg:top-24 lg:order-1 lg:self-start">
+              <AnimatedPortraitFrame
+                src={image}
+                aspect={aspectClass(imageAspect)}
+                cover
+              />
+            </div>
+          ) : (
+            <ParallaxFrame className="lg:order-1">
+              <AnimatedPortraitFrame
+                src={image}
+                aspect={aspectClass(imageAspect)}
+                cover
+              />
+            </ParallaxFrame>
+          )
         ) : null}
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.9, ease: EASE }}
           className={image ? "lg:order-2" : "lg:order-1"}
         >
           {eyebrow && (
-            <span className="text-tagline text-xs text-revival-gold">
-              {eyebrow}
-            </span>
+            <div className="mb-6">
+              <EditorialEyebrow>{eyebrow}</EditorialEyebrow>
+            </div>
           )}
-          <h2
-            className="mt-3 font-heading font-medium leading-[1.1] text-revival-dark"
-            style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.75rem)" }}
-          >
-            {heading}
-          </h2>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          <EditorialHeading>{heading}</EditorialHeading>
+
+          <ul className="mt-10 grid gap-3 sm:grid-cols-2">
             {items.map((it, i) => (
               <motion.li
                 key={it}
@@ -335,64 +565,89 @@ export function BenefitsList({
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.03, ease: EASE }}
-                className="flex items-start gap-3 rounded-2xl bg-white px-4 py-3.5 text-sm text-revival-charcoal/85 shadow-sm ring-1 ring-revival-gold/10"
+                className="group flex items-start gap-3 rounded-2xl bg-white px-4 py-4 text-sm text-revival-charcoal/85 shadow-sm ring-1 ring-revival-gold/10 transition-all duration-300 hover:-translate-y-0.5 hover:ring-revival-gold/30"
               >
                 <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-revival-gold to-revival-gold-light text-revival-dark">
                   <CheckCircle2 className="h-3.5 w-3.5" />
                 </span>
-                {it}
+                <span className="pt-0.5">{it}</span>
               </motion.li>
             ))}
           </ul>
         </motion.div>
 
         {motionGraphic && !image ? (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.9, ease: EASE }}
-            className="relative lg:order-2"
-          >
-            <HormoneMotionGraphic />
-          </motion.div>
+          <ParallaxFrame className="lg:order-2">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.9, ease: EASE }}
+            >
+              <HormoneMotionGraphic />
+            </motion.div>
+          </ParallaxFrame>
         ) : null}
       </div>
     </section>
   );
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// FAQSection — editorial accordion with serif numerals & hairline dividers.
+// ─────────────────────────────────────────────────────────────────────────────
+
 export function FAQSection({ faqs }: { faqs: FAQ[] }) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const orbY = useTransform(scrollYProgress, [0, 1], ["-30px", "30px"]);
+
   return (
-    <section className="relative overflow-hidden bg-revival-warm-white py-16 lg:py-24">
+    <section
+      ref={sectionRef}
+      className="relative overflow-clip bg-revival-warm-white py-20 lg:py-28"
+    >
+      <AmbientOrbs parallax={orbY} />
+
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-tagline text-xs text-revival-gold">
-            Frequently Asked
-          </span>
-          <h2
-            className="mt-3 font-heading font-medium leading-[1.1] text-revival-dark"
-            style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.75rem)" }}
-          >
+          <div className="mb-6">
+            <EditorialEyebrow align="center">Frequently Asked</EditorialEyebrow>
+          </div>
+          <EditorialHeading className="text-center">
             Common questions, straight answers
-          </h2>
+          </EditorialHeading>
         </div>
 
-        <div className="mt-12 space-y-3">
-          {faqs.map((f) => (
+        <div className="mt-14 space-y-2">
+          {faqs.map((f, i) => (
             <details
               key={f.question}
-              className="group rounded-2xl border border-revival-gold/15 bg-white p-5 shadow-sm transition-all open:border-revival-gold/40 open:shadow-md sm:p-6"
+              className="group rounded-2xl border border-revival-gold/15 bg-white px-6 py-5 shadow-sm transition-all duration-300 open:border-revival-gold/40 open:shadow-md sm:px-7 sm:py-6"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-heading text-base text-revival-dark sm:text-lg">
-                {f.question}
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-revival-gold/15 text-revival-gold transition-transform duration-300 group-open:rotate-45">
-                  <span aria-hidden className="text-xl leading-none">
-                    +
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-5">
+                <div className="flex items-baseline gap-4">
+                  <span
+                    aria-hidden
+                    className="font-heading text-lg italic text-revival-gold/70 sm:text-xl"
+                  >
+                    {String(i + 1).padStart(2, "0")}
                   </span>
+                  <span className="font-heading text-base leading-snug text-revival-dark sm:text-lg">
+                    {f.question}
+                  </span>
+                </div>
+                <span
+                  aria-hidden
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-revival-gold/15 text-revival-gold transition-transform duration-300 group-open:rotate-45"
+                >
+                  <span className="text-xl leading-none">+</span>
                 </span>
               </summary>
-              <p className="mt-4 text-sm font-light leading-relaxed text-revival-charcoal/80 sm:text-base">
+              <p className="mt-5 border-t border-revival-gold/10 pt-5 text-sm font-light leading-relaxed text-revival-charcoal/80 sm:text-base sm:leading-[1.75]">
                 {f.answer}
               </p>
             </details>
@@ -403,46 +658,81 @@ export function FAQSection({ faqs }: { faqs: FAQ[] }) {
   );
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// RelatedServices — magazine cards with numeral index & gold-hairline hover.
+// ─────────────────────────────────────────────────────────────────────────────
+
 export function RelatedServices({
   items,
 }: {
   items: { label: string; href: string; blurb: string }[];
 }) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const orbY = useTransform(scrollYProgress, [0, 1], ["-30px", "30px"]);
+
   return (
-    <section className="relative overflow-hidden bg-revival-cream py-16 lg:py-24">
+    <section
+      ref={sectionRef}
+      className="relative overflow-clip bg-revival-cream py-20 lg:py-28"
+    >
+      <AmbientOrbs tone="cream" parallax={orbY} />
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-tagline text-xs text-revival-gold">
-            Explore
-          </span>
-          <h2
-            className="mt-3 font-heading font-medium leading-[1.1] text-revival-dark"
-            style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)" }}
-          >
-            Related hormone services
-          </h2>
+          <div className="mb-6">
+            <EditorialEyebrow align="center">Explore</EditorialEyebrow>
+          </div>
+          <EditorialHeading className="text-center">
+            Related services
+          </EditorialHeading>
         </div>
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {items.map((it) => (
-            <Link
+
+        <div className="mt-14 grid gap-6 md:grid-cols-3 lg:gap-7">
+          {items.map((it, i) => (
+            <motion.div
               key={it.href}
-              href={it.href}
-              className="group relative overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-revival-gold/50 hover:shadow-xl"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: i * 0.07, ease: EASE }}
             >
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-revival-gold to-revival-gold-light text-revival-dark">
-                <Sparkles className="h-5 w-5" />
-              </span>
-              <h3 className="mt-4 font-heading text-xl text-revival-dark">
-                {it.label}
-              </h3>
-              <p className="mt-2 text-sm font-light leading-relaxed text-revival-charcoal/75">
-                {it.blurb}
-              </p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-revival-gold">
-                Learn more
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-              </span>
-            </Link>
+              <Link
+                href={it.href}
+                className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:border-revival-gold/50 hover:shadow-[0_30px_80px_-30px_rgba(15,15,15,0.35)]"
+              >
+                <span
+                  aria-hidden
+                  className="absolute inset-x-7 top-0 h-px origin-left scale-x-0 bg-gradient-to-r from-revival-gold via-revival-gold/70 to-transparent transition-transform duration-500 group-hover:scale-x-100"
+                />
+
+                <div className="flex items-start justify-between gap-4">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-revival-gold to-revival-gold-light text-revival-dark">
+                    <Sparkles className="h-5 w-5" />
+                  </span>
+                  <span
+                    aria-hidden
+                    className="font-heading text-3xl italic leading-none text-revival-gold/50 sm:text-4xl"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <h3 className="mt-5 font-heading text-xl leading-tight text-revival-dark sm:text-2xl">
+                  {it.label}
+                </h3>
+                <p className="mt-3 text-sm font-light leading-relaxed text-revival-charcoal/75">
+                  {it.blurb}
+                </p>
+                <span className="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-revival-gold">
+                  Learn more
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>

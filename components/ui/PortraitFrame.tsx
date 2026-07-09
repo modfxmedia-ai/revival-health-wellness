@@ -90,6 +90,26 @@ export default function PortraitFrame({
                 }}
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-revival-dark/60 via-transparent to-transparent" />
+
+              {/* Ambient motion graph: rotating gold sparkle top-right + pulse bottom-left */}
+              <motion.span
+                aria-hidden
+                animate={{ rotate: 360 }}
+                transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+                className="pointer-events-none absolute right-4 top-4 z-10 h-8 w-8 sm:right-5 sm:top-5 sm:h-10 sm:w-10"
+              >
+                <svg viewBox="0 0 40 40" className="h-full w-full text-revival-gold/80" fill="currentColor">
+                  <path d="M20 3 L22.3 17.7 L37 20 L22.3 22.3 L20 37 L17.7 22.3 L3 20 L17.7 17.7 Z" />
+                </svg>
+              </motion.span>
+
+              <span
+                aria-hidden
+                className="pointer-events-none absolute bottom-5 left-5 z-10 flex h-3 w-3 sm:h-3.5 sm:w-3.5"
+              >
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-revival-gold/70" />
+                <span className="relative inline-flex h-full w-full rounded-full bg-revival-gold" />
+              </span>
             </>
           ) : (
             <div className={`relative flex h-full w-full items-center justify-center ${innerPadding}`}>

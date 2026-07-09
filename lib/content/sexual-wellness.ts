@@ -148,9 +148,8 @@ export const SW_CONTENT: Record<string, SWPage> = {
     description:
       "At Revival Health and Wellness, we provide sexual wellness solutions for men and women. Discreet, physician-led care in two Las Vegas locations.",
     gallery: [
-      "/images/sexual-wellness/live/hub-parent.png",
-      "/images/sexual-wellness/sw-couple-embrace.jpg",
-      "/images/sexual-wellness/sw-couple-lifestyle.jpg",
+      "/images/page-banners/sexual-wellness-banner-1.webp",
+      "/images/page-banners/sexual-wellness-banner-2.avif",
     ],
     breadcrumbs: [{ label: "Home", href: "/" }, { label: "Sexual Wellness" }],
     sections: [

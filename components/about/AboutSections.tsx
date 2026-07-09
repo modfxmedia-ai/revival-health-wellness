@@ -562,3 +562,111 @@ export function TestimonialsIntroSection() {
     </section>
   );
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Patient testimonial gallery (image cards, ported from live site)
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const TESTIMONIAL_CARDS: { name: string; image: string }[] = [
+  { name: "Paul Rosenthal", image: "/images/about/testimonials/paul-rosenthal.png" },
+  { name: "Deanna Solomon", image: "/images/about/testimonials/deanna-solomon.png" },
+  { name: "Cristina Herschberger", image: "/images/about/testimonials/cristina-herschberger.png" },
+  { name: "Valarie Sahai", image: "/images/about/testimonials/valarie-sahai.png" },
+  { name: "Kim Lefebvre", image: "/images/about/testimonials/kim-lefebvre.png" },
+  { name: "Shabnam Salmani", image: "/images/about/testimonials/shabnam-salmani.png" },
+];
+
+export function TestimonialsGallerySection() {
+  return (
+    <section className="relative bg-revival-warm-white pb-20 lg:pb-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          {TESTIMONIAL_CARDS.map((t, i) => (
+            <motion.figure
+              key={t.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, ease: EASE, delay: (i % 3) * 0.08 }}
+              className="relative overflow-hidden rounded-2xl border border-revival-gold/15 bg-white shadow-[0_20px_60px_-32px_rgba(15,15,15,0.25)]"
+            >
+              <Image
+                src={t.image}
+                alt={`${t.name} — Revival Health & Wellness patient testimonial`}
+                width={1545}
+                height={1994}
+                sizes="(min-width: 1024px) 32vw, (min-width: 640px) 48vw, 100vw"
+                className="h-auto w-full object-cover"
+                quality={92}
+              />
+            </motion.figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Client results (before/after screenshots, ported from live site)
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const CLIENT_RESULTS: string[] = [
+  "/images/about/client-results/result-1.jpg",
+  "/images/about/client-results/result-2.jpg",
+  "/images/about/client-results/result-3.jpg",
+  "/images/about/client-results/result-4.jpg",
+];
+
+export function ClientResultsSection() {
+  return (
+    <section className="relative bg-revival-cream py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: EASE }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <span className="text-tagline text-xs text-revival-gold">
+            Real Transformations
+          </span>
+          <h2
+            className="mt-4 font-heading font-medium leading-[1.1] text-revival-dark"
+            style={{ fontSize: "clamp(2rem, 3.6vw, 3.1rem)" }}
+          >
+            Client Results
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed text-revival-charcoal/85">
+            The results speak for themselves. Real patients, real transformations,
+            real long-term wellness.
+          </p>
+        </motion.div>
+
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
+          {CLIENT_RESULTS.map((src, i) => (
+            <motion.figure
+              key={src}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, ease: EASE, delay: (i % 2) * 0.08 }}
+              className="overflow-hidden rounded-2xl border border-revival-gold/15 bg-white shadow-[0_20px_60px_-32px_rgba(15,15,15,0.25)]"
+            >
+              <Image
+                src={src}
+                alt={`Revival patient before-and-after result ${i + 1}`}
+                width={1172}
+                height={876}
+                sizes="(min-width: 1024px) 48vw, 100vw"
+                className="h-auto w-full object-cover"
+                quality={92}
+              />
+            </motion.figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

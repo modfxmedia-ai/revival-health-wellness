@@ -126,10 +126,8 @@ export default function GLP1Page() {
         description="Manage your weight and improve your health with medically supervised GLP-1 medications, compounded for you and paired with expert guidance."
         secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
-          "/images/weight-loss/glp-1-program.png",
-          "/images/weight-loss/glp-1-before-after.jpg",
-          "/images/services/glp-1-measuring-tape.avif",
-          "/images/services/medical-weight-loss.jpeg",
+          "/images/page-banners/glp-banner-1.webp",
+          "/images/page-banners/glp-banner-2.jpg",
         ]}
       />
 

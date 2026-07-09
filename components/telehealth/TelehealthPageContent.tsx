@@ -174,11 +174,12 @@ function IntroSection() {
             className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_40px_120px_-32px_rgba(15,15,15,0.35)]"
           >
             <Image
-              src="/images/telehealth/telehealth-woman-laptop.jpg"
+              src="/images/page-banners/telehealth-banner-1.jpeg"
               alt="Patient meeting with a Revival provider by secure video from home"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="object-cover"
+              quality={90}
               priority
             />
             {/* subtle warm gradient */}
@@ -437,11 +438,12 @@ function DeviceMockupSection() {
             <div className="relative rounded-[1.5rem] border border-revival-dark/10 bg-gradient-to-b from-white to-revival-cream p-3 shadow-[0_50px_120px_-40px_rgba(15,15,15,0.4)]">
               <div className="relative aspect-video overflow-hidden rounded-2xl bg-revival-dark">
                 <Image
-                  src="/images/telehealth/telehealth-video-call.jpg"
+                  src="/images/page-banners/telehealth-banner-2.jpg"
                   alt="Video visit interface with a Revival provider"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
+                  quality={90}
                 />
                 {/* UI overlay: call controls */}
                 <div className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-3 bg-gradient-to-t from-revival-dark/85 to-transparent p-4">
@@ -466,7 +468,7 @@ function DeviceMockupSection() {
                 {/* Self-view thumbnail */}
                 <div className="absolute right-3 top-3 hidden h-16 w-24 overflow-hidden rounded-lg border-2 border-white/60 shadow-lg sm:block">
                   <Image
-                    src="/images/telehealth/telehealth-app-phone.jpg"
+                    src="/images/page-banners/telehealth-banner-3.jpg"
                     alt=""
                     fill
                     sizes="96px"
@@ -479,13 +481,13 @@ function DeviceMockupSection() {
             <div className="mx-auto mt-1 h-2.5 w-[92%] rounded-b-[1.5rem] bg-gradient-to-b from-revival-charcoal/20 to-transparent" />
           </motion.div>
 
-          {/* Floating side card */}
+          {/* Floating review card — sits below the laptop, not on top of it */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.3 }}
-            className="absolute -right-4 bottom-10 hidden max-w-[220px] rounded-2xl border border-revival-gold/25 bg-white/95 p-4 shadow-xl backdrop-blur sm:block"
+            className="mx-auto mt-6 hidden max-w-[280px] rounded-2xl border border-revival-gold/25 bg-white/95 p-4 shadow-xl backdrop-blur sm:block lg:absolute lg:mx-0 lg:mt-0 lg:right-[-72px] lg:bottom-[-56px] lg:max-w-[240px]"
           >
             <div className="flex items-center gap-2 text-revival-gold">
               <Star className="h-4 w-4 fill-revival-gold" />
@@ -615,6 +617,94 @@ function TreatableGridSection() {
 }
 
 // ─── 5) Trust bar — HIPAA / licensed / secure ──────────────────────────────
+
+// ─── Feature callout — Revival branded telehealth image ────────────────────
+
+function FeatureSection() {
+  return (
+    <section className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-28">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-8">
+        <motion.div
+          variants={fadeContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+        >
+          <motion.div variants={fadeUp}>
+            <Eyebrow>Telehealth Care</Eyebrow>
+          </motion.div>
+          <motion.div variants={fadeUp}>
+            <Heading>
+              Concierge-level care,{" "}
+              <span className="italic text-revival-gold">delivered virtually</span>
+            </Heading>
+          </motion.div>
+          <motion.p
+            variants={fadeUp}
+            className="mt-6 max-w-xl text-lg leading-relaxed text-revival-charcoal/75"
+          >
+            Meet your Revival provider from home, work, or wherever life takes
+            you. Same physician-led plans for weight loss, hormone therapy, and
+            sexual wellness — with labs, prescriptions, and follow-ups handled
+            without a single trip to the clinic.
+          </motion.p>
+          <motion.ul
+            variants={fadeUp}
+            className="mt-8 grid grid-cols-1 gap-3 text-sm text-revival-charcoal/80 sm:grid-cols-2"
+          >
+            {[
+              { Icon: Video, label: "Secure HD video visits" },
+              { Icon: ClipboardList, label: "Personalized care plans" },
+              { Icon: Pill, label: "Prescriptions shipped to you" },
+              { Icon: HeartPulse, label: "Ongoing progress tracking" },
+            ].map(({ Icon, label }) => (
+              <li key={label} className="inline-flex items-center gap-2.5">
+                <Icon className="h-4 w-4 text-revival-gold" />
+                {label}
+              </li>
+            ))}
+          </motion.ul>
+          <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
+            <Link
+              href={ZENOTI}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-revival-dark px-6 py-3 text-sm font-semibold text-white transition hover:bg-revival-charcoal"
+            >
+              Book a virtual visit
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/quiz/"
+              className="inline-flex items-center gap-2 rounded-full border border-revival-dark/15 bg-white px-6 py-3 text-sm font-semibold text-revival-dark transition hover:border-revival-gold hover:text-revival-gold"
+            >
+              Take the Quiz
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.9, ease: EASE }}
+          className="relative overflow-hidden rounded-[2rem] shadow-[0_50px_120px_-32px_rgba(201,169,110,0.35)]"
+        >
+          <Image
+            src="/images/telehealth/telehealth-feature.png"
+            alt="Revival Health & Wellness telehealth care"
+            width={1402}
+            height={1122}
+            sizes="(min-width: 1024px) 55vw, 100vw"
+            className="h-auto w-full object-cover"
+            quality={95}
+          />
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 function TrustBar() {
   const items = [
@@ -897,11 +987,12 @@ function FinalCta() {
           className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_50px_120px_-32px_rgba(201,169,110,0.35)]"
         >
           <Image
-            src="/images/telehealth/telehealth-doctor-tablet.jpg"
+            src="/images/page-banners/telehealth-banner-4.jpg"
             alt="A Revival provider connecting with a patient by secure video"
             fill
             sizes="(min-width: 1024px) 40vw, 100vw"
             className="object-cover"
+            quality={90}
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-revival-dark/70 via-transparent to-transparent" />
         </motion.div>
@@ -933,15 +1024,16 @@ export default function TelehealthPageContent() {
         description="Meet a Revival provider by secure video. Same personalized care—weight loss, hormone therapy, sexual wellness—minus the drive."
         secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
-          "/images/telehealth/telehealth-hero.jpg",
-          "/images/telehealth/telehealth-doctor-tablet.jpg",
-          "/images/telehealth/telehealth-woman-laptop.jpg",
-          "/images/telehealth/telehealth-consult.jpg",
+          "/images/page-banners/telehealth-banner-1.jpeg",
+          "/images/page-banners/telehealth-banner-2.jpg",
+          "/images/page-banners/telehealth-banner-3.jpg",
+          "/images/page-banners/telehealth-banner-4.jpg",
         ]}
       />
 
       <IntroSection />
       <TrustBar />
+      <FeatureSection />
       <HowItWorksSection />
       <DeviceMockupSection />
       <TreatableGridSection />

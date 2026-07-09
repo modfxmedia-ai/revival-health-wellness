@@ -57,7 +57,7 @@ const FAQS = [
   {
     question: "When will I feel the difference?",
     answer:
-      "Most men notice improved energy, focus, and drive within a few weeks. Muscle tone, recovery, and cardiovascular markers usually take 2\u20134 months to fully improve as your body stabilizes.",
+      "Most men notice improved energy, focus, and drive within a few weeks. Muscle tone, recovery, and cardiovascular markers usually take 2–4 months to fully improve as your body stabilizes.",
   },
 ];
 
@@ -95,9 +95,9 @@ export default function MensHormoneTherapyPage() {
         description="With age, men often experience a decline in strength, energy, and libido. Advanced bio-identical testosterone therapy helps you rebalance and live at full capacity again."
         secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
-          "/images/hormone/testosterone-therapy.jpeg",
-          "/images/hormone/hormone-couple-cuddle.jpg",
-          "/images/hormone/hormone-couple-fit.jpg",
+          "/images/page-banners/mens-hormone-therapy-banner-1.webp",
+          "/images/page-banners/mens-hormone-therapy-banner-2.jpeg",
+          "/images/page-banners/mens-hormone-therapy-banner-3.jpeg",
         ]}
         compact
       />
@@ -107,7 +107,7 @@ export default function MensHormoneTherapyPage() {
           eyebrow: "Testosterone Therapy for Men",
           heading: "What is testosterone therapy?",
           paragraphs: [
-            "Weight gain, loss of muscle mass, trouble sleeping, erectile dysfunction, and persistent fatigue are commonly linked to age-related hormonal shifts. By restoring testosterone to a healthy range with targeted therapy, many of these symptoms can be significantly reduced\u2014or eliminated.",
+            "Weight gain, loss of muscle mass, trouble sleeping, erectile dysfunction, and persistent fatigue are commonly linked to age-related hormonal shifts. By restoring testosterone to a healthy range with targeted therapy, many of these symptoms can be significantly reduced—or eliminated.",
             "Our advanced bio-identical testosterone therapy gives your body the tools it needs to combat aging and feel your best, without the guesswork of over-the-counter fixes.",
           ],
           image: "/images/hormone/testosterone-therapy.jpeg",
@@ -121,7 +121,7 @@ export default function MensHormoneTherapyPage() {
           heading: "How do bio-identical hormones work?",
           paragraphs: [
             "Bio-identical hormones are crafted to be exact replicas of the hormones your body already produces. That means treatment is natural, tailored, and highly effective.",
-            "Our specialists go beyond just prescribing a plan\u2014we conduct thorough baseline testing, review your labs, and continuously monitor your response so we can adjust and keep you on track.",
+            "Our specialists go beyond just prescribing a plan—we conduct thorough baseline testing, review your labs, and continuously monitor your response so we can adjust and keep you on track.",
           ],
         }}
       />
