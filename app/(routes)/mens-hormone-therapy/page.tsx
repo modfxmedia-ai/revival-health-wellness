@@ -93,7 +93,6 @@ export default function MensHormoneTherapyPage() {
           </>
         }
         description="With age, men often experience a decline in strength, energy, and libido. Advanced bio-identical testosterone therapy helps you rebalance and live at full capacity again."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/page-banners/mens-hormone-therapy-banner-1.webp",
           "/images/page-banners/mens-hormone-therapy-banner-2.jpeg",
@@ -107,7 +106,7 @@ export default function MensHormoneTherapyPage() {
           eyebrow: "Testosterone Therapy for Men",
           heading: "What is testosterone therapy?",
           paragraphs: [
-            "Weight gain, loss of muscle mass, trouble sleeping, erectile dysfunction, and persistent fatigue are commonly linked to age-related hormonal shifts. By restoring testosterone to a healthy range with targeted therapy, many of these symptoms can be significantly reduced—or eliminated.",
+            "Weight gain, loss of muscle mass, trouble sleeping, erectile dysfunction, and persistent fatigue are commonly linked to age-related hormonal shifts. By restoring testosterone to a healthy range with targeted therapy, many of these symptoms can be significantly reduced-or eliminated.",
             "Our advanced bio-identical testosterone therapy gives your body the tools it needs to combat aging and feel your best, without the guesswork of over-the-counter fixes.",
           ],
           image: "/images/hormone/testosterone-therapy.jpeg",
@@ -121,7 +120,7 @@ export default function MensHormoneTherapyPage() {
           heading: "How do bio-identical hormones work?",
           paragraphs: [
             "Bio-identical hormones are crafted to be exact replicas of the hormones your body already produces. That means treatment is natural, tailored, and highly effective.",
-            "Our specialists go beyond just prescribing a plan—we conduct thorough baseline testing, review your labs, and continuously monitor your response so we can adjust and keep you on track.",
+            "Our specialists go beyond just prescribing a plan-we conduct thorough baseline testing, review your labs, and continuously monitor your response so we can adjust and keep you on track.",
           ],
         }}
       />
@@ -158,7 +157,7 @@ export default function MensHormoneTherapyPage() {
         eyebrow="What you can expect"
         heading="Real, measurable results"
         items={BENEFITS}
-        image="/images/hormone/hormone-couple-cuddle.jpg"
+        image="/images/hormone/mens-real-results.webp"
       />
 
       <OverviewBlock

@@ -44,7 +44,7 @@ const FAQS = [
   {
     question: "How is Sculptra different from traditional dermal fillers?",
     answer:
-      "Unlike traditional dermal fillers that provide immediate volume, Sculptra works gradually by stimulating your body’s own collagen production. The results build over time and look natural — lasting up to two years or more.",
+      "Unlike traditional dermal fillers that provide immediate volume, Sculptra works gradually by stimulating your body’s own collagen production. The results build over time and look natural - lasting up to two years or more.",
   },
   {
     question: "Who is Sculptra for?",
@@ -59,7 +59,7 @@ const FAQS = [
   {
     question: "Will I look “done”?",
     answer:
-      "No. Sculptra isn’t about changing how you look — it’s about restoring what time has taken and enhancing your natural features with grace and longevity. Your provider will personalize your treatment plan to ensure results unfold gradually, keeping you looking refreshed — not “done.”",
+      "No. Sculptra isn’t about changing how you look - it’s about restoring what time has taken and enhancing your natural features with grace and longevity. Your provider will personalize your treatment plan to ensure results unfold gradually, keeping you looking refreshed - not “done.”",
   },
 ];
 
@@ -99,8 +99,7 @@ export default function SculptraPage() {
             </span>
           </>
         }
-        description={"Stimulate your skin’s natural collagen and restore youthful volume — gradually and beautifully. Results that look natural and last up to two years or more."}
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description={"Stimulate your skin’s natural collagen and restore youthful volume - gradually and beautifully. Results that look natural and last up to two years or more."}
         gallery={[
           "/images/sculptra/sculptra-before-after-2.png",
           "/images/sculptra/before-after-sculptra-treatment-1-1024x1024-1.webp",
@@ -115,9 +114,10 @@ export default function SculptraPage() {
             "Stimulate your skin’s natural collagen and restore youthful volume",
           paragraphs: [
             "At Revival Health and Wellness, we’re proud to offer Sculptra® Aesthetic, an advanced biostimulatory injectable designed to restore facial volume, enhance skin structure, and rejuvenate your appearance from the inside out.",
-            "Unlike traditional dermal fillers that provide immediate volume, Sculptra works gradually by stimulating your body’s own collagen production — helping you achieve results that look natural and last up to two years or more.",
+            "Unlike traditional dermal fillers that provide immediate volume, Sculptra works gradually by stimulating your body’s own collagen production - helping you achieve results that look natural and last up to two years or more.",
           ],
-          image: "/images/sculptra/before-after-sculptra-treatment-1-1024x1024-1.webp",
+          image: "/images/sculptra/sculptra-hero.png",
+          imageContain: true,
         }}
       />
 
@@ -126,7 +126,7 @@ export default function SculptraPage() {
         reverse
         section={{
           eyebrow: "What is Sculptra®?",
-          heading: "Poly-L-lactic acid — the collagen catalyst",
+          heading: "Poly-L-lactic acid - the collagen catalyst",
           paragraphs: [
             "Sculptra® is made from poly-L-lactic acid (PLLA), a biocompatible compound that triggers collagen regeneration in the skin. It’s ideal for patients looking for subtle, long-lasting results without appearing overfilled or overdone.",
           ],
@@ -139,7 +139,8 @@ export default function SculptraPage() {
         eyebrow={"Benefits of Sculptra®"}
         heading="A subtle transformation that builds over time"
         items={BENEFITS}
-        image="/images/sculptra/seoraksan-mountains-morning-fog.jpg"
+        image="/images/sculptra/sculptra-ae-3.png"
+        imageContain
       />
 
       <OverviewBlock
@@ -148,7 +149,7 @@ export default function SculptraPage() {
           heading: "For volume loss, facial hollowness, and preventative anti-aging",
           paragraphs: [
             "Sculptra is perfect for individuals experiencing age-related volume loss, facial hollowness, or those who want a more youthful contour without the immediacy or plumpness of HA fillers. It’s also great as part of a preventative anti-aging regimen.",
-            "Sculptra isn’t about changing how you look — it’s about restoring what time has taken and enhancing your natural features with grace and longevity. At Revival, your provider will personalize your treatment plan to ensure your results unfold gradually, keeping you looking refreshed — not “done.”",
+            "Sculptra isn’t about changing how you look - it’s about restoring what time has taken and enhancing your natural features with grace and longevity. At Revival, your provider will personalize your treatment plan to ensure your results unfold gradually, keeping you looking refreshed - not “done.”",
           ],
         }}
       />
@@ -161,13 +162,13 @@ export default function SculptraPage() {
             label: "Derma Filler",
             href: "/derma-filler/",
             blurb:
-              "Hyaluronic-acid fillers for immediate volume and contour — a complement to Sculptra’s gradual approach.",
+              "Hyaluronic-acid fillers for immediate volume and contour - a complement to Sculptra’s gradual approach.",
           },
           {
             label: "Botox",
             href: "/botox/",
             blurb:
-              "Smooth dynamic wrinkles while Sculptra rebuilds volume from within — a powerful duo.",
+              "Smooth dynamic wrinkles while Sculptra rebuilds volume from within - a powerful duo.",
           },
           {
             label: "PDO Thread lifts",

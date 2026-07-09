@@ -15,7 +15,7 @@ export type PortraitFrameProps = {
    */
   cover?: boolean;
   /**
-   * Optional right offset to shift the image inside the frame — matches the
+   * Optional right offset to shift the image inside the frame - matches the
    * provider portrait treatment (subject weighted to the left).
    */
   objectPosition?: string;
@@ -42,7 +42,7 @@ export type PortraitFrameProps = {
 };
 
 /**
- * Shared "provider portrait" style frame — dark card with a gold gradient
+ * Shared "provider portrait" style frame - dark card with a gold gradient
  * border wrapper, optional rotating dashed ring, subtle top-fade overlay,
  * and optional two-badge row along the bottom. Used for both photography and
  * motion graphics so the visual treatment stays consistent across the site.

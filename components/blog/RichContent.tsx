@@ -87,7 +87,7 @@ export function parseRichContent(raw: string): Block[] {
       continue;
     }
 
-    // Regular paragraph text — merge with any preceding lines that don't have
+    // Regular paragraph text - merge with any preceding lines that don't have
     // a blank line separator.
     flushList();
     paragraph.push(line);
@@ -97,7 +97,7 @@ export function parseRichContent(raw: string): Block[] {
   return blocks;
 }
 
-/** Extract H2/H3 headings from raw article text — used to power the TOC. */
+/** Extract H2/H3 headings from raw article text - used to power the TOC. */
 export function extractHeadings(
   raw: string,
 ): { level: "h2" | "h3"; text: string; id: string }[] {

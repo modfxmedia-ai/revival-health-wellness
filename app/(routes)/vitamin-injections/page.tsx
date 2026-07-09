@@ -36,7 +36,7 @@ const BOOSTER_OPTIONS = [
   },
   {
     title: "Vitamin D",
-    text: "Supports immune function, bone health, and mood regulation—especially useful indoors.",
+    text: "Supports immune function, bone health, and mood regulation-especially useful indoors.",
     icon: "shieldCheck" as const,
   },
   {
@@ -86,7 +86,7 @@ const FAQS = [
   {
     question: "Which injection is right for me?",
     answer:
-      "It depends on what you're solving for—energy, immunity, weight-loss support, recovery, or skin brightness. We recommend a specific booster (or combination) based on your labs and goals.",
+      "It depends on what you're solving for-energy, immunity, weight-loss support, recovery, or skin brightness. We recommend a specific booster (or combination) based on your labs and goals.",
   },
   {
     question: "Do they hurt?",
@@ -137,7 +137,6 @@ export default function VitaminInjectionsPage() {
           </>
         }
         description="Increase your energy and wellness with concentrated vitamin, mineral, and antioxidant injections delivered by our medical team in Las Vegas."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/weight-loss/vitamin-injections-hero.jpg",
           "/images/weight-loss/vitamin-injections-secondary.jpg",
@@ -149,7 +148,7 @@ export default function VitaminInjectionsPage() {
           eyebrow: "Vitamin Booster Injection",
           heading: "Vital nutrients, delivered where your body can use them",
           paragraphs: [
-            "Oral supplements have to survive digestion before your body can use them. Vitamin injections skip that step entirely—delivering concentrated nutrients directly into your muscle for near-complete absorption.",
+            "Oral supplements have to survive digestion before your body can use them. Vitamin injections skip that step entirely-delivering concentrated nutrients directly into your muscle for near-complete absorption.",
             "The result: faster energy, better immune support, and a more efficient way to correct real deficiencies alongside the rest of your health plan.",
           ],
           image: "/images/weight-loss/vitamin-injections-hero.jpg",
@@ -166,7 +165,7 @@ export default function VitaminInjectionsPage() {
       <MotionShowcase
         eyebrow="Micronutrient Boost"
         heading="One quick injection. Broad-spectrum benefit."
-        body="Concentrated vitamins, minerals, and antioxidants absorbed directly into your bloodstream—energy, immunity, recovery, and glow at once."
+        body="Concentrated vitamins, minerals, and antioxidants absorbed directly into your bloodstream-energy, immunity, recovery, and glow at once."
         centerIcon="syringe"
         centerLabel="Micronutrient Boost"
         orbitLabels={["B12", "Vitamin D", "Glutathione", "Biotin"]}
@@ -182,7 +181,7 @@ export default function VitaminInjectionsPage() {
         tone="cream"
         eyebrow="Menu"
         heading="Vitamin booster options"
-        intro="Choose the injection that fits your goal—or ask our team to recommend a combination based on your labs."
+        intro="Choose the injection that fits your goal-or ask our team to recommend a combination based on your labs."
         pillars={BOOSTER_OPTIONS}
       />
 

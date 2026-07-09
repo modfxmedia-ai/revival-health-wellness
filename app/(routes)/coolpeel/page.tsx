@@ -20,7 +20,7 @@ const PATH = "/coolpeel/";
 // wellness (a leftover template error on the live site). Replaced with an accurate,
 // CoolPeel-specific description here.
 const DESCRIPTION =
-  "Reveal smoother, healthier, younger-looking skin with CoolPeel® CO₂ laser in Las Vegas. Next-generation resurfacing on the Cartessa Tetra Pro platform — dramatic results, minimal downtime.";
+  "Reveal smoother, healthier, younger-looking skin with CoolPeel® CO₂ laser in Las Vegas. Next-generation resurfacing on the Cartessa Tetra Pro platform - dramatic results, minimal downtime.";
 
 export const metadata = buildMetadata({
   title: "CoolPeel",
@@ -39,7 +39,7 @@ const KEY_BENEFITS = [
 ];
 
 const RIGHT_AFTER = [
-  "Skin may feel warm and appear slightly red — like a mild sunburn",
+  "Skin may feel warm and appear slightly red - like a mild sunburn",
   "No significant pain or peeling expected",
   "You’ll be able to return to most daily activities immediately",
 ];
@@ -54,22 +54,22 @@ const FAQS = [
   {
     question: "What is CoolPeel®?",
     answer:
-      "CoolPeel® is the next-generation CO₂ laser resurfacing that delivers powerful skin rejuvenation without the intensity or downtime of traditional lasers. Performed using the advanced Cartessa Tetra Pro platform, CoolPeel is perfect for patients who want dramatic results — smoother texture, smaller pores, fewer wrinkles, and renewed radiance — with less redness and recovery time.",
+      "CoolPeel® is the next-generation CO₂ laser resurfacing that delivers powerful skin rejuvenation without the intensity or downtime of traditional lasers. Performed using the advanced Cartessa Tetra Pro platform, CoolPeel is perfect for patients who want dramatic results - smoother texture, smaller pores, fewer wrinkles, and renewed radiance - with less redness and recovery time.",
   },
   {
     question: "Why choose CoolPeel?",
     answer:
-      "Unlike traditional CO₂ lasers that often require a week or more of recovery, CoolPeel offers controlled precision and powerful results — without the heat damage that causes extended downtime.",
+      "Unlike traditional CO₂ lasers that often require a week or more of recovery, CoolPeel offers controlled precision and powerful results - without the heat damage that causes extended downtime.",
   },
   {
     question: "Can CoolPeel be customized?",
     answer:
-      "Yes — with the DEKA pulse technology, our providers can fully customize your CO₂ treatment from a gentle refresh to a deeper resurfacing for stubborn lines, acne scars, and aging skin. Whether you need a light touch or dramatic renewal, Revival Health and Wellness has the right setting for you.",
+      "Yes - with the DEKA pulse technology, our providers can fully customize your CO₂ treatment from a gentle refresh to a deeper resurfacing for stubborn lines, acne scars, and aging skin. Whether you need a light touch or dramatic renewal, Revival Health and Wellness has the right setting for you.",
   },
   {
     question: "How many sessions will I need?",
     answer:
-      "For optimal results, we recommend a series of 3 CoolPeel sessions, spaced 4–6 weeks apart. This protocol delivers cumulative collagen remodeling, skin tightening, and long-term skin health benefits — with results that keep getting better over time.",
+      "For optimal results, we recommend a series of 3 CoolPeel sessions, spaced 4–6 weeks apart. This protocol delivers cumulative collagen remodeling, skin tightening, and long-term skin health benefits - with results that keep getting better over time.",
   },
 ];
 
@@ -109,8 +109,7 @@ export default function CoolPeelPage() {
             </span>
           </>
         }
-        description="Reveal smoother, healthier, younger-looking skin — with little to no downtime. Powered by the advanced Cartessa Tetra Pro platform."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description="Reveal smoother, healthier, younger-looking skin - with little to no downtime. Powered by the advanced Cartessa Tetra Pro platform."
         gallery={[
           "/images/coolpeel/1R1A7618-1024x683-1.jpg",
           "/images/coolpeel/Uptown-Medical-Aesthetics-Coolpeel.webp",
@@ -122,10 +121,10 @@ export default function CoolPeelPage() {
         section={{
           eyebrow: "CoolPeel® CO₂ Laser at Revival Health and Wellness",
           heading:
-            "Reveal smoother, younger-looking skin — without the downtime",
+            "Reveal smoother, younger-looking skin - without the downtime",
           paragraphs: [
             "The CoolPeel® treatment is the next-generation CO₂ laser resurfacing that delivers powerful skin rejuvenation without the intensity or downtime of traditional lasers.",
-            "Performed using the advanced Cartessa Tetra Pro platform, CoolPeel is perfect for patients who want dramatic results — smoother texture, smaller pores, fewer wrinkles, and renewed radiance — with less redness and recovery time.",
+            "Performed using the advanced Cartessa Tetra Pro platform, CoolPeel is perfect for patients who want dramatic results - smoother texture, smaller pores, fewer wrinkles, and renewed radiance - with less redness and recovery time.",
           ],
           image: "/images/coolpeel/Uptown-Medical-Aesthetics-Coolpeel.webp",
           imageAspect: "portrait",
@@ -139,7 +138,7 @@ export default function CoolPeelPage() {
           eyebrow: "Why Choose CoolPeel?",
           heading: "Controlled precision. Powerful results. No downtime.",
           paragraphs: [
-            "Unlike traditional CO₂ lasers that often require a week or more of recovery, CoolPeel offers controlled precision and powerful results — without the heat damage that causes extended downtime.",
+            "Unlike traditional CO₂ lasers that often require a week or more of recovery, CoolPeel offers controlled precision and powerful results - without the heat damage that causes extended downtime.",
           ],
           image: "/images/coolpeel/1R1A7618-1024x683-1.jpg",
           imageAspect: "landscape",
@@ -168,7 +167,7 @@ export default function CoolPeelPage() {
         section={{
           eyebrow: "DEKA Pulse Technology",
           heading:
-            "Mild, moderate, or aggressive CO₂ — tailored to you",
+            "Mild, moderate, or aggressive CO₂ - tailored to you",
           paragraphs: [
             "With the DEKA pulse technology, our providers can fully customize your CO₂ treatment from a gentle refresh to a deeper resurfacing for stubborn lines, acne scars, and aging skin. Whether you need a light touch or dramatic renewal, Revival Health and Wellness has the right setting for you.",
           ],
@@ -181,7 +180,7 @@ export default function CoolPeelPage() {
           eyebrow: "The Power of a CoolPeel Series",
           heading: "3 sessions, 4–6 weeks apart",
           paragraphs: [
-            "For optimal results, we recommend a series of 3 CoolPeel sessions, spaced 4–6 weeks apart. This protocol delivers cumulative collagen remodeling, skin tightening, and long-term skin health benefits — with results that keep getting better over time.",
+            "For optimal results, we recommend a series of 3 CoolPeel sessions, spaced 4–6 weeks apart. This protocol delivers cumulative collagen remodeling, skin tightening, and long-term skin health benefits - with results that keep getting better over time.",
           ],
         }}
       />
@@ -194,19 +193,19 @@ export default function CoolPeelPage() {
             label: "CoolPeel® Laser (details)",
             href: "/coolpeel-laser/",
             blurb:
-              "Deep-dive on CoolPeel® — benefits, timing, and before/after gallery.",
+              "Deep-dive on CoolPeel® - benefits, timing, and before/after gallery.",
           },
           {
             label: "Tetra Pro CO2 Laser",
             href: "/tetra-pro-co2-laser/",
             blurb:
-              "The powerhouse sibling — deeper resurfacing on the same Cartessa platform for dramatic transformation.",
+              "The powerhouse sibling - deeper resurfacing on the same Cartessa platform for dramatic transformation.",
           },
           {
             label: "CO2 Laser Treatments",
             href: "/co2-laser-treatments/",
             blurb:
-              "The complete overview — CoolPeel vs. Tetra Pro side-by-side comparison.",
+              "The complete overview - CoolPeel vs. Tetra Pro side-by-side comparison.",
           },
         ]}
       />
@@ -214,7 +213,7 @@ export default function CoolPeelPage() {
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14 lg:px-8">
         <CTABanner
           title="Let’s get you glowing"
-          subtitle="Ready to experience one of the most effective skin resurfacing treatments — with minimal downtime? Book your personalized CoolPeel consultation today and discover what true skin renewal feels like."
+          subtitle="Ready to experience one of the most effective skin resurfacing treatments - with minimal downtime? Book your personalized CoolPeel consultation today and discover what true skin renewal feels like."
         />
       </div>
     </>

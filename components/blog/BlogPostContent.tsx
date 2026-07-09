@@ -229,7 +229,7 @@ export default function BlogPostContent({ post }: { post: BlogPost }) {
             {/* Mobile TOC accordion (desktop uses the sticky sidebar). */}
             {toc.length > 0 && <MobileToc toc={toc} activeId={activeId} />}
 
-            {/* Intro — falls back to the excerpt so every post shows real copy. */}
+            {/* Intro - falls back to the excerpt so every post shows real copy. */}
             <motion.p
               variants={fadeUp}
               initial="hidden"

@@ -44,7 +44,7 @@ import {
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Icon registry — pages send a string key; the map resolves it on the client.
+// Icon registry - pages send a string key; the map resolves it on the client.
 // ─────────────────────────────────────────────────────────────────────────────
 
 const ICONS = {
@@ -78,7 +78,7 @@ const ICONS = {
 export type IconKey = keyof typeof ICONS;
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Public API types (shape unchanged — dozens of pages consume these)
+// Public API types (shape unchanged - dozens of pages consume these)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type OverviewSection = {
@@ -86,8 +86,10 @@ export type OverviewSection = {
   heading: string;
   paragraphs: string[];
   image?: string;
-  /** Frame aspect for the image — default portrait 4:5. Use "landscape" for wide banner images (2:1 or wider) and "square" for 1:1 sources. */
+  /** Frame aspect for the image - default portrait 4:5. Use "landscape" for wide banner images (2:1 or wider) and "square" for 1:1 sources. */
   imageAspect?: "portrait" | "landscape" | "square";
+  /** When true, renders the image with object-contain so the full source is visible (no cropping). Defaults to cover. */
+  imageContain?: boolean;
   bullets?: string[];
 };
 
@@ -232,7 +234,7 @@ function ParallaxFrame({
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// OverviewBlock — editorial 2-col with lead-paragraph rule, parallax image.
+// OverviewBlock - editorial 2-col with lead-paragraph rule, parallax image.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function OverviewBlock({
@@ -285,7 +287,7 @@ export function OverviewBlock({
               <AnimatedPortraitFrame
                 src={section.image}
                 aspect={aspectClass(section.imageAspect)}
-                cover
+                cover={!section.imageContain}
               />
             </div>
           ) : (
@@ -293,7 +295,7 @@ export function OverviewBlock({
               <AnimatedPortraitFrame
                 src={section.image}
                 aspect={aspectClass(section.imageAspect)}
-                cover
+                cover={!section.imageContain}
               />
             </ParallaxFrame>
           ))}
@@ -361,7 +363,7 @@ export function OverviewBlock({
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// PillarsGrid — magazine cards with serif numerals & gold-hairline hover.
+// PillarsGrid - magazine cards with serif numerals & gold-hairline hover.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function PillarsGrid({
@@ -480,7 +482,7 @@ export function PillarsGrid({
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// BenefitsList — editorial two-column list with parallax image / motion graphic.
+// BenefitsList - editorial two-column list with parallax image / motion graphic.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function BenefitsList({
@@ -489,6 +491,7 @@ export function BenefitsList({
   items,
   image,
   imageAspect,
+  imageContain = false,
   motionGraphic = false,
   stickyImage = false,
 }: {
@@ -497,6 +500,8 @@ export function BenefitsList({
   items: string[];
   image?: string;
   imageAspect?: "portrait" | "landscape" | "square";
+  /** When true, renders the image with object-contain so the full source is visible (no cropping). */
+  imageContain?: boolean;
   motionGraphic?: boolean;
   /** Sticks the image column while the benefit chips column scrolls past. */
   stickyImage?: boolean;
@@ -529,7 +534,7 @@ export function BenefitsList({
               <AnimatedPortraitFrame
                 src={image}
                 aspect={aspectClass(imageAspect)}
-                cover
+                cover={!imageContain}
               />
             </div>
           ) : (
@@ -537,7 +542,7 @@ export function BenefitsList({
               <AnimatedPortraitFrame
                 src={image}
                 aspect={aspectClass(imageAspect)}
-                cover
+                cover={!imageContain}
               />
             </ParallaxFrame>
           )
@@ -594,7 +599,7 @@ export function BenefitsList({
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// FAQSection — editorial accordion with serif numerals & hairline dividers.
+// FAQSection - editorial accordion with serif numerals & hairline dividers.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function FAQSection({ faqs }: { faqs: FAQ[] }) {
@@ -659,7 +664,7 @@ export function FAQSection({ faqs }: { faqs: FAQ[] }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// RelatedServices — magazine cards with numeral index & gold-hairline hover.
+// RelatedServices - magazine cards with numeral index & gold-hairline hover.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function RelatedServices({

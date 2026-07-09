@@ -128,7 +128,7 @@ export default function ProviderSnippetSection() {
             <p className="text-base font-light italic leading-relaxed text-revival-charcoal/85">
               &ldquo;Every patient here is treated like family. My job is to
               make sure you feel supported, seen, and set up to actually reach
-              your goals—not just start.&rdquo;
+              your goals-not just start.&rdquo;
             </p>
           </div>
 

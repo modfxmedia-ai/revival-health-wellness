@@ -131,8 +131,7 @@ export default function Co2LaserTreatmentsPage() {
             Treatments
           </>
         }
-        description={"CoolPeel® & Tetra Pro — the future of skin rejuvenation. The latest technology in skin resurfacing with the Cartessa SmartXide Tetra CO2 laser."}
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description={"CoolPeel® & Tetra Pro - the future of skin rejuvenation. The latest technology in skin resurfacing with the Cartessa SmartXide Tetra CO2 laser."}
         gallery={[
           "/images/co2-laser-treatments/beauty-woman-clean-skin.webp",
           "/images/co2-laser-treatments/Touch-MedSpa-CoolPeel-7727.jpg",
@@ -155,7 +154,7 @@ export default function Co2LaserTreatmentsPage() {
 
       <BenefitsList
         eyebrow={"What is CoolPeel®?"}
-        heading={"Fractional CO2 resurfacing — without the downtime"}
+        heading={"Fractional CO2 resurfacing - without the downtime"}
         items={COOLPEEL_BENEFITS}
         image="/images/co2-laser-treatments/coolpeel-treatment-in-progress.jpg"
       />
@@ -263,13 +262,13 @@ export default function Co2LaserTreatmentsPage() {
             label: "Everesse RF Skin Tightening",
             href: "/everesse-rf-skin-tightening-and-rejuvenation/",
             blurb:
-              "Radiofrequency skin tightening — pairs beautifully with CoolPeel® in our exclusive Radiant Lift protocol.",
+              "Radiofrequency skin tightening - pairs beautifully with CoolPeel® in our exclusive Radiant Lift protocol.",
           },
           {
             label: "Microneedling",
             href: "/microneedling/",
             blurb:
-              "Boost collagen and refine skin texture — a natural complement to CO2 laser resurfacing.",
+              "Boost collagen and refine skin texture - a natural complement to CO2 laser resurfacing.",
           },
           {
             label: "Sculptra®",

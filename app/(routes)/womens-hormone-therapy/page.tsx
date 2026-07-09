@@ -43,7 +43,7 @@ const FAQS = [
   {
     question: "What is women's hormone therapy?",
     answer:
-      "It's a personalized plan that replaces the hormones—primarily estrogen, progesterone, and testosterone—your body no longer produces in adequate amounts. The goal is to restore your natural balance and relieve menopause and perimenopause symptoms.",
+      "It's a personalized plan that replaces the hormones-primarily estrogen, progesterone, and testosterone-your body no longer produces in adequate amounts. The goal is to restore your natural balance and relieve menopause and perimenopause symptoms.",
   },
   {
     question: "How is women's hormone therapy administered?",
@@ -95,7 +95,6 @@ export default function WomensHormoneTherapyPage() {
           </>
         }
         description="Aging doesn't have to mean losing your glow. Our women's hormone therapy gently restores your body's natural balance so you feel like yourself again."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/hormone/hormone-couple-sunset.jpg",
           "/images/hormone/hormone-couple-bedroom.webp",
@@ -110,7 +109,7 @@ export default function WomensHormoneTherapyPage() {
           heading: "What is hormone therapy?",
           paragraphs: [
             "Hormone therapy safely replaces the hormones your body can no longer produce on its own during perimenopause, menopause, and beyond. Every treatment is personalized to your labs, symptoms, and goals.",
-            "By restoring hormones to a more youthful range, HRT eases the physical and emotional shifts that make daily life feel harder than it should—without the guesswork of trying to power through them.",
+            "By restoring hormones to a more youthful range, HRT eases the physical and emotional shifts that make daily life feel harder than it should-without the guesswork of trying to power through them.",
           ],
           image: "/images/hormone/hormone-couple-sunset.jpg",
         }}
@@ -122,7 +121,7 @@ export default function WomensHormoneTherapyPage() {
           eyebrow: "Delivery Method",
           heading: "How bio-identical hormone pellets work",
           paragraphs: [
-            "Our preferred method for many patients is bio-identical hormone pellets, placed just under the skin in the hip or buttock area. Once implanted, the pellets release small, steady amounts of hormone directly into your bloodstream—mimicking the natural rhythm your ovaries once provided.",
+            "Our preferred method for many patients is bio-identical hormone pellets, placed just under the skin in the hip or buttock area. Once implanted, the pellets release small, steady amounts of hormone directly into your bloodstream-mimicking the natural rhythm your ovaries once provided.",
             "Because bio-identical pellets contain only the hormone itself, there's no synthetic filler; they fully dissolve and are absorbed by your body over three to four months.",
           ],
         }}
@@ -206,7 +205,7 @@ export default function WomensHormoneTherapyPage() {
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <CTABanner
           title="Ready to feel like you again?"
-          subtitle="Book a free consultation—our team will review your labs and design a plan around your body."
+          subtitle="Book a free consultation-our team will review your labs and design a plan around your body."
         />
       </div>
     </>

@@ -77,7 +77,6 @@ export default function HormoneTherapyPage() {
           </>
         }
         description="Hormones fluctuate as we age, and even small shifts can leave you feeling off. Our personalized HRT restores balance to your unique body chemistry so you can feel like yourself again."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/hormone/hormone-couple-park.avif",
           "/images/hormone/hormone-couple-fit.jpg",
@@ -92,10 +91,11 @@ export default function HormoneTherapyPage() {
           eyebrow: "The Basics",
           heading: "What is hormone therapy?",
           paragraphs: [
-            "Hormone replacement therapy relieves many of the natural side effects of aging—low mood and libido in men, and menopause symptoms in women. By replacing what your body no longer produces in adequate amounts, HRT restores balance and helps you feel your best.",
+            "Hormone replacement therapy relieves many of the natural side effects of aging-low mood and libido in men, and menopause symptoms in women. By replacing what your body no longer produces in adequate amounts, HRT restores balance and helps you feel your best.",
             "There is no one-size-fits-all HRT. We build a plan around your labs, symptoms, goals, and lifestyle so the specific hormones, doses, and delivery method are matched to you.",
           ],
-          image: "/images/hormone/hormone-couple-park.avif",
+          image: "/images/hormone/hormone-couple-piggyback.jpg",
+          imageAspect: "portrait",
         }}
       />
 
@@ -148,7 +148,7 @@ export default function HormoneTherapyPage() {
         pillars={[
           {
             title: "Physician-led",
-            text: "Every protocol is designed and monitored by our medical team—not a chatbot or a portal.",
+            text: "Every protocol is designed and monitored by our medical team-not a chatbot or a portal.",
             icon: "shieldCheck",
           },
           {
@@ -192,7 +192,7 @@ export default function HormoneTherapyPage() {
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <CTABanner
           title="Ready to feel like yourself again?"
-          subtitle="Book a free consultation and lab review with our medical team—we'll build a plan for your body, not a template."
+          subtitle="Book a free consultation and lab review with our medical team-we'll build a plan for your body, not a template."
         />
       </div>
     </>

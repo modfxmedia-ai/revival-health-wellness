@@ -28,11 +28,11 @@ export const metadata = buildMetadata({
 });
 
 const WHY = [
-  "Smart Toxin Technology — purified formula without unnecessary proteins",
-  "Natural-Looking Results — keeps your expressions intact",
-  "Fast & Effective — visible results in just a few days",
-  "No Downtime — return to daily activities right away",
-  "Long-Lasting — results can last up to 3–4 months",
+  "Smart Toxin Technology - purified formula without unnecessary proteins",
+  "Natural-Looking Results - keeps your expressions intact",
+  "Fast & Effective - visible results in just a few days",
+  "No Downtime - return to daily activities right away",
+  "Long-Lasting - results can last up to 3–4 months",
 ];
 
 const LIFESTYLE_PILLARS = [
@@ -43,7 +43,7 @@ const LIFESTYLE_PILLARS = [
   },
   {
     title: "Prevent and refresh",
-    text: "Xeomin® isn’t just for those who already see lines — it’s also popular for prevention. Younger patients use it to relax facial muscles before deep wrinkles form, helping maintain a smoother, youthful look longer.",
+    text: "Xeomin® isn’t just for those who already see lines - it’s also popular for prevention. Younger patients use it to relax facial muscles before deep wrinkles form, helping maintain a smoother, youthful look longer.",
     icon: "sparkles" as const,
   },
   {
@@ -57,12 +57,12 @@ const FAQS = [
   {
     question: "What is Xeomin®?",
     answer:
-      "Xeomin® is an FDA-approved neurotoxin injectable used to temporarily reduce moderate-to-severe facial wrinkles. Its uniquely purified formula contains only the active ingredient — no unnecessary proteins — which is why it's called “smart toxin” technology.",
+      "Xeomin® is an FDA-approved neurotoxin injectable used to temporarily reduce moderate-to-severe facial wrinkles. Its uniquely purified formula contains only the active ingredient - no unnecessary proteins - which is why it's called “smart toxin” technology.",
   },
   {
     question: "How is Xeomin different from Botox?",
     answer:
-      "Both are FDA-approved neurotoxins that temporarily relax the targeted facial muscles. Xeomin’s uniquely purified formulation contains only the active ingredient, without additional proteins — which some patients feel provides a cleaner, more natural-looking result.",
+      "Both are FDA-approved neurotoxins that temporarily relax the targeted facial muscles. Xeomin’s uniquely purified formulation contains only the active ingredient, without additional proteins - which some patients feel provides a cleaner, more natural-looking result.",
   },
   {
     question: "How long does a Xeomin session take?",
@@ -118,10 +118,10 @@ export default function XeominPage() {
           </>
         }
         description="Reveal smoother skin with Xeomin injections. Precise, purified, and delivered by expert injectors for a naturally youthful, refreshed appearance."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
-          "/images/xeomin/XEOMIN-0A.jpg",
-          "/images/xeomin/xeomin-hero-portrait.png",
+          "/images/xeomin/xeomin-1.jpg",
+          "/images/xeomin/xeomin-3.jpeg",
+          "/images/xeomin/xeomin-2.webp",
         ]}
         compact
       />
@@ -132,10 +132,11 @@ export default function XeominPage() {
           heading:
             "The purified neurotoxin for a smoother, more refreshed look",
           paragraphs: [
-            "Xeomin® is an FDA-approved neurotoxin injectable used to temporarily reduce moderate-to-severe facial wrinkles. Its uniquely purified formula contains only the active ingredient — without unnecessary proteins — which is why it’s often called “smart toxin” technology.",
-            "At Revival Health and Wellness, our expert injectors use Xeomin® to help you smooth frown lines, forehead creases, and dynamic wrinkles — while keeping your natural expressions perfectly intact.",
+            "Xeomin® is an FDA-approved neurotoxin injectable used to temporarily reduce moderate-to-severe facial wrinkles. Its uniquely purified formula contains only the active ingredient - without unnecessary proteins - which is why it’s often called “smart toxin” technology.",
+            "At Revival Health and Wellness, our expert injectors use Xeomin® to help you smooth frown lines, forehead creases, and dynamic wrinkles - while keeping your natural expressions perfectly intact.",
           ],
-          image: "/images/xeomin/xeomin-hero-portrait.png",
+          image: "/images/xeomin/xeomin-1.jpg",
+          imageContain: true,
         }}
       />
 
@@ -153,18 +154,20 @@ export default function XeominPage() {
           eyebrow: "Why choose Revival for Xeomin®",
           heading: "Precision, artistry, and results that look like you",
           paragraphs: [
-            "Our expert injectors combine medical precision with an aesthetic eye to make sure your Xeomin® results are natural — never frozen. Every treatment is tailored to your facial anatomy and cosmetic goals, so you leave feeling confident, radiant, and unmistakably yourself.",
+            "Our expert injectors combine medical precision with an aesthetic eye to make sure your Xeomin® results are natural - never frozen. Every treatment is tailored to your facial anatomy and cosmetic goals, so you leave feeling confident, radiant, and unmistakably yourself.",
           ],
-          image: "/images/xeomin/seoraksan-mountains-is-covered-by-morning-fog-sunrise-seoul-korea-scaled.jpg",
+          image: "/images/xeomin/xeomin-3.jpeg",
+          imageContain: true,
         }}
       />
 
       <BenefitsList
         eyebrow={"Why choose Xeomin®?"}
-        heading={"Wrinkle-smoothing power that looks authentic — never frozen"}
+        heading={"Wrinkle-smoothing power that looks authentic - never frozen"}
         items={WHY}
-        image="/images/xeomin/dermal-fillers.jpeg"
+        image="/images/xeomin/xeomin-2.webp"
         imageAspect="landscape"
+        imageContain
       />
 
       <FAQSection faqs={FAQS} />
@@ -195,7 +198,7 @@ export default function XeominPage() {
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14 lg:px-8">
         <CTABanner
           title="Ready to refresh?"
-          subtitle={"Book your Xeomin® consultation today — small changes, big impact."}
+          subtitle={"Book your Xeomin® consultation today - small changes, big impact."}
         />
       </div>
     </>

@@ -13,6 +13,8 @@ export type SWSection =
       paragraphs: string[];
       image?: string;
       imageAlt?: string;
+      /** When true, renders the image with `object-contain` on a neutral tile so the full photo is visible - no cropping. */
+      imageContain?: boolean;
       side?: "left" | "right";
       bullets?: string[];
     }
@@ -159,10 +161,11 @@ export const SW_CONTENT: Record<string, SWPage> = {
         heading: "Enhanced wellbeing, tailored to you",
         paragraphs: [
           "At Revival Health and Wellness, we provide sexual wellness solutions for men and women. Whether you are navigating erectile issues, low libido, discomfort, or simply want to feel more like yourself again, our team builds a private, discreet plan around your goals.",
-          "Every treatment we offer is medically supervised, evidence-based, and delivered by clinicians who specialize in men's and women's sexual wellness — no gimmicks, no one-size-fits-all templates.",
+          "Every treatment we offer is medically supervised, evidence-based, and delivered by clinicians who specialize in men's and women's sexual wellness - no gimmicks, no one-size-fits-all templates.",
         ],
-        image: "/images/sexual-wellness/live/hub-parent.png",
-        imageAlt: "Revival sexual wellness — men and women",
+        image: "/images/sexual-wellness/hub-parent.webp",
+        imageAlt: "Revival sexual wellness - men and women",
+        imageContain: true,
       },
       {
         kind: "options",
@@ -175,14 +178,14 @@ export const SW_CONTENT: Record<string, SWPage> = {
             title: "Women's sexual wellness",
             href: "/women/",
             blurb:
-              "PRP-based rejuvenation, acoustic wave therapy, and pelvic floor strengthening for arousal, sensation, and comfort — O-Shot, GAINSWave™ For Her, and EMSELLA.",
+              "PRP-based rejuvenation, acoustic wave therapy, and pelvic floor strengthening for arousal, sensation, and comfort - O-Shot, GAINSWave™ For Her, and EMSELLA.",
             image: "/images/sexual-wellness/live/hub-women.png",
           },
           {
             title: "Men's sexual wellness",
             href: "/men/",
             blurb:
-              "Non-surgical treatments for ED, performance, and confidence — P-Shot, GAINSWave, TriMix, Priapus Toxin, Viagra, and Emsella.",
+              "Non-surgical treatments for ED, performance, and confidence - P-Shot, GAINSWave, TriMix, Priapus Toxin, Viagra, and Emsella.",
             image: "/images/sexual-wellness/live/hub-men.png",
           },
         ],
@@ -209,7 +212,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
           },
           {
             title: "Combination Therapy",
-            text: "Treatments frequently work best paired — we design multi-modal plans when it makes clinical sense.",
+            text: "Treatments frequently work best paired - we design multi-modal plans when it makes clinical sense.",
             icon: "activity",
           },
         ],
@@ -228,7 +231,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
       canonical:
         "https://revivalhealthandwellnessgroup.com/sexual-wellness/",
       ogImage:
-        "https://revivalhealthandwellnessgroup.com/wp-content/uploads/2025/08/Luxury-Living-in-Dubai-South-3-e1756038721930.png",
+        "https://revivalhealthandwellnessgroup.com/wp-content/uploads/2025/08/close-beauty-portrait-topless-woman-with-perfect-skin-natural-makeup-holds-serum-youth-skin-hydration-dropper-with-cosmetic-oilx9.webp",
     },
     schema: { medicalTherapyName: "Sexual Wellness Therapy" },
   },
@@ -268,14 +271,14 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "When your body is functioning properly and you can enjoy sexual activity, your quality of life can significantly improve.",
         ],
         image: "/images/sexual-wellness/live/hub-men.png",
-        imageAlt: "Sexual wellness for men — Revival Health & Wellness",
+        imageAlt: "Sexual wellness for men - Revival Health & Wellness",
       },
       {
         kind: "video",
         eyebrow: "Watch",
         heading: "A closer look at men's sexual wellness",
         intro:
-          "How Revival Health & Wellness approaches performance, ED, and long-term men's health — from lifestyle guidance to advanced non-surgical treatment.",
+          "How Revival Health & Wellness approaches performance, ED, and long-term men's health - from lifestyle guidance to advanced non-surgical treatment.",
         videoId: "Nq4yqKCBydI",
         start: 1,
         caption: "Revival Health & Wellness · Men's sexual wellness overview",
@@ -285,7 +288,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
         eyebrow: "Options for sexual wellness products for men",
         heading: "Your treatment paths",
         intro:
-          "From regenerative injections to acoustic wave therapy to pelvic floor strengthening — most men build a plan combining two or three of these.",
+          "From regenerative injections to acoustic wave therapy to pelvic floor strengthening - most men build a plan combining two or three of these.",
         items: [
           {
             title: "P-Shot",
@@ -298,7 +301,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
             title: "GAINSWave",
             href: "/gainswave-tm/",
             blurb:
-              "GAINSWave is a cutting-edge, non-invasive treatment for men's sexual health that uses acoustic sound wave therapy to improve blood flow and enhance performance. This safe and effective therapy helps reduce erectile dysfunction, boost sensitivity, and restore confidence — without surgery or medication.",
+              "GAINSWave is a cutting-edge, non-invasive treatment for men's sexual health that uses acoustic sound wave therapy to improve blood flow and enhance performance. This safe and effective therapy helps reduce erectile dysfunction, boost sensitivity, and restore confidence - without surgery or medication.",
             image: "/images/sexual-wellness/sw-acoustic-wave.jpg",
           },
           {
@@ -312,7 +315,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
             title: "TriMix",
             href: "/trimix/",
             blurb:
-              "TriMix is an effective, customized injection therapy for erectile dysfunction. It increases blood flow to help men achieve and maintain firm erections, improving performance and satisfaction. Safe, fast-acting, and reliable, TriMix is a great option when oral medications aren't effective — restoring confidence and intimacy naturally.",
+              "TriMix is an effective, customized injection therapy for erectile dysfunction. It increases blood flow to help men achieve and maintain firm erections, improving performance and satisfaction. Safe, fast-acting, and reliable, TriMix is a great option when oral medications aren't effective - restoring confidence and intimacy naturally.",
             image: "/images/sexual-wellness/sw-medical-vial.jpg",
           },
           {
@@ -326,7 +329,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
             title: "Emsella",
             href: "/emsella/",
             blurb:
-              "EMSELLA is a breakthrough, non-invasive solution for urinary incontinence and pelvic floor strengthening. Using advanced HIFEM technology, it delivers thousands of powerful muscle contractions in a single session — far beyond what regular exercise can achieve. This comfortable treatment helps both men and women improve bladder control, regain confidence, and enhance overall quality of life while remaining fully clothed.",
+              "EMSELLA is a breakthrough, non-invasive solution for urinary incontinence and pelvic floor strengthening. Using advanced HIFEM technology, it delivers thousands of powerful muscle contractions in a single session - far beyond what regular exercise can achieve. This comfortable treatment helps both men and women improve bladder control, regain confidence, and enhance overall quality of life while remaining fully clothed.",
             image: "/images/sexual-wellness/sw-man-fitness.jpg",
           },
         ],
@@ -355,7 +358,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
   },
 
   // ────────────────────────────────────────────────────────────────────────
-  // HUB: /women/  (faithful clone — live page embeds full O-Shot detail)
+  // HUB: /women/  (faithful clone - live page embeds full O-Shot detail)
   // ────────────────────────────────────────────────────────────────────────
   women: {
     slug: "women",
@@ -388,7 +391,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "For many women, sexual wellness is an essential component of emotional well-being. If you're experiencing sexual issues such as low libido, vaginal dryness, or difficulty reaching orgasm, the O-Shot may be the ideal solution for you.",
         ],
         image: "/images/sexual-wellness/live/hub-women.png",
-        imageAlt: "Sexual wellness for women — Revival Health & Wellness",
+        imageAlt: "Sexual wellness for women - Revival Health & Wellness",
       },
       {
         kind: "options",
@@ -401,7 +404,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
             title: "GAINSWave™ For Her",
             href: "/gainswavetm-for-her/",
             blurb:
-              "GAINSWave™ For Her is a breakthrough, non-invasive treatment designed to enhance women's sexual wellness. Using gentle acoustic sound wave therapy, it stimulates blood flow, promotes new tissue growth, and increases sensitivity. Many women report improved arousal, greater intimacy, and relief from dryness or discomfort — all without surgery or downtime.",
+              "GAINSWave™ For Her is a breakthrough, non-invasive treatment designed to enhance women's sexual wellness. Using gentle acoustic sound wave therapy, it stimulates blood flow, promotes new tissue growth, and increases sensitivity. Many women report improved arousal, greater intimacy, and relief from dryness or discomfort - all without surgery or downtime.",
             image: "/images/sexual-wellness/sw-acoustic-wave.jpg",
           },
           {
@@ -415,7 +418,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
             title: "Emsella",
             href: "/emsella-2/",
             blurb:
-              "EMSELLA is a breakthrough, non-invasive treatment that strengthens the pelvic floor and helps improve urinary incontinence. Using advanced HIFEM technology, EMSELLA delivers thousands of muscle contractions in just one session — far more than regular exercise can achieve. This quick and comfortable therapy helps both men and women regain bladder control, enhance confidence, and improve quality of life, all while remaining fully clothed.",
+              "EMSELLA is a breakthrough, non-invasive treatment that strengthens the pelvic floor and helps improve urinary incontinence. Using advanced HIFEM technology, EMSELLA delivers thousands of muscle contractions in just one session - far more than regular exercise can achieve. This quick and comfortable therapy helps both men and women regain bladder control, enhance confidence, and improve quality of life, all while remaining fully clothed.",
             image: "/images/sexual-wellness/sw-clinic-modern.jpg",
           },
         ],
@@ -461,7 +464,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
         heading: "The science, simply",
         paragraphs: [
           "Platelet-rich plasma (PRP) is rich in healing proteins known as growth factors, which are naturally present in our blood. Medically, these growth factors have been effective in treating joint pain and aiding in hair restoration. When applied to sexual health, PRP has also shown significant effectiveness.",
-          "When platelet-rich plasma is injected into the clitoris, labia, and G-spot, it enhances blood flow and promotes the growth of new, healthy tissue. This process stimulates the development of blood vessels and nerves in these areas — resulting in increased sensation due to the growth of additional nerve fibers.",
+          "When platelet-rich plasma is injected into the clitoris, labia, and G-spot, it enhances blood flow and promotes the growth of new, healthy tissue. This process stimulates the development of blood vessels and nerves in these areas - resulting in increased sensation due to the growth of additional nerve fibers.",
         ],
         image: "/images/sexual-wellness/sw-woman-wellness.jpg",
         imageAlt: "Woman relaxing at a wellness retreat",
@@ -527,9 +530,9 @@ export const SW_CONTENT: Record<string, SWPage> = {
     description:
       "A non-surgical PRP treatment that uses your own platelet-rich plasma to improve blood flow, sensitivity, and sexual function.",
     gallery: [
-      "/images/sexual-wellness/sw-lab-plasma.jpg",
-      "/images/sexual-wellness/sw-medical-vial.jpg",
-      "/images/sexual-wellness/sw-clinic-modern.jpg",
+      "/images/sexual-wellness/p-shot-tm/p-shot-tm-1.jpg",
+      "/images/sexual-wellness/p-shot-tm/p-shot-tm-3.jpg",
+      "/images/sexual-wellness/p-shot-tm/p-shot-tm-2.webp",
     ],
     breadcrumbs: [
       { label: "Home", href: "/" },
@@ -542,11 +545,11 @@ export const SW_CONTENT: Record<string, SWPage> = {
         eyebrow: "P-Shot for Sexual Wellness",
         heading: "Understanding the P-Shot",
         paragraphs: [
-          "The P-Shot® is a sexual wellness treatment that involves injecting platelet-rich plasma (PRP) derived from the patient's own blood. It stimulates the growth of new blood vessels — particularly beneficial for those with poor circulation or difficulty maintaining an erection.",
+          "The P-Shot® is a sexual wellness treatment that involves injecting platelet-rich plasma (PRP) derived from the patient's own blood. It stimulates the growth of new blood vessels - particularly beneficial for those with poor circulation or difficulty maintaining an erection.",
           "For some men, one P-Shot treatment may be sufficient. Others might require up to three sessions to reach optimal results. Every plan is personalized to your goals and physiology.",
         ],
-        image: "/images/sexual-wellness/sw-lab-plasma.jpg",
-        imageAlt: "Platelet-rich plasma prepared for injection",
+        image: "/images/sexual-wellness/p-shot-tm/p-shot-tm-4.jpeg",
+        imageAlt: "P-Shot® PRP treatment overview",
       },
       {
         kind: "bullets",
@@ -624,9 +627,9 @@ export const SW_CONTENT: Record<string, SWPage> = {
     description:
       "High-frequency pulsewave therapy that naturally enhances male sexual function, performance, and health.",
     gallery: [
-      "/images/sexual-wellness/sw-acoustic-wave.jpg",
-      "/images/sexual-wellness/sw-man-confident.jpg",
-      "/images/sexual-wellness/sw-clinic-modern.jpg",
+      "/images/sexual-wellness/gainswave-tm/gainswave-tm-men.jpg",
+      "/images/sexual-wellness/gainswave-tm/gainswave-tm-men-2.jpg",
+      "/images/sexual-wellness/gainswave-tm/gainswave-tm-men-3.webp",
     ],
     breadcrumbs: [
       { label: "Home", href: "/" },
@@ -642,8 +645,8 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "Over time, GAINSWave™ has emerged as a leading therapy for erectile dysfunction (ED) and male performance. This high-frequency pulsewave therapy naturally and scientifically enhances male sexual function, performance, and health.",
           "It is the only non-invasive therapy that increases blood flow, releases growth factors to promote the development of new blood vessels, and effectively removes penile microplaque.",
         ],
-        image: "/images/sexual-wellness/sw-acoustic-wave.jpg",
-        imageAlt: "Acoustic wave therapy in progress",
+        image: "/images/sexual-wellness/gainswave-tm/gainswave-tm-men.jpg",
+        imageAlt: "GAINSWave™ acoustic wave therapy for men",
       },
       {
         kind: "stats",
@@ -674,8 +677,9 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "During treatment, high-frequency acoustic waves are applied to the penis. This energy helps remove micro-plaque buildup that has been obstructing blood flow while also stimulating the creation of new blood vessels.",
           "Poor blood flow is a major contributor to erectile dysfunction, and GAINSWave™ effectively addresses this issue at the root. The enhanced blood flow leads to stronger, firmer, and longer-lasting erections.",
         ],
-        image: "/images/sexual-wellness/sw-man-fitness.jpg",
-        imageAlt: "Confident, fit man",
+        image: "/images/sexual-wellness/gainswave-tm/gainswave-tm-men-2.jpg",
+        imageAlt: "GAINSWave™ mechanism of action",
+        imageContain: true,
         side: "right",
       },
       {
@@ -683,7 +687,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
         eyebrow: "Who it's for",
         heading: "Candidates for GAINSWave™",
         intro:
-          "This non-invasive, medication- and surgery-free treatment is beneficial for any man over 30 — whether or not you have diagnosed ED.",
+          "This non-invasive, medication- and surgery-free treatment is beneficial for any man over 30 - whether or not you have diagnosed ED.",
         items: [
           {
             title: "Men experiencing ED",
@@ -732,16 +736,16 @@ export const SW_CONTENT: Record<string, SWPage> = {
     eyebrow: "P-Long® Protocol",
     title: "The P-Long® Protocol",
     titleNode: {
-      pre: "Increase length & girth by up to a",
+      pre: "Increase the length & girth of your manhood by a",
       accent: "full inch",
-      post: "— no surgery.",
+      post: ".",
     },
     description:
-      "The first and only clinically proven protocol to naturally increase the size of your manhood — no surgery, no cosmetic fillers.",
+      "The first and only clinically proven protocol to naturally increase the size of your manhood - no surgery, no cosmetic fillers, no negative side effects.",
     gallery: [
-      "/images/sexual-wellness/sw-man-fitness.jpg",
-      "/images/sexual-wellness/sw-clinic-modern.jpg",
-      "/images/sexual-wellness/sw-lab-plasma.jpg",
+      "/images/sexual-wellness/p-long/condition-header-penis-enlargement.jpg",
+      "/images/sexual-wellness/p-long/p-long-hero.jpg",
+      "/images/sexual-wellness/p-long/p-long-younger-men-feat.jpg",
     ],
     breadcrumbs: [
       { label: "Home", href: "/" },
@@ -749,6 +753,23 @@ export const SW_CONTENT: Record<string, SWPage> = {
       { label: "P-Long®" },
     ],
     sections: [
+      {
+        kind: "overview",
+        eyebrow: "Introducing P-Long®",
+        heading:
+          "Naturally increase length, girth & function - clinically proven.",
+        paragraphs: [
+          "Over 50% of men wish their manhood was bigger. Until the release of P-Long, there was no scientifically proven natural way to increase the length, girth, and function of a healthy, normal penis.",
+          "P-Long® is the first and only clinically proven protocol to naturally increase the size of your manhood without surgery, cosmetic fillers, or negative side effects.",
+        ],
+        image: "/images/sexual-wellness/p-long/sex-therapy-wellness.jpg",
+        imageAlt: "P-Long protocol overview at Revival Health & Wellness",
+        bullets: [
+          "Discreet & Confidential",
+          "FDA-Approved Collagen Fillers",
+          "Performed by Experts",
+        ],
+      },
       {
         kind: "stats",
         eyebrow: "Backed by clinical research",
@@ -774,9 +795,8 @@ export const SW_CONTENT: Record<string, SWPage> = {
       {
         kind: "features",
         eyebrow: "What you get",
-        heading: "Safer results than surgical alternatives",
-        intro:
-          "No longer will men have to attempt risky or artificial therapies to increase the size of their manhood — with the unfortunate results those procedures too often produce.",
+        heading:
+          "No longer will men have to attempt risky or artificial therapies - with the unfortunate results they too often produce.",
         items: [
           {
             title: "Increase Length",
@@ -797,23 +817,44 @@ export const SW_CONTENT: Record<string, SWPage> = {
         tone: "cream",
       },
       {
+        kind: "video",
+        eyebrow: "See the science",
+        heading: "How the P-Long® Protocol works",
+        intro:
+          "Watch the video below to learn more about the clinical protocol that's changing men's health.",
+        videoId: "ZiuqW8CYkuA",
+        caption: "BrandeisMD · The Only Clinically Proven Protocol",
+      },
+      {
         kind: "quote",
         eyebrow: "Real patient",
         quote:
-          "I had struggled with confidence about my size for years but didn't want to risk surgery or medication. When I discovered the P-Long Protocol at Revival Health, I was impressed by the science and clinical results behind it. After completing the program, I noticed real improvements — not just in length and girth, but in my overall sexual performance and confidence.",
-        attribution: "— Michael R.",
-        image: "/images/sexual-wellness/sw-man-confident.jpg",
+          "I had struggled with confidence about my size for years but didn't want to risk surgery or medication. When I discovered the P-Long Protocol at Revival Health, I was impressed by the science and clinical results behind it. After completing the program, I noticed real improvements - not just in length and girth, but in my overall sexual performance and confidence.",
+        attribution: "- Michael R.",
+        image: "/images/sexual-wellness/p-long/p-long-younger-men-feat.jpg",
+      },
+      {
+        kind: "overview",
+        eyebrow: "About Revival Health & Wellness",
+        heading: "Increase girth. Boost confidence. No scalpels, no stitches.",
+        paragraphs: [
+          "Revival Health & Wellness helps men optimize their health for peak performance - physically, mentally, and emotionally. Our expert team delivers personalized care designed to boost energy, enhance confidence, and support long-term wellness.",
+          "Our medical team is dedicated to helping men restore performance, vitality, and overall wellness through advanced, science-based treatments and personalized care. With experience in hormone optimization, sexual wellness, and regenerative therapies, our providers focus on identifying the root causes of men's health concerns and developing tailored treatment plans designed for real, lasting results.",
+        ],
+        side: "right",
+        image: "/images/sexual-wellness/p-long/condition-header-penis-enlargement.jpg",
+        imageAlt: "Revival Health & Wellness - expert men's health care",
       },
       {
         kind: "warning",
         eyebrow: "Why not the alternatives?",
-        heading: "The drawbacks of enhancement surgery & fillers",
+        heading: "The drawbacks of male enhancement surgery & fillers",
         intro:
           "Are you willing to invest thousands of dollars in procedures that may actually shorten your manhood? Many enlargement procedures result in infection, scar tissue, and outcomes that leave men worse than before.",
         items: [
           {
             title: "Penuma Surgical® Implant",
-            text: "Dozens of men have had their permanent implants removed due to infection, pain, or dissatisfaction — which shortens length.",
+            text: "Dozens of men have had their permanent implants removed due to infection, pain, or dissatisfaction - which shortens length.",
           },
           {
             title: "Suspensory Ligament Division",
@@ -821,14 +862,14 @@ export const SW_CONTENT: Record<string, SWPage> = {
           },
           {
             title: "Cosmetic Dermal Fillers",
-            text: "Temporary, expensive, don't increase length, and results only last 1–2 years — often with a lumpy, uneven finish.",
+            text: "Temporary, expensive, don't increase length, and results only last 1–2 years - often with a lumpy, uneven finish.",
           },
         ],
       },
       {
         kind: "process",
         eyebrow: "Your journey",
-        heading: "Find your path to better performance",
+        heading: "Find your path to better performance at Revival",
         intro:
           "Our trained medical professionals follow advanced protocols to help men restore confidence, performance, and overall wellness in a safe, supportive clinical setting.",
         steps: [
@@ -849,15 +890,30 @@ export const SW_CONTENT: Record<string, SWPage> = {
           },
         ],
       },
+      {
+        kind: "bullets",
+        eyebrow: "Our Commitment to Men's Health & Vitality",
+        heading:
+          "Every man deserves to feel confident, energized, and in control of his health.",
+        intro:
+          "Through innovative therapies and a patient-first philosophy, our mission is simple: to help men regain confidence, improve performance, and live healthier, more fulfilling lives.",
+        items: [
+          "Individualized attention in a comfortable, supportive environment",
+          "Clinical expertise paired with a compassionate approach",
+          "Root-cause identification, not just symptom management",
+          "Ongoing support through your entire treatment journey",
+        ],
+        columns: 2,
+      },
     ],
-    ctaTitle: "Add an inch in length — without surgery.",
+    ctaTitle: "Add an inch in length - without surgery.",
     ctaSubtitle:
       "The P-Long Protocol is the first and only clinically proven, non-surgical approach. Book your free consultation.",
     relatedSlugs: ["p-shot-tm", "gainswave-tm", "priapus-toxin", "men"],
     meta: {
       title: "P-Long Protocol for Men | Revival Health & Wellness",
       description:
-        "Look into the P-Long in Las Vegas for a proven way to improve your size and function without surgery. Revival Health and Wellness offers the P-Long Protocol.",
+        "Look into the P-Long in Las Vegas for a proven way to improve your size and function. Revival Health and Wellness helps you reach your goals with medical care.",
       canonical: "https://revivalhealthandwellnessgroup.com/p-long/",
     },
     schema: { medicalTherapyName: "P-Long® Protocol" },
@@ -877,11 +933,11 @@ export const SW_CONTENT: Record<string, SWPage> = {
       post: "for ED",
     },
     description:
-      "Viagra® is a safe and effective oral treatment for erectile dysfunction — available since 1998 and suitable for men of all ages.",
+      "Viagra® is a safe and effective oral treatment for erectile dysfunction - available since 1998 and suitable for men of all ages.",
     gallery: [
-      "/images/sexual-wellness/sw-medical-vial.jpg",
-      "/images/sexual-wellness/sw-clinic-modern.jpg",
-      "/images/sexual-wellness/sw-man-confident.jpg",
+      "/images/sexual-wellness/viagra/viagra-1.jpg",
+      "/images/sexual-wellness/viagra/viagra.avif",
+      "/images/sexual-wellness/viagra/viagra-3.webp",
     ],
     breadcrumbs: [
       { label: "Home", href: "/" },
@@ -897,8 +953,8 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "Viagra® is a safe and effective oral treatment for erectile dysfunction, suitable for men of all ages. Available since 1998, it is the oldest FDA-approved treatment for erectile dysfunction on the market.",
           "Most men begin to feel its effects within 30 to 60 minutes after taking it. When prescribed and monitored by a physician, it remains one of the simplest and most reliable ED solutions.",
         ],
-        image: "/images/sexual-wellness/sw-medical-vial.jpg",
-        imageAlt: "Prescription medication tray",
+        image: "/images/sexual-wellness/viagra/viagra-1.jpg",
+        imageAlt: "Viagra® oral treatment for ED",
       },
       {
         kind: "overview",
@@ -908,8 +964,8 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "Viagra works by enhancing blood flow to the soft tissue of the penis. It causes the walls of your blood vessels to relax, allowing blood to flow more easily. This relaxation helps men achieve and maintain a strong erection.",
         ],
         side: "right",
-        image: "/images/sexual-wellness/sw-clinic-modern.jpg",
-        imageAlt: "Modern clinical office",
+        image: "/images/sexual-wellness/viagra/viagra.avif",
+        imageAlt: "How Viagra® works - improved blood flow",
       },
       {
         kind: "features",
@@ -930,7 +986,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
           },
           {
             title: "Willing to plan ahead",
-            text: "Takes 30–60 minutes to activate — plan accordingly.",
+            text: "Takes 30–60 minutes to activate - plan accordingly.",
             icon: "timer",
           },
           {
@@ -944,7 +1000,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
     ],
     ctaTitle: "Get a physician-supervised Viagra Rx.",
     ctaSubtitle:
-      "Book a free consultation to see if Viagra is the right fit — or explore non-medication alternatives with our team.",
+      "Book a free consultation to see if Viagra is the right fit - or explore non-medication alternatives with our team.",
     relatedSlugs: ["trimix", "gainswave-tm", "p-shot-tm", "men"],
     meta: {
       title: "Viagra and Sexual Wellness | Revival Health & Wellness",
@@ -969,11 +1025,11 @@ export const SW_CONTENT: Record<string, SWPage> = {
       post: "for erectile dysfunction",
     },
     description:
-      "An at-home injectable treatment for erectile dysfunction with a 90% success rate — reliable when oral medications aren't enough.",
+      "An at-home injectable treatment for erectile dysfunction with a 90% success rate - reliable when oral medications aren't enough.",
     gallery: [
-      "/images/sexual-wellness/sw-medical-vial.jpg",
-      "/images/sexual-wellness/sw-lab-plasma.jpg",
-      "/images/sexual-wellness/sw-clinic-modern.jpg",
+      "/images/sexual-wellness/trimix/trimix.jpg",
+      "/images/sexual-wellness/trimix/trimix-1.webp",
+      "/images/sexual-wellness/trimix/trimix-3.webp",
     ],
     breadcrumbs: [
       { label: "Home", href: "/" },
@@ -986,11 +1042,11 @@ export const SW_CONTENT: Record<string, SWPage> = {
         eyebrow: "Explore TriMix",
         heading: "An effective injectable treatment for ED",
         paragraphs: [
-          "TriMix is an at-home injectable treatment for erectile dysfunction, composed of a mixture of papaverine, phentolamine, and prostaglandin E1 — with a 90% success rate among patients.",
-          "This powerful combination works by causing the corpus cavernosum — the erectile tissue in the penis — to relax, expand, and become engorged with blood, resulting in a strong and sustained erection.",
+          "TriMix is an at-home injectable treatment for erectile dysfunction, composed of a mixture of papaverine, phentolamine, and prostaglandin E1 - with a 90% success rate among patients.",
+          "This powerful combination works by causing the corpus cavernosum - the erectile tissue in the penis - to relax, expand, and become engorged with blood, resulting in a strong and sustained erection.",
         ],
-        image: "/images/sexual-wellness/sw-medical-vial.jpg",
-        imageAlt: "TriMix injectable therapy vials",
+        image: "/images/sexual-wellness/trimix/trimix.jpg",
+        imageAlt: "TriMix injectable therapy overview",
       },
       {
         kind: "stats",
@@ -1031,7 +1087,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
         ],
       },
     ],
-    ctaTitle: "When oral ED meds aren't enough — TriMix is.",
+    ctaTitle: "When oral ED meds aren't enough - TriMix is.",
     ctaSubtitle:
       "Book a free consultation and let our team decide if TriMix is the right next step for you.",
     relatedSlugs: ["viagra", "gainswave-tm", "priapus-toxin", "men"],
@@ -1060,9 +1116,9 @@ export const SW_CONTENT: Record<string, SWPage> = {
     description:
       "A cutting-edge sexual wellness treatment using targeted botulinum toxin to enhance blood flow, relax penile muscles, and improve erection quality.",
     gallery: [
-      "/images/sexual-wellness/sw-medical-vial.jpg",
-      "/images/sexual-wellness/sw-clinic-modern.jpg",
-      "/images/sexual-wellness/sw-man-confident.jpg",
+      "/images/sexual-wellness/priapus-toxin/priapus-toxin-1.jpg",
+      "/images/sexual-wellness/priapus-toxin/priapus-toxin-2.png",
+      "/images/sexual-wellness/trimix/trimix-1.webp",
     ],
     breadcrumbs: [
       { label: "Home", href: "/" },
@@ -1078,19 +1134,20 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "Priapus Toxin™ is a cutting-edge treatment offered by Revival Health and Wellness to help you overcome erectile issues and achieve more powerful, consistent erections.",
           "This innovative approach uses botulinum toxin to relax targeted penile muscles, enhance blood circulation, and improve the overall quality of erections and orgasms.",
         ],
-        image: "/images/sexual-wellness/sw-medical-vial.jpg",
-        imageAlt: "Medical vial and syringe on a tray",
+        image: "/images/sexual-wellness/priapus-toxin/priapus-toxin.jpg",
+        imageAlt: "Priapus Toxin™ treatment overview",
+        imageContain: true,
       },
       {
         kind: "overview",
         eyebrow: "How it works",
         heading: "The science behind Priapus Toxin™",
         paragraphs: [
-          "Priapus Toxin™ involves injecting 100 units of botulinum toxin into the corpus cavernosum — the erectile tissue of the penis. 50 units are injected on either side of the muscle.",
-          "Botulinum toxin is a neuromodulator that blocks communication between nerve endings and muscles, causing the targeted muscles to relax. This relaxation allows blood to flow more freely into the penis — facilitating stronger and more sustained erections.",
+          "Priapus Toxin™ involves injecting 100 units of botulinum toxin into the corpus cavernosum - the erectile tissue of the penis. 50 units are injected on either side of the muscle.",
+          "Botulinum toxin is a neuromodulator that blocks communication between nerve endings and muscles, causing the targeted muscles to relax. This relaxation allows blood to flow more freely into the penis - facilitating stronger and more sustained erections.",
         ],
-        image: "/images/sexual-wellness/sw-clinic-modern.jpg",
-        imageAlt: "Modern clinic treatment room",
+        image: "/images/sexual-wellness/priapus-toxin/priapus-toxin-1.jpg",
+        imageAlt: "How Priapus Toxin™ works",
         side: "right",
       },
       {
@@ -1115,8 +1172,8 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "If you want to enhance the results of Priapus Toxin™ even further, you can combine it with PRP (platelet-rich plasma) therapy. PRP, derived from your own blood, has been used for male sexual wellness for years with remarkable results.",
           "Growth factors and platelets in PRP drive cellular regeneration and the formation of new blood vessels. When combined with Priapus Toxin™, the two treatments work synergistically for powerful erections and improved orgasms.",
         ],
-        image: "/images/sexual-wellness/sw-lab-plasma.jpg",
-        imageAlt: "PRP plasma preparation in a centrifuge tube",
+        image: "/images/sexual-wellness/priapus-toxin/priapus-toxin-2.png",
+        imageAlt: "Priapus Toxin™ combined with PRP therapy",
       },
       {
         kind: "stats",
@@ -1157,9 +1214,9 @@ export const SW_CONTENT: Record<string, SWPage> = {
     description:
       "An FDA-approved, non-invasive treatment designed to strengthen the pelvic floor muscles that support erectile function.",
     gallery: [
-      "/images/sexual-wellness/sw-clinic-modern.jpg",
-      "/images/sexual-wellness/sw-man-fitness.jpg",
-      "/images/sexual-wellness/sw-man-confident.jpg",
+      "/images/sexual-wellness/emsella/bella-paloma-emsella-clinic.jpg",
+      "/images/sexual-wellness/emsella/emsella-chair-equipment.jpg",
+      "/images/sexual-wellness/emsella/emsella-men.png",
     ],
     breadcrumbs: [
       { label: "Home", href: "/" },
@@ -1169,31 +1226,41 @@ export const SW_CONTENT: Record<string, SWPage> = {
     sections: [
       {
         kind: "overview",
-        eyebrow: "A non-invasive solution",
-        heading: "EMSELLA™ for erectile dysfunction",
+        eyebrow: "EMSELLA™ for Erectile Dysfunction",
+        heading: "A non-invasive solution for ED",
         paragraphs: [
-          "At Revival Health and Wellness, we understand that sexual health is an essential part of overall well-being. Successfully addressing complex issues like ED often requires more than a generic treatment — it needs a comprehensive, personalized approach.",
-          "EMSELLA™ is FDA-approved and non-invasive, designed to improve pelvic-floor muscle strength and endurance to support better sexual performance. Unlike medications or surgery, EMSELLA™ works by stimulating the pelvic floor muscles needed for erection — without hormones or drugs.",
+          "At Revival Health and Wellness, we understand that sexual health is an essential part of overall well-being. Successfully addressing complex issues like ED often requires more than a generic treatment; it needs a comprehensive, personalized approach that considers various factors unique to each individual.",
+          "Erectile dysfunction (ED) is a common issue - affecting over 30 million men and nearly 70% of those aged 70 and above. Left untreated, ED can significantly impact a man's social, emotional, and physical well-being, potentially leading to conditions like low self-esteem, anxiety, and depression.",
+          "Revival Health and Wellness proudly offers EMSELLA™ as part of our ED treatment options. EMSELLA™ is FDA-approved and non-invasive, designed to improve muscle strength and endurance to aid in better sexual performance. Unlike medications, surgery, or other invasive procedures, EMSELLA™ works by stimulating the pelvic floor muscles needed to achieve and maintain an erection naturally - without hormones or drugs.",
         ],
-        image: "/images/sexual-wellness/sw-clinic-modern.jpg",
-        imageAlt: "EMSELLA HIFEM chair in a treatment room",
+        image: "/images/sexual-wellness/emsella/bella-paloma-emsella-clinic.jpg",
+        imageAlt: "EMSELLA HIFEM chair at a men's clinic",
       },
       {
         kind: "overview",
-        eyebrow: "How it works",
-        heading: "HIFEM technology, targeted",
+        eyebrow: "What is EMSELLA™?",
+        heading: "HIFEM technology - thousands of contractions in 30 minutes",
         paragraphs: [
-          "EMSELLA™ uses High-Intensity Focused Electromagnetic (HIFEM) technology. During each 30-minute session, the EMSELLA™ chair delivers thousands of contractions — strengthening the muscles responsible for erectile function.",
-          "The treatment improves blood flow to the pelvic region, leading to better control over erections, improved sexual performance, and enhanced sensation. We often combine EMSELLA™ with testosterone therapy, TriMix, GAINSWave®, and the P-Shot® for the strongest results.",
+          "EMSELLA™ is a convenient, non-surgical treatment that targets weak pelvic floor muscles using High-Intensity Focused Electromagnetic (HIFEM) technology. During each 30-minute session, the EMSELLA™ chair delivers thousands of contractions - strengthening the muscles responsible for erectile function.",
+          "This treatment improves blood flow to the pelvic region, leading to better control over erections, improved sexual performance, and enhanced sensation.",
         ],
         side: "right",
-        image: "/images/sexual-wellness/sw-man-fitness.jpg",
-        imageAlt: "Fit, confident man",
+        image: "/images/sexual-wellness/emsella/emsella-chair-equipment.jpg",
+        imageAlt: "EMSELLA chair equipment in a clinical setting",
+      },
+      {
+        kind: "video",
+        eyebrow: "Watch",
+        heading: "A closer look at EMSELLA™ for ED",
+        intro:
+          "How EMSELLA™ works and why it pairs beautifully with our other ED therapies - a full overview from our medical team.",
+        videoId: "Nq4yqKCBydI",
+        caption: "Revival H&W · Erectile Dysfunction overview",
       },
       {
         kind: "bullets",
-        eyebrow: "The benefits",
-        heading: "Why patients choose EMSELLA™",
+        eyebrow: "Why Choose EMSELLA™ for ED?",
+        heading: "Nine benefits patients report",
         items: [
           "Reduction in premature ejaculation",
           "Enhanced ability to achieve and maintain erections",
@@ -1210,11 +1277,29 @@ export const SW_CONTENT: Record<string, SWPage> = {
       {
         kind: "stats",
         eyebrow: "What to expect",
+        heading: "The EMSELLA™ protocol at Revival",
         items: [
           { value: "30 min", label: "per session", sub: "fully clothed" },
           { value: "6", label: "sessions", sub: "twice weekly, standard course" },
-          { value: "9–12 mo", label: "results last", sub: "touch-up in 3–6 months for peak" },
+          {
+            value: "9–12 mo",
+            label: "results last",
+            sub: "touch-up in 3–6 months for peak",
+          },
         ],
+      },
+      {
+        kind: "overview",
+        eyebrow: "What to Expect from Your EMSELLA™ Experience",
+        heading: "Fully clothed. Fully seated. 30 minutes.",
+        paragraphs: [
+          "During an EMSELLA™ session at Revival Health and Wellness, you'll remain fully clothed and seated on the specialized chair as the treatment works to stimulate your pelvic muscles. Each session takes around 30 minutes, and a typical course involves six sessions, spaced twice a week. Most men notice improvements in their ED symptoms after the first treatment, with more significant results following subsequent sessions.",
+          "The effects of EMSELLA™ typically last between 9 to 12 months. For optimal outcomes, we may recommend a follow-up session within 3–6 months after completing the initial treatment series.",
+          "If you're already undergoing other ED therapies at Revival Health and Wellness - such as testosterone replacement, TriMix, GAINSWave®, or the Priapus Shot® - combining these with EMSELLA™ can further enhance your results. Our board-certified physicians are experts in creating comprehensive treatment plans that integrate multiple therapies for lasting, meaningful results.",
+        ],
+        side: "right",
+        image: "/images/sexual-wellness/emsella/emsella-men-2.webp",
+        imageAlt: "EMSELLA session experience",
       },
     ],
     ctaTitle: "Ready to strengthen the foundation of your erections?",
@@ -1225,7 +1310,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
       title:
         "Emsella™ Pelvic Floor Treatment | Revival Health & Wellness",
       description:
-        "Improve your bladder control and intimacy with Emsella™ in Las Vegas. Revival Health and Wellness offers this non-invasive pelvic floor strengthening treatment.",
+        "Improve your bladder control and intimacy with Emsella™ in Las Vegas. Revival Health and Wellness offers this comfortable, fully-clothed treatment for everyone.",
       canonical: "https://revivalhealthandwellnessgroup.com/emsella/",
     },
     schema: { medicalTherapyName: "EMSELLA™ HIFEM Pelvic Floor Therapy (Men)" },
@@ -1301,7 +1386,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
         eyebrow: "The process",
         heading: "How your O-Shot appointment flows",
         intro:
-          "Most patients find the entire treatment surprisingly comfortable and quick — about 30 minutes total.",
+          "Most patients find the entire treatment surprisingly comfortable and quick - about 30 minutes total.",
         steps: [
           {
             title: "Numb the area",
@@ -1355,9 +1440,9 @@ export const SW_CONTENT: Record<string, SWPage> = {
     description:
       "Revolutionary sound-wave therapy that increases blood flow and promotes healing to enhance arousal, sensation, and comfort.",
     gallery: [
-      "/images/sexual-wellness/sw-acoustic-wave.jpg",
-      "/images/sexual-wellness/sw-woman-wellness.jpg",
-      "/images/sexual-wellness/sw-woman-confident.jpg",
+      "/images/sexual-wellness/gainswavetm-for-her/gainswavetm-for-her-1.jpg",
+      "/images/sexual-wellness/gainswavetm-for-her/gainswavetm-for-her-2.avif",
+      "/images/sexual-wellness/gainswavetm-for-her/gainswavetm-for-her-3.webp",
     ],
     breadcrumbs: [
       { label: "Home", href: "/" },
@@ -1368,13 +1453,13 @@ export const SW_CONTENT: Record<string, SWPage> = {
       {
         kind: "overview",
         eyebrow: "Non-invasive treatment",
-        heading: "Improve sexual function — without surgery",
+        heading: "Improve sexual function - without surgery",
         paragraphs: [
-          "GAINSWave™ For Her is a revolutionary treatment for female sexual dysfunction that uses advanced sound wave technology to increase blood flow and promote healing — without the need for invasive procedures.",
+          "GAINSWave™ For Her is a revolutionary treatment for female sexual dysfunction that uses advanced sound wave technology to increase blood flow and promote healing - without the need for invasive procedures.",
           "By utilizing high-frequency acoustic waves, this treatment addresses the underlying causes of sexual dysfunction, stimulating new blood vessels and nerve cells to increase lubrication and heighten sensitivity.",
         ],
-        image: "/images/sexual-wellness/sw-acoustic-wave.jpg",
-        imageAlt: "Acoustic wave therapy device in a clinical setting",
+        image: "/images/sexual-wellness/gainswavetm-for-her/gainswavetm-for-her-1.jpg",
+        imageAlt: "GAINSWave™ For Her acoustic wave therapy",
       },
       {
         kind: "bullets",
@@ -1414,7 +1499,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
           },
           {
             title: "Root-cause approach",
-            text: "Addresses causes of sexual dysfunction — not just symptoms.",
+            text: "Addresses causes of sexual dysfunction - not just symptoms.",
             icon: "target",
           },
           {
@@ -1438,8 +1523,8 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "The recommended course of treatment usually involves 6–12 GAINSWave™ sessions for optimal results. However, the exact number of sessions varies with your specific concerns and medical history.",
           "During your consultation, we'll assess your needs and create a personalized plan tailored to you.",
         ],
-        image: "/images/sexual-wellness/sw-woman-confident.jpg",
-        imageAlt: "Confident woman smiling in natural light",
+        image: "/images/sexual-wellness/gainswavetm-for-her/gainswavetm-for-her-2.avif",
+        imageAlt: "GAINSWave™ For Her session planning",
         side: "right",
       },
     ],
@@ -1471,14 +1556,14 @@ export const SW_CONTENT: Record<string, SWPage> = {
     titleNode: {
       pre: "Strengthen your",
       accent: "pelvic floor",
-      post: "— fully clothed.",
+      post: "- fully clothed.",
     },
     description:
       "Non-invasive HIFEM® technology that induces thousands of Kegel-like contractions per session to treat urinary incontinence and rebuild pelvic strength.",
     gallery: [
-      "/images/sexual-wellness/sw-clinic-modern.jpg",
-      "/images/sexual-wellness/sw-woman-wellness.jpg",
-      "/images/sexual-wellness/sw-woman-confident.jpg",
+      "/images/sexual-wellness/emsella-2/emsella-4.webp",
+      "/images/sexual-wellness/emsella-2/emsella-1.jpg",
+      "/images/sexual-wellness/emsella-2/emsella-3.png",
     ],
     breadcrumbs: [
       { label: "Home", href: "/" },
@@ -1492,22 +1577,22 @@ export const SW_CONTENT: Record<string, SWPage> = {
         heading: "EMSELLA™ for women's health",
         paragraphs: [
           "EMSELLA™ is a non-invasive treatment that uses High-Intensity Focused Electromagnetic (HIFEM®) technology to strengthen pelvic floor muscles and treat urinary incontinence. It's FDA-approved for both men and women.",
-          "This revolutionary technology transforms intimate health and wellness for women — a completely non-invasive solution for stress and urge incontinence.",
+          "This revolutionary technology transforms intimate health and wellness for women - a completely non-invasive solution for stress and urge incontinence.",
         ],
-        image: "/images/sexual-wellness/sw-clinic-modern.jpg",
-        imageAlt: "EMSELLA HIFEM chair in a clean, modern treatment room",
+        image: "/images/sexual-wellness/emsella-2/emsella-1.jpg",
+        imageAlt: "EMSELLA HIFEM pelvic floor therapy for women",
       },
       {
         kind: "overview",
         eyebrow: "How it works",
         heading: "The science behind EMSELLA™",
         paragraphs: [
-          "EMSELLA™, using HIFEM® technology, induces thousands of Kegel-like pelvic floor muscle contractions in a single session. These contractions re-educate and strengthen weak pelvic floor muscles — restoring neuromuscular control and improving urinary incontinence.",
+          "EMSELLA™, using HIFEM® technology, induces thousands of Kegel-like pelvic floor muscle contractions in a single session. These contractions re-educate and strengthen weak pelvic floor muscles - restoring neuromuscular control and improving urinary incontinence.",
           "Strong pelvic floor muscles support the pelvic organs and give control over the bladder and bowel. When those muscles weaken, incontinence and dysfunction follow. EMSELLA™ fixes the foundation.",
         ],
         side: "right",
-        image: "/images/sexual-wellness/sw-woman-wellness.jpg",
-        imageAlt: "Woman smiling, feeling confident",
+        image: "/images/sexual-wellness/emsella-2/emsella-4.webp",
+        imageAlt: "HIFEM technology and pelvic floor strengthening",
       },
       {
         kind: "stats",
@@ -1540,7 +1625,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "Up to 75% reduction in pad consumption",
           "Up to 95% reduction in stress urinary incontinence",
           "Reduces irritation, stress, shame, and social anxiety",
-          "Restores control of your bladder — and your confidence",
+          "Restores control of your bladder - and your confidence",
         ],
         columns: 2,
       },
@@ -1550,10 +1635,10 @@ export const SW_CONTENT: Record<string, SWPage> = {
         heading: "What to expect from EMSELLA™",
         paragraphs: [
           "Most patients see improvement after six sessions, twice weekly. Depending on how severe your condition is, some notice relief after just a few sessions. Grade 0–1 urinary incontinence responds very well.",
-          "A brief worsening before an improvement is normal. Some patients may need follow-up treatments in the future — we'll set expectations based on your specific case.",
+          "A brief worsening before an improvement is normal. Some patients may need follow-up treatments in the future - we'll set expectations based on your specific case.",
         ],
-        image: "/images/sexual-wellness/sw-woman-confident.jpg",
-        imageAlt: "Confident woman enjoying her day",
+        image: "/images/sexual-wellness/emsella-2/emsella-3.png",
+        imageAlt: "EMSELLA treatment results - restored confidence and control",
       },
     ],
     ctaTitle: "Ready to stop the leaks?",

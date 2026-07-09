@@ -108,7 +108,6 @@ export default function TetraProCo2LaserPage() {
           </>
         }
         description="Advanced resurfacing. Transformative results. The most powerful and customizable CO2 resurfacing treatment available at Revival Health and Wellness."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/tetra-pro-co2-laser/coolpeel-patient-treatment.jpg",
           "/images/tetra-pro-co2-laser/Image_20250905_080311_234.jpeg",
@@ -170,19 +169,19 @@ export default function TetraProCo2LaserPage() {
             label: "CoolPeel® Laser",
             href: "/coolpeel-laser/",
             blurb:
-              "The lighter cousin of Tetra Pro — same Cartessa CO2 platform with minimal downtime for a quick skin refresh.",
+              "The lighter cousin of Tetra Pro - same Cartessa CO2 platform with minimal downtime for a quick skin refresh.",
           },
           {
             label: "CO2 Laser Treatments",
             href: "/co2-laser-treatments/",
             blurb:
-              "The complete overview of our CO2 laser offering — CoolPeel® vs. Tetra Pro side-by-side.",
+              "The complete overview of our CO2 laser offering - CoolPeel® vs. Tetra Pro side-by-side.",
           },
           {
             label: "Everesse RF Skin Tightening",
             href: "/everesse-rf-skin-tightening-and-rejuvenation/",
             blurb:
-              "Pair Tetra Pro with monopolar RF for our exclusive Radiant Lift protocol — surface renewal plus deep tightening.",
+              "Pair Tetra Pro with monopolar RF for our exclusive Radiant Lift protocol - surface renewal plus deep tightening.",
           },
         ]}
       />

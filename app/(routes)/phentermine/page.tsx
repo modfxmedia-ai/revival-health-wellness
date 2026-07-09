@@ -35,7 +35,7 @@ const HOW_IT_WORKS = [
   },
   {
     title: "Adrenaline & epinephrine",
-    text: "Triggers the release of adrenaline and epinephrine outside the brain — hormones known for powerful fat-burning properties.",
+    text: "Triggers the release of adrenaline and epinephrine outside the brain - hormones known for powerful fat-burning properties.",
     icon: "flame" as const,
   },
   {
@@ -84,7 +84,7 @@ const FAQS = [
   {
     question: "How does Phentermine work?",
     answer:
-      "Phentermine targets your brain and nervous system, releasing dopamine and norepinephrine to stimulate metabolism and suppress hunger. It also triggers adrenaline and epinephrine outside the brain — hormones with powerful fat-burning properties. Taken once daily in the morning, it peaks in 3–5 hours and continues supporting weight loss throughout the day.",
+      "Phentermine targets your brain and nervous system, releasing dopamine and norepinephrine to stimulate metabolism and suppress hunger. It also triggers adrenaline and epinephrine outside the brain - hormones with powerful fat-burning properties. Taken once daily in the morning, it peaks in 3–5 hours and continues supporting weight loss throughout the day.",
   },
   {
     question: "Is Phentermine right for me?",
@@ -144,8 +144,7 @@ export default function PhenterminePage() {
             to kickstart your journey
           </>
         }
-        description="A potent, FDA-approved weight-loss medication trusted for over 50 years. Substantial results within the first few weeks — under medical supervision in Las Vegas."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description="A potent, FDA-approved weight-loss medication trusted for over 50 years. Substantial results within the first few weeks - under medical supervision in Las Vegas."
         gallery={[
           "/images/weight-loss/phentermine-thumbs-up.png",
           "/images/weight-loss/phentermine-treatment.jpg",
@@ -159,17 +158,18 @@ export default function PhenterminePage() {
           eyebrow: "Weight Loss with Phentermine",
           heading: "What is the Phentermine treatment?",
           paragraphs: [
-            "Phentermine is more than just an appetite suppressant — it's a potent weight-loss medication that delivers substantial results for those looking to shed a significant amount of weight within the first few weeks.",
+            "Phentermine is more than just an appetite suppressant - it's a potent weight-loss medication that delivers substantial results for those looking to shed a significant amount of weight within the first few weeks.",
             "FDA-approved for long-term weight management and often combined with topiramate, Phentermine is a remarkably safe, non-addictive medication that has been trusted for over 50 years. Prescribed in three-month cycles, it has demonstrated a very high success rate when used correctly.",
           ],
           image: "/images/weight-loss/phentermine-treatment.jpg",
+          imageAspect: "landscape",
         }}
       />
 
       <PillarsGrid
         eyebrow="How it works"
         heading="How does Phentermine work?"
-        intro="Phentermine works through four coordinated mechanisms — the medication doesn't do the work for you, but it makes sticking to your plan dramatically easier."
+        intro="Phentermine works through four coordinated mechanisms - the medication doesn't do the work for you, but it makes sticking to your plan dramatically easier."
         pillars={HOW_IT_WORKS}
       />
 
@@ -181,7 +181,7 @@ export default function PhenterminePage() {
           heading: "Is Phentermine right for you?",
           paragraphs: [
             "The best way to know is a consultation with our specialists. We'll review your medical history and perform a physical exam to confirm Phentermine is a suitable choice, then schedule a follow-up shortly after starting so we can verify the medication is working with your body.",
-            "Our specialists tailor your Phentermine dosage to your specific needs. Many of our patients also take Topiramate alongside Phentermine — an anticonvulsant and nerve-pain medication that enhances the effectiveness of your weight-loss regimen.",
+            "Our specialists tailor your Phentermine dosage to your specific needs. Many of our patients also take Topiramate alongside Phentermine - an anticonvulsant and nerve-pain medication that enhances the effectiveness of your weight-loss regimen.",
           ],
           image: "/images/weight-loss/phentermine-thumbs-up.png",
           bullets: [
@@ -200,7 +200,7 @@ export default function PhenterminePage() {
         image="/images/weight-loss/phentermine-pill.webp"
       />
 
-      {/* Compact "Not for everyone" + Side effects — combined into one dense band */}
+      {/* Compact "Not for everyone" + Side effects - combined into one dense band */}
       <section className="relative bg-revival-warm-white py-12 lg:py-16">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
           <div>
@@ -272,7 +272,7 @@ export default function PhenterminePage() {
             label: "Medical Weight Loss",
             href: "/weight-loss/",
             blurb:
-              "The full program—labs, physician-led plans, and ongoing support.",
+              "The full program-labs, physician-led plans, and ongoing support.",
           },
         ]}
       />

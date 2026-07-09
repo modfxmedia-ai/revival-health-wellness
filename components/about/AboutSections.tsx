@@ -92,14 +92,14 @@ export const TEAM: TeamMember[] = [
     role: "Nurse Practitioner",
     initials: "RR",
     image: "/images/about/team/radford-raquedan.png",
-    bio: "Radford Raquedan, serves as the clinics Nurse practitioner at Revival Health and Wellness, he was born and raised in Hawaii, has dedicated over a decade to the medical field, specializing in emergency medicine and acute care. His journey into nursing was inspired by a close friend’s courageous battle with cancer, sparking a lifelong passion for helping others. As a lifelong athlete who transformed his own health—losing over 50 pounds—Radford became a nurse practitioner to guide others toward their best selves. He focuses on hormone optimization, weight loss, sexual wellness, and aesthetics, blending medical expertise with personal experience. Radford is committed to empowering individuals to embrace healthy lifestyles, gain confidence, and achieve lasting change, one life at a time.",
+    bio: "Radford Raquedan, serves as the clinics Nurse practitioner at Revival Health and Wellness, he was born and raised in Hawaii, has dedicated over a decade to the medical field, specializing in emergency medicine and acute care. His journey into nursing was inspired by a close friend’s courageous battle with cancer, sparking a lifelong passion for helping others. As a lifelong athlete who transformed his own health-losing over 50 pounds-Radford became a nurse practitioner to guide others toward their best selves. He focuses on hormone optimization, weight loss, sexual wellness, and aesthetics, blending medical expertise with personal experience. Radford is committed to empowering individuals to embrace healthy lifestyles, gain confidence, and achieve lasting change, one life at a time.",
   },
   {
     name: "Sanaz Salmani",
     role: "Clinic Director",
     initials: "SS",
     image: "/images/about/team/sanaz-salmani.png",
-    bio: "Sanaz Salmani serves as the clinic director at Revival Health and Wellness, bringing over two decades of luxury customer service experience to her leadership role. Passionate about building relationships, she ensures every patient is treated like family and receives personalized care and support to achieve their wellness goals. As a mom of two, Sanaz deeply loves her children and inspires others by proving that moms can do it all—take care of themselves while caring for others. With a strong passion for training and fitness, she is a certified personal trainer and professional bodybuilder, proudly earning her pro card in the natural bodybuilding community. Sanaz’s dedication to health, empowerment, and personal growth inspires both her patients and her team, driving the transformative experience at Revival Health and Wellness.",
+    bio: "Sanaz Salmani serves as the clinic director at Revival Health and Wellness, bringing over two decades of luxury customer service experience to her leadership role. Passionate about building relationships, she ensures every patient is treated like family and receives personalized care and support to achieve their wellness goals. As a mom of two, Sanaz deeply loves her children and inspires others by proving that moms can do it all-take care of themselves while caring for others. With a strong passion for training and fitness, she is a certified personal trainer and professional bodybuilder, proudly earning her pro card in the natural bodybuilding community. Sanaz’s dedication to health, empowerment, and personal growth inspires both her patients and her team, driving the transformative experience at Revival Health and Wellness.",
   },
   {
     name: "Daesja Johnson",
@@ -120,7 +120,7 @@ export const TEAM: TeamMember[] = [
 export const TESTIMONIALS_INTRO = {
   eyebrow: "Real Stories, Real Results",
   title: "Testimonials",
-  body: "Every patient who walks through our doors begins a unique journey, and their success stories are the heartbeat of Revival Health & Wellness. From overcoming long-standing health challenges to embracing a new chapter filled with energy, confidence, and vitality, our patients’ voices tell the real story of what compassionate, personalized care can achieve. These testimonials serve as a reminder of our mission — to help people live healthier, happier, and more fulfilling lives. We are proud to share their words with you, as they reflect the life-changing results and genuine connections built through our work.",
+  body: "Every patient who walks through our doors begins a unique journey, and their success stories are the heartbeat of Revival Health & Wellness. From overcoming long-standing health challenges to embracing a new chapter filled with energy, confidence, and vitality, our patients’ voices tell the real story of what compassionate, personalized care can achieve. These testimonials serve as a reminder of our mission - to help people live healthier, happier, and more fulfilling lives. We are proud to share their words with you, as they reflect the life-changing results and genuine connections built through our work.",
 };
 
 export const VISION = {
@@ -269,7 +269,7 @@ export function CoreValuesSection() {
           </h2>
           <p className="mt-5 text-lg font-light leading-relaxed text-revival-charcoal/80">
             Seven principles that guide every consultation, treatment, and
-            interaction—because how we care matters as much as the care itself.
+            interaction-because how we care matters as much as the care itself.
           </p>
         </div>
 
@@ -342,7 +342,7 @@ export function MeetTeamSection() {
             Meet Our Team
           </h2>
           <p className="mt-5 text-lg font-light leading-relaxed text-revival-cream/80">
-            A physician-led team dedicated to your transformation—medically
+            A physician-led team dedicated to your transformation-medically
             trained, personally invested, and here to walk with you every step
             of the way.
           </p>
@@ -592,7 +592,7 @@ export function TestimonialsGallerySection() {
             >
               <Image
                 src={t.image}
-                alt={`${t.name} — Revival Health & Wellness patient testimonial`}
+                alt={`${t.name} - Revival Health & Wellness patient testimonial`}
                 width={1545}
                 height={1994}
                 sizes="(min-width: 1024px) 32vw, (min-width: 640px) 48vw, 100vw"

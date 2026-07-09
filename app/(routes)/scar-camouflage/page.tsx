@@ -67,8 +67,7 @@ export default function ScarCamouflagePage() {
             </span>
           </>
         }
-        description={"Scar concealment & confidence restoration — because your skin should reflect how strong, radiant, and beautiful you truly are."}
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description={"Scar concealment & confidence restoration - because your skin should reflect how strong, radiant, and beautiful you truly are."}
         gallery={["/images/scar-camouflage/SMC11.avif"]}
         compact
       />
@@ -79,7 +78,7 @@ export default function ScarCamouflagePage() {
           heading:
             "Because your skin should reflect how strong, radiant, and beautiful you truly are.",
           paragraphs: [
-            "At Revival Health and Wellness, we understand that scars — whether from surgery, acne, or injury — can affect how you feel about yourself. While they’re part of your story, they don’t have to define you.",
+            "At Revival Health and Wellness, we understand that scars - whether from surgery, acne, or injury - can affect how you feel about yourself. While they’re part of your story, they don’t have to define you.",
             "Our expert providers offer advanced, non-surgical treatments designed to minimize the appearance of scars, helping you restore your natural beauty and reclaim your confidence. Using cutting-edge technology and personalized care, we work with you to soften visible imperfections and improve your skin’s texture and tone.",
           ],
           image: "/images/scar-camouflage/SMC11.avif",
@@ -132,7 +131,7 @@ export default function ScarCamouflagePage() {
             <p className="mt-6 border-l-2 border-revival-gold/40 pl-5 text-lg font-light leading-[1.65] text-revival-charcoal/90 sm:text-xl">
               Whether it’s a subtle change or a significant transformation,
               every scar we help fade is a step toward you feeling whole again.
-              Your healing is more than skin-deep — and we’re here for
+              Your healing is more than skin-deep - and we’re here for
               every part of the journey.
             </p>
           </div>

@@ -63,7 +63,7 @@ const FAQS = [
   {
     question: "What is GLP-1?",
     answer:
-      "GLP-1 (glucagon-like peptide-1) is a hormone your body naturally produces after eating. GLP-1 medications mimic that signal to help regulate appetite, slow digestion, and support healthier blood sugar—so weight loss becomes more sustainable.",
+      "GLP-1 (glucagon-like peptide-1) is a hormone your body naturally produces after eating. GLP-1 medications mimic that signal to help regulate appetite, slow digestion, and support healthier blood sugar-so weight loss becomes more sustainable.",
   },
   {
     question: "How does GLP-1 help with weight loss?",
@@ -73,7 +73,7 @@ const FAQS = [
   {
     question: "Does compounded GLP-1 medication actually help you lose weight?",
     answer:
-      "Yes—when it's part of a medically supervised plan. At Revival we combine compounded GLP-1 with lab work, dose titration, nutrition guidance, and weekly progress tracking so results are real and lasting.",
+      "Yes-when it's part of a medically supervised plan. At Revival we combine compounded GLP-1 with lab work, dose titration, nutrition guidance, and weekly progress tracking so results are real and lasting.",
   },
   {
     question: "Who can benefit from GLP-1 medication?",
@@ -124,7 +124,6 @@ export default function GLP1Page() {
           </>
         }
         description="Manage your weight and improve your health with medically supervised GLP-1 medications, compounded for you and paired with expert guidance."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/page-banners/glp-banner-1.webp",
           "/images/page-banners/glp-banner-2.jpg",
@@ -137,7 +136,7 @@ export default function GLP1Page() {
           heading: "Understanding GLP-1 & its role in weight loss",
           paragraphs: [
             "GLP-1 (glucagon-like peptide-1) is a hormone your body naturally releases after eating. It tells the brain you're full, slows how quickly the stomach empties, and helps regulate insulin.",
-            "GLP-1 medications amplify that natural signal—so appetite calms down, cravings ease up, and eating in a healthy calorie balance stops feeling like a fight against your own biology.",
+            "GLP-1 medications amplify that natural signal-so appetite calms down, cravings ease up, and eating in a healthy calorie balance stops feeling like a fight against your own biology.",
           ],
           image: "/images/weight-loss/glp-1-program.png",
         }}
@@ -153,7 +152,7 @@ export default function GLP1Page() {
       <MotionShowcase
         eyebrow="The Mechanism"
         heading="One hormone. Multiple metabolic wins."
-        body="GLP-1 acts across appetite, digestion, and blood-sugar regulation at the same time—a coordinated response, not a single lever."
+        body="GLP-1 acts across appetite, digestion, and blood-sugar regulation at the same time-a coordinated response, not a single lever."
         centerIcon="pill"
         centerLabel="GLP-1 Therapy"
         orbitLabels={["Appetite", "Blood Sugar", "Metabolism", "Satiety"]}
@@ -173,7 +172,7 @@ export default function GLP1Page() {
           heading: "Does compounded GLP-1 actually help you lose weight?",
           paragraphs: [
             "In a medically supervised plan, yes. At Revival, compounded GLP-1 is prescribed after a full consultation and lab review, then paired with dose titration, nutrition guidance, and weekly progress tracking.",
-            "That combination—medication plus monitoring plus habit support—is what turns a prescription into durable, real-world results.",
+            "That combination-medication plus monitoring plus habit support-is what turns a prescription into durable, real-world results.",
           ],
           image: "/images/weight-loss/glp-1-before-after.jpg",
           bullets: [
@@ -211,7 +210,7 @@ export default function GLP1Page() {
             label: "Medical Weight Loss",
             href: "/weight-loss/",
             blurb:
-              "The broader program—physician-led plans, lab work, and ongoing support.",
+              "The broader program-physician-led plans, lab work, and ongoing support.",
           },
         ]}
       />

@@ -16,10 +16,11 @@ export default function CTABanner({
   subtitle = "Book a consultation with our medical team and build a plan made for you.",
   primaryLabel = "Book a Consultation",
   primaryHref = "/contact-us",
-  secondaryLabel = "Take the Quiz",
-  secondaryHref = "/quiz",
+  secondaryLabel,
+  secondaryHref,
   className,
 }: CTABannerProps) {
+  const showSecondary = Boolean(secondaryLabel && secondaryHref);
   return (
     <section
       className={cn(
@@ -35,14 +36,16 @@ export default function CTABanner({
         <Button href={primaryHref} variant="primary" size="lg">
           {primaryLabel}
         </Button>
-        <Button
-          href={secondaryHref}
-          variant="outline"
-          size="lg"
-          className="border-revival-gold-light text-revival-warm-white hover:bg-revival-warm-white/10"
-        >
-          {secondaryLabel}
-        </Button>
+        {showSecondary && (
+          <Button
+            href={secondaryHref!}
+            variant="outline"
+            size="lg"
+            className="border-revival-gold-light text-revival-warm-white hover:bg-revival-warm-white/10"
+          >
+            {secondaryLabel}
+          </Button>
+        )}
       </div>
     </section>
   );

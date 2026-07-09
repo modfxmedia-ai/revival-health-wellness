@@ -59,7 +59,7 @@ const FAQS = [
   {
     question: "What is CoolPeel®?",
     answer:
-      "CoolPeel® is the next-generation CO2 laser treatment designed to give you all the benefits of traditional resurfacing without the downtime. Unlike aggressive CO2 lasers of the past, CoolPeel targets only the superficial layer of skin, removing damaged cells and stimulating collagen — leaving you with smoother, younger-looking skin.",
+      "CoolPeel® is the next-generation CO2 laser treatment designed to give you all the benefits of traditional resurfacing without the downtime. Unlike aggressive CO2 lasers of the past, CoolPeel targets only the superficial layer of skin, removing damaged cells and stimulating collagen - leaving you with smoother, younger-looking skin.",
   },
   {
     question: "How much downtime should I expect?",
@@ -121,7 +121,6 @@ export default function CoolpeelLaserPage() {
           </>
         }
         description="Refresh your skin with minimal downtime. Next-generation CO2 laser resurfacing without the intensity or recovery of traditional lasers."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/coolpeel-laser/228AB068-1B5F-4504-87BA-4C840C148E9D.jpeg",
           "/images/coolpeel-laser/image3.jpeg",
@@ -132,10 +131,10 @@ export default function CoolpeelLaserPage() {
       <OverviewBlock
         section={{
           eyebrow: "Refresh Your Skin with Minimal Downtime",
-          heading: "The next-generation CO2 laser — without the downtime",
+          heading: "The next-generation CO2 laser - without the downtime",
           paragraphs: [
             "At Revival Health and Wellness, we’re proud to offer CoolPeel®, the next-generation CO2 laser treatment designed to give you all the benefits of traditional resurfacing without the downtime.",
-            "Unlike aggressive CO2 lasers of the past, CoolPeel® targets only the superficial layer of skin, removing damaged cells and stimulating collagen — leaving you with smoother, younger-looking skin.",
+            "Unlike aggressive CO2 lasers of the past, CoolPeel® targets only the superficial layer of skin, removing damaged cells and stimulating collagen - leaving you with smoother, younger-looking skin.",
           ],
           image: "/images/coolpeel-laser/228AB068-1B5F-4504-87BA-4C840C148E9D.jpeg",
         }}
@@ -206,19 +205,19 @@ export default function CoolpeelLaserPage() {
             label: "Tetra Pro CO2 Laser",
             href: "/tetra-pro-co2-laser/",
             blurb:
-              "The powerhouse sibling of CoolPeel — deeper resurfacing for dramatic anti-aging transformations.",
+              "The powerhouse sibling of CoolPeel - deeper resurfacing for dramatic anti-aging transformations.",
           },
           {
             label: "CO2 Laser Treatments",
             href: "/co2-laser-treatments/",
             blurb:
-              "The complete overview of our CO2 laser offering — CoolPeel® vs. Tetra Pro side-by-side.",
+              "The complete overview of our CO2 laser offering - CoolPeel® vs. Tetra Pro side-by-side.",
           },
           {
             label: "Everesse RF Skin Tightening",
             href: "/everesse-rf-skin-tightening-and-rejuvenation/",
             blurb:
-              "Pair CoolPeel with Everesse RF for our exclusive Radiant Lift protocol — surface refinement plus deep collagen tightening.",
+              "Pair CoolPeel with Everesse RF for our exclusive Radiant Lift protocol - surface refinement plus deep collagen tightening.",
           },
         ]}
       />

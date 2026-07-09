@@ -35,7 +35,7 @@ const THREAD_TYPES = [
   },
   {
     title: "Cog threads",
-    text: "Barbed threads that hook into the skin to physically lift and reposition sagging tissue — the go-to option for jawline and jowl lifting.",
+    text: "Barbed threads that hook into the skin to physically lift and reposition sagging tissue - the go-to option for jawline and jowl lifting.",
     icon: "target" as const,
   },
   {
@@ -47,7 +47,7 @@ const THREAD_TYPES = [
 
 const CANDIDATES = [
   "Wants instantaneous, dramatic, and natural-looking results without surgery",
-  "Looking to reverse signs of aging — fine lines, wrinkles, sagging skin",
+  "Looking to reverse signs of aging - fine lines, wrinkles, sagging skin",
   "In good physical and emotional health",
   "Has realistic expectations about the outcome",
   "Wants gradual collagen improvement in addition to an immediate lift",
@@ -67,7 +67,7 @@ const FAQS = [
   {
     question: "Who is a good candidate for PDO thread lifts?",
     answer:
-      "This treatment is ideal for anyone seeking instantaneous, dramatic, and natural-looking results without the need for surgery — particularly for reversing signs of aging like fine lines, wrinkles, and sagging skin. Candidates should be physically and emotionally healthy and have realistic expectations about the outcome.",
+      "This treatment is ideal for anyone seeking instantaneous, dramatic, and natural-looking results without the need for surgery - particularly for reversing signs of aging like fine lines, wrinkles, and sagging skin. Candidates should be physically and emotionally healthy and have realistic expectations about the outcome.",
   },
   {
     question: "What happens after PDO thread lifts?",
@@ -77,7 +77,7 @@ const FAQS = [
   {
     question: "How long do the results last?",
     answer:
-      "PDO thread lifts offer immediate results — your face appears fuller and smoother as soon as you leave the clinic. Results continue to improve over the next two months as your body produces new collagen fibers. While the PDO threads are absorbed by your body after about 9 months, the results last longer due to the increased collagen reserves.",
+      "PDO thread lifts offer immediate results - your face appears fuller and smoother as soon as you leave the clinic. Results continue to improve over the next two months as your body produces new collagen fibers. While the PDO threads are absorbed by your body after about 9 months, the results last longer due to the increased collagen reserves.",
   },
 ];
 
@@ -118,10 +118,11 @@ export default function PdoThreadLiftsPage() {
             lifts
           </>
         }
-        description={"Lift, tighten, and redefine your facial contours with a minimally invasive PDO thread lift. Instant results plus long-term collagen stimulation — no surgery, no scarring."}
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description={"Lift, tighten, and redefine your facial contours with a minimally invasive PDO thread lift. Instant results plus long-term collagen stimulation - no surgery, no scarring."}
         gallery={[
-          "/images/pdo-thread-lifts/threadlift.jpg",
+          "/images/pdo-thread-lifts/pdo-thread-lifts-1.webp",
+          "/images/pdo-thread-lifts/pdo-thread-lifts-2.webp",
+          "/images/pdo-thread-lifts/pdo-thread-lifts-3.png",
         ]}
         compact
       />
@@ -133,17 +134,18 @@ export default function PdoThreadLiftsPage() {
             "Instant lift. Long-term collagen. Zero surgery.",
           paragraphs: [
             "A PDO thread lift is a minimally invasive, non-surgical procedure that lifts and tightens sagging skin using dissolvable polydioxanone (PDO) threads. The threads are placed under the skin to physically lift tissue and stimulate new collagen production over time.",
-            "Your face will appear fuller and smoother as soon as you leave the medical center — and the results continue to improve over the following two months as your body produces new collagen fibers. This treatment reduces sagging, redefines facial contours, and gives you a naturally youthful, lifted, and refreshed appearance.",
+            "Your face will appear fuller and smoother as soon as you leave the medical center - and the results continue to improve over the following two months as your body produces new collagen fibers. This treatment reduces sagging, redefines facial contours, and gives you a naturally youthful, lifted, and refreshed appearance.",
           ],
-          image: "/images/pdo-thread-lifts/threadlift.jpg",
+          image: "/images/pdo-thread-lifts/pdo-thread-lifts-1.webp",
           imageAspect: "landscape",
+          imageContain: true,
         }}
       />
 
       <PillarsGrid
         tone="cream"
         eyebrow="What are the types of PDO threads?"
-        heading={"Three thread types — tailored to your goals"}
+        heading={"Three thread types - tailored to your goals"}
         intro="Your provider selects the right combination of thread types for your specific concerns."
         pillars={THREAD_TYPES}
       />
@@ -152,8 +154,8 @@ export default function PdoThreadLiftsPage() {
         eyebrow="Ideal candidates"
         heading="Who is PDO right for?"
         items={CANDIDATES}
-        image="/images/pdo-thread-lifts/threadlift.jpg"
-        imageAspect="landscape"
+        image="/images/pdo-thread-lifts/pdo-thread-lifts-2.webp"
+        imageContain
       />
 
       <OverviewBlock
@@ -164,9 +166,10 @@ export default function PdoThreadLiftsPage() {
             "Mild swelling, immediate results, long-term collagen",
           paragraphs: [
             "After your PDO thread lift, you may experience mild swelling, bruising, and irritation around the treatment areas. To reduce these symptoms, you can use ice packs and over-the-counter pain relievers like Tylenol and Arnica. It’s also recommended to avoid strenuous physical activities and workouts for about 3 days following the procedure.",
-            "PDO thread lifts offer immediate results — your face will appear fuller and smoother as soon as you leave the medical center. However, the results will continue to improve over the next two months as your body produces new collagen fibers. While the PDO threads will be absorbed by your body after about 9 months, the results last longer due to the increased collagen reserves.",
+            "PDO thread lifts offer immediate results - your face will appear fuller and smoother as soon as you leave the medical center. However, the results will continue to improve over the next two months as your body produces new collagen fibers. While the PDO threads will be absorbed by your body after about 9 months, the results last longer due to the increased collagen reserves.",
           ],
-          image: "/images/pdo-thread-lifts/Luxury-Living-in-Dubai-South-8-e1756238774520.png",
+          image: "/images/pdo-thread-lifts/pdo-thread-lifts-3.png",
+          imageContain: true,
         }}
       />
 
@@ -178,7 +181,7 @@ export default function PdoThreadLiftsPage() {
             label: "Derma Filler",
             href: "/derma-filler/",
             blurb:
-              "Restore volume alongside lifting — dermal fillers pair beautifully with thread lifts for complete rejuvenation.",
+              "Restore volume alongside lifting - dermal fillers pair beautifully with thread lifts for complete rejuvenation.",
           },
           {
             label: "Sculptra®",
@@ -190,7 +193,7 @@ export default function PdoThreadLiftsPage() {
             label: "Kybella®",
             href: "/kybella/",
             blurb:
-              "Refine your jawline and profile by targeting stubborn submental fat — the perfect complement to a thread lift.",
+              "Refine your jawline and profile by targeting stubborn submental fat - the perfect complement to a thread lift.",
           },
         ]}
       />

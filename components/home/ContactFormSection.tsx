@@ -93,7 +93,7 @@ export default function ContactFormSection() {
 
           <ul className="mt-8 space-y-3.5 text-sm">
             {[
-              { icon: ShieldCheck, text: "100% confidential—no obligation" },
+              { icon: ShieldCheck, text: "100% confidential-no obligation" },
               { icon: CheckCircle2, text: "Response from a real provider within 1 business day" },
               { icon: Sparkles, text: "Personalized recommendations based on your goals" },
             ].map((row) => (
@@ -241,7 +241,7 @@ export default function ContactFormSection() {
               {status === "sent" ? (
                 <>
                   <CheckCircle2 className="relative h-4 w-4" />
-                  <span className="relative">Thanks—message sent!</span>
+                  <span className="relative">Thanks-message sent!</span>
                 </>
               ) : status === "loading" ? (
                 <span className="relative">Sending…</span>

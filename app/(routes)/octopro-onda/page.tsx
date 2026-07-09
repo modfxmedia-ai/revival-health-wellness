@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
 import {
   serviceSchema,
@@ -8,9 +9,7 @@ import {
 import PageHero from "@/components/ui/PageHero";
 import CTABanner from "@/components/ui/CTABanner";
 import {
-  OverviewBlock,
   PillarsGrid,
-  BenefitsList,
   FAQSection,
   RelatedServices,
 } from "@/components/templates/HormoneSections";
@@ -24,7 +23,7 @@ export const metadata = buildMetadata({
   title: TITLE,
   description: DESCRIPTION,
   path: PATH,
-  images: ["/images/emsculpt-neo/emsculpt-neo-female-model.jpg"],
+  images: ["/images/octopro-onda/octopro-machine.webp"],
 });
 
 const KEY_BENEFITS = [
@@ -32,19 +31,19 @@ const KEY_BENEFITS = [
   "Simultaneous skin tightening in the treated area",
   "Visible cellulite improvement",
   "No incisions, no needles, no anesthesia",
-  "Zero downtime — return to normal activity immediately",
+  "Zero downtime - return to normal activity immediately",
   "Comfortable, well-tolerated sessions",
 ];
 
 const TREATMENT_AREAS = [
   {
     title: "Abdomen & Flanks",
-    text: "The most-requested zone — target stubborn belly fat and love handles that resist diet and exercise. OctoPro’s Coolwaves reach subcutaneous adipose tissue while protecting the skin.",
+    text: "The most-requested zone - target stubborn belly fat and love handles that resist diet and exercise. OctoPro’s Coolwaves reach subcutaneous adipose tissue while protecting the skin.",
     icon: "target" as const,
   },
   {
     title: "Thighs & Buttocks",
-    text: "Smooth cellulite, reduce localized fat, and tighten the overlying skin — a combination few devices deliver in one session.",
+    text: "Smooth cellulite, reduce localized fat, and tighten the overlying skin - a combination few devices deliver in one session.",
     icon: "sparkles" as const,
   },
   {
@@ -58,12 +57,12 @@ const FAQS = [
   {
     question: "What is OctoPro (ONDA)?",
     answer:
-      "OctoPro is a non-invasive body-contouring device by DEKA that uses Coolwaves — a proprietary microwave technology — to selectively heat subcutaneous fat cells while protecting the surface of the skin. In the same treatment, the residual thermal action stimulates dermal remodeling for skin tightening and cellulite improvement.",
+      "OctoPro is a non-invasive body-contouring device by DEKA that uses Coolwaves - a proprietary microwave technology - to selectively heat subcutaneous fat cells while protecting the surface of the skin. In the same treatment, the residual thermal action stimulates dermal remodeling for skin tightening and cellulite improvement.",
   },
   {
     question: "What can OctoPro treat?",
     answer:
-      "OctoPro is cleared for localized fat reduction, skin laxity, and cellulite — across the abdomen, flanks, thighs, buttocks, arms, and bra-line area. It’s particularly well-suited to patients seeking a non-surgical alternative to liposuction who also want a mild skin-tightening benefit.",
+      "OctoPro is cleared for localized fat reduction, skin laxity, and cellulite - across the abdomen, flanks, thighs, buttocks, arms, and bra-line area. It’s particularly well-suited to patients seeking a non-surgical alternative to liposuction who also want a mild skin-tightening benefit.",
   },
   {
     question: "How many sessions will I need?",
@@ -73,7 +72,7 @@ const FAQS = [
   {
     question: "What does a session feel like?",
     answer:
-      "Sessions are comfortable — you’ll feel a warm, massage-like sensation as the handpiece is moved across the treatment area. There’s no numbing required and no post-treatment soreness. Sessions typically run 20–40 minutes depending on the area.",
+      "Sessions are comfortable - you’ll feel a warm, massage-like sensation as the handpiece is moved across the treatment area. There’s no numbing required and no post-treatment soreness. Sessions typically run 20–40 minutes depending on the area.",
   },
   {
     question: "Is there downtime?",
@@ -86,6 +85,108 @@ const FAQS = [
       "Initial changes are visible within a few weeks. Optimal results build gradually over 3–6 months as the body naturally metabolizes the treated fat cells and new collagen forms.",
   },
 ];
+
+/**
+ * Full-bleed uncropped image block - two-column layout that renders the source
+ * image at its native aspect ratio via `object-contain`, so device shots and
+ * treatment photos display in full without any cropping.
+ */
+function FullImageBlock({
+  eyebrow,
+  heading,
+  paragraphs,
+  bullets,
+  image,
+  imageAlt,
+  imageWidth,
+  imageHeight,
+  reverse = false,
+  tone = "light",
+}: {
+  eyebrow: string;
+  heading: string;
+  paragraphs: string[];
+  bullets?: string[];
+  image: string;
+  imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
+  reverse?: boolean;
+  tone?: "light" | "cream";
+}) {
+  const bg = tone === "cream" ? "bg-revival-cream" : "bg-revival-warm-white";
+  return (
+    <section className={`relative overflow-clip ${bg} py-20 lg:py-28`}>
+      <span
+        aria-hidden
+        className="pointer-events-none absolute -left-32 top-16 h-96 w-96 rounded-full bg-revival-gold/10 blur-[140px]"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute -right-32 bottom-16 h-96 w-96 rounded-full bg-revival-gold/10 blur-[140px]"
+      />
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
+        <div className={reverse ? "lg:order-2" : ""}>
+          <div className="relative overflow-hidden rounded-[2rem] border border-revival-gold/15 bg-gradient-to-br from-revival-cream to-revival-warm-white p-4 shadow-[0_50px_120px_-32px_rgba(15,15,15,0.25)]">
+            <div className="relative flex items-center justify-center">
+              <Image
+                src={image}
+                alt={imageAlt}
+                width={imageWidth}
+                height={imageHeight}
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="h-auto w-full rounded-2xl object-contain"
+              />
+            </div>
+          </div>
+        </div>
+        <div className={reverse ? "lg:order-1" : ""}>
+          <div className="mb-6 flex items-center gap-3">
+            <span className="h-px w-8 bg-gradient-to-r from-transparent via-revival-gold to-revival-gold/60" />
+            <span className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-revival-gold">
+              {eyebrow}
+            </span>
+          </div>
+          <h2 className="font-heading text-3xl leading-[1.1] tracking-[-0.015em] text-revival-dark sm:text-4xl lg:text-[2.75rem]">
+            {heading}
+          </h2>
+          <div className="mt-8 space-y-6">
+            {paragraphs.map((p, i) => (
+              <p
+                key={i}
+                className={
+                  i === 0
+                    ? "relative border-l-2 border-revival-gold/40 pl-5 text-lg font-light leading-[1.7] text-revival-charcoal/90 sm:text-xl sm:leading-[1.65]"
+                    : "text-base font-light leading-relaxed text-revival-charcoal/80 sm:text-lg"
+                }
+              >
+                {p}
+              </p>
+            ))}
+          </div>
+          {bullets && bullets.length > 0 && (
+            <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+              {bullets.map((b, i) => (
+                <li
+                  key={b}
+                  className="flex items-start gap-3 text-sm text-revival-charcoal/80 sm:text-[0.95rem]"
+                >
+                  <span
+                    aria-hidden
+                    className="mt-1 font-heading text-xs italic text-revival-gold"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function OctoProOndaPage() {
   return (
@@ -124,48 +225,54 @@ export default function OctoProOndaPage() {
             (ONDA)
           </>
         }
-        description="Non-invasive fat reduction, skin tightening, and cellulite improvement — in one treatment. Powered by DEKA’s proprietary Coolwaves microwave technology."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description="Non-invasive fat reduction, skin tightening, and cellulite improvement - in one treatment. Powered by DEKA’s proprietary Coolwaves microwave technology."
         gallery={[
-          "/images/emsculpt-neo/emsculpt-neo-female-model.jpg",
-          "/images/emsculpt-neo/neobum.webp",
+          "/images/octopro-onda/octopro-machine.webp",
+          "/images/octopro-onda/octopro-onda-1.webp",
+          "/images/octopro-onda/octopro-2.jpg",
         ]}
         compact
       />
 
-      <OverviewBlock
-        section={{
-          eyebrow: "Introducing the OctoPro Platform",
-          heading:
-            "Fat reduction. Skin tightening. Cellulite smoothing. In one session.",
-          paragraphs: [
-            "OctoPro is DEKA’s next-generation body-contouring platform, now available at Revival Health and Wellness. Using proprietary Coolwaves technology, it selectively heats subcutaneous adipose tissue while protecting the surface of the skin — a combination that’s difficult to achieve with laser or radiofrequency alone.",
-            "The result: measurable reduction in localized fat, visible skin tightening, and improvement in the appearance of cellulite — without incisions, anesthesia, or downtime.",
-          ],
-          image: "/images/emsculpt-neo/emsculpt-neo-female-model.jpg",
-          imageAspect: "landscape",
-        }}
+      <FullImageBlock
+        eyebrow="Introducing the OctoPro Platform"
+        heading="Fat reduction. Skin tightening. Cellulite smoothing. In one session."
+        paragraphs={[
+          "OctoPro is DEKA’s next-generation body-contouring platform, now available at Revival Health and Wellness. Using proprietary Coolwaves technology, it selectively heats subcutaneous adipose tissue while protecting the surface of the skin - a combination that’s difficult to achieve with laser or radiofrequency alone.",
+          "The result: measurable reduction in localized fat, visible skin tightening, and improvement in the appearance of cellulite - without incisions, anesthesia, or downtime.",
+        ]}
+        image="/images/octopro-onda/octopro-machine.webp"
+        imageAlt="OctoPro (ONDA) body contouring device"
+        imageWidth={3840}
+        imageHeight={5760}
       />
 
-      <OverviewBlock
+      <FullImageBlock
         tone="cream"
         reverse
-        section={{
-          eyebrow: "How OctoPro Works",
-          heading: "Coolwaves — microwave energy, precisely delivered",
-          paragraphs: [
-            "OctoPro delivers 2.45 GHz microwave energy through a proprietary handpiece designed to preferentially target adipose tissue. Fat cells absorb the energy and undergo apoptosis (natural cell death); the body then clears them through normal metabolic processes over the following weeks.",
-            "Because the same thermal action gently heats the dermis, patients also see collagen remodeling in the treated area — which is why OctoPro tightens skin and improves cellulite in the same session it reduces fat.",
-          ],
-        }}
+        eyebrow="How OctoPro Works"
+        heading="Coolwaves - microwave energy, precisely delivered"
+        paragraphs={[
+          "OctoPro delivers 2.45 GHz microwave energy through a proprietary handpiece designed to preferentially target adipose tissue. Fat cells absorb the energy and undergo apoptosis (natural cell death); the body then clears them through normal metabolic processes over the following weeks.",
+          "Because the same thermal action gently heats the dermis, patients also see collagen remodeling in the treated area - which is why OctoPro tightens skin and improves cellulite in the same session it reduces fat.",
+        ]}
+        image="/images/octopro-onda/octopro-onda-1.webp"
+        imageAlt="OctoPro treatment in progress"
+        imageWidth={2706}
+        imageHeight={3607}
       />
 
-      <BenefitsList
+      <FullImageBlock
         eyebrow="Key Benefits"
         heading="Everything OctoPro delivers in one platform"
-        items={KEY_BENEFITS}
-        image="/images/emsculpt-neo/neobum.webp"
-        imageAspect="landscape"
+        paragraphs={[
+          "One versatile handpiece system, calibrated to each treatment zone - abdomen, love handles, thighs, buttocks, arms, and bra-line. Every session is comfortable, quick, and downtime-free.",
+        ]}
+        bullets={KEY_BENEFITS}
+        image="/images/octopro-onda/octopro-2.jpg"
+        imageAlt="OctoPro treatment session"
+        imageWidth={650}
+        imageHeight={530}
       />
 
       <PillarsGrid
@@ -176,28 +283,19 @@ export default function OctoProOndaPage() {
         pillars={TREATMENT_AREAS}
       />
 
-      <OverviewBlock
-        section={{
-          eyebrow: "Who is a good candidate?",
-          heading:
-            "For patients seeking a non-surgical alternative to liposuction",
-          paragraphs: [
-            "OctoPro is ideal for patients close to their goal weight who want to address localized pockets of stubborn fat, mild-to-moderate skin laxity, or cellulite — without the recovery of surgical liposuction.",
-            "During your complimentary consultation, our medical team will assess your goals, review your health history, and design a customized OctoPro protocol — or recommend the best combination of body-contouring options across our platform.",
-          ],
-        }}
-      />
-
-      <OverviewBlock
-        tone="cream"
+      <FullImageBlock
+        eyebrow="Who is a good candidate?"
+        heading="For patients seeking a non-surgical alternative to liposuction"
+        paragraphs={[
+          "OctoPro is ideal for patients close to their goal weight who want to address localized pockets of stubborn fat, mild-to-moderate skin laxity, or cellulite - without the recovery of surgical liposuction.",
+          "During your complimentary consultation, our medical team will assess your goals, review your health history, and design a customized OctoPro protocol - or recommend the best combination of body-contouring options across our platform.",
+          "For patients seeking maximum transformation, our providers often layer OctoPro with Emsculpt NEO (to build muscle in the treated area) and Everesse RF (for deeper skin tightening). We’ll design the right combination for your goals.",
+        ]}
+        image="/images/octopro-onda/octopro-4.jpeg"
+        imageAlt="OctoPro non-surgical body contouring candidate"
+        imageWidth={452}
+        imageHeight={678}
         reverse
-        section={{
-          eyebrow: "Pairs Beautifully With",
-          heading: "Combine OctoPro with our other body-shaping tools",
-          paragraphs: [
-            "For patients seeking maximum transformation, our providers often layer OctoPro with Emsculpt NEO (to build muscle in the treated area) and Everesse RF (for deeper skin tightening). We’ll design the right combination for your goals.",
-          ],
-        }}
       />
 
       <FAQSection faqs={FAQS} />
@@ -208,13 +306,13 @@ export default function OctoProOndaPage() {
             label: "Emsculpt NEO",
             href: "/emsculpt-neo/",
             blurb:
-              "Build muscle and burn fat with HIFEM + RF — the perfect complement to OctoPro’s fat-reduction focus.",
+              "Build muscle and burn fat with HIFEM + RF - the perfect complement to OctoPro’s fat-reduction focus.",
           },
           {
             label: "Everesse RF Skin Tightening",
             href: "/everesse-rf-skin-tightening-and-rejuvenation/",
             blurb:
-              "Deeper monopolar RF tightening for the same treatment areas — layer for compound results.",
+              "Deeper monopolar RF tightening for the same treatment areas - layer for compound results.",
           },
           {
             label: "Weight Loss Program",

@@ -25,8 +25,15 @@ import MobileMenu from "./MobileMenu";
 import { cn } from "@/lib/utils";
 
 const LUXURY_EASE = [0.22, 1, 0.36, 1] as const;
-const PHONE = "(702) 963-1154";
 const EMAIL = "info@revivalhealthandwellnessgroup.com";
+
+const LOCATIONS = [
+  { label: "Henderson / SW", phone: "(702) 963-1154" },
+  { label: "Summerlin / NW", phone: "(702) 725-1588" },
+] as const;
+
+/** Primary desktop phone (used for the icon-only nav pill — tel: link). */
+const PRIMARY_PHONE = LOCATIONS[0].phone;
 
 const SOCIALS = [
   {
@@ -97,7 +104,7 @@ export default function Header() {
               transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
             />
             <div className="relative mx-auto flex h-10 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
-              {/* Left: email + locations */}
+              {/* Left: email */}
               <div className="flex items-center gap-5 text-[0.7rem] font-medium uppercase tracking-[0.12em]">
                 <a
                   href={`mailto:${EMAIL}`}
@@ -107,11 +114,27 @@ export default function Header() {
                   <span className="hidden sm:inline">{EMAIL}</span>
                   <span className="sm:hidden">Email Us</span>
                 </a>
-                <span className="hidden items-center gap-2 text-revival-warm-white/60 md:inline-flex">
-                  <MapPin className="h-3.5 w-3.5 text-revival-gold" />
-                  Two Las Vegas Locations
-                </span>
               </div>
+
+              {/* Center: dual-location phone chips */}
+              <ul className="hidden items-center gap-4 text-[0.7rem] font-semibold uppercase tracking-[0.12em] md:flex">
+                {LOCATIONS.map((loc) => (
+                  <li key={loc.phone}>
+                    <a
+                      href={`tel:${loc.phone.replace(/[^\d]/g, "")}`}
+                      className="group inline-flex items-center gap-2 text-revival-warm-white/85 transition-colors hover:text-revival-gold"
+                    >
+                      <MapPin className="h-3.5 w-3.5 text-revival-gold" />
+                      <span className="text-revival-warm-white/55">
+                        {loc.label}
+                      </span>
+                      <span className="tracking-[0.08em] text-revival-warm-white/90 group-hover:text-revival-gold">
+                        {loc.phone}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
 
               {/* Right: socials + book pill */}
               <div className="flex items-center gap-4">
@@ -234,24 +257,44 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Right: phone (desktop) + mobile trigger */}
-            <div className="ml-auto flex shrink-0 items-center gap-3 xl:ml-0">
+            {/* Right: icon phone + Book Now + mobile trigger */}
+            <div className="ml-auto flex shrink-0 items-center gap-2 xl:ml-0">
               <a
-                href={`tel:${PHONE.replace(/[^\d]/g, "")}`}
+                href={`tel:${PRIMARY_PHONE.replace(/[^\d]/g, "")}`}
+                aria-label={`Call ${PRIMARY_PHONE}`}
+                title={PRIMARY_PHONE}
                 className={cn(
-                  "group hidden items-center gap-2 rounded-full border px-3.5 py-2 text-[0.72rem] font-semibold tracking-[0.08em] transition-colors xl:inline-flex",
+                  "group relative hidden h-10 w-10 items-center justify-center rounded-full border transition-colors xl:inline-flex",
                   scrolled
-                    ? "border-white/10 text-revival-warm-white/80 hover:border-revival-gold/40 hover:text-revival-gold"
-                    : "border-revival-dark/10 text-revival-charcoal hover:border-revival-gold/50 hover:text-revival-gold",
+                    ? "border-white/15 text-revival-gold hover:border-revival-gold/50 hover:bg-white/[0.04]"
+                    : "border-revival-dark/10 text-revival-gold hover:border-revival-gold/50 hover:bg-revival-warm-white",
                 )}
               >
-                <span className="relative flex h-2 w-2">
+                <span
+                  aria-hidden
+                  className="absolute right-1.5 top-1.5 flex h-2 w-2"
+                >
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-revival-gold/60" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-revival-gold" />
                 </span>
-                <Phone className="h-3.5 w-3.5 text-revival-gold" />
-                {PHONE}
+                <Phone className="h-4 w-4" />
               </a>
+
+              <Link
+                href={CTA.href}
+                {...(CTA.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+                className="group relative hidden items-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-5 py-2.5 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-revival-dark shadow-[0_10px_28px_-10px_rgba(201,169,110,0.65)] transition-transform duration-300 hover:scale-[1.03] xl:inline-flex"
+              >
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+                />
+                <CalendarCheck className="relative h-3.5 w-3.5" />
+                <span className="relative">Book Now</span>
+                <ArrowRight className="relative h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+              </Link>
 
               <div className="xl:hidden">
                 <MobileMenu

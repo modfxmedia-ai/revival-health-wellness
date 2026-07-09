@@ -20,7 +20,7 @@ import {
 const TITLE = "RF Skin Tightening & Rejuvenation";
 const PATH = "/everesse-rf-skin-tightening-and-rejuvenation/";
 const DESCRIPTION =
-  "Tighten and lift your skin with Everesse by Volnewmer in Las Vegas. Revival Health and Wellness uses radiofrequency to help you achieve smoother, firmer, more radiant skin — no needles, no downtime.";
+  "Tighten and lift your skin with Everesse by Volnewmer in Las Vegas. Revival Health and Wellness uses radiofrequency to help you achieve smoother, firmer, more radiant skin - no needles, no downtime.";
 
 export const metadata = buildMetadata({
   title: TITLE,
@@ -180,7 +180,6 @@ export default function EveresseRfPage() {
           </>
         }
         description="Tighten, lift & resurface your skin without needles or downtime. Non-invasive skin rejuvenation has reached a new level with advanced laser resurfacing plus breakthrough radiofrequency technology."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/everesse-rf/everesse-hero.jpg",
           "/images/everesse-rf/EVERESSE-4-896x896-1.webp",
@@ -202,18 +201,19 @@ export default function EveresseRfPage() {
         }}
       />
 
-      {/* Video showcase — custom component with click-to-play, motion badges, contained (uncropped) video */}
+      {/* Video showcase - custom component with click-to-play, motion badges, contained (uncropped) video */}
       <EveresseVideoShowcase />
 
       <OverviewBlock
         section={{
           eyebrow: "CoolPeel CO₂ Laser",
-          heading: "Resurface & refine — with minimal downtime",
+          heading: "Resurface & refine - with minimal downtime",
           paragraphs: [
             "CoolPeel represents the next evolution in laser skin resurfacing. Unlike traditional CO₂ treatments that require days of downtime, CoolPeel delivers precise, controlled energy to the skin’s surface to smooth fine lines, improve texture, fade sun damage, and reveal fresher, more radiant skin with minimal downtime and discomfort.",
           ],
           bullets: COOLPEEL_TREATS,
           image: "/images/everesse-rf/VNM.png",
+          imageContain: true,
         }}
       />
 
@@ -222,9 +222,9 @@ export default function EveresseRfPage() {
         reverse
         section={{
           eyebrow: "Everesse RF",
-          heading: "Lift, tighten & contour — from within",
+          heading: "Lift, tighten & contour - from within",
           paragraphs: [
-            "Everesse RF uses monopolar radiofrequency technology to deliver deep, controlled thermal energy that stimulates new collagen production, tightens the skin, and lifts sagging tissue. It works from within — rebuilding structure while continuous cooling keeps the surface comfortable throughout the session.",
+            "Everesse RF uses monopolar radiofrequency technology to deliver deep, controlled thermal energy that stimulates new collagen production, tightens the skin, and lifts sagging tissue. It works from within - rebuilding structure while continuous cooling keeps the surface comfortable throughout the session.",
           ],
           bullets: EVERESSE_TREATS,
           image: "/images/everesse-rf/everesse-rf-tightening.jpg",
@@ -236,7 +236,7 @@ export default function EveresseRfPage() {
           eyebrow: "Radiant Lift",
           heading: "The ultimate combination protocol",
           paragraphs: [
-            "When you combine CoolPeel laser resurfacing with Everesse RF skin tightening in a single session, you get our exclusive Radiant Lift protocol — comprehensive facial contouring and rejuvenation that addresses both surface concerns and deeper structural laxity.",
+            "When you combine CoolPeel laser resurfacing with Everesse RF skin tightening in a single session, you get our exclusive Radiant Lift protocol - comprehensive facial contouring and rejuvenation that addresses both surface concerns and deeper structural laxity.",
             "Everesse rebuilds and tightens from within while CoolPeel refines and perfects the surface for complete, inside-out transformation.",
           ],
           bullets: RADIANT_LIFT_BENEFITS,
@@ -273,7 +273,7 @@ export default function EveresseRfPage() {
           ],
           bullets: [
             "Treatment typically takes 20–30 minutes depending on the area (CoolPeel)",
-            "Most patients describe a warm, prickling sensation — no numbing cream required",
+            "Most patients describe a warm, prickling sensation - no numbing cream required",
             "Continuous cooling keeps skin comfortable throughout (Everesse)",
             "No needles, no injections, no numbing required (Everesse)",
             "Both treatments performed in a single 60–90 minute Radiant Lift session",
@@ -359,7 +359,7 @@ export default function EveresseRfPage() {
             label: "Microneedling",
             href: "/microneedling/",
             blurb:
-              "Boost collagen and skin texture — a natural addition to any Everesse or CoolPeel plan.",
+              "Boost collagen and skin texture - a natural addition to any Everesse or CoolPeel plan.",
           },
           {
             label: "Sculptra®",

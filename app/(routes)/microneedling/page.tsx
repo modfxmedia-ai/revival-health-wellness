@@ -44,7 +44,7 @@ const FAQS = [
   {
     question: "What is microneedling?",
     answer:
-      "Microneedling is one of the most popular and effective skincare treatments available today. It gets its name from the tiny, fine needles used to create micro-injuries in the skin, which trigger the body’s natural healing process. This process not only rejuvenates the skin but also stimulates the production of new collagen — leading to smoother, firmer, healthier-looking skin.",
+      "Microneedling is one of the most popular and effective skincare treatments available today. It gets its name from the tiny, fine needles used to create micro-injuries in the skin, which trigger the body’s natural healing process. This process not only rejuvenates the skin but also stimulates the production of new collagen - leading to smoother, firmer, healthier-looking skin.",
   },
   {
     question: "What happens during a microneedling appointment?",
@@ -59,7 +59,7 @@ const FAQS = [
   {
     question: "What is the downtime after microneedling?",
     answer:
-      "Downtime is minimal, but you should expect noticeable redness after your appointment — similar to a mild sunburn. It’s advisable not to plan on returning to work or going anywhere for the rest of the day. Applying a moisturizer with ceramide can help keep your skin hydrated. Avoid sun exposure, exfoliating products, alcohol-based toners, and the gym/sauna/hot tub for at least 24 hours. By the next day your skin should return to normal color, and by day three you’ll notice more radiance and glow.",
+      "Downtime is minimal, but you should expect noticeable redness after your appointment - similar to a mild sunburn. It’s advisable not to plan on returning to work or going anywhere for the rest of the day. Applying a moisturizer with ceramide can help keep your skin hydrated. Avoid sun exposure, exfoliating products, alcohol-based toners, and the gym/sauna/hot tub for at least 24 hours. By the next day your skin should return to normal color, and by day three you’ll notice more radiance and glow.",
   },
   {
     question: "Can microneedling be combined with other treatments?",
@@ -109,8 +109,7 @@ export default function MicroneedlingPage() {
             </span>
           </>
         }
-        description={"If you’re looking to improve the appearance of your skin or want to boost collagen production, microneedling is an excellent option — a cutting-edge solution for healthier, more youthful skin."}
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description={"If you’re looking to improve the appearance of your skin or want to boost collagen production, microneedling is an excellent option - a cutting-edge solution for healthier, more youthful skin."}
         gallery={[
           "/images/microneedling/what_is_microneedling_header.webp",
           "/images/microneedling/view-woman-getting-face-prp-treatment.jpg",
@@ -139,7 +138,7 @@ export default function MicroneedlingPage() {
           heading: "Your microneedling appointment, start to finish",
           paragraphs: [
             "On the day of your appointment, your face is thoroughly cleansed and a topical anesthetic is applied. It typically takes 30 minutes to an hour for the anesthetic to take full effect. Once you’re properly numbed, a derma-roller or microneedling machine gently passes over the skin, creating tiny punctures. The microneedling process itself takes about 15 minutes for the face.",
-            "After the treatment, a cooling mask is applied for approximately half an hour to soothe the skin, followed by topical skincare products or a serum to enhance results. The downtime is minimal, but expect to leave with noticeable redness — similar to a mild sunburn — for the rest of the day. By the next day, your skin should return to its normal color, and by day three you’ll notice more radiance and glow.",
+            "After the treatment, a cooling mask is applied for approximately half an hour to soothe the skin, followed by topical skincare products or a serum to enhance results. The downtime is minimal, but expect to leave with noticeable redness - similar to a mild sunburn - for the rest of the day. By the next day, your skin should return to its normal color, and by day three you’ll notice more radiance and glow.",
             "For at least 24 hours after your treatment, avoid sun exposure, exfoliating products, alcohol-based toners, and activities like the gym, sauna, or hot tub. Applying a moisturizer with ceramide can help keep your skin hydrated.",
           ],
           image: "/images/microneedling/close-beauty-portrait-serum-hydration.webp",
@@ -198,7 +197,7 @@ export default function MicroneedlingPage() {
             label: "PRP Hair restoration",
             href: "/prp-hair-restoration/",
             blurb:
-              "Similar PRP science applied to the scalp — revitalize thinning hair with your own growth factors.",
+              "Similar PRP science applied to the scalp - revitalize thinning hair with your own growth factors.",
           },
           {
             label: "Under-eye treatment",
@@ -210,7 +209,7 @@ export default function MicroneedlingPage() {
             label: "Botox",
             href: "/botox/",
             blurb:
-              "Combine with microneedling for a complete anti-aging protocol — texture plus fine-line smoothing.",
+              "Combine with microneedling for a complete anti-aging protocol - texture plus fine-line smoothing.",
           },
         ]}
       />

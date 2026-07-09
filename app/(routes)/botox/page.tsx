@@ -112,7 +112,6 @@ export default function BotoxPage() {
           </>
         }
         description="Botox is one of the most popular and effective non-surgical anti-aging treatments worldwide, offering both convenience and renewed confidence. If you’re considering Botox treatments, Revival Health and Wellness is here to help you achieve your desired results."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/botox/botox_injections_750-e1756236969540.webp",
           "/images/botox/Luxury-Living-in-Dubai-South-8-e1756238774520.png",
@@ -130,6 +129,7 @@ export default function BotoxPage() {
             "By working beneath the skin, Botox targets the source of your wrinkles, minimizing muscle activity to smooth and rejuvenate your skin. Even the most subtle changes can have a dramatic impact on how you look and feel.",
           ],
           image: "/images/botox/botox_injections_750-e1756236969540.webp",
+          imageContain: true,
         }}
       />
 
@@ -144,6 +144,7 @@ export default function BotoxPage() {
             "It’s essential to select a medical professional who thoroughly understands the anatomy of the human face, the underlying facial muscles, the appropriate dosage for each area, and the precise technique for administering Botox. This ensures both effective results and the preservation of your natural expressions.",
           ],
           image: "/images/botox/Luxury-Living-in-Dubai-South-8-e1756238774520.png",
+          imageContain: true,
         }}
       />
 
@@ -202,7 +203,7 @@ export default function BotoxPage() {
             label: "Xeomin",
             href: "/xeomin/",
             blurb:
-              "Uniquely purified neurotoxin — another option for smoothing dynamic wrinkles.",
+              "Uniquely purified neurotoxin - another option for smoothing dynamic wrinkles.",
           },
         ]}
       />

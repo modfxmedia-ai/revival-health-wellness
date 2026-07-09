@@ -14,7 +14,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 /**
  * Molecule / metric chips positioned around a central "Body Composition" hub.
- * Each floats and pulses in place — a good visual counterpart to the hormone
+ * Each floats and pulses in place - a good visual counterpart to the hormone
  * motion graphic used elsewhere on the site.
  */
 const ORBITS = [
@@ -126,7 +126,7 @@ export default function WeightLossMotionGraphic() {
         />
       ))}
 
-      {/* Central hub — the scale/hormone-balance visual */}
+      {/* Central hub - the scale/hormone-balance visual */}
       <motion.div
         initial={{ scale: 0.85, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}

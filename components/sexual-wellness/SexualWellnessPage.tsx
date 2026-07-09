@@ -217,7 +217,7 @@ function CountUp({ value }: { value: string }) {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   VALUE STRIP  — thin editorial band right under the hero
+   VALUE STRIP  - thin editorial band right under the hero
    ═══════════════════════════════════════════════════════════════════════ */
 
 function ValueStrip({ data }: { data: SWPage }) {
@@ -259,7 +259,7 @@ function ValueStrip({ data }: { data: SWPage }) {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   OVERVIEW  — editorial split with layered offset card + numbered tag
+   OVERVIEW  - editorial split with layered offset card + numbered tag
    ═══════════════════════════════════════════════════════════════════════ */
 
 function OverviewSection({
@@ -365,16 +365,29 @@ function OverviewSection({
               <Sparkles className="h-3 w-3" />
               {String(index + 1).padStart(2, "0")}
             </span>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_50px_120px_-32px_rgba(15,15,15,0.35)]">
-              <Image
-                src={section.image}
-                alt={section.imageAlt ?? section.heading}
-                fill
-                sizes="(min-width: 1024px) 42vw, 100vw"
-                className="object-cover"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-revival-dark/25 via-transparent to-transparent" />
-            </div>
+            {section.imageContain ? (
+              <div className="relative overflow-hidden rounded-[2rem] shadow-[0_50px_120px_-32px_rgba(15,15,15,0.35)]">
+                <Image
+                  src={section.image}
+                  alt={section.imageAlt ?? section.heading}
+                  width={1200}
+                  height={982}
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+            ) : (
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_50px_120px_-32px_rgba(15,15,15,0.35)]">
+                <Image
+                  src={section.image}
+                  alt={section.imageAlt ?? section.heading}
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-revival-dark/25 via-transparent to-transparent" />
+              </div>
+            )}
           </motion.div>
         ) : null}
       </div>
@@ -383,7 +396,7 @@ function OverviewSection({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   STATS  — full-width billboard with count-up
+   STATS  - full-width billboard with count-up
    ═══════════════════════════════════════════════════════════════════════ */
 
 function StatsSection({
@@ -472,7 +485,7 @@ function StatsSection({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   PROCESS  — vertical scroll-drawn timeline
+   PROCESS  - vertical scroll-drawn timeline
    ═══════════════════════════════════════════════════════════════════════ */
 
 function ProcessSection({
@@ -570,7 +583,7 @@ function ProcessSection({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   FEATURES  — equal-height card row with numbered indices + gold accent bar
+   FEATURES  - equal-height card row with numbered indices + gold accent bar
    ═══════════════════════════════════════════════════════════════════════ */
 
 function FeaturesSection({
@@ -722,7 +735,7 @@ function FeaturesSection({
                   {it.text}
                 </p>
 
-                {/* Animated bottom accent — draws from left on hover */}
+                {/* Animated bottom accent - draws from left on hover */}
                 <span
                   aria-hidden
                   className="relative mt-6 block h-px w-full overflow-hidden bg-revival-gold/15"
@@ -739,7 +752,7 @@ function FeaturesSection({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   BULLETS  — 2-column checklist card with corner accent
+   BULLETS  - 2-column checklist card with corner accent
    ═══════════════════════════════════════════════════════════════════════ */
 
 function BulletsSection({
@@ -820,7 +833,7 @@ function BulletsSection({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   QUOTE  — asymmetric editorial testimonial
+   QUOTE  - asymmetric editorial testimonial
    ═══════════════════════════════════════════════════════════════════════ */
 
 function QuoteSection({
@@ -909,7 +922,7 @@ function QuoteSection({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   WARNING  — struck-through comparison + Revival "yes" card
+   WARNING  - struck-through comparison + Revival "yes" card
    ═══════════════════════════════════════════════════════════════════════ */
 
 function WarningSection({
@@ -979,7 +992,7 @@ function WarningSection({
             </motion.div>
           ))}
 
-          {/* Revival positive card — completes the 4-up grid */}
+          {/* Revival positive card - completes the 4-up grid */}
           <motion.div
             variants={fadeUp}
             className="group relative overflow-hidden rounded-3xl border border-revival-gold/40 bg-revival-dark p-7 text-revival-warm-white shadow-xl transition-all duration-500 hover:-translate-y-1"
@@ -996,7 +1009,7 @@ function WarningSection({
             </h3>
             <p className="relative mt-3 text-sm font-light leading-relaxed text-revival-warm-white/80">
               Clinically-proven, non-surgical protocols with real, safe results
-              — designed and delivered by our medical team.
+              - designed and delivered by our medical team.
             </p>
           </motion.div>
         </motion.div>
@@ -1006,7 +1019,7 @@ function WarningSection({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   OPTIONS  — luxury lifestyle cards with image top
+   OPTIONS  - luxury lifestyle cards with image top
    ═══════════════════════════════════════════════════════════════════════ */
 
 function OptionsSection({
@@ -1104,7 +1117,7 @@ function OptionsSection({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   RELATED TREATMENTS  — horizontal scroll snap carousel
+   RELATED TREATMENTS  - horizontal scroll snap carousel
    ═══════════════════════════════════════════════════════════════════════ */
 
 function RelatedTreatments({
@@ -1207,7 +1220,7 @@ function RelatedTreatments({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   FINAL CTA  — dark hero-esque closer
+   FINAL CTA  - dark hero-esque closer
    ═══════════════════════════════════════════════════════════════════════ */
 
 function FinalCta({
@@ -1332,7 +1345,7 @@ function FinalCta({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   VIDEO  — click-to-load YouTube facade (loads iframe only after user clicks)
+   VIDEO  - click-to-load YouTube facade (loads iframe only after user clicks)
    ═══════════════════════════════════════════════════════════════════════ */
 
 function VideoSection({
@@ -1477,7 +1490,7 @@ function VideoSection({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   MARQUEE BAND  — cycling treatment names between hub → grid
+   MARQUEE BAND  - cycling treatment names between hub → grid
    ═══════════════════════════════════════════════════════════════════════ */
 
 function MarqueeBand({ items }: { items: string[] }) {
@@ -1545,7 +1558,6 @@ export default function SexualWellnessPage({
           )
         }
         description={data.description}
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={data.gallery}
       />
 

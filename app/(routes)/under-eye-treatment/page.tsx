@@ -100,7 +100,6 @@ export default function UnderEyeTreatmentPage() {
           </>
         }
         description="Revive tired, dull eyes. This advanced tear-trough treatment targets dark circles, puffiness, and fine lines to rejuvenate and brighten the under-eye area for a refreshed, well-rested look."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/under-eye-treatment/23128-dark-circles-under-eyes.jpg",
           "/images/under-eye-treatment/Eyes-3.jpg",
@@ -115,7 +114,7 @@ export default function UnderEyeTreatmentPage() {
             "A youthful appearance starts with a well-rested eye area",
           paragraphs: [
             "Revive tired, dull eyes with our specialized Under-Eye Treatment at Revival Health & Wellness. This advanced treatment targets dark circles, puffiness, and fine lines, helping to rejuvenate and brighten the under-eye area.",
-            "Experience a refreshed, youthful, and well-rested look that enhances your overall appearance — no surgery, no downtime, and results that look like the best-rested version of you.",
+            "Experience a refreshed, youthful, and well-rested look that enhances your overall appearance - no surgery, no downtime, and results that look like the best-rested version of you.",
           ],
           image: "/images/under-eye-treatment/Eyes-3.jpg",
         }}
@@ -127,10 +126,10 @@ export default function UnderEyeTreatmentPage() {
         section={{
           eyebrow: "How does tear trough lightening work?",
           heading:
-            "Precisely placed hyaluronic acid — reflect light, restore volume",
+            "Precisely placed hyaluronic acid - reflect light, restore volume",
           paragraphs: [
             "The tear trough is the delicate hollow between the lower eyelid and the cheekbone. Age, genetics, and volume loss can create shadows and “tired” looking eyes. Tear trough lightening uses small amounts of hyaluronic acid filler, precisely placed to gently restore volume, reflect light differently, and smooth the transition between the lower lid and the cheek.",
-            "Our injectors often pair this with skin-brightening or PRP protocols depending on your specific concerns — the goal is a naturally refreshed look that never appears “done.”",
+            "Our injectors often pair this with skin-brightening or PRP protocols depending on your specific concerns - the goal is a naturally refreshed look that never appears “done.”",
           ],
           image: "/images/under-eye-treatment/under-eye-bags-treatment.webp",
           imageAspect: "landscape",
@@ -152,19 +151,19 @@ export default function UnderEyeTreatmentPage() {
             label: "Derma Filler",
             href: "/derma-filler/",
             blurb:
-              "The full hyaluronic-acid dermal filler portfolio — for lips, cheeks, jawline, and more.",
+              "The full hyaluronic-acid dermal filler portfolio - for lips, cheeks, jawline, and more.",
           },
           {
             label: "PRP Hair restoration",
             href: "/prp-hair-restoration/",
             blurb:
-              "Similar PRP science, applied to the scalp — stimulate natural hair growth with your own growth factors.",
+              "Similar PRP science, applied to the scalp - stimulate natural hair growth with your own growth factors.",
           },
           {
             label: "Microneedling",
             href: "/microneedling/",
             blurb:
-              "Boost collagen and improve skin texture around the eye area — pairs beautifully with tear-trough treatment.",
+              "Boost collagen and improve skin texture around the eye area - pairs beautifully with tear-trough treatment.",
           },
         ]}
       />

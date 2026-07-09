@@ -39,7 +39,7 @@ function CountUp({
 
 const HIGHLIGHTS = [
   "Physician-led hair loss consultations",
-  "Autologous PRP — uses your own growth factors",
+  "Autologous PRP - uses your own growth factors",
   "Personalized dosing and follow-up plan",
   "FDA-approved oral finasteride option",
 ];
@@ -47,7 +47,7 @@ const HIGHLIGHTS = [
 const STATS = [
   { value: 90, suffix: "%", label: "of patients see visible improvement" },
   { value: 3, suffix: "–6", label: "sessions for full PRP protocol" },
-  { value: 100, suffix: "%", label: "natural — no synthetics, no dyes" },
+  { value: 100, suffix: "%", label: "natural - no synthetics, no dyes" },
 ];
 
 export default function HairIntroSection() {

@@ -33,7 +33,7 @@ const HAIR_SERVICES = [
     href: "/finasteride/",
     image: "/images/hair/PRP-Treatment-for-Hair-Loss-Orlando.webp",
     blurb:
-      "Finasteride is a clinically proven treatment for hair loss that blocks the hormone causing thinning. It slows hair loss, strengthens existing hair, and promotes fuller, healthier growth—perfect for maintaining hair and boosting confidence naturally.",
+      "Finasteride is a clinically proven treatment for hair loss that blocks the hormone causing thinning. It slows hair loss, strengthens existing hair, and promotes fuller, healthier growth-perfect for maintaining hair and boosting confidence naturally.",
   },
 ];
 
@@ -68,10 +68,8 @@ export default function HairPage() {
           </>
         }
         description="Revival Health and Wellness is here to help you with your medical hair care needs. Check out our hair services below."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/hair/PRP-Treatment-for-Hair-Loss-Orlando.webp",
-          "/images/hair/Luxury-Living-in-Dubai-South-3-e1756038721930.png",
         ]}
         compact
       />
@@ -82,7 +80,7 @@ export default function HairPage() {
         tone="dark"
         eyebrow="How it works"
         heading="The science of hair restoration"
-        body="Our medical hair program pairs two clinically proven approaches — PRP that reactivates dormant follicles from within, and Finasteride that blocks the hormone driving thinning. Together they build density from the root."
+        body="Our medical hair program pairs two clinically proven approaches - PRP that reactivates dormant follicles from within, and Finasteride that blocks the hormone driving thinning. Together they build density from the root."
         centerIcon="sparkles"
         centerLabel="Hair Regrowth"
         orbitLabels={[
@@ -98,7 +96,7 @@ export default function HairPage() {
         ]}
       />
 
-      {/* Service strip — 2 cards */}
+      {/* Service strip - 2 cards */}
       <section className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">

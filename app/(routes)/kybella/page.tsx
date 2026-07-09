@@ -57,17 +57,17 @@ const FAQS = [
   {
     question: "What happens during a Kybella appointment?",
     answer:
-      "When you arrive we’ll start with “before” photos, apply a numbing cream, then place a temporary tattoo dot grid to guide the injections. You can expect 10 to 50 injections that take only a few minutes. Some patients feel a slight burning sensation — we provide ice packs to alleviate this. After the session, we’ll wrap your chin with a compression bandage, and you may experience mild soreness.",
+      "When you arrive we’ll start with “before” photos, apply a numbing cream, then place a temporary tattoo dot grid to guide the injections. You can expect 10 to 50 injections that take only a few minutes. Some patients feel a slight burning sensation - we provide ice packs to alleviate this. After the session, we’ll wrap your chin with a compression bandage, and you may experience mild soreness.",
   },
   {
     question: "How many treatments will I need?",
     answer:
-      "For optimal results, Kybella typically requires 2 to 4 treatments spaced 4–6 weeks apart. Most patients begin to notice changes after 2 to 3 sessions. The exact number depends on the amount of fat being treated. Once you’re satisfied, no further maintenance treatments are necessary — the destroyed fat cells are gone for good.",
+      "For optimal results, Kybella typically requires 2 to 4 treatments spaced 4–6 weeks apart. Most patients begin to notice changes after 2 to 3 sessions. The exact number depends on the amount of fat being treated. Once you’re satisfied, no further maintenance treatments are necessary - the destroyed fat cells are gone for good.",
   },
   {
     question: "What is recovery like?",
     answer:
-      "After Kybella, most patients notice some swelling, which can make it seem like your double chin is getting bigger — rest assured, that’s just part of the process. Swelling usually peaks around 24 hours after your first treatment and can last a few days to a few weeks. You may also experience some bruising, a burning sensation, or numbness in the treated area.",
+      "After Kybella, most patients notice some swelling, which can make it seem like your double chin is getting bigger - rest assured, that’s just part of the process. Swelling usually peaks around 24 hours after your first treatment and can last a few days to a few weeks. You may also experience some bruising, a burning sensation, or numbness in the treated area.",
   },
   {
     question: "Am I a good candidate?",
@@ -114,7 +114,6 @@ export default function KybellaPage() {
           </>
         }
         description={"If you’re dealing with a double chin that makes you appear heavier or older than you are, Kybella® eliminates excess fat under the chin to reveal a beautifully sculpted neck and jawline."}
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/kybella/kybella-figure-3.jpg",
           "/images/kybella/64fe407c6c52fe1a51db4ba8_kybella-3.webp",
@@ -125,7 +124,7 @@ export default function KybellaPage() {
       <OverviewBlock
         section={{
           eyebrow: "What is Kybella?",
-          heading: "FDA-approved since 2015 — the non-surgical double chin fix",
+          heading: "FDA-approved since 2015 - the non-surgical double chin fix",
           paragraphs: [
             "FDA-approved since 2015, Kybella is revolutionary in its ability to target and eliminate fat beneath the chin. Prior to Kybella, the only effective way to treat a double chin was through liposuction.",
             "The convenience of an injectable, non-surgical treatment for removing excess submental fat has made Kybella a highly sought-after option for those looking to refine their neck and jawline without surgery.",
@@ -147,10 +146,10 @@ export default function KybellaPage() {
         reverse
         section={{
           eyebrow: "How does Kybella work?",
-          heading: "Deoxycholic acid — permanently destroys fat cells",
+          heading: "Deoxycholic acid - permanently destroys fat cells",
           paragraphs: [
             "Kybella’s active ingredient is a synthetic form of deoxycholic acid, a molecule naturally found in the body that aids in the breakdown and absorption of dietary fat.",
-            "When injected directly into the excess fat beneath the chin, Kybella works by destroying the fat cells in the targeted area — preventing them from storing fat again for permanent results.",
+            "When injected directly into the excess fat beneath the chin, Kybella works by destroying the fat cells in the targeted area - preventing them from storing fat again for permanent results.",
           ],
           image: "/images/kybella/Kybella-Injections-double-chin.jpg",
         }}
@@ -171,9 +170,9 @@ export default function KybellaPage() {
         tone="cream"
         section={{
           eyebrow: "Recovery",
-          heading: "Swelling is normal — it means it’s working",
+          heading: "Swelling is normal - it means it’s working",
           paragraphs: [
-            "After your Kybella treatment, most patients notice some swelling, which can make it seem like your double chin is getting bigger — but rest assured, it’s just part of the process. This swelling is normal and indicates that the treatment is working. Once the swelling subsides, the targeted fat cells will be permanently gone.",
+            "After your Kybella treatment, most patients notice some swelling, which can make it seem like your double chin is getting bigger - but rest assured, it’s just part of the process. This swelling is normal and indicates that the treatment is working. Once the swelling subsides, the targeted fat cells will be permanently gone.",
             "The swelling usually peaks around 24 hours after your first treatment and can last anywhere from a couple of days to a few weeks. During the recovery period, you might also experience some bruising, a burning sensation, or numbness in the treated area.",
           ],
         }}
@@ -181,7 +180,7 @@ export default function KybellaPage() {
 
       <BenefitsList
         eyebrow="Who is a good candidate for Kybella?"
-        heading={"Lift. Define. Refresh — your way."}
+        heading={"Lift. Define. Refresh - your way."}
         items={CANDIDATES}
       />
 

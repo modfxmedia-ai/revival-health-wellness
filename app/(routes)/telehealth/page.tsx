@@ -33,7 +33,7 @@ const FAQS = [
   {
     question: "Can I be prescribed medication over telehealth?",
     answer:
-      "Yes—when clinically appropriate and after a proper evaluation. Some prescriptions require baseline labs, which we order from a lab near you.",
+      "Yes-when clinically appropriate and after a proper evaluation. Some prescriptions require baseline labs, which we order from a lab near you.",
   },
   {
     question: "Do you accept insurance for telehealth?",

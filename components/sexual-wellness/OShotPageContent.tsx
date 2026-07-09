@@ -57,7 +57,7 @@ const PROCESS_STEPS = [
     n: "02",
     Icon: Droplet,
     title: "Draw your blood",
-    text: "A small volume of your own blood is drawn — no donors, no synthetics.",
+    text: "A small volume of your own blood is drawn - no donors, no synthetics.",
   },
   {
     n: "03",
@@ -69,7 +69,7 @@ const PROCESS_STEPS = [
     n: "04",
     Icon: Syringe,
     title: "Precise injection",
-    text: "PRP is carefully injected around the labia minora and clitoris — quick and tolerable.",
+    text: "PRP is carefully injected around the labia minora and clitoris - quick and tolerable.",
   },
 ];
 
@@ -77,7 +77,7 @@ const FAQS = [
   {
     question: "What is the O-Shot® treatment?",
     answer:
-      "The O-Shot® is a natural, minimally invasive treatment for women experiencing symptoms of menopause, loss of libido, and a decline in sexual health. Using platelet-rich plasma (PRP) drawn from your own blood, it stimulates blood flow and promotes new tissue development in the vaginal area — effectively reversing effects of aging and hormonal changes.",
+      "The O-Shot® is a natural, minimally invasive treatment for women experiencing symptoms of menopause, loss of libido, and a decline in sexual health. Using platelet-rich plasma (PRP) drawn from your own blood, it stimulates blood flow and promotes new tissue development in the vaginal area - effectively reversing effects of aging and hormonal changes.",
   },
   {
     question: "What is sexual wellness?",
@@ -92,12 +92,12 @@ const FAQS = [
   {
     question: "Is there downtime or side effects?",
     answer:
-      "There is no downtime — you can return to daily routine immediately after the procedure. Since the platelets are drawn from your own body, there is no allergy risk. Some patients may experience minimal, temporary swelling, numbness, redness, or sensitivity in the treated area. Side effects are generally mild and short-lived.",
+      "There is no downtime - you can return to daily routine immediately after the procedure. Since the platelets are drawn from your own body, there is no allergy risk. Some patients may experience minimal, temporary swelling, numbness, redness, or sensitivity in the treated area. Side effects are generally mild and short-lived.",
   },
   {
     question: "How long does the appointment take?",
     answer:
-      "The entire treatment is quick — most patients are in and out in about 30 minutes and find the procedure surprisingly comfortable thanks to the topical numbing.",
+      "The entire treatment is quick - most patients are in and out in about 30 minutes and find the procedure surprisingly comfortable thanks to the topical numbing.",
   },
 ];
 
@@ -135,7 +135,7 @@ function IntroSection() {
             If you&apos;re not satisfied with your sexual life and are seeking
             treatments to enhance it, Revival Health and Wellness has you
             covered. The O-Shot® is a natural, safe way to boost your sexual
-            wellness — a minimally invasive treatment that helps you experience
+            wellness - a minimally invasive treatment that helps you experience
             improved sexual pleasure and overall health.
           </motion.p>
 
@@ -270,7 +270,7 @@ function WellnessMattersSection() {
         >
           Sexual wellness encompasses how satisfied you feel about your sexual
           relationships, performance, and experiences. Maintaining harmony in
-          sexual wellness is crucial — it can significantly impact your
+          sexual wellness is crucial - it can significantly impact your
           relational, emotional, and physical well-being. Prioritizing it
           restores hormonal balance and fosters a healthier, more fulfilling
           life.
@@ -332,7 +332,7 @@ function TreatmentOverviewSection() {
             The O-Shot® is designed for women experiencing symptoms of
             menopause, loss of libido, and a decline in sexual health. By using
             your own blood platelets, the O-Shot stimulates blood flow and
-            promotes new tissue development in the vaginal area — effectively
+            promotes new tissue development in the vaginal area - effectively
             reversing the effects of aging and hormonal changes.
           </motion.p>
           <motion.p
@@ -385,7 +385,7 @@ function BenefitsSection() {
             Real benefits patients report
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg font-light leading-relaxed text-white/70">
-            The O-Shot® targets the underlying causes of sexual concerns —
+            The O-Shot® targets the underlying causes of sexual concerns -
             here&apos;s what patients most often notice.
           </p>
         </div>
@@ -446,7 +446,7 @@ function MechanismSection() {
             variants={fadeUp}
             className="mt-6 text-lg leading-relaxed text-revival-charcoal/85"
           >
-            The platelets in your blood — known as platelet-rich plasma (PRP) —
+            The platelets in your blood - known as platelet-rich plasma (PRP) -
             contain powerful growth factors. When injected, they stimulate the
             growth of new tissues and collagen, activating stem cells and
             leading to the development of healthy tissue.
@@ -456,7 +456,7 @@ function MechanismSection() {
             className="mt-4 text-lg leading-relaxed text-revival-charcoal/85"
           >
             This process rejuvenates and heals clitoral and vaginal tissues,
-            enhancing your sexual well-being while reducing vaginal dryness —
+            enhancing your sexual well-being while reducing vaginal dryness -
             for a more comfortable and satisfying experience.
           </motion.p>
 
@@ -525,7 +525,7 @@ function ProcessSection() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg font-light leading-relaxed text-revival-charcoal/85">
             Most patients find the entire treatment surprisingly comfortable
-            and quick — about 30 minutes total.
+            and quick - about 30 minutes total.
           </p>
         </div>
 
@@ -576,7 +576,7 @@ function DowntimeSection() {
     {
       Icon: Timer,
       title: "No downtime",
-      text: "Return to your daily routine immediately after the procedure — no recovery break needed.",
+      text: "Return to your daily routine immediately after the procedure - no recovery break needed.",
     },
     {
       Icon: ShieldCheck,
@@ -586,7 +586,7 @@ function DowntimeSection() {
     {
       Icon: HeartPulse,
       title: "Mild, temporary effects",
-      text: "Some patients notice minimal swelling, numbness, redness, or sensitivity at the injection area — generally mild and short-lived.",
+      text: "Some patients notice minimal swelling, numbness, redness, or sensitivity at the injection area - generally mild and short-lived.",
     },
   ];
 
@@ -667,7 +667,7 @@ function RelatedSection() {
     {
       href: "/emsella-2/",
       label: "Emsella®",
-      blurb: "Chair-based pelvic-floor strengthening — fully clothed.",
+      blurb: "Chair-based pelvic-floor strengthening - fully clothed.",
     },
     {
       href: "/women/",
@@ -739,8 +739,7 @@ export default function OShotPageContent() {
             for women&apos;s sexual wellness
           </>
         }
-        description="A natural, safe, minimally invasive PRP treatment that boosts sexual pleasure and overall intimate health — using your own platelets."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description="A natural, safe, minimally invasive PRP treatment that boosts sexual pleasure and overall intimate health - using your own platelets."
         gallery={[
           "/images/sexual-wellness/o-shot/o-shot-banner.webp",
           "/images/sexual-wellness/o-shot/o-shot-portrait.jpeg",

@@ -15,7 +15,7 @@ import { CheckCircle2, Clock, Sparkles, Target, Zap } from "lucide-react";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 /**
- * Animated numeric counter — counts up from 0 → `to` when scrolled into view.
+ * Animated numeric counter - counts up from 0 → `to` when scrolled into view.
  * Supports optional suffix (e.g. "months") and format hook for ranges like "2–3".
  */
 function CountUp({
@@ -125,7 +125,7 @@ export default function DysportEffectiveSection({
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_40px_120px_-32px_rgba(15,15,15,0.3)]">
             <Image
               src={image}
-              alt="Dysport treatment target areas — face illustration"
+              alt="Dysport treatment target areas - face illustration"
               fill
               sizes="(min-width: 1024px) 45vw, 100vw"
               className="object-cover"
@@ -184,7 +184,7 @@ export default function DysportEffectiveSection({
 
           <p className="mt-6 border-l-2 border-revival-gold/40 pl-5 text-lg font-light leading-[1.65] text-revival-charcoal/90 sm:text-xl">
             Dysport temporarily relaxes targeted facial muscles to reduce
-            wrinkles formed by repeated facial expressions — frowning,
+            wrinkles formed by repeated facial expressions - frowning,
             squinting, and smiling. Faster-acting than some other neurotoxins,
             with results in as little as 2–3 days and lasting up to 4 months.
           </p>

@@ -55,10 +55,8 @@ export default function AestheticsPage() {
           </>
         }
         description="At Revival Health and Wellness, we believe in providing services that can make you feel your best at every age."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/aesthetics/istockphoto-1366228042-612x612-1-e1756148525229.jpg",
-          "/images/aesthetics/Luxury-Living-in-Dubai-South-3-e1756038721930.png",
         ]}
         compact
       />
@@ -94,7 +92,7 @@ export default function AestheticsPage() {
       <PillarsGrid
         eyebrow="Our top injectable aesthetic services"
         heading="Signature injectables"
-        intro={"Three of our most-requested treatments — crafted to refine, restore, and enhance your natural beauty."}
+        intro={"Three of our most-requested treatments - crafted to refine, restore, and enhance your natural beauty."}
         pillars={[
           {
             title: "Dermal Fillers",
@@ -103,18 +101,18 @@ export default function AestheticsPage() {
           },
           {
             title: "Botox & Dysport",
-            text: "The most prominent treatments for eliminating wrinkles and rejuvenating your skin. Botox and Dysport are injectables that work by relaxing the muscles that cause fine lines and wrinkles — blocking the nerve signals that make these muscles contract, giving your skin a smoother, more youthful appearance.",
+            text: "The most prominent treatments for eliminating wrinkles and rejuvenating your skin. Botox and Dysport are injectables that work by relaxing the muscles that cause fine lines and wrinkles - blocking the nerve signals that make these muscles contract, giving your skin a smoother, more youthful appearance.",
             icon: "syringe",
           },
           {
             title: "Kybella",
-            text: "Kybella is an advanced injectable treatment that helps reduce stubborn fat and redefine your profile without surgery. By safely breaking down fat cells, it delivers a slimmer, more sculpted look with minimal downtime — a great choice for those seeking lasting results without the discomfort of traditional procedures.",
+            text: "Kybella is an advanced injectable treatment that helps reduce stubborn fat and redefine your profile without surgery. By safely breaking down fat cells, it delivers a slimmer, more sculpted look with minimal downtime - a great choice for those seeking lasting results without the discomfort of traditional procedures.",
             icon: "target",
           },
         ]}
       />
 
-      {/* Service strip — mirrors the live aesthetics layout with each service's exact background image */}
+      {/* Service strip - mirrors the live aesthetics layout with each service's exact background image */}
       <section className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -195,28 +193,28 @@ export default function AestheticsPage() {
                 href: "/finasteride/",
                 image: "/images/aesthetics/PRP-HAIR.jpg",
                 blurb:
-                  "Finasteride is a clinically proven treatment for hair loss that blocks the hormone causing thinning. It slows hair loss, strengthens existing hair, and promotes fuller, healthier growth—perfect for maintaining hair and boosting confidence naturally.",
+                  "Finasteride is a clinically proven treatment for hair loss that blocks the hormone causing thinning. It slows hair loss, strengthens existing hair, and promotes fuller, healthier growth-perfect for maintaining hair and boosting confidence naturally.",
               },
               {
                 label: "Emsculpt NEO",
                 href: "/emsculpt-neo/",
                 image: "/images/aesthetics/September-Featured-image.jpg",
                 blurb:
-                  "Emsculpt NEO is an advanced body contouring treatment that simultaneously builds muscle and reduces fat using high-intensity electromagnetic technology. It helps tone and strengthen your muscles, sculpt your body, and achieve a firmer, more defined physique—all without surgery or downtime.",
+                  "Emsculpt NEO is an advanced body contouring treatment that simultaneously builds muscle and reduces fat using high-intensity electromagnetic technology. It helps tone and strengthen your muscles, sculpt your body, and achieve a firmer, more defined physique-all without surgery or downtime.",
               },
               {
                 label: "Xeomin®",
                 href: "/xeomin/",
                 image: "/images/xeomin/XEOMIN-0A.jpg",
                 blurb:
-                  "The “smart toxin” neurotoxin — a purified formula without unnecessary proteins. Xeomin® relaxes facial muscles for a naturally refreshed look, with visible results in just a few days and no downtime.",
+                  "The “smart toxin” neurotoxin - a purified formula without unnecessary proteins. Xeomin® relaxes facial muscles for a naturally refreshed look, with visible results in just a few days and no downtime.",
               },
               {
                 label: "Sculptra®",
                 href: "/sculptra/",
                 image: "/images/sculptra/sculptra-before-after-2.png",
                 blurb:
-                  "Stimulate your skin’s natural collagen and restore youthful volume — gradually and beautifully. Results last up to 24 months for a natural-looking lift without surgery.",
+                  "Stimulate your skin’s natural collagen and restore youthful volume - gradually and beautifully. Results last up to 24 months for a natural-looking lift without surgery.",
               },
             ].map((s, i) => (
               <Link

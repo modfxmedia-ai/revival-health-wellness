@@ -139,6 +139,7 @@ export const PRIMARY_NAV: NavItem[] = [
         href: "https://labs.revivalhealthandwellnessgroup.com/",
         external: true,
       },
+      { label: "Patient Financing (Cherry)", href: "/cherry/" },
       { label: "Contact Us", href: "/contact-us/" },
     ],
   },

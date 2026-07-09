@@ -41,12 +41,12 @@ const COMMON_AREAS = [
 ];
 
 const WHY = [
-  "Master Injector Expertise — Treatments performed by highly skilled and experienced injectors with an artistic eye for natural results.",
-  "Personalized Enhancements — Every treatment plan is customized to your unique features, ensuring balance, beauty, and confidence.",
-  "Subtle, Natural Results — We focus on refreshing your look, not changing it — leaving you looking youthful, radiant, and authentically you.",
-  "Luxury Experience — Enjoy a modern, comfortable, spa-like atmosphere with top-tier care from start to finish.",
-  "Advanced Techniques & Premium Products — We use only trusted brands and the latest methods to achieve safe, beautiful, long-lasting results.",
-  "Trusted by Our Community — Patients choose us for our reputation, compassion, and consistent results.",
+  "Master Injector Expertise - Treatments performed by highly skilled and experienced injectors with an artistic eye for natural results.",
+  "Personalized Enhancements - Every treatment plan is customized to your unique features, ensuring balance, beauty, and confidence.",
+  "Subtle, Natural Results - We focus on refreshing your look, not changing it - leaving you looking youthful, radiant, and authentically you.",
+  "Luxury Experience - Enjoy a modern, comfortable, spa-like atmosphere with top-tier care from start to finish.",
+  "Advanced Techniques & Premium Products - We use only trusted brands and the latest methods to achieve safe, beautiful, long-lasting results.",
+  "Trusted by Our Community - Patients choose us for our reputation, compassion, and consistent results.",
 ];
 
 const CANDIDATES = [
@@ -66,7 +66,7 @@ const JUVEDERM = [
   },
   {
     title: "Juvéderm Voluma",
-    text: "Used for cheeks and chin. The first and only FDA-approved dermal filler designed specifically to improve sunken facial skin and add volume to the mid-face, enhance a weak chin, and sculpt the cheeks. Made of the thickest and most effective gel from the Juvéderm line — subtle yet natural enhancement that can last up to two years.",
+    text: "Used for cheeks and chin. The first and only FDA-approved dermal filler designed specifically to improve sunken facial skin and add volume to the mid-face, enhance a weak chin, and sculpt the cheeks. Made of the thickest and most effective gel from the Juvéderm line - subtle yet natural enhancement that can last up to two years.",
     icon: "target" as const,
   },
   {
@@ -76,22 +76,22 @@ const JUVEDERM = [
   },
   {
     title: "Juvéderm Vollure",
-    text: "Used for under the eyes, marionette lines, and nasolabial folds. Vollure’s gel thickness is right in between Voluma and Volbella — the “medium thick gel” of the family. Used mostly to treat marionette lines and nasolabial folds at the mouth. Results typically last up to 18 months.",
+    text: "Used for under the eyes, marionette lines, and nasolabial folds. Vollure’s gel thickness is right in between Voluma and Volbella - the “medium thick gel” of the family. Used mostly to treat marionette lines and nasolabial folds at the mouth. Results typically last up to 18 months.",
     icon: "smile" as const,
   },
   {
     title: "Juvéderm Volbella",
-    text: "Used for fine lines, under the eyes, and lip contouring. While Voluma is the thickest gel, Volbella is made with the thinnest gel — perfect for improving smaller, more superficial lines. Volbella can also contour the lips in a very soft, subtle, natural way. Results typically last up to 18 months.",
+    text: "Used for fine lines, under the eyes, and lip contouring. While Voluma is the thickest gel, Volbella is made with the thinnest gel - perfect for improving smaller, more superficial lines. Volbella can also contour the lips in a very soft, subtle, natural way. Results typically last up to 18 months.",
     icon: "leaf" as const,
   },
 ];
 
 const GALDERMA_TREATMENTS = [
-  "Lip augmentation with Restylane® Kysse — soft, flexible, kissable lips",
-  "Smile Line Treatment (Nasolabial Folds) — with Restylane® Refyne or Defyne",
-  "Cheek & Midface Lift — with Restylane® Contour or Lyft",
-  "Chin & Jawline Sculpting — for improved profile and definition",
-  "Fine Lines & Tear Troughs — subtle smoothing for a refreshed look",
+  "Lip augmentation with Restylane® Kysse - soft, flexible, kissable lips",
+  "Smile Line Treatment (Nasolabial Folds) - with Restylane® Refyne or Defyne",
+  "Cheek & Midface Lift - with Restylane® Contour or Lyft",
+  "Chin & Jawline Sculpting - for improved profile and definition",
+  "Fine Lines & Tear Troughs - subtle smoothing for a refreshed look",
 ];
 
 const BEFORE_AFTERS = [
@@ -171,12 +171,11 @@ export default function DermaFillerPage() {
             </span>
           </>
         }
-        description={"Sculpt. Plump. Restore — with precision. Natural-looking facial rejuvenation using Juvéderm® and the Galderma Restylane® collection."}
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description={"Sculpt. Plump. Restore - with precision. Natural-looking facial rejuvenation using Juvéderm® and the Galderma Restylane® collection."}
         gallery={[
-          "/images/derma-filler/dermal-fillers.jpeg",
-          "/images/derma-filler/are-dermal-fillers-worth-it-e1756239934354.jpg",
-          "/images/derma-filler/Sanaz-Lips.jpg",
+          "/images/derma-filler/derma-filler-1.jpg",
+          "/images/derma-filler/derma-filler-1.webp",
+          "/images/derma-filler/derma-filler-2.jpeg",
         ]}
         compact
       />
@@ -185,12 +184,13 @@ export default function DermaFillerPage() {
         section={{
           eyebrow: "Juvéderm® Dermal Fillers at Revival",
           heading:
-            "Sculpt. Plump. Restore — with precision.",
+            "Sculpt. Plump. Restore - with precision.",
           paragraphs: [
             "At Revival Health and Wellness, we specialize in natural-looking facial rejuvenation using Juvéderm®, one of the most trusted names in hyaluronic acid (HA) dermal fillers.",
             "Whether you’re looking to restore lost volume, define your features, or smooth away fine lines, Juvéderm offers a customizable solution tailored to your unique beauty. Our expert providers assess your skin, facial anatomy, and aesthetic goals to design a fully personalized plan.",
           ],
-          image: "/images/derma-filler/are-dermal-fillers-worth-it-e1756239934354.jpg",
+          image: "/images/derma-filler/derma-filler-1.jpg",
+          imageContain: true,
         }}
       />
 
@@ -198,14 +198,15 @@ export default function DermaFillerPage() {
         eyebrow={"Where Juvéderm® shines"}
         heading="Common areas we treat"
         items={COMMON_AREAS}
-        image="/images/derma-filler/Luxury-Living-in-Dubai-South-9-e1756240324202.png"
+        image="/images/derma-filler/derma-filler-1.webp"
+        imageContain
       />
 
       <PillarsGrid
         tone="cream"
         eyebrow={"Juvéderm Solutions We Offer"}
         heading="Five formulations. One personalized plan."
-        intro={"Each Juvéderm gel is engineered for a specific area — from delicate lip contours to sculpted cheekbones."}
+        intro={"Each Juvéderm gel is engineered for a specific area - from delicate lip contours to sculpted cheekbones."}
         pillars={JUVEDERM}
       />
 
@@ -227,16 +228,17 @@ export default function DermaFillerPage() {
           heading: "Timeless beauty with the Restylane® collection",
           paragraphs: [
             "Achieve timeless beauty with the Restylane® collection of dermal fillers. From adding subtle volume to lips and cheeks to restoring contours lost to aging, Restylane’s hyaluronic acid-based formulas are designed to enhance your features while maintaining natural expression.",
-            "Whether it’s defining your jawline, filling in smile lines, or adding soft volume to hollowed areas, Restylane delivers results that are both refined and lasting — elevating your beauty with each injection.",
+            "Whether it’s defining your jawline, filling in smile lines, or adding soft volume to hollowed areas, Restylane delivers results that are both refined and lasting - elevating your beauty with each injection.",
           ],
-          image: "/images/derma-filler/dermal-fillers.jpeg",
+          image: "/images/derma-filler/derma-filler-2.jpeg",
           imageAspect: "landscape",
+          imageContain: true,
         }}
       />
 
       <BenefitsList
         eyebrow="Popular Galderma Treatments"
-        heading={"Lift. Define. Refresh — your way."}
+        heading={"Lift. Define. Refresh - your way."}
         items={GALDERMA_TREATMENTS}
       />
 
@@ -249,12 +251,12 @@ export default function DermaFillerPage() {
             "Restylane® Kysse: the perfectly kissable lips",
           paragraphs: [
             "For those seeking fuller, natural-looking lips, Restylane® Kysse is the ultimate solution. This advanced filler is designed to enhance lip volume and smooth out fine lines around the mouth, all while maintaining a soft, kissable feel. With results that last up to a year, Restylane Kysse provides the perfect balance between volume, definition, and a naturally youthful appearance.",
-            "At Revival Health and Wellness, we believe in the transformative power of personalized aesthetic treatments. The Galderma line offers a range of carefully crafted solutions to meet your unique needs, whether you’re enhancing your features or restoring your youthful glow. Our expert providers are committed to delivering exceptional results that reflect your true beauty — effortlessly and elegantly.",
+            "At Revival Health and Wellness, we believe in the transformative power of personalized aesthetic treatments. The Galderma line offers a range of carefully crafted solutions to meet your unique needs, whether you’re enhancing your features or restoring your youthful glow. Our expert providers are committed to delivering exceptional results that reflect your true beauty - effortlessly and elegantly.",
           ],
         }}
       />
 
-      {/* Before & After gallery — 9 patient outcomes */}
+      {/* Before & After gallery - 9 patient outcomes */}
       <section className="relative bg-revival-warm-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -304,7 +306,7 @@ export default function DermaFillerPage() {
             label: "Botox",
             href: "/botox/",
             blurb:
-              "Smooth dynamic wrinkles — pairs beautifully with volume-restoring dermal fillers.",
+              "Smooth dynamic wrinkles - pairs beautifully with volume-restoring dermal fillers.",
           },
           {
             label: "Sculptra®",
@@ -316,7 +318,7 @@ export default function DermaFillerPage() {
             label: "Kybella®",
             href: "/kybella/",
             blurb:
-              "Non-surgical fix for a double chin — sculpt your jawline for a refined profile.",
+              "Non-surgical fix for a double chin - sculpt your jawline for a refined profile.",
           },
         ]}
       />

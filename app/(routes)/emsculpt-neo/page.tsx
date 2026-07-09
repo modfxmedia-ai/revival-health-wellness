@@ -30,7 +30,7 @@ export const metadata = buildMetadata({
 const KEY_BENEFITS = [
   "Average 30% reduction in subcutaneous fat",
   "Average 25% increase in muscle thickness",
-  "Non-invasive — no incisions, no anesthesia",
+  "Non-invasive - no incisions, no anesthesia",
   "30-minute treatment sessions",
   "Treats abdomen, buttocks, thighs, arms, calves",
   "Works for patients up to BMI 35",
@@ -47,17 +47,17 @@ const FDA_BENEFITS = [
 const TREATMENT_AREAS = [
   {
     title: "Upper Body",
-    text: "Arms, biceps, triceps, and shoulders — build definition and tone with targeted HIFEM contractions plus RF heating.",
+    text: "Arms, biceps, triceps, and shoulders - build definition and tone with targeted HIFEM contractions plus RF heating.",
     icon: "target" as const,
   },
   {
     title: "Mid Section",
-    text: "Abs, love handles, core, and glutes — the most popular treatment zones for building a stronger, more sculpted midsection.",
+    text: "Abs, love handles, core, and glutes - the most popular treatment zones for building a stronger, more sculpted midsection.",
     icon: "sparkles" as const,
   },
   {
     title: "Lower Body",
-    text: "Legs, thighs, and hamstrings — lift, firm, and strengthen with the same clinically-proven protocol.",
+    text: "Legs, thighs, and hamstrings - lift, firm, and strengthen with the same clinically-proven protocol.",
     icon: "timer" as const,
   },
 ];
@@ -71,12 +71,12 @@ const FAQS = [
   {
     question: "Who is a good candidate for Emsculpt NEO?",
     answer:
-      "If you can benefit from less fat and more muscle, Emsculpt NEO may be a great fit for you. It has broad appeal because it can treat patients up to BMI 35 — a wider range than most body-contouring options. It’s especially popular for the abdomen, buttocks, thighs, arms, and calves.",
+      "If you can benefit from less fat and more muscle, Emsculpt NEO may be a great fit for you. It has broad appeal because it can treat patients up to BMI 35 - a wider range than most body-contouring options. It’s especially popular for the abdomen, buttocks, thighs, arms, and calves.",
   },
   {
     question: "What does Emsculpt NEO feel like?",
     answer:
-      "You’ll feel intense muscle contractions and a heating sensation in the treated area — comparable to a hot stone massage combined with an intense workout. Some patients experience mild soreness afterward, similar to post-workout muscle fatigue. This typically resolves within a few days.",
+      "You’ll feel intense muscle contractions and a heating sensation in the treated area - comparable to a hot stone massage combined with an intense workout. Some patients experience mild soreness afterward, similar to post-workout muscle fatigue. This typically resolves within a few days.",
   },
   {
     question: "How long until I see results?",
@@ -129,8 +129,7 @@ export default function EmsculptNeoPage() {
             NEO
           </>
         }
-        description="Build muscle. Burn fat. Reshape your body in 30-minute sessions — no surgery, no downtime. The first non-invasive body-shaping technology that does both at once."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description="Build muscle. Burn fat. Reshape your body in 30-minute sessions - no surgery, no downtime. The first non-invasive body-shaping technology that does both at once."
         gallery={[
           "/images/emsculpt-neo/emsculpt-neo-female-model.jpg",
           "/images/emsculpt-neo/neobum.webp",
@@ -143,7 +142,7 @@ export default function EmsculptNeoPage() {
           eyebrow: "Transform Your Body with Emsculpt NEO",
           heading: "Build muscle and burn fat in a single 30-minute session",
           paragraphs: [
-            "Emsculpt NEO is the first and only non-invasive body-shaping procedure that helps eliminate fat and build muscle simultaneously in 30 minutes — the ultimate muscle-building and fat-reduction system.",
+            "Emsculpt NEO is the first and only non-invasive body-shaping procedure that helps eliminate fat and build muscle simultaneously in 30 minutes - the ultimate muscle-building and fat-reduction system.",
             "It combines Radiofrequency (RF) heating with the HIFEM (High-Intensity Focused Electromagnetic) procedure to reduce fat and build muscle at the same time. Clinical studies show an average 30% reduction in subcutaneous fat and a 25% increase in muscle thickness.",
           ],
           image: "/images/emsculpt-neo/emsculpt-neo-female-model.jpg",
@@ -159,7 +158,7 @@ export default function EmsculptNeoPage() {
           heading:
             "Two clinically-proven technologies. One 30-minute session.",
           paragraphs: [
-            "Abdomen and buttock treatments are among the most in-demand aesthetic procedures. Emsculpt NEO’s large applicators are designed to treat these bigger areas — the abdomen, buttocks, and thighs — enhancing contour, firmness, and strength.",
+            "Abdomen and buttock treatments are among the most in-demand aesthetic procedures. Emsculpt NEO’s large applicators are designed to treat these bigger areas - the abdomen, buttocks, and thighs - enhancing contour, firmness, and strength.",
             "The end result is less fat and more muscle, in less time. Best of all, Emsculpt NEO has broad appeal because it can treat patients up to BMI 35.",
           ],
           image: "/images/emsculpt-neo/neobum.webp",
@@ -224,7 +223,7 @@ export default function EmsculptNeoPage() {
           heading: "A great fit if you want less fat and more muscle",
           paragraphs: [
             "If you can benefit from less fat and more muscle, Emsculpt NEO may be right for you. Because it can treat patients up to BMI 35, it appeals to a much wider audience than most body-contouring treatments.",
-            "During your treatment you’ll feel intense muscle contractions and a heating sensation — comparable to a hot stone massage combined with an intense workout. Some soreness afterward is normal and resolves within a few days.",
+            "During your treatment you’ll feel intense muscle contractions and a heating sensation - comparable to a hot stone massage combined with an intense workout. Some soreness afterward is normal and resolves within a few days.",
           ],
         }}
       />
@@ -235,10 +234,10 @@ export default function EmsculptNeoPage() {
         section={{
           eyebrow: "Functional Wellness",
           heading:
-            "Beyond aesthetics — a tool for recovery, strength, and mobility",
+            "Beyond aesthetics - a tool for recovery, strength, and mobility",
           paragraphs: [
             "Emsculpt NEO’s integration into functional wellness offers a non-invasive option for enhancing muscle strength, improving mobility, and supporting overall physical health.",
-            "It’s an increasingly valuable tool for patients recovering from injuries, managing chronic pain, or aiming to improve core strength and physical resilience — without the impact of high-intensity training.",
+            "It’s an increasingly valuable tool for patients recovering from injuries, managing chronic pain, or aiming to improve core strength and physical resilience - without the impact of high-intensity training.",
           ],
         }}
       />
@@ -289,7 +288,7 @@ export default function EmsculptNeoPage() {
           heading: "Immediate feedback. Peak results at 90 days.",
           paragraphs: [
             "There’s essentially no downtime with Emsculpt NEO. Many patients start to notice tangible results right after their initial treatments.",
-            "Optimal results are typically observed 90 days after the final session and can continue improving for several weeks after treatment — as your body responds to the newly-built muscle and reduced fat.",
+            "Optimal results are typically observed 90 days after the final session and can continue improving for several weeks after treatment - as your body responds to the newly-built muscle and reduced fat.",
           ],
         }}
       />
@@ -302,13 +301,13 @@ export default function EmsculptNeoPage() {
             label: "Emsella",
             href: "/emsella/",
             blurb:
-              "The pelvic-floor sibling of Emsculpt NEO — same HIFEM technology, applied to strengthen the pelvic floor.",
+              "The pelvic-floor sibling of Emsculpt NEO - same HIFEM technology, applied to strengthen the pelvic floor.",
           },
           {
             label: "Everesse RF Skin Tightening",
             href: "/everesse-rf-skin-tightening-and-rejuvenation/",
             blurb:
-              "Combine Emsculpt NEO with monopolar RF for our Radiant Lift protocol — tighter skin over stronger muscle.",
+              "Combine Emsculpt NEO with monopolar RF for our Radiant Lift protocol - tighter skin over stronger muscle.",
           },
           {
             label: "Weight Loss Program",
@@ -321,7 +320,7 @@ export default function EmsculptNeoPage() {
 
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14 lg:px-8">
         <CTABanner
-          title="Ready to build muscle and burn fat — without lifting a weight?"
+          title="Ready to build muscle and burn fat - without lifting a weight?"
           subtitle="Book a free Emsculpt NEO consultation. Our medical team will assess your goals and design a session plan tailored to you."
         />
       </div>

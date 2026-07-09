@@ -179,7 +179,7 @@ export default function ServicesGrid() {
                       {service.blurb}
                     </p>
 
-                    {/* Learn more affordance — reveals on hover */}
+                    {/* Learn more affordance - reveals on hover */}
                     <span
                       className={`mt-0 flex items-center gap-1.5 overflow-hidden text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-revival-gold opacity-0 transition-all duration-500 ${
                         featured

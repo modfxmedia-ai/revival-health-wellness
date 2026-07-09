@@ -108,7 +108,6 @@ export default function GrowthHormoneOptimizationPage() {
           </>
         }
         description="When adults develop growth hormone deficiency, the risks compound quickly. HGH optimization helps you regain control of your body composition and overall health."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/hormone/growth-hormone-optimization.png",
           "/images/hormone/hormone-optimization.webp",
@@ -123,7 +122,7 @@ export default function GrowthHormoneOptimizationPage() {
           heading: "What is growth hormone deficiency?",
           paragraphs: [
             "Growth hormone, produced by the pituitary gland at the base of the brain, plays a crucial role in regulating body composition, fluids, muscle and bone growth, and mental function.",
-            "When someone has a growth hormone deficiency, the pituitary isn't producing enough to meet the body's needs. That can lead to a range of medical issues—but growth hormone replacement can significantly improve many of the associated symptoms.",
+            "When someone has a growth hormone deficiency, the pituitary isn't producing enough to meet the body's needs. That can lead to a range of medical issues-but growth hormone replacement can significantly improve many of the associated symptoms.",
           ],
           image: "/images/hormone/hormone-optimization.webp",
         }}
@@ -142,7 +141,7 @@ export default function GrowthHormoneOptimizationPage() {
           eyebrow: "Why treat it",
           heading: "Medical dangers of growth hormone deficiency",
           paragraphs: [
-            "Adults with a growth hormone deficiency are at higher risk of abnormal body composition—particularly abdominal fat accumulation—as well as cardiovascular disease and diabetes.",
+            "Adults with a growth hormone deficiency are at higher risk of abnormal body composition-particularly abdominal fat accumulation-as well as cardiovascular disease and diabetes.",
             "The deficiency often leads to decreased muscle strength and endurance, making it harder to maintain an active lifestyle. Bone density may be compromised, increasing the risk of osteoporosis later in life, and cholesterol tends to run high.",
           ],
         }}
@@ -191,7 +190,7 @@ export default function GrowthHormoneOptimizationPage() {
         pillars={[
           {
             title: "Body composition",
-            text: "Reduce fat—particularly abdominal fat—and support lean muscle growth.",
+            text: "Reduce fat-particularly abdominal fat-and support lean muscle growth.",
             icon: "scale",
           },
           {

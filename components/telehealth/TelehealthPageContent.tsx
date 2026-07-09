@@ -73,7 +73,7 @@ function Heading({
   );
 }
 
-// ─── 1) Split intro — headline + stats + framed image with floating badges ──
+// ─── 1) Split intro - headline + stats + framed image with floating badges ──
 
 function IntroSection() {
   return (
@@ -111,7 +111,7 @@ function IntroSection() {
           >
             Meet a licensed Revival provider by secure video from anywhere in
             Nevada. Weight loss, hormone therapy, sexual wellness, and
-            follow-up visits—delivered from your living room with the same
+            follow-up visits-delivered from your living room with the same
             personalized attention you&apos;d get in-clinic.
           </motion.p>
 
@@ -171,7 +171,7 @@ function IntroSection() {
         >
           <motion.div
             variants={fadeUp}
-            className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_40px_120px_-32px_rgba(15,15,15,0.35)]"
+            className="relative aspect-[3/2] overflow-hidden rounded-[2rem] shadow-[0_40px_120px_-32px_rgba(15,15,15,0.35)]"
           >
             <Image
               src="/images/page-banners/telehealth-banner-1.jpeg"
@@ -241,13 +241,13 @@ function IntroSection() {
   );
 }
 
-// ─── 2) How it works — 4-step process with connecting rail ─────────────────
+// ─── 2) How it works - 4-step process with connecting rail ─────────────────
 
 const STEPS = [
   {
     n: "01",
     title: "Book online",
-    text: "Pick a time that fits your schedule. Instant confirmation—no phone tag, no forms to print.",
+    text: "Pick a time that fits your schedule. Instant confirmation-no phone tag, no forms to print.",
     Icon: CalendarCheck,
   },
   {
@@ -299,7 +299,7 @@ function HowItWorksSection() {
             variants={fadeUp}
             className="mt-5 text-lg font-light text-revival-warm-white/70"
           >
-            The full Revival experience—minus the commute, the waiting room,
+            The full Revival experience-minus the commute, the waiting room,
             and the paper forms.
           </motion.p>
         </motion.div>
@@ -346,7 +346,7 @@ function HowItWorksSection() {
   );
 }
 
-// ─── 3) Device mockup — laptop frame with a "video call" screen ────────────
+// ─── 3) Device mockup - laptop frame with a "video call" screen ────────────
 
 function DeviceMockupSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -394,7 +394,7 @@ function DeviceMockupSection() {
             {[
               {
                 Icon: Video,
-                text: "Encrypted, HIPAA-compliant video—no third-party sign-ins",
+                text: "Encrypted, HIPAA-compliant video-no third-party sign-ins",
               },
               {
                 Icon: Signal,
@@ -481,7 +481,7 @@ function DeviceMockupSection() {
             <div className="mx-auto mt-1 h-2.5 w-[92%] rounded-b-[1.5rem] bg-gradient-to-b from-revival-charcoal/20 to-transparent" />
           </motion.div>
 
-          {/* Floating review card — sits below the laptop, not on top of it */}
+          {/* Floating review card - sits below the laptop, not on top of it */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -501,7 +501,7 @@ function DeviceMockupSection() {
               up. It felt exactly like being in the clinic.&rdquo;
             </p>
             <p className="mt-2 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-revival-charcoal/50">
-              — Revival Patient
+              - Revival Patient
             </p>
           </motion.div>
         </motion.div>
@@ -510,7 +510,7 @@ function DeviceMockupSection() {
   );
 }
 
-// ─── 4) What we treat — icon grid ──────────────────────────────────────────
+// ─── 4) What we treat - icon grid ──────────────────────────────────────────
 
 const TREATABLE = [
   {
@@ -575,7 +575,7 @@ function TreatableGridSection() {
             variants={fadeUp}
             className="mt-5 text-lg font-light text-revival-charcoal/75"
           >
-            Some treatments still need an in-clinic visit—we&apos;ll always
+            Some treatments still need an in-clinic visit-we&apos;ll always
             tell you which is which. Everything below is fair game for a
             virtual first appointment.
           </motion.p>
@@ -616,9 +616,9 @@ function TreatableGridSection() {
   );
 }
 
-// ─── 5) Trust bar — HIPAA / licensed / secure ──────────────────────────────
+// ─── 5) Trust bar - HIPAA / licensed / secure ──────────────────────────────
 
-// ─── Feature callout — Revival branded telehealth image ────────────────────
+// ─── Feature callout - Revival branded telehealth image ────────────────────
 
 function FeatureSection() {
   return (
@@ -645,7 +645,7 @@ function FeatureSection() {
           >
             Meet your Revival provider from home, work, or wherever life takes
             you. Same physician-led plans for weight loss, hormone therapy, and
-            sexual wellness — with labs, prescriptions, and follow-ups handled
+            sexual wellness - with labs, prescriptions, and follow-ups handled
             without a single trip to the clinic.
           </motion.p>
           <motion.ul
@@ -731,7 +731,7 @@ function TrustBar() {
   );
 }
 
-// ─── 6) Providers — meet the team ──────────────────────────────────────────
+// ─── 6) Providers - meet the team ──────────────────────────────────────────
 
 const PROVIDERS = [
   {
@@ -841,7 +841,7 @@ const FAQS = [
   },
   {
     q: "Can I be prescribed medication over telehealth?",
-    a: "Yes—when clinically appropriate and after a proper evaluation. Some prescriptions require baseline labs, which we order from a lab near you.",
+    a: "Yes-when clinically appropriate and after a proper evaluation. Some prescriptions require baseline labs, which we order from a lab near you.",
   },
   {
     q: "Do you accept insurance for telehealth?",
@@ -1021,8 +1021,7 @@ export default function TelehealthPageContent() {
             from the comfort of home
           </>
         }
-        description="Meet a Revival provider by secure video. Same personalized care—weight loss, hormone therapy, sexual wellness—minus the drive."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description="Meet a Revival provider by secure video. Same personalized care-weight loss, hormone therapy, sexual wellness-minus the drive."
         gallery={[
           "/images/page-banners/telehealth-banner-1.jpeg",
           "/images/page-banners/telehealth-banner-2.jpg",

@@ -47,28 +47,16 @@ const COMPANY_LINKS = [
   },
 ];
 
-const LOCATIONS = [
-  {
-    name: "Henderson / Southwest",
-    address: "7220 S. Cimarron Road, Suite #140, Las Vegas, Nevada 89113",
-    mapHref:
-      "https://www.google.com/maps/place/Revival+Health+and+Wellness/@36.0569688,-115.2693326,15z/",
-    phones: [
-      { label: "(702) 963-1154", href: "tel:(702) 963-1154" },
-      { label: "(702) 475-4621", href: "tel:(702) 475-4621" },
-    ],
-    hours: "Monday 9AM–1PM | Tue–Thu 9AM–7PM",
-  },
-  {
-    name: "Summerlin / Northwest",
-    address: "2585 Box Canyon Drive Suite #150, Las Vegas, Nevada 89128",
-    mapHref:
-      "https://www.google.com/maps/dir//2585+Box+Canyon+Dr+Suite+150+Las+Vegas,+NV+89128/",
-    phones: [{ label: "(702) 725-1588", href: "tel:(702) 725-1588" }],
-    fax: "(702) 475-4621",
-    hours: "Friday & Saturday 9AM–5PM",
-  },
-];
+import { CLINICS, telHref } from "@/lib/content/clinics";
+
+const LOCATIONS = CLINICS.map((c) => ({
+  name: c.name,
+  address: c.address,
+  mapHref: c.mapHref,
+  phones: c.phones.map((p) => ({ label: p, href: telHref(p) })),
+  fax: c.fax,
+  hours: c.hours,
+}));
 
 const SOCIAL_LINKS = [
   {
@@ -193,10 +181,16 @@ export default function Footer() {
             href={LEGITSCRIPT_HREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 rounded-lg border border-revival-gold/25 px-4 py-2 text-xs font-light text-revival-warm-white/75 transition-colors hover:border-revival-gold hover:text-revival-gold"
+            aria-label="LegitScript Certified"
+            className="mt-6 inline-flex items-center rounded-lg bg-white/95 p-2 shadow-sm transition-transform duration-200 hover:scale-[1.03]"
           >
-            <span className="text-tagline text-revival-gold">LegitScript</span>
-            Certified
+            <Image
+              src="/images/logos/legit-script.png"
+              alt="LegitScript Certified"
+              width={292}
+              height={316}
+              className="h-16 w-auto"
+            />
           </a>
 
           {/* Social links */}
@@ -268,10 +262,21 @@ export default function Footer() {
                     Fax: {loc.fax}
                   </span>
                 ) : null}
-                <span className="mt-1.5 flex items-start gap-2 text-revival-warm-white/60">
+                <div className="mt-1.5 flex items-start gap-2 text-revival-warm-white/60">
                   <Clock className="mt-0.5 h-4 w-4 shrink-0 text-revival-gold" />
-                  {loc.hours}
-                </span>
+                  <ul className="space-y-0.5 text-[0.72rem] leading-snug">
+                    {loc.hours.map((h) => (
+                      <li key={h.day} className="flex items-center gap-2">
+                        <span className="font-semibold text-revival-warm-white/80">
+                          {h.day}
+                        </span>
+                        <span className="text-revival-warm-white/60">
+                          {h.hours}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>

@@ -101,7 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Include every blog post — all render locally.
+  // Include every blog post - all render locally.
   const blogPosts: MetadataRoute.Sitemap = BLOG_POST_DATA.map((post) => ({
     url: url(`/blogs/${post.slug}/`),
     lastModified: new Date(post.date),

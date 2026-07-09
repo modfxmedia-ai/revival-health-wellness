@@ -46,7 +46,7 @@ export default function StickyBookBar() {
                 Now Booking
               </p>
               <p className="truncate text-sm font-light text-revival-cream/90 sm:text-base">
-                Free consultation—same-week appointments available
+                Free consultation-same-week appointments available
               </p>
             </div>
 

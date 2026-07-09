@@ -86,7 +86,7 @@ export default function EveresseVideoShowcase() {
       </div>
 
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1fr_1fr] lg:gap-16 lg:px-8">
-        {/* Left — editorial copy */}
+        {/* Left - editorial copy */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -115,7 +115,7 @@ export default function EveresseVideoShowcase() {
             protocol for comprehensive rejuvenation.
           </p>
 
-          {/* Inline stats — micro motion graph */}
+          {/* Inline stats - micro motion graph */}
           <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-4">
             {[
               { value: "2", unit: "techs", label: "Everesse RF + CoolPeel" },
@@ -152,7 +152,7 @@ export default function EveresseVideoShowcase() {
           </div>
         </motion.div>
 
-        {/* Right — contained video with custom play button + floating stat badges */}
+        {/* Right - contained video with custom play button + floating stat badges */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -173,7 +173,7 @@ export default function EveresseVideoShowcase() {
               onEnded={() => setIsPlaying(false)}
             />
 
-            {/* Subtle gradient overlay only when paused — helps play button visibility */}
+            {/* Subtle gradient overlay only when paused - helps play button visibility */}
             <motion.div
               aria-hidden
               className="pointer-events-none absolute inset-0 bg-gradient-to-t from-revival-dark/60 via-transparent to-transparent"
@@ -219,7 +219,7 @@ export default function EveresseVideoShowcase() {
             </button>
           </div>
 
-          {/* Floating stat badges around the video — the motion graph */}
+          {/* Floating stat badges around the video - the motion graph */}
           {STAT_BADGES.map((b) => (
             <motion.div
               key={b.label}

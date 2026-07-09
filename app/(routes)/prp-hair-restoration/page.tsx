@@ -36,12 +36,12 @@ const FAQS = [
   {
     question: "What is PRP hair restoration?",
     answer:
-      "PRP (platelet-rich plasma) hair restoration is a treatment that leverages your body’s own plasma to stimulate new hair growth. Plasma, found within your blood, contains platelets, which in turn house growth factors responsible for cell growth and tissue repair. Through a series of PRP hair injections, these growth factors can assist men and women with specific hair conditions — particularly androgenetic alopecia — in restoring hair growth.",
+      "PRP (platelet-rich plasma) hair restoration is a treatment that leverages your body’s own plasma to stimulate new hair growth. Plasma, found within your blood, contains platelets, which in turn house growth factors responsible for cell growth and tissue repair. Through a series of PRP hair injections, these growth factors can assist men and women with specific hair conditions - particularly androgenetic alopecia - in restoring hair growth.",
   },
   {
     question: "How does PRP hair restoration work?",
     answer:
-      "Platelets act like our body’s natural first responders. When we get a cut or wound, platelets rush to the site to stop the bleeding and promote quick healing. This same “rescue team” can be used to awaken dormant hair follicles and stimulate new hair growth by encouraging inactive follicles to enter an active growth phase. A small amount of blood is drawn, spun in a centrifuge to separate red blood cells from plasma, and the plasma — rich with platelets and growth factors — is injected into the scalp.",
+      "Platelets act like our body’s natural first responders. When we get a cut or wound, platelets rush to the site to stop the bleeding and promote quick healing. This same “rescue team” can be used to awaken dormant hair follicles and stimulate new hair growth by encouraging inactive follicles to enter an active growth phase. A small amount of blood is drawn, spun in a centrifuge to separate red blood cells from plasma, and the plasma - rich with platelets and growth factors - is injected into the scalp.",
   },
   {
     question: "What happens during a PRP appointment?",
@@ -102,8 +102,7 @@ export default function PrpHairRestorationPage() {
             hair restoration
           </>
         }
-        description="Unlocking the benefits of PRP for hair loss recovery. Hair loss often leads to decreased self-esteem and confidence — PRP could be the solution you’ve been looking for."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description="Unlocking the benefits of PRP for hair loss recovery. Hair loss often leads to decreased self-esteem and confidence - PRP could be the solution you’ve been looking for."
         gallery={[
           "/images/prp-hair-restoration/prp-for-hair-restoration-gallery-1-1.webp",
           "/images/prp-hair-restoration/prp-for-hair-restoration-gallery-1.webp",
@@ -118,7 +117,7 @@ export default function PrpHairRestorationPage() {
             "A natural, growth-factor-driven approach to hair regrowth",
           paragraphs: [
             "Hair loss often leads to decreased self-esteem and confidence for both men and women. If you’re struggling with hair loss, PRP hair restoration could be the solution you’ve been looking for.",
-            "PRP (platelet-rich plasma) hair restoration is a treatment that leverages your body’s own plasma to stimulate new hair growth. Plasma, found within your blood, contains platelets, which house growth factors responsible for cell growth and tissue repair. Through a series of PRP hair injections, these growth factors can help restore hair growth — particularly for androgenetic alopecia.",
+            "PRP (platelet-rich plasma) hair restoration is a treatment that leverages your body’s own plasma to stimulate new hair growth. Plasma, found within your blood, contains platelets, which house growth factors responsible for cell growth and tissue repair. Through a series of PRP hair injections, these growth factors can help restore hair growth - particularly for androgenetic alopecia.",
           ],
           image: "/images/prp-hair-restoration/prp-for-hair-restoration-gallery-1.webp",
           imageAspect: "landscape",
@@ -131,10 +130,10 @@ export default function PrpHairRestorationPage() {
         section={{
           eyebrow: "How does PRP hair restoration work?",
           heading:
-            "Your body’s own “rescue team” — redirected to your scalp",
+            "Your body’s own “rescue team” - redirected to your scalp",
           paragraphs: [
             "Platelets act like our body’s natural first responders. When we get a cut or wound, platelets rush to the site to stop the bleeding and promote quick healing. This same “rescue team” can be used to awaken dormant hair follicles and stimulate new hair growth by encouraging inactive follicles to enter an active growth phase.",
-            "During a standard PRP hair restoration session, a small amount of blood is drawn from a vein and placed in a device that separates the red blood cells from the plasma. The plasma — now rich with platelets and growth factors — is then injected into the scalp, where it begins the process of re-growing hair.",
+            "During a standard PRP hair restoration session, a small amount of blood is drawn from a vein and placed in a device that separates the red blood cells from the plasma. The plasma - now rich with platelets and growth factors - is then injected into the scalp, where it begins the process of re-growing hair.",
           ],
           image: "/images/prp-hair-restoration/prp-hair-loss-3.webp",
         }}
@@ -156,7 +155,7 @@ export default function PrpHairRestorationPage() {
         tone="cream"
         section={{
           eyebrow: "Recovery",
-          heading: "Back to daily life — immediately",
+          heading: "Back to daily life - immediately",
           paragraphs: [
             "PRP hair injections allow you to resume your regular daily activities immediately after your appointment. However, some patients may experience minor side effects such as soreness, swelling, itching, or pinpoint bleeding at the injection sites. These effects are typically mild and subside quickly.",
           ],
@@ -189,7 +188,7 @@ export default function PrpHairRestorationPage() {
             label: "Finasteride",
             href: "/finasteride/",
             blurb:
-              "FDA-approved oral hair-loss medication that blocks DHT — pairs beautifully with PRP for compound results.",
+              "FDA-approved oral hair-loss medication that blocks DHT - pairs beautifully with PRP for compound results.",
           },
           {
             label: "Hair Services Overview",
@@ -201,7 +200,7 @@ export default function PrpHairRestorationPage() {
             label: "Microneedling",
             href: "/microneedling/",
             blurb:
-              "The same PRP science applied to the skin — combine with microneedling to enhance skin texture and glow.",
+              "The same PRP science applied to the skin - combine with microneedling to enhance skin texture and glow.",
           },
         ]}
       />

@@ -126,19 +126,40 @@ const fadeUp = {
 // Sub-components
 // ─────────────────────────────────────────────────────────────────────────────
 
-function SectionEyebrow({ children }: { children: React.ReactNode }) {
+function SectionEyebrow({
+  children,
+  tone = "dark",
+}: {
+  children: React.ReactNode;
+  tone?: "dark" | "light";
+}) {
+  const isLight = tone === "light";
   return (
-    <span className="text-tagline inline-flex items-center gap-2 rounded-full border border-revival-gold/25 bg-white/[0.03] px-3.5 py-1.5 text-xs text-revival-gold backdrop-blur">
+    <span
+      className={`text-tagline inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs text-revival-gold backdrop-blur ${
+        isLight
+          ? "border-revival-gold/40 bg-white/70"
+          : "border-revival-gold/25 bg-white/[0.03]"
+      }`}
+    >
       <Sparkles className="h-3.5 w-3.5" />
       {children}
     </span>
   );
 }
 
-function Heading({ children }: { children: React.ReactNode }) {
+function Heading({
+  children,
+  tone = "dark",
+}: {
+  children: React.ReactNode;
+  tone?: "dark" | "light";
+}) {
   return (
     <h2
-      className="mt-5 font-heading font-light leading-[1.1] text-white/90"
+      className={`mt-5 font-heading font-light leading-[1.1] ${
+        tone === "light" ? "text-revival-dark" : "text-white/90"
+      }`}
       style={{ fontSize: "clamp(1.9rem, 3.4vw, 3rem)" }}
     >
       {children}
@@ -149,13 +170,16 @@ function Heading({ children }: { children: React.ReactNode }) {
 function BodyCopy({
   children,
   className = "",
+  tone = "dark",
 }: {
   children: React.ReactNode;
   className?: string;
+  tone?: "dark" | "light";
 }) {
+  const color = tone === "light" ? "text-revival-charcoal/75" : "text-white/60";
   return (
     <p
-      className={`mt-6 max-w-3xl text-base font-light leading-relaxed text-white/60 sm:text-lg ${className}`}
+      className={`mt-6 max-w-3xl text-base font-light leading-relaxed sm:text-lg ${color} ${className}`}
     >
       {children}
     </p>
@@ -205,20 +229,21 @@ function CountUp({
  * the section enters the viewport (Framer Motion pathLength). Each row fades
  * up on scroll.
  */
-function ApproachTimeline() {
+function ApproachTimeline({ tone = "dark" }: { tone?: "dark" | "light" }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start 70%", "end 30%"],
   });
   const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const railColor = tone === "light" ? "bg-revival-gold/15" : "bg-white/10";
 
   return (
     <div ref={ref} className="relative">
       {/* Static rail */}
       <span
         aria-hidden
-        className="pointer-events-none absolute left-[27px] top-4 bottom-4 w-px bg-white/10 sm:left-[31px]"
+        className={`pointer-events-none absolute left-[27px] top-4 bottom-4 w-px sm:left-[31px] ${railColor}`}
       />
       {/* Animated gold draw */}
       <motion.span
@@ -229,7 +254,7 @@ function ApproachTimeline() {
 
       <ul className="space-y-6">
         {APPROACH_STEPS.map((s, i) => (
-          <TimelineRow key={s.title} step={s} index={i} />
+          <TimelineRow key={s.title} step={s} index={i} tone={tone} />
         ))}
       </ul>
     </div>
@@ -239,9 +264,11 @@ function ApproachTimeline() {
 function TimelineRow({
   step,
   index,
+  tone = "dark",
 }: {
   step: (typeof APPROACH_STEPS)[number];
   index: number;
+  tone?: "dark" | "light";
 }) {
   const rowRef = useRef<HTMLLIElement>(null);
   const inView = useInView(rowRef, { once: true, margin: "-60px" });
@@ -264,10 +291,18 @@ function TimelineRow({
       </div>
 
       <div className="min-w-0 flex-1 pt-2">
-        <h3 className="font-heading text-lg font-medium text-white/90 sm:text-xl">
+        <h3
+          className={`font-heading text-lg font-medium sm:text-xl ${
+            tone === "light" ? "text-revival-dark" : "text-white/90"
+          }`}
+        >
           {step.title}
         </h3>
-        <p className="mt-2 max-w-2xl text-sm font-light leading-relaxed text-white/60 sm:text-base">
+        <p
+          className={`mt-2 max-w-2xl text-sm font-light leading-relaxed sm:text-base ${
+            tone === "light" ? "text-revival-charcoal/75" : "text-white/60"
+          }`}
+        >
           {step.text}
         </p>
       </div>
@@ -282,7 +317,7 @@ function TimelineRow({
 export default function WeightLossPageContent() {
   return (
     <>
-      {/* Hero — uses weight-loss imagery that appears elsewhere on the page. */}
+      {/* Hero - uses weight-loss imagery that appears elsewhere on the page. */}
       <PageHero
         eyebrow="Medical Weight Loss"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Weight Loss" }]}
@@ -297,13 +332,12 @@ export default function WeightLossPageContent() {
             </span>
           </>
         }
-        description="A scientific, personalized plan built around your body—GLP-1, phentermine, and vitamin injections with ongoing medical support in Summerlin and Henderson."
+        description="A scientific, personalized plan built around your body-GLP-1, phentermine, and vitamin injections with ongoing medical support in Summerlin and Henderson."
         primary={{
           label: "Book Your Free Consultation",
           href: ZENOTI,
           external: true,
         }}
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/page-banners/weight-loss-banner-1.jpg",
           "/images/page-banners/weight-loss-banner-2.jpg",
@@ -318,28 +352,27 @@ export default function WeightLossPageContent() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="relative overflow-hidden py-16 lg:py-24"
-        style={{ backgroundColor: BG_DARK }}
+        className="relative overflow-hidden bg-revival-warm-white py-16 lg:py-24"
       >
-        <AmbientOrbs />
+        <AmbientOrbs light />
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8">
           <div>
             <motion.div variants={fadeUp}>
-              <SectionEyebrow>Your Plan, Your Body</SectionEyebrow>
+              <SectionEyebrow tone="light">Your Plan, Your Body</SectionEyebrow>
             </motion.div>
             <motion.h2
               variants={fadeUp}
-              className="mt-5 font-heading font-light leading-[1.05] text-white/90"
+              className="mt-5 font-heading font-light leading-[1.05] text-revival-dark"
               style={{ fontSize: "clamp(2.2rem, 4vw, 3.6rem)" }}
             >
               Achieve your{" "}
-              <span className="italic bg-gradient-to-r from-[#8a5a2b] via-revival-gold to-[#e8d5b0] bg-clip-text text-transparent">
+              <span className="italic bg-gradient-to-r from-[#8a5a2b] via-revival-gold to-[#c9a96e] bg-clip-text text-transparent">
                 weight loss goals
               </span>
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-6 max-w-2xl text-base font-light leading-relaxed text-white/60 sm:text-lg"
+              className="mt-6 max-w-2xl text-base font-light leading-relaxed text-revival-charcoal/75 sm:text-lg"
             >
               At Revival Health and Wellness, we understand that achieving your
               ideal weight requires a plan that&apos;s as unique as you are.
@@ -377,20 +410,19 @@ export default function WeightLossPageContent() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="relative overflow-hidden py-16 lg:py-24"
-        style={{ backgroundColor: BG_DARKER }}
+        className="relative overflow-hidden bg-revival-warm-white py-16 lg:py-24"
       >
-        <AmbientOrbs faint />
+        <AmbientOrbs faint light />
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-8">
           <div>
             <motion.div variants={fadeUp}>
-              <SectionEyebrow>The Science</SectionEyebrow>
+              <SectionEyebrow tone="light">The Science</SectionEyebrow>
             </motion.div>
             <motion.div variants={fadeUp}>
-              <Heading>How does medical weight loss work?</Heading>
+              <Heading tone="light">How does medical weight loss work?</Heading>
             </motion.div>
             <motion.div variants={fadeUp}>
-              <BodyCopy>
+              <BodyCopy tone="light">
                 Your body evolves over time, requiring different approaches to
                 maintain a healthy weight. While many think they know how to
                 lose weight, relying on calorie counting and exercise alone
@@ -411,25 +443,55 @@ export default function WeightLossPageContent() {
         </div>
       </motion.section>
 
+      {/* ── SECTION 2b: Video showcase ─────────────────────────────────── */}
+      <section className="relative overflow-clip bg-revival-dark py-20 lg:py-28">
+        <AmbientOrbs />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-10 text-center">
+            <p className="text-tagline text-[0.7rem] text-revival-gold">
+              SEE IT IN ACTION
+            </p>
+            <h2 className="mt-3 font-heading text-3xl italic text-revival-warm-white sm:text-4xl lg:text-[2.75rem]">
+              Watch how our medical weight-loss program works
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base font-light text-revival-warm-white/70">
+              A behind-the-scenes look at the science, the process, and the
+              real transformations our patients experience at Revival.
+            </p>
+          </div>
+          <div className="relative overflow-hidden rounded-[2rem] border border-revival-gold/25 bg-black shadow-[0_50px_120px_-32px_rgba(201,169,110,0.35)]">
+            <div className="relative pt-[56.25%]">
+              <iframe
+                src="https://www.youtube.com/embed/bM3oJ3KsgxI?start=5&rel=0&modestbranding=1"
+                title="Medical weight loss at Revival Health & Wellness"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 h-full w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── SECTION 3: You can lose weight and stay healthy ─────────────── */}
       <motion.section
         variants={fadeContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="relative overflow-hidden py-16 lg:py-24"
-        style={{ backgroundColor: BG_DARK }}
+        className="relative overflow-hidden bg-revival-cream py-16 lg:py-24"
       >
-        <AmbientOrbs />
+        <AmbientOrbs light />
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <motion.div variants={fadeUp}>
-            <SectionEyebrow>Health First</SectionEyebrow>
+            <SectionEyebrow tone="light">Health First</SectionEyebrow>
           </motion.div>
           <motion.div variants={fadeUp}>
-            <Heading>You can lose weight and stay healthy</Heading>
+            <Heading tone="light">You can lose weight and stay healthy</Heading>
           </motion.div>
           <motion.div variants={fadeUp}>
-            <BodyCopy>
+            <BodyCopy tone="light">
               To kickstart your weight loss journey, it&apos;s crucial to
               recognize that lasting success starts with improving your overall
               health. Rather than chasing a lower number on the scale, the
@@ -483,10 +545,9 @@ export default function WeightLossPageContent() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="relative overflow-hidden py-16 lg:py-24"
-        style={{ backgroundColor: BG_DARK }}
+        className="relative overflow-hidden bg-revival-warm-white py-16 lg:py-24"
       >
-        <AmbientOrbs />
+        <AmbientOrbs light />
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-start gap-12 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14 lg:px-8">
           <motion.div variants={fadeUp} className="hidden lg:block">
             <PortraitFrame
@@ -498,13 +559,13 @@ export default function WeightLossPageContent() {
 
           <div>
             <motion.div variants={fadeUp}>
-              <SectionEyebrow>Our Process</SectionEyebrow>
+              <SectionEyebrow tone="light">Our Process</SectionEyebrow>
             </motion.div>
             <motion.div variants={fadeUp}>
-              <Heading>Our approach to medical weight loss</Heading>
+              <Heading tone="light">Our approach to medical weight loss</Heading>
             </motion.div>
             <motion.div variants={fadeUp} className="mt-12">
-              <ApproachTimeline />
+              <ApproachTimeline tone="light" />
             </motion.div>
           </div>
         </div>
@@ -516,16 +577,15 @@ export default function WeightLossPageContent() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="relative overflow-hidden py-16 lg:py-24"
-        style={{ backgroundColor: BG_DARKER }}
+        className="relative overflow-hidden bg-revival-cream py-16 lg:py-24"
       >
-        <AmbientOrbs faint />
+        <AmbientOrbs faint light />
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <motion.div variants={fadeUp}>
-            <SectionEyebrow>Who It&apos;s For</SectionEyebrow>
+            <SectionEyebrow tone="light">Who It&apos;s For</SectionEyebrow>
           </motion.div>
           <motion.div variants={fadeUp}>
-            <Heading>Good candidates for medical weight loss</Heading>
+            <Heading tone="light">Good candidates for medical weight loss</Heading>
           </motion.div>
           <ul className="mt-10 grid gap-4 sm:grid-cols-2">
             {CANDIDATES.map((c, i) => (
@@ -535,7 +595,7 @@ export default function WeightLossPageContent() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: EASE }}
-                className="flex items-start gap-4 rounded-2xl border border-revival-gold/15 bg-white/[0.03] px-5 py-4 backdrop-blur-md"
+                className="flex items-start gap-4 rounded-2xl border border-revival-gold/20 bg-white/80 px-5 py-4 shadow-sm backdrop-blur-md"
               >
                 <motion.span
                   initial={{ scale: 0.5, opacity: 0 }}
@@ -550,7 +610,7 @@ export default function WeightLossPageContent() {
                 >
                   <CheckCircle2 className="h-4 w-4" />
                 </motion.span>
-                <span className="text-sm font-light leading-relaxed text-white/80 sm:text-base">
+                <span className="text-sm font-light leading-relaxed text-revival-charcoal/85 sm:text-base">
                   {c}
                 </span>
               </motion.li>
@@ -632,17 +692,14 @@ export default function WeightLossPageContent() {
       </motion.section>
 
       {/* ── SECTION 8: Disclaimer ────────────────────────────────────────── */}
-      <section
-        className="relative overflow-hidden py-14"
-        style={{ backgroundColor: BG_DARKER }}
-      >
+      <section className="relative overflow-hidden bg-revival-warm-white py-14">
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.9, ease: EASE }}
-            className="text-xs font-light leading-relaxed text-white/45 sm:text-sm"
+            className="text-xs font-light leading-relaxed text-revival-charcoal/65 sm:text-sm"
           >
             {DISCLAIMER}
           </motion.p>
@@ -656,16 +713,24 @@ export default function WeightLossPageContent() {
 // Ambient background orbs used across every dark section
 // ─────────────────────────────────────────────────────────────────────────────
 
-function AmbientOrbs({ faint = false }: { faint?: boolean }) {
-  const strong = faint ? 0.14 : 0.22;
-  const weak = faint ? 0.1 : 0.18;
+function AmbientOrbs({
+  faint = false,
+  light = false,
+}: {
+  faint?: boolean;
+  light?: boolean;
+}) {
+  const strong = faint ? (light ? 0.1 : 0.14) : (light ? 0.16 : 0.22);
+  const weak = faint ? (light ? 0.08 : 0.1) : (light ? 0.12 : 0.18);
+  const goldRgb = "201,169,110";
+  const secondaryRgb = light ? "232,213,176" : "138,90,43";
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
       <motion.div
         aria-hidden
         className="absolute -left-32 top-8 h-[28rem] w-[28rem] rounded-full blur-[140px]"
         style={{
-          background: `radial-gradient(circle, rgba(201,169,110,${strong}), transparent 70%)`,
+          background: `radial-gradient(circle, rgba(${goldRgb},${strong}), transparent 70%)`,
         }}
         animate={{ x: [0, 40, 0], y: [0, 30, 0], scale: [1, 1.12, 1] }}
         transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
@@ -674,7 +739,7 @@ function AmbientOrbs({ faint = false }: { faint?: boolean }) {
         aria-hidden
         className="absolute -right-24 bottom-0 h-[26rem] w-[26rem] rounded-full blur-[140px]"
         style={{
-          background: `radial-gradient(circle, rgba(138,90,43,${weak}), transparent 70%)`,
+          background: `radial-gradient(circle, rgba(${secondaryRgb},${weak}), transparent 70%)`,
         }}
         animate={{ x: [0, -30, 0], y: [0, -20, 0], scale: [1.1, 1, 1.1] }}
         transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}

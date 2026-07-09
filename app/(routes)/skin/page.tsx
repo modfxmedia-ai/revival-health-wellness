@@ -95,10 +95,8 @@ export default function SkinPage() {
           </>
         }
         description="Revival Health and Wellness is here to help you with your medical skin care needs."
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={[
           "/images/skin/close-beauty-portrait-topless-woman-with-perfect-skin.webp",
-          "/images/skin/Luxury-Living-in-Dubai-South-3-e1756038721930.png",
         ]}
         compact
       />
@@ -125,7 +123,7 @@ export default function SkinPage() {
         </div>
       </section>
 
-      {/* Service strip — 6 cards with the exact live imagery */}
+      {/* Service strip - 6 cards with the exact live imagery */}
       <section className="relative overflow-hidden bg-revival-warm-white pb-20 lg:pb-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

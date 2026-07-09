@@ -36,7 +36,7 @@ const TREATS = [
 
 const WHY = [
   "Licensed, experienced master injectors",
-  "Honest consultations — no pressure, just options",
+  "Honest consultations - no pressure, just options",
   "Holistic, individualized treatment plans to enhance your natural beauty",
   "A clean, modern, and luxury care environment",
   "Proven results, personalized care",
@@ -46,7 +46,7 @@ const FAQS = [
   {
     question: "What is Dysport?",
     answer:
-      "Dysport is an FDA-approved injectable that temporarily relaxes targeted facial muscles to reduce the appearance of dynamic wrinkles — those lines formed by repeated facial expressions such as frowning, squinting, and smiling. It’s especially effective for frown lines (the “11s” between your brows), forehead creases, crow’s feet, and bunny lines on the nose.",
+      "Dysport is an FDA-approved injectable that temporarily relaxes targeted facial muscles to reduce the appearance of dynamic wrinkles - those lines formed by repeated facial expressions such as frowning, squinting, and smiling. It’s especially effective for frown lines (the “11s” between your brows), forehead creases, crow’s feet, and bunny lines on the nose.",
   },
   {
     question: "How quickly does Dysport work?",
@@ -61,7 +61,7 @@ const FAQS = [
   {
     question: "What other Galderma treatments do you offer?",
     answer:
-      "At Revival Health and Wellness, we proudly offer the full suite of Galderma’s premium aesthetic treatments — crafted to refine, restore, and enhance your natural beauty. From the smooth, expressive results of Dysport® to the contouring precision of the Restylane® dermal filler family, each product in the Galderma portfolio is backed by science and designed with elegance in mind.",
+      "At Revival Health and Wellness, we proudly offer the full suite of Galderma’s premium aesthetic treatments - crafted to refine, restore, and enhance your natural beauty. From the smooth, expressive results of Dysport® to the contouring precision of the Restylane® dermal filler family, each product in the Galderma portfolio is backed by science and designed with elegance in mind.",
   },
 ];
 
@@ -103,8 +103,7 @@ export default function DysportPage() {
             : erase wrinkles at Revival
           </>
         }
-        description={"Soften fine lines and wrinkles — especially those stubborn frown lines between the brows — without freezing your natural expressions."}
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
+        description={"Soften fine lines and wrinkles - especially those stubborn frown lines between the brows - without freezing your natural expressions."}
         gallery={[
           "/images/dysport/What_is_Dysport-e1756242860848.webp",
           "/images/dysport/dreamstime_m_272223673-e1682172557797.webp",
@@ -116,9 +115,9 @@ export default function DysportPage() {
         section={{
           eyebrow: "About Dysport",
           heading:
-            "Erase wrinkles — without freezing your natural expressions",
+            "Erase wrinkles - without freezing your natural expressions",
           paragraphs: [
-            "At Revival Health and Wellness, we offer Dysport® treatments to help soften fine lines and wrinkles — especially those stubborn frown lines between the brows — without freezing your natural expressions.",
+            "At Revival Health and Wellness, we offer Dysport® treatments to help soften fine lines and wrinkles - especially those stubborn frown lines between the brows - without freezing your natural expressions.",
             "Dysport is a fast-acting, FDA-approved injectable that works by relaxing targeted muscles, creating a smoother, more refreshed appearance. With minimal downtime and results that can last up to 4 months, Dysport is a popular choice for clients looking to maintain a youthful, confident look. Let our experienced providers help you achieve natural-looking rejuvenation tailored to your unique features.",
           ],
           image: "/images/dysport/What_is_Dysport-e1756242860848.webp",
@@ -136,8 +135,8 @@ export default function DysportPage() {
           eyebrow: "The Galderma Aesthetic Collection",
           heading: "Elevate your beauty with the full portfolio",
           paragraphs: [
-            "At Revival Health and Wellness, we proudly offer the full suite of Galderma’s premium aesthetic treatments — crafted to refine, restore, and enhance your natural beauty. From the smooth, expressive results of Dysport® to the contouring precision of the Restylane® dermal filler family, each product in the Galderma portfolio is backed by science and designed with elegance in mind.",
-            "Whether you’re seeking subtle volume, sculpted definition, or skin that simply glows, our expert providers tailor each treatment to your individual aesthetic — ensuring results that are artfully balanced and beautifully you. Discover the gold standard in modern rejuvenation, because you deserve nothing less.",
+            "At Revival Health and Wellness, we proudly offer the full suite of Galderma’s premium aesthetic treatments - crafted to refine, restore, and enhance your natural beauty. From the smooth, expressive results of Dysport® to the contouring precision of the Restylane® dermal filler family, each product in the Galderma portfolio is backed by science and designed with elegance in mind.",
+            "Whether you’re seeking subtle volume, sculpted definition, or skin that simply glows, our expert providers tailor each treatment to your individual aesthetic - ensuring results that are artfully balanced and beautifully you. Discover the gold standard in modern rejuvenation, because you deserve nothing less.",
           ],
         }}
       />
@@ -168,7 +167,7 @@ export default function DysportPage() {
             label: "Xeomin",
             href: "/xeomin/",
             blurb:
-              "A uniquely purified neurotoxin option — another way to soften dynamic wrinkles.",
+              "A uniquely purified neurotoxin option - another way to soften dynamic wrinkles.",
           },
         ]}
       />

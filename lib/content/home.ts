@@ -43,7 +43,7 @@ export const SERVICES: Service[] = [
   {
     name: "Medical Weight Loss",
     href: "/weight-loss/",
-    image: "/images/services/weight-loss-couple.jpg",
+    image: "/images/services/medical-weight-loss-hero.jpg",
     blurb:
       "A scientific, personalized plan built around your body, GLP-1, phentermine, and vitamin injections with ongoing medical support.",
   },
@@ -383,9 +383,9 @@ export const SIGNATURE = {
   hotspots: [
     { label: "Waistline", top: "20%", left: "34%" },
     { label: "Abdomen", top: "32%", left: "52%" },
-    { label: "Hip Contouring", top: "52%", left: "22%" },
-    { label: "Inner Thighs", top: "74%", left: "46%" },
-    { label: "Outer Thighs", top: "70%", left: "74%" },
+    { label: "Hip Contouring", top: "62%", left: "10%" },
+    { label: "Inner Thighs", top: "96%", left: "40%" },
+    { label: "Outer Thighs", top: "82%", left: "84%" },
   ] as Hotspot[],
   features: [
     "FDA-Cleared Technology",

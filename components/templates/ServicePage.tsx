@@ -154,7 +154,6 @@ export default function ServicePage({
         title={title}
         description={intro}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: eyebrow }]}
-        secondary={{ label: "Take the Quiz", href: "/quiz/" }}
         gallery={heroGallery}
         compact
       />
