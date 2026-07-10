@@ -252,8 +252,7 @@ export default function MobileMenu({
         aria-expanded={open}
         onClick={() => onOpenChange(!open)}
         className={cn(
-          "flex h-10 w-10 items-center justify-center rounded-full transition-colors",
-          scrolled ? "text-revival-warm-white" : "text-revival-dark",
+          "flex h-10 w-10 items-center justify-center rounded-full text-revival-warm-white transition-colors hover:text-revival-gold",
         )}
       >
         {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

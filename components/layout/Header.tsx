@@ -103,32 +103,32 @@ export default function Header() {
               animate={{ x: [0, 120, 0], opacity: [0.4, 0.7, 0.4] }}
               transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
             />
-            <div className="relative mx-auto flex h-10 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+            <div className="relative mx-auto flex h-10 max-w-7xl flex-nowrap items-center justify-between gap-4 whitespace-nowrap px-4 sm:px-6 lg:gap-6 lg:px-8">
               {/* Left: email */}
-              <div className="flex items-center gap-5 text-[0.7rem] font-medium uppercase tracking-[0.12em]">
+              <div className="flex items-center gap-5 whitespace-nowrap text-[0.68rem] font-medium uppercase tracking-[0.1em] lg:text-[0.7rem] lg:tracking-[0.12em]">
                 <a
                   href={`mailto:${EMAIL}`}
-                  className="group inline-flex items-center gap-2 text-revival-warm-white/75 transition-colors hover:text-revival-gold"
+                  className="group inline-flex items-center gap-2 whitespace-nowrap text-revival-warm-white/75 transition-colors hover:text-revival-gold"
                 >
-                  <Mail className="h-3.5 w-3.5 text-revival-gold" />
-                  <span className="hidden sm:inline">{EMAIL}</span>
-                  <span className="sm:hidden">Email Us</span>
+                  <Mail className="h-3.5 w-3.5 shrink-0 text-revival-gold" />
+                  <span className="hidden xl:inline">{EMAIL}</span>
+                  <span className="xl:hidden">Email Us</span>
                 </a>
               </div>
 
               {/* Center: dual-location phone chips */}
-              <ul className="hidden items-center gap-4 text-[0.7rem] font-semibold uppercase tracking-[0.12em] md:flex">
+              <ul className="hidden items-center gap-3 whitespace-nowrap text-[0.66rem] font-semibold uppercase tracking-[0.08em] md:flex lg:gap-5 lg:text-[0.7rem] lg:tracking-[0.12em]">
                 {LOCATIONS.map((loc) => (
-                  <li key={loc.phone}>
+                  <li key={loc.phone} className="whitespace-nowrap">
                     <a
                       href={`tel:${loc.phone.replace(/[^\d]/g, "")}`}
-                      className="group inline-flex items-center gap-2 text-revival-warm-white/85 transition-colors hover:text-revival-gold"
+                      className="group inline-flex items-center gap-2 whitespace-nowrap text-revival-warm-white/85 transition-colors hover:text-revival-gold"
                     >
-                      <MapPin className="h-3.5 w-3.5 text-revival-gold" />
-                      <span className="text-revival-warm-white/55">
+                      <MapPin className="h-3.5 w-3.5 shrink-0 text-revival-gold" />
+                      <span className="whitespace-nowrap text-revival-warm-white/55">
                         {loc.label}
                       </span>
-                      <span className="tracking-[0.08em] text-revival-warm-white/90 group-hover:text-revival-gold">
+                      <span className="whitespace-nowrap tracking-[0.06em] text-revival-warm-white/90 group-hover:text-revival-gold lg:tracking-[0.08em]">
                         {loc.phone}
                       </span>
                     </a>
@@ -137,8 +137,8 @@ export default function Header() {
               </ul>
 
               {/* Right: socials + book pill */}
-              <div className="flex items-center gap-4">
-                <span className="hidden text-[0.7rem] uppercase tracking-[0.25em] text-revival-warm-white/45 lg:inline">
+              <div className="flex items-center gap-3 whitespace-nowrap lg:gap-4">
+                <span className="hidden whitespace-nowrap text-[0.68rem] uppercase tracking-[0.22em] text-revival-warm-white/45 xl:inline">
                   Follow
                 </span>
                 <ul className="flex items-center gap-1.5">
@@ -162,13 +162,19 @@ export default function Header() {
                 />
                 <Link
                   href="/contact-us/"
-                  className="hidden items-center gap-1.5 text-[0.7rem] font-medium uppercase tracking-[0.12em] text-revival-warm-white/75 transition-colors hover:text-revival-gold sm:inline-flex"
+                  className="hidden items-center gap-1.5 whitespace-nowrap text-[0.68rem] font-medium uppercase tracking-[0.1em] text-revival-warm-white/75 transition-colors hover:text-revival-gold sm:inline-flex lg:text-[0.7rem] lg:tracking-[0.12em]"
                 >
-                  <CalendarCheck className="h-3.5 w-3.5 text-revival-gold" />
+                  <CalendarCheck className="h-3.5 w-3.5 shrink-0 text-revival-gold" />
                   Contact Us
                 </Link>
               </div>
             </div>
+
+            {/* Blended separator: fades from transparent → subtle gold → transparent */}
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-revival-gold/25 to-transparent"
+            />
           </motion.div>
         ) : null}
       </AnimatePresence>
@@ -176,24 +182,17 @@ export default function Header() {
       {/* ── Main unified navigation bar ─────────────────────────────────── */}
       <div
         className={cn(
-          "relative border-b transition-colors duration-500",
+          "relative transition-colors duration-500",
           scrolled
-            ? "border-revival-gold/15 bg-revival-dark/90 backdrop-blur-xl"
-            : "border-revival-gold/10 bg-revival-cream/90 backdrop-blur-md",
+            ? "bg-revival-dark/90 backdrop-blur-xl"
+            : "bg-gradient-to-b from-revival-dark/85 via-revival-dark/55 to-transparent backdrop-blur-md",
         )}
       >
-        {/* Animated gold sheen sweeping across the bottom hairline */}
+        {/* Soft fade at bottom edge blends the nav into the hero */}
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-px overflow-hidden"
-        >
-          <motion.span
-            className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-revival-gold to-transparent"
-            animate={{ x: ["-120%", "420%"] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-revival-gold/25 to-transparent" />
-        </span>
+          className="pointer-events-none absolute inset-x-0 -bottom-8 h-8 bg-gradient-to-b from-revival-dark/40 to-transparent"
+        />
 
         <div
           className={cn(
@@ -215,18 +214,14 @@ export default function Header() {
                 transition={{ type: "spring", stiffness: 300, damping: 16 }}
               >
                 <Image
-                  src={
-                    scrolled
-                      ? "/images/brand/revival-logo-mobile.png"
-                      : "/images/brand/revival-logo-full-color.png"
-                  }
+                  src="/images/brand/revival-logo-mobile.png"
                   alt="Revival Health & Wellness"
-                  width={scrolled ? 221 : 742}
-                  height={scrolled ? 300 : 1005}
+                  width={221}
+                  height={300}
                   priority
                   className={cn(
                     "w-auto object-contain transition-all duration-500",
-                    scrolled ? "h-12" : "h-16 sm:h-20",
+                    scrolled ? "h-12" : "h-16 sm:h-[4.5rem]",
                   )}
                 />
               </motion.span>
@@ -263,12 +258,7 @@ export default function Header() {
                 href={`tel:${PRIMARY_PHONE.replace(/[^\d]/g, "")}`}
                 aria-label={`Call ${PRIMARY_PHONE}`}
                 title={PRIMARY_PHONE}
-                className={cn(
-                  "group relative hidden h-10 w-10 items-center justify-center rounded-full border transition-colors xl:inline-flex",
-                  scrolled
-                    ? "border-white/15 text-revival-gold hover:border-revival-gold/50 hover:bg-white/[0.04]"
-                    : "border-revival-dark/10 text-revival-gold hover:border-revival-gold/50 hover:bg-revival-warm-white",
-                )}
+                className="group relative hidden h-10 w-10 items-center justify-center rounded-full border border-white/15 text-revival-gold transition-colors hover:border-revival-gold/50 hover:bg-white/[0.04] xl:inline-flex"
               >
                 <span
                   aria-hidden
@@ -334,9 +324,10 @@ function DesktopNavItem({
   onPanelHover?: () => void;
   onPanelLeave?: () => void;
 }) {
-  const baseColor = scrolled
-    ? "text-revival-warm-white/90"
-    : "text-revival-charcoal";
+  // Header now always sits over a dark backdrop (translucent on hero,
+  // solid-blur on scroll), so nav text stays warm-white in both states.
+  void scrolled;
+  const baseColor = "text-revival-warm-white/90";
 
   const sizing = "px-3.5 py-2 text-[0.8rem] font-semibold tracking-[0.04em] font-sans";
 
