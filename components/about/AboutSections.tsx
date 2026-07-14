@@ -200,7 +200,7 @@ export function AboutIntroSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: EASE }}
-          className="relative aspect-square overflow-hidden rounded-[2.5rem] bg-revival-cream shadow-2xl ring-1 ring-black/5"
+          className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-revival-cream shadow-2xl ring-1 ring-black/5 sm:aspect-square"
         >
           <Image
             src={ABOUT_INTRO.image}
@@ -210,7 +210,7 @@ export function AboutIntroSection() {
             className="object-cover object-bottom"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/40 via-transparent to-transparent" />
-          <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full border border-white/25 bg-revival-dark/40 px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.2em] text-white backdrop-blur-md">
+          <div className="absolute bottom-6 left-6 inline-flex items-center gap-2 rounded-full border border-white/25 bg-revival-dark/40 px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.2em] text-white backdrop-blur-md">
             <Sparkles className="h-3 w-3 text-revival-gold" />
             Las Vegas · Est. 2020
           </div>
