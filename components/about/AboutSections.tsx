@@ -200,14 +200,14 @@ export function AboutIntroSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: EASE }}
-          className="relative h-[420px] overflow-hidden rounded-[2.5rem] shadow-2xl ring-1 ring-black/5 sm:h-[540px]"
+          className="relative aspect-square overflow-hidden rounded-[2.5rem] bg-revival-cream shadow-2xl ring-1 ring-black/5"
         >
           <Image
             src={ABOUT_INTRO.image}
             alt="Revival Health & Wellness clinical team"
             fill
             sizes="(max-width: 1024px) 100vw, 45vw"
-            className="object-cover"
+            className="object-cover object-bottom"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/40 via-transparent to-transparent" />
           <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full border border-white/25 bg-revival-dark/40 px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.2em] text-white backdrop-blur-md">

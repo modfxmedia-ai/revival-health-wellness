@@ -58,8 +58,8 @@ export default function ContactUsPage() {
         }
         description="Ready to start your journey? Reach out and we'll help you take the first step - by phone, text, or online. All new-patient consultations are complimentary."
         gallery={[
-          "/images/page-banners/contact-banner-1.webp",
-          "/images/page-banners/contact-banner-2.png",
+          "/images/contact/IMG_5949.jpeg",
+          "/images/contact/IMG_7311.jpeg",
         ]}
       />
 
