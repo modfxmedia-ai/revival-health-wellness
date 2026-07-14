@@ -191,11 +191,11 @@ export default function Footer() {
               name="email"
               required
               placeholder="Enter your email"
-              className="flex-1 bg-transparent px-5 py-3 text-sm text-revival-warm-white placeholder:text-revival-warm-white/40 focus:outline-none"
+              className="min-w-0 flex-1 bg-transparent px-5 py-3 text-sm text-revival-warm-white placeholder:text-revival-warm-white/40 focus:outline-none"
             />
             <button
               type="submit"
-              className="bg-revival-gold px-5 text-sm font-medium text-revival-dark transition-colors hover:bg-revival-gold-light"
+              className="shrink-0 whitespace-nowrap bg-revival-gold px-5 text-sm font-medium text-revival-dark transition-colors hover:bg-revival-gold-light"
             >
               Subscribe
             </button>
