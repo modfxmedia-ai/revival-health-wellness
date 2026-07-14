@@ -116,7 +116,7 @@ function FullImageBlock({
 }) {
   const bg = tone === "cream" ? "bg-revival-cream" : "bg-revival-warm-white";
   return (
-    <section className={`relative overflow-clip ${bg} py-20 lg:py-28`}>
+    <section className={`relative overflow-clip ${bg} py-14 sm:py-20 lg:py-28`}>
       <span
         aria-hidden
         className="pointer-events-none absolute -left-32 top-16 h-96 w-96 rounded-full bg-revival-gold/10 blur-[140px]"
@@ -272,7 +272,7 @@ export default function XerfPage() {
       />
 
       {/* Before / After billboard */}
-      <section className="relative overflow-clip bg-revival-warm-white py-20 lg:py-24">
+      <section className="relative overflow-clip bg-revival-warm-white py-14 sm:py-20 lg:py-24">
         <span
           aria-hidden
           className="pointer-events-none absolute -left-32 top-16 h-96 w-96 rounded-full bg-revival-gold/10 blur-[140px]"

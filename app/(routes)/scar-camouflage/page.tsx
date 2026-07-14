@@ -99,7 +99,7 @@ export default function ScarCamouflagePage() {
       />
 
       {/* Featured animation from the live site */}
-      <section className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-28">
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <div
             aria-hidden

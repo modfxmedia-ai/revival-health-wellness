@@ -175,7 +175,7 @@ export default function Co2LaserTreatmentsPage() {
       />
 
       {/* Side-by-side treatment cards */}
-      <section className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
             {/* CoolPeel card */}
@@ -306,7 +306,7 @@ export default function Co2LaserTreatmentsPage() {
       </section>
 
       {/* Comparison table */}
-      <section className="relative overflow-hidden bg-revival-cream py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-revival-cream py-14 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6 flex items-center justify-center gap-3">
@@ -360,7 +360,7 @@ export default function Co2LaserTreatmentsPage() {
       </section>
 
       {/* CoolPeel launch announcement */}
-      <section className="relative overflow-hidden bg-revival-cream py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-24">
         <span
           aria-hidden
           className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-revival-gold/10 blur-[140px]"
@@ -413,7 +413,7 @@ export default function Co2LaserTreatmentsPage() {
       </section>
 
       {/* CoolPeel treatment gallery */}
-      <section className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-revival-cream py-14 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6 flex items-center justify-center gap-3">
@@ -454,7 +454,7 @@ export default function Co2LaserTreatmentsPage() {
       </section>
 
       {/* Before & After patient gallery */}
-      <section className="relative bg-revival-cream py-20 lg:py-24">
+      <section className="relative bg-revival-warm-white py-14 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6 flex items-center justify-center gap-3">
@@ -495,6 +495,7 @@ export default function Co2LaserTreatmentsPage() {
       </section>
 
       <OverviewBlock
+        tone="cream"
         section={{
           eyebrow: "The Revival Difference",
           heading:

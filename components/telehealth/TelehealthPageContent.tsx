@@ -77,7 +77,7 @@ function Heading({
 
 function IntroSection() {
   return (
-    <section className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-28">
       {/* soft gold ambience */}
       <span
         aria-hidden
@@ -359,7 +359,7 @@ function DeviceMockupSection() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-28"
+      className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-28"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:px-8">
         {/* Left: copy */}
@@ -553,7 +553,7 @@ const TREATABLE = [
 
 function TreatableGridSection() {
   return (
-    <section className="relative bg-revival-cream py-20 lg:py-28">
+    <section className="relative bg-revival-cream py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeContainer}
@@ -622,7 +622,7 @@ function TreatableGridSection() {
 
 function FeatureSection() {
   return (
-    <section className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-28">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-8">
         <motion.div
           variants={fadeContainer}
@@ -758,7 +758,7 @@ const PROVIDERS = [
 
 function ProvidersSection() {
   return (
-    <section className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeContainer}
@@ -859,7 +859,7 @@ const FAQS = [
 
 function FAQSection() {
   return (
-    <section className="bg-revival-cream py-20 lg:py-28">
+    <section className="bg-revival-cream py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeContainer}

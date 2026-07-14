@@ -268,7 +268,7 @@ export function OverviewBlock({
   return (
     <section
       ref={sectionRef}
-      className={`relative overflow-clip ${bg} py-20 lg:py-28`}
+      className={`relative overflow-clip ${bg} py-14 sm:py-20 lg:py-28`}
     >
       <AmbientOrbs tone={tone} parallax={orbY} />
 
@@ -403,7 +403,7 @@ export function PillarsGrid({
   return (
     <section
       ref={sectionRef}
-      className={`relative overflow-clip ${bg} py-20 lg:py-28`}
+      className={`relative overflow-clip ${bg} py-14 sm:py-20 lg:py-28`}
     >
       <AmbientOrbs tone={tone} parallax={orbY} />
 
@@ -521,7 +521,7 @@ export function BenefitsList({
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-clip bg-revival-cream py-20 lg:py-28"
+      className="relative overflow-clip bg-revival-cream py-14 sm:py-20 lg:py-28"
     >
       <AmbientOrbs tone="cream" parallax={orbY} />
 
@@ -628,7 +628,7 @@ export function FAQSection({ faqs }: { faqs: FAQ[] }) {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-clip bg-revival-warm-white py-20 lg:py-28"
+      className="relative overflow-clip bg-revival-warm-white py-14 sm:py-20 lg:py-28"
     >
       <AmbientOrbs parallax={orbY} />
 
@@ -697,7 +697,7 @@ export function RelatedServices({
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-clip bg-revival-cream py-20 lg:py-28"
+      className="relative overflow-clip bg-revival-cream py-14 sm:py-20 lg:py-28"
     >
       <AmbientOrbs tone="cream" parallax={orbY} />
 

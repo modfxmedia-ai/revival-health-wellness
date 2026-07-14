@@ -444,7 +444,7 @@ export default function WeightLossPageContent() {
       </motion.section>
 
       {/* ── SECTION 2b: Video showcase ─────────────────────────────────── */}
-      <section className="relative overflow-clip bg-revival-dark py-20 lg:py-28">
+      <section className="relative overflow-clip bg-revival-dark py-14 sm:py-20 lg:py-28">
         <AmbientOrbs />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">

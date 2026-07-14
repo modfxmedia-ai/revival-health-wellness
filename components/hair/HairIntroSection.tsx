@@ -62,7 +62,7 @@ export default function HairIntroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-28"
+      className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-28"
     >
       {/* Ambient orbs */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">

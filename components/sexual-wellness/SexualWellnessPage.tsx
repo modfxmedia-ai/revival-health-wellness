@@ -273,7 +273,7 @@ function OverviewSection({
   const bg = index % 2 === 0 ? "bg-revival-warm-white" : "bg-revival-cream";
 
   return (
-    <section className={`relative overflow-hidden ${bg} py-20 lg:py-24`}>
+    <section className={`relative overflow-hidden ${bg} py-14 sm:py-20 lg:py-24`}>
       {/* subtle grid pattern */}
       <div
         aria-hidden
@@ -501,7 +501,7 @@ function ProcessSection({
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeContainer}
@@ -613,7 +613,7 @@ function FeaturesSection({
       : "sm:grid-cols-2 lg:grid-cols-4"; // 4 or 5 items
 
   return (
-    <section className={`relative overflow-hidden py-20 lg:py-24 ${bg}`}>
+    <section className={`relative overflow-hidden py-14 sm:py-20 lg:py-24 ${bg}`}>
       {/* soft radial glow */}
       <span
         aria-hidden
@@ -761,7 +761,7 @@ function BulletsSection({
   section: Extract<SWSection, { kind: "bullets" }>;
 }) {
   return (
-    <section className="relative bg-revival-warm-white py-20 lg:py-24">
+    <section className="relative bg-revival-warm-white py-14 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeContainer}
@@ -842,7 +842,7 @@ function QuoteSection({
   section: Extract<SWSection, { kind: "quote" }>;
 }) {
   return (
-    <section className="relative overflow-hidden bg-revival-cream py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-revival-cream py-14 sm:py-20 lg:py-24">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-8">
         {section.image ? (
           <motion.div
@@ -931,7 +931,7 @@ function WarningSection({
   section: Extract<SWSection, { kind: "warning" }>;
 }) {
   return (
-    <section className="relative bg-revival-warm-white py-20 lg:py-24">
+    <section className="relative bg-revival-warm-white py-14 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeContainer}
@@ -1028,7 +1028,7 @@ function OptionsSection({
   section: Extract<SWSection, { kind: "options" }>;
 }) {
   return (
-    <section className="relative overflow-hidden bg-revival-cream py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-revival-cream py-14 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeContainer}
@@ -1131,7 +1131,7 @@ function RelatedTreatments({
   if (items.length === 0) return null;
 
   return (
-    <section className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeContainer}

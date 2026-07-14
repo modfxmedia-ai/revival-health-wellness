@@ -249,7 +249,7 @@ export default function EmsculptNeoPage() {
       />
 
       {/* YouTube showcase */}
-      <section className="relative overflow-clip bg-revival-dark py-20 lg:py-28">
+      <section className="relative overflow-clip bg-revival-dark py-14 sm:py-20 lg:py-28">
         <span
           aria-hidden
           className="pointer-events-none absolute -left-32 top-16 h-96 w-96 rounded-full bg-revival-gold/20 blur-[140px]"

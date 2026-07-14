@@ -113,7 +113,7 @@ export default function AestheticsPage() {
       />
 
       {/* Service strip - mirrors the live aesthetics layout with each service's exact background image */}
-      <section className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6 flex items-center justify-center gap-3">

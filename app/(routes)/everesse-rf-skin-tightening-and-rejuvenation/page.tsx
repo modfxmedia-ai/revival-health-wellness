@@ -312,7 +312,7 @@ export default function EveresseRfPage() {
       />
 
       {/* Before & After patient gallery */}
-      <section className="relative bg-revival-warm-white py-20 lg:py-28">
+      <section className="relative bg-revival-warm-white py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6 flex items-center justify-center gap-3">

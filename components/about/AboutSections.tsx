@@ -626,7 +626,7 @@ export const CLIENT_RESULTS: string[] = [
 
 export function ClientResultsSection() {
   return (
-    <section className="relative bg-revival-cream py-20 lg:py-28">
+    <section className="relative bg-revival-cream py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

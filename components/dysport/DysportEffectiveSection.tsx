@@ -86,7 +86,7 @@ export default function DysportEffectiveSection({
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-revival-warm-white py-20 lg:py-28"
+      className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-28"
     >
       {/* Dual ambient gold orbs with scroll parallax */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
