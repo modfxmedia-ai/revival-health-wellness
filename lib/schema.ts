@@ -46,7 +46,7 @@ export function organizationSchema(): Json {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: "Monday",
         opens: "09:00",
-        closes: "13:00",
+        closes: "14:00",
       },
       {
         "@type": "OpeningHoursSpecification",
@@ -58,7 +58,7 @@ export function organizationSchema(): Json {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Friday", "Saturday"],
         opens: "09:00",
-        closes: "17:00",
+        closes: "15:00",
       },
     ],
     sameAs: [

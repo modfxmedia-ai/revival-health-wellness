@@ -10,6 +10,7 @@ import CTABanner from "@/components/ui/CTABanner";
 import {
   OverviewBlock,
   BenefitsList,
+  PillarsGrid,
   FAQSection,
   RelatedServices,
 } from "@/components/templates/HormoneSections";
@@ -25,6 +26,34 @@ export const metadata = buildMetadata({
   path: PATH,
   images: ["/images/microneedling/what_is_microneedling_header.webp"],
 });
+
+const APPOINTMENT_STEPS = [
+  {
+    title: "Before your treatment",
+    text: "Your medical provider reviews your treatment plan, answers any questions, and confirms your skin is ready. Your face is then thoroughly cleansed to remove makeup, oil, and impurities.",
+    icon: "compass" as const,
+  },
+  {
+    title: "Numbing",
+    text: "A medical-grade topical numbing cream is applied to the treatment area and left to take effect for approximately 20–30 minutes to maximize your comfort throughout the procedure.",
+    icon: "droplet" as const,
+  },
+  {
+    title: "Your microneedling treatment",
+    text: "Once your skin is properly numbed, your provider uses a medical-grade microneedling device to create thousands of precise microscopic channels, stimulating your body’s natural healing response - increased blood flow, collagen and elastin production, and improvements to fine lines, acne scars, enlarged pores, and overall skin quality. Treatment typically takes 20–45 minutes.",
+    icon: "syringe" as const,
+  },
+  {
+    title: "After your treatment",
+    text: "Your skin may appear pink to moderately red - similar to a mild sunburn - with slight warmth or tightness. These effects are normal and generally improve within 24–72 hours. Your provider applies soothing post-treatment products and reviews personalized aftercare instructions.",
+    icon: "shieldCheck" as const,
+  },
+  {
+    title: "Results",
+    text: "Many patients notice a healthy glow within the first week, and collagen remodeling continues beneath the skin for several weeks. For optimal results, most patients benefit from a series of 3–6 treatments spaced approximately 4–6 weeks apart.",
+    icon: "award" as const,
+  },
+];
 
 const CONCERNS = [
   "Acne and acne scars",
@@ -112,7 +141,7 @@ export default function MicroneedlingPage() {
         description={"If you’re looking to improve the appearance of your skin or want to boost collagen production, microneedling is an excellent option - a cutting-edge solution for healthier, more youthful skin."}
         gallery={[
           "/images/microneedling/what_is_microneedling_header.webp",
-          "/images/microneedling/view-woman-getting-face-prp-treatment.jpg",
+          "/images/microneedling/microneedling.avif",
         ]}
         compact
       />
@@ -125,7 +154,7 @@ export default function MicroneedlingPage() {
           paragraphs: [
             "If you’re looking to improve the appearance of your skin or want to boost collagen production, microneedling is an excellent option. Revival Health and Wellness offers microneedling treatments, providing you with a cutting-edge solution for achieving healthier, more youthful skin.",
           ],
-          image: "/images/microneedling/view-woman-getting-face-prp-treatment.jpg",
+          image: "/images/microneedling/microneedling.avif",
           imageAspect: "landscape",
         }}
       />
@@ -144,6 +173,13 @@ export default function MicroneedlingPage() {
           image: "/images/microneedling/close-beauty-portrait-serum-hydration.webp",
           imageAspect: "landscape",
         }}
+      />
+
+      <PillarsGrid
+        eyebrow="Your visit, step by step"
+        heading="What to expect during your microneedling appointment"
+        intro="From your arrival to the collagen remodeling that continues for weeks after, here’s exactly what a Revival microneedling visit looks like."
+        pillars={APPOINTMENT_STEPS}
       />
 
       <OverviewBlock
@@ -171,7 +207,7 @@ export default function MicroneedlingPage() {
           eyebrow: "Additions to microneedling",
           heading: "Boost your treatment with add-ons",
           paragraphs: [
-            "Many patients opt to combine microneedling with serums or other topicals during treatment. Incorporating elements like vitamins, Botox®, or even platelet-rich plasma (PRP) can enhance the results of your microneedling session.",
+            "Many patients opt to combine microneedling with serums or other topicals during treatment. Incorporating elements like vitamins, Botox®, platelet-rich plasma (PRP), or topical Sculptra can enhance the results of your microneedling session - amplifying collagen stimulation and delivering deeper, longer-lasting skin quality improvements.",
             "If you’re considering microneedling, ask us about the options available to further boost your treatment outcomes.",
           ],
         }}

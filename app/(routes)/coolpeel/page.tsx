@@ -20,7 +20,7 @@ const PATH = "/coolpeel/";
 // wellness (a leftover template error on the live site). Replaced with an accurate,
 // CoolPeel-specific description here.
 const DESCRIPTION =
-  "Reveal smoother, healthier, younger-looking skin with CoolPeel® CO₂ laser in Las Vegas. Next-generation resurfacing on the Cartessa Tetra Pro platform - dramatic results, minimal downtime.";
+  "Reveal smoother, healthier, younger-looking skin with CoolPeel® CO₂ laser in Las Vegas. Next-generation resurfacing on the Cartessa Deka Tetra Pro platform - dramatic results, minimal downtime.";
 
 export const metadata = buildMetadata({
   title: "CoolPeel",
@@ -54,7 +54,7 @@ const FAQS = [
   {
     question: "What is CoolPeel®?",
     answer:
-      "CoolPeel® is the next-generation CO₂ laser resurfacing that delivers powerful skin rejuvenation without the intensity or downtime of traditional lasers. Performed using the advanced Cartessa Tetra Pro platform, CoolPeel is perfect for patients who want dramatic results - smoother texture, smaller pores, fewer wrinkles, and renewed radiance - with less redness and recovery time.",
+      "CoolPeel® is the next-generation CO₂ laser resurfacing that delivers powerful skin rejuvenation without the intensity or downtime of traditional lasers. Performed using the advanced Cartessa Deka Tetra Pro platform, CoolPeel is perfect for patients who want dramatic results - smoother texture, smaller pores, fewer wrinkles, and renewed radiance - with less redness and recovery time.",
   },
   {
     question: "Why choose CoolPeel?",
@@ -109,7 +109,7 @@ export default function CoolPeelPage() {
             </span>
           </>
         }
-        description="Reveal smoother, healthier, younger-looking skin - with little to no downtime. Powered by the advanced Cartessa Tetra Pro platform."
+        description="Reveal smoother, healthier, younger-looking skin - with little to no downtime. Powered by the advanced Cartessa Deka Tetra Pro platform."
         gallery={[
           "/images/coolpeel/1R1A7618-1024x683-1.jpg",
           "/images/coolpeel/Uptown-Medical-Aesthetics-Coolpeel.webp",
@@ -124,7 +124,7 @@ export default function CoolPeelPage() {
             "Reveal smoother, younger-looking skin - without the downtime",
           paragraphs: [
             "The CoolPeel® treatment is the next-generation CO₂ laser resurfacing that delivers powerful skin rejuvenation without the intensity or downtime of traditional lasers.",
-            "Performed using the advanced Cartessa Tetra Pro platform, CoolPeel is perfect for patients who want dramatic results - smoother texture, smaller pores, fewer wrinkles, and renewed radiance - with less redness and recovery time.",
+            "Performed using the advanced Cartessa Deka Tetra Pro platform, CoolPeel is perfect for patients who want dramatic results - smoother texture, smaller pores, fewer wrinkles, and renewed radiance - with less redness and recovery time.",
           ],
           image: "/images/coolpeel/Uptown-Medical-Aesthetics-Coolpeel.webp",
           imageAspect: "portrait",
@@ -196,7 +196,7 @@ export default function CoolPeelPage() {
               "Deep-dive on CoolPeel® - benefits, timing, and before/after gallery.",
           },
           {
-            label: "Tetra Pro CO2 Laser",
+            label: "Deka Tetra Pro CO2 Laser",
             href: "/tetra-pro-co2-laser/",
             blurb:
               "The powerhouse sibling - deeper resurfacing on the same Cartessa platform for dramatic transformation.",
@@ -205,7 +205,7 @@ export default function CoolPeelPage() {
             label: "CO2 Laser Treatments",
             href: "/co2-laser-treatments/",
             blurb:
-              "The complete overview - CoolPeel vs. Tetra Pro side-by-side comparison.",
+              "The complete overview - CoolPeel vs. Deka Tetra Pro side-by-side comparison.",
           },
         ]}
       />

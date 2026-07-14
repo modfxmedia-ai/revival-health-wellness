@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { CLINICS, telHref } from "@/lib/content/clinics";
 import {
   Shield,
   Scale,
@@ -14,6 +15,9 @@ import {
   Stethoscope,
   Compass,
   CheckCircle2,
+  Clock,
+  MapPin,
+  Phone,
   type LucideIcon,
 } from "lucide-react";
 
@@ -31,7 +35,7 @@ export const ABOUT_INTRO = {
     "We believe in a comprehensive approach to wellness, focusing on revitalizing your mind, body, and spirit. Our dedicated team genuinely cares about your health and future, and we are committed to helping you lead a longer, happier, and healthier life.",
     "By offering comprehensive and effective treatments, we strive to deliver optimal results that truly transform your life. We specialize in weight loss, hormone replacement therapy, body contouring, and aesthetics.",
   ],
-  image: "/images/home/Image_20250829_162858_851.jpeg",
+  image: "/images/about/image1.jpeg",
 };
 
 export type CoreValue = {
@@ -616,6 +620,8 @@ export const CLIENT_RESULTS: string[] = [
   "/images/about/client-results/result-2.jpg",
   "/images/about/client-results/result-3.jpg",
   "/images/about/client-results/result-4.jpg",
+  "/images/image2.png",
+  "/images/image3.png",
 ];
 
 export function ClientResultsSection() {
@@ -664,6 +670,122 @@ export function ClientResultsSection() {
                 quality={92}
               />
             </motion.figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function OfficeHoursSection() {
+  return (
+    <section className="relative overflow-hidden bg-revival-warm-white py-16 lg:py-24">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <motion.div
+          aria-hidden
+          className="absolute -left-24 top-10 h-[24rem] w-[24rem] rounded-full blur-[140px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(201,169,110,0.18), transparent 70%)",
+          }}
+          animate={{ x: [0, 40, 0], y: [0, -30, 0], scale: [1, 1.1, 1] }}
+          transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: EASE }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <span className="text-tagline text-xs text-revival-gold">
+            Visit Revival Health &amp; Wellness
+          </span>
+          <h2
+            className="mt-4 font-heading font-medium leading-[1.1] text-revival-dark"
+            style={{ fontSize: "clamp(2rem, 3.6vw, 3.1rem)" }}
+          >
+            Our Las Vegas Offices &amp; Hours
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed text-revival-charcoal/85">
+            Two concierge locations serving the Las Vegas valley. Reach out anytime
+            to book your consultation - we&apos;ll match you with the office that
+            fits your schedule.
+          </p>
+        </motion.div>
+
+        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+          {CLINICS.map((clinic, i) => (
+            <motion.article
+              key={clinic.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.75, ease: EASE, delay: i * 0.08 }}
+              className="relative overflow-hidden rounded-[2rem] border border-revival-gold/20 bg-white p-8 shadow-[0_25px_70px_-30px_rgba(15,15,15,0.25)] sm:p-10"
+            >
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-revival-gold/10 blur-3xl"
+              />
+              <header className="relative">
+                <span className="text-tagline text-[0.7rem] text-revival-gold">
+                  Location {i + 1}
+                </span>
+                <h3
+                  className="mt-2 font-heading font-medium leading-tight text-revival-dark"
+                  style={{ fontSize: "clamp(1.4rem, 2.2vw, 1.9rem)" }}
+                >
+                  {clinic.name}
+                </h3>
+                <a
+                  href={clinic.mapHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-start gap-2 text-sm font-light leading-relaxed text-revival-charcoal/80 transition-colors hover:text-revival-gold"
+                >
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-revival-gold" />
+                  {clinic.address}
+                </a>
+                <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1.5">
+                  {clinic.phones.map((p) => (
+                    <a
+                      key={p}
+                      href={telHref(p)}
+                      className="inline-flex items-center gap-2 text-sm font-light text-revival-charcoal/80 transition-colors hover:text-revival-gold"
+                    >
+                      <Phone className="h-4 w-4 shrink-0 text-revival-gold" />
+                      {p}
+                    </a>
+                  ))}
+                </div>
+              </header>
+
+              <div className="relative mt-6 border-t border-revival-gold/15 pt-5">
+                <p className="mb-3 inline-flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-revival-gold">
+                  <Clock className="h-3.5 w-3.5" />
+                  Weekly Hours
+                </p>
+                <ul>
+                  {clinic.hours.map((h) => (
+                    <li
+                      key={h.day}
+                      className="flex items-center justify-between gap-4 border-b border-revival-dark/5 py-2 last:border-b-0"
+                    >
+                      <span className="font-heading text-sm text-revival-dark sm:text-base">
+                        {h.day}
+                      </span>
+                      <span className="text-right text-sm font-light text-revival-charcoal/80">
+                        {h.hours}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.article>
           ))}
         </div>
       </div>

@@ -202,7 +202,7 @@ export default function CoolpeelLaserPage() {
       <RelatedServices
         items={[
           {
-            label: "Tetra Pro CO2 Laser",
+            label: "Deka Tetra Pro CO2 Laser",
             href: "/tetra-pro-co2-laser/",
             blurb:
               "The powerhouse sibling of CoolPeel - deeper resurfacing for dramatic anti-aging transformations.",
@@ -211,7 +211,7 @@ export default function CoolpeelLaserPage() {
             label: "CO2 Laser Treatments",
             href: "/co2-laser-treatments/",
             blurb:
-              "The complete overview of our CO2 laser offering - CoolPeel® vs. Tetra Pro side-by-side.",
+              "The complete overview of our CO2 laser offering - CoolPeel® vs. Deka Tetra Pro side-by-side.",
           },
           {
             label: "Everesse RF Skin Tightening",

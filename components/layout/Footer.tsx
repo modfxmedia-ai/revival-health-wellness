@@ -61,6 +61,28 @@ const LOCATIONS = CLINICS.map((c) => ({
   hours: c.hours,
 }));
 
+/** Compact day labels for the narrow footer column. */
+function shortDay(day: string): string {
+  return day
+    .replace(/Monday/g, "Mon")
+    .replace(/Tuesday/g, "Tue")
+    .replace(/Wednesday/g, "Wed")
+    .replace(/Thursday/g, "Thu")
+    .replace(/Friday/g, "Fri")
+    .replace(/Saturday/g, "Sat")
+    .replace(/Sunday/g, "Sun")
+    .replace(/\s-\s/g, "\u2013");
+}
+
+/** Compact hour labels for the narrow footer column. */
+function shortHours(hours: string): string {
+  return hours
+    .replace(/\s?AM/g, "AM")
+    .replace(/\s?PM/g, "PM")
+    .replace(/\sto\s/g, "\u2013")
+    .replace(/By appointment only/i, "By appt only");
+}
+
 const SOCIAL_LINKS = [
   {
     label: "Facebook",
@@ -124,7 +146,7 @@ export default function Footer() {
         className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-12 lg:px-8"
       >
         {/* Col 1, Brand */}
-        <motion.div variants={fadeInUp} className="lg:col-span-4">
+        <motion.div variants={fadeInUp} className="lg:col-span-3">
           <Link
             href="/"
             className="flex items-center gap-3"
@@ -232,7 +254,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Col 5, Locations */}
-        <motion.div variants={fadeInUp} className="lg:col-span-2">
+        <motion.div variants={fadeInUp} className="lg:col-span-3">
           <FooterHeading>Locations</FooterHeading>
           <div className="space-y-6">
             {LOCATIONS.map((loc) => (
@@ -265,16 +287,22 @@ export default function Footer() {
                     Fax: {loc.fax}
                   </span>
                 ) : null}
-                <div className="mt-1.5 flex items-start gap-2 text-revival-warm-white/60">
-                  <Clock className="mt-0.5 h-4 w-4 shrink-0 text-revival-gold" />
-                  <ul className="space-y-0.5 text-[0.72rem] leading-snug">
+                <div className="mt-3">
+                  <p className="flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-revival-gold">
+                    <Clock className="h-3.5 w-3.5" />
+                    Hours
+                  </p>
+                  <ul className="mt-1.5 space-y-0.5 text-[0.72rem] leading-snug">
                     {loc.hours.map((h) => (
-                      <li key={h.day} className="flex items-center gap-2">
+                      <li
+                        key={h.day}
+                        className="flex items-baseline justify-between gap-3 whitespace-nowrap"
+                      >
                         <span className="font-semibold text-revival-warm-white/80">
-                          {h.day}
+                          {shortDay(h.day)}
                         </span>
                         <span className="text-revival-warm-white/60">
-                          {h.hours}
+                          {shortHours(h.hours)}
                         </span>
                       </li>
                     ))}

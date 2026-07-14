@@ -277,28 +277,63 @@ export default function XerfPage() {
           aria-hidden
           className="pointer-events-none absolute -left-32 top-16 h-96 w-96 rounded-full bg-revival-gold/10 blur-[140px]"
         />
-        <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 text-center">
+        <span
+          aria-hidden
+          className="pointer-events-none absolute -right-32 bottom-16 h-96 w-96 rounded-full bg-revival-gold/10 blur-[140px]"
+        />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
             <p className="text-tagline text-[0.7rem] text-revival-gold">
               REAL RESULTS · BEFORE &amp; AFTER
             </p>
             <h2 className="mt-3 font-heading text-3xl italic text-revival-dark sm:text-4xl lg:text-[2.75rem]">
-              Visible lift. Firmer skin. Same face - better.
+              Visible lift. Firmer skin. Same body - better.
             </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-base font-light leading-relaxed text-revival-charcoal/80 sm:text-lg">
+              Real Revival patients through a series of Xerf sessions - photographed in-clinic, unedited.
+            </p>
           </div>
-          <figure className="relative mx-auto max-w-2xl overflow-hidden rounded-[2rem] border border-revival-gold/20 bg-white shadow-xl">
-            <Image
-              src="/images/xerf/xerf-before-after.jpg"
-              alt="Xerf treatment before and after comparison"
-              width={962}
-              height={802}
-              sizes="(min-width: 1024px) 640px, 100vw"
-              className="h-auto w-full object-contain"
-            />
-            <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
-              Xerf · Before &amp; After
-            </figcaption>
-          </figure>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+            <figure className="relative overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
+              <Image
+                src="/images/xerf/xerf-before-after.jpg"
+                alt="Xerf treatment before and after comparison"
+                width={962}
+                height={802}
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="h-auto w-full object-contain"
+              />
+              <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
+                Xerf · Before &amp; After
+              </figcaption>
+            </figure>
+            <figure className="relative overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
+              <Image
+                src="/images/xerf/image6.png"
+                alt="Xerf before and after - abdomen and waist, treatment session 4"
+                width={1080}
+                height={1080}
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="h-auto w-full object-contain"
+              />
+              <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
+                Xerf · Treatment session 4
+              </figcaption>
+            </figure>
+            <figure className="relative overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
+              <Image
+                src="/images/xerf/image7.png"
+                alt="Xerf before and after - abdomen, treatment session 6"
+                width={1080}
+                height={1080}
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="h-auto w-full object-contain"
+              />
+              <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
+                Xerf · Treatment session 6
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 

@@ -20,8 +20,6 @@ const SUB_SERVICES = [
   "botox",
   "cherry",
   "co2-laser-treatments",
-  "coolpeel",
-  "coolpeel-laser",
   "derma-filler",
   "dysport",
   "emsculpt-neo",

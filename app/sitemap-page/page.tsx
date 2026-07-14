@@ -164,9 +164,7 @@ const BODY_SKIN: SitemapGroup = {
     { label: "Xerf Skin Tightening", href: "/xerf/" },
     { label: "Microneedling", href: "/microneedling/" },
     { label: "CO2 Laser Treatments", href: "/co2-laser-treatments/" },
-    { label: "CoolPeel® Laser", href: "/coolpeel-laser/" },
-    { label: "CoolPeel", href: "/coolpeel/" },
-    { label: "Tetra Pro CO2 Laser", href: "/tetra-pro-co2-laser/" },
+    { label: "Deka Tetra Pro CO2 Laser", href: "/tetra-pro-co2-laser/" },
     { label: "Scar Camouflage", href: "/scar-camouflage/" },
   ],
 };

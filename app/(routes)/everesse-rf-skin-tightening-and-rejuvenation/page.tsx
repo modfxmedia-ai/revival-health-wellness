@@ -109,9 +109,13 @@ const WHY_PILLARS = [
 ];
 
 const BEFORE_AFTERS = [
-  "/images/everesse-rf/before-after-1.jpg",
-  "/images/everesse-rf/before-after-2.jpg",
-  "/images/everesse-rf/before-after-3.jpg",
+  "/images/everesse-rf/Everees/Screenshot%202026-02-20%20at%206.44.37%E2%80%AFAM.png",
+  "/images/everesse-rf/Everees/Screenshot%202026-02-20%20at%206.44.48%E2%80%AFAM.png",
+  "/images/everesse-rf/Everees/Screenshot%202026-02-20%20at%206.45.12%E2%80%AFAM.png",
+  "/images/everesse-rf/Everees/Screenshot%202026-02-20%20at%206.45.19%E2%80%AFAM.png",
+  "/images/everesse-rf/Everees/Screenshot%202026-02-20%20at%206.45.26%E2%80%AFAM.png",
+  "/images/everesse-rf/Everees/Screenshot%202026-02-20%20at%206.45.33%E2%80%AFAM.png",
+  "/images/everesse-rf/Everees/Screenshot%202026-02-20%20at%206.45.45%E2%80%AFAM.png",
 ];
 
 const FAQS = [
@@ -325,18 +329,18 @@ export default function EveresseRfPage() {
               Real patients. Real results.
             </h2>
           </div>
-          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3 lg:gap-8">
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {BEFORE_AFTERS.map((src, i) => (
               <figure
                 key={src}
-                className="group relative aspect-square overflow-hidden rounded-2xl border border-revival-gold/15 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_rgba(15,15,15,0.3)]"
+                className="group relative aspect-square overflow-hidden rounded-2xl border border-revival-gold/15 bg-revival-cream shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_rgba(15,15,15,0.3)]"
               >
                 <Image
                   src={src}
                   alt={`Everesse RF & CoolPeel patient before and after ${i + 1}`}
                   fill
-                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 33vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+                  className="object-contain transition-transform duration-700 group-hover:scale-105"
                   quality={90}
                 />
               </figure>
@@ -353,7 +357,7 @@ export default function EveresseRfPage() {
             label: "CO₂ Laser Treatments",
             href: "/co2-laser-treatments/",
             blurb:
-              "Deep-dive on the CoolPeel & Tetra Pro laser resurfacing technology used in our Radiant Lift protocol.",
+              "Deep-dive on the CoolPeel & Deka Tetra Pro laser resurfacing technology used in our Radiant Lift protocol.",
           },
           {
             label: "Microneedling",

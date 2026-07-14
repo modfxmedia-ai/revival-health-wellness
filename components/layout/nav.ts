@@ -86,31 +86,33 @@ export const PRIMARY_NAV: NavItem[] = [
       { label: "Kybella", href: "/kybella/" },
       { label: "Sculptra", href: "/sculptra/" },
       {
-        label: "Body Contouring",
+        label: "Body Contouring and Sculpting",
         href: "/emsculpt-neo/",
         children: [
-          { label: "Emsculpt NEO", href: "/emsculpt-neo/" },
-          { label: "OctoPro (ONDA)", href: "/octopro-onda/" },
+          { label: "ONDA Pro", href: "/octopro-onda/" },
           {
             label: "Everesse RF Skin Tightening",
             href: "/everesse-rf-skin-tightening-and-rejuvenation/",
           },
+          { label: "Emsculpt Neo", href: "/emsculpt-neo/" },
+          { label: "XERF", href: "/xerf/" },
         ],
       },
       {
         label: "Skin",
         href: "/skin/",
         children: [
-          { label: "Skin Overview", href: "/skin/" },
-          { label: "Microneedling", href: "/microneedling/" },
-          { label: "Xerf Skin Tightening", href: "/xerf/" },
+          { label: "Skin Overview", href: "/skin/" },          { label: "ONDA Pro Cellulite Removal", href: "/octopro-onda/" },
+          {
+            label: "Everesse RF Skin Tightening",
+            href: "/everesse-rf-skin-tightening-and-rejuvenation/",
+          },
+          { label: "XERF Skin, Sculpting & Lifting", href: "/xerf/" },          { label: "Microneedling", href: "/microneedling/" },
           { label: "Under Eye Treatment", href: "/under-eye-treatment/" },
           { label: "PDO Thread Lifts", href: "/pdo-thread-lifts/" },
           { label: "Scar Camouflage", href: "/scar-camouflage/" },
           { label: "CO2 Laser Treatments", href: "/co2-laser-treatments/" },
-          { label: "CoolPeel® Laser", href: "/coolpeel-laser/" },
-          { label: "CoolPeel", href: "/coolpeel/" },
-          { label: "Tetra Pro CO2 Laser", href: "/tetra-pro-co2-laser/" },
+          { label: "Deka Tetra Pro CO2 Laser", href: "/tetra-pro-co2-laser/" },
         ],
       },
       {

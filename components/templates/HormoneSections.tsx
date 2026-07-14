@@ -494,6 +494,7 @@ export function BenefitsList({
   imageContain = false,
   motionGraphic = false,
   stickyImage = false,
+  footer,
 }: {
   eyebrow?: string;
   heading: string;
@@ -505,6 +506,8 @@ export function BenefitsList({
   motionGraphic?: boolean;
   /** Sticks the image column while the benefit chips column scrolls past. */
   stickyImage?: boolean;
+  /** Optional closing paragraph rendered beneath the chip grid. */
+  footer?: string;
 }) {
   const hasVisual = Boolean(image) || motionGraphic;
 
@@ -579,6 +582,18 @@ export function BenefitsList({
               </motion.li>
             ))}
           </ul>
+
+          {footer ? (
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, ease: EASE }}
+              className="mt-8 border-l-2 border-revival-gold/40 pl-5 text-base font-light leading-relaxed text-revival-charcoal/80 sm:text-lg"
+            >
+              {footer}
+            </motion.p>
+          ) : null}
         </motion.div>
 
         {motionGraphic && !image ? (

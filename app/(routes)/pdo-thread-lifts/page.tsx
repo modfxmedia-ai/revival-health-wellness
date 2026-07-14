@@ -27,57 +27,73 @@ export const metadata = buildMetadata({
   images: ["/images/pdo-thread-lifts/threadlift.jpg"],
 });
 
-const THREAD_TYPES = [
-  {
-    title: "Mono threads",
-    text: "Smooth, single filament threads that tighten the skin and gently stimulate collagen production for an overall skin-tightening effect.",
-    icon: "leaf" as const,
-  },
-  {
-    title: "Cog threads",
-    text: "Barbed threads that hook into the skin to physically lift and reposition sagging tissue - the go-to option for jawline and jowl lifting.",
-    icon: "target" as const,
-  },
-  {
-    title: "Screw threads",
-    text: "Intertwined threads used to restore volume to sunken areas of the skin, giving cheeks and mid-face a fuller, lifted appearance.",
-    icon: "sparkles" as const,
-  },
+const TREATABLE_AREAS = [
+  "Mid-face and cheeks",
+  "Jawline definition",
+  "Jowls",
+  "Neck laxity",
+  "Eyebrows",
+  "Nasolabial folds",
+  "Marionette lines",
 ];
 
-const CANDIDATES = [
-  "Wants instantaneous, dramatic, and natural-looking results without surgery",
-  "Looking to reverse signs of aging - fine lines, wrinkles, sagging skin",
-  "In good physical and emotional health",
-  "Has realistic expectations about the outcome",
-  "Wants gradual collagen improvement in addition to an immediate lift",
+const CANDIDATE_GOALS = [
+  "Lift sagging cheeks or jowls",
+  "Improve jawline definition",
+  "Tighten loose neck skin",
+  "Elevate the brows",
+  "Stimulate natural collagen production",
+  "Achieve natural-looking rejuvenation with minimal downtime",
+];
+
+const VISIT_STEPS = [
+  {
+    title: "Your appointment",
+    text: "Your visit begins with a comprehensive consultation to evaluate your facial anatomy and confirm PDO threads are the best option for your goals. The treatment area is cleansed, a local anesthetic is administered for your comfort, and your provider strategically places the PDO threads beneath the skin using specialized techniques. The procedure typically takes 45–90 minutes depending on the number of areas treated.",
+    icon: "compass" as const,
+  },
+  {
+    title: "Recovery",
+    text: "Most patients return to normal daily activities within a few days. You may experience mild swelling, bruising, tenderness, or a feeling of tightness for several days. Your provider will review detailed aftercare instructions to help optimize healing and your final results.",
+    icon: "shieldCheck" as const,
+  },
+  {
+    title: "Results",
+    text: "Many patients notice an immediate lifting effect after treatment. As collagen production increases over the next 2–3 months, the skin becomes firmer, smoother, and more youthful. Results typically last 12–18 months, though longevity varies based on age, skin quality, lifestyle, and the treatment area.",
+    icon: "award" as const,
+  },
 ];
 
 const FAQS = [
   {
-    question: "What are PDO thread lifts?",
+    question: "What is a PDO thread lift?",
     answer:
-      "A PDO thread lift is a minimally invasive, non-surgical procedure that lifts and tightens sagging skin using dissolvable polydioxanone (PDO) threads. The threads are placed under the skin to physically lift tissue and stimulate new collagen production for gradual, long-lasting improvement.",
+      "A PDO thread lift is a minimally invasive, non-surgical procedure that lifts and tightens sagging skin using dissolvable polydioxanone (PDO) threads. The threads are placed beneath the skin to provide an immediate lifting effect while stimulating new collagen and elastin production over the following months.",
   },
   {
-    question: "What are the types of PDO threads?",
+    question: "What areas can be treated?",
     answer:
-      "There are three main types: Mono threads (smooth, for overall tightening), Cog threads (barbed, for repositioning and lifting sagging tissue), and Screw threads (intertwined, for restoring volume to sunken areas). Your provider will select the right combination for your goals.",
+      "PDO thread lifts can effectively improve the mid-face and cheeks, jawline definition, jowls, neck laxity, eyebrows, nasolabial folds, and marionette lines. Your provider will customize the placement based on your anatomy and goals.",
   },
   {
-    question: "Who is a good candidate for PDO thread lifts?",
+    question: "How long does the procedure take?",
     answer:
-      "This treatment is ideal for anyone seeking instantaneous, dramatic, and natural-looking results without the need for surgery - particularly for reversing signs of aging like fine lines, wrinkles, and sagging skin. Candidates should be physically and emotionally healthy and have realistic expectations about the outcome.",
+      "Most PDO thread lift appointments take 45–90 minutes depending on the number of areas being treated. This includes consultation, cleansing, local anesthesia, and precise thread placement.",
   },
   {
-    question: "What happens after PDO thread lifts?",
+    question: "What is recovery like?",
     answer:
-      "You may experience mild swelling, bruising, and irritation around the treatment areas. Ice packs and over-the-counter pain relievers like Tylenol and Arnica help reduce these symptoms. Avoid strenuous physical activities and workouts for about 3 days after the procedure.",
+      "Most patients return to normal daily activities within a few days. You may experience mild swelling, bruising, tenderness, or a feeling of tightness for several days. Your provider will review detailed aftercare instructions to help optimize healing and your final results.",
   },
   {
     question: "How long do the results last?",
     answer:
-      "PDO thread lifts offer immediate results - your face appears fuller and smoother as soon as you leave the clinic. Results continue to improve over the next two months as your body produces new collagen fibers. While the PDO threads are absorbed by your body after about 9 months, the results last longer due to the increased collagen reserves.",
+      "Many patients notice an immediate lifting effect right after treatment. As collagen production increases over the next 2–3 months, the skin continues to become firmer, smoother, and more youthful. Results typically last 12–18 months, though longevity varies based on age, skin quality, lifestyle, and the treatment area.",
+  },
+  {
+    question: "Am I a good candidate?",
+    answer:
+      "PDO thread lifts are ideal for individuals with mild to moderate skin laxity who want noticeable lifting without surgery. Great candidates are looking to lift sagging cheeks or jowls, improve jawline definition, tighten loose neck skin, elevate the brows, stimulate natural collagen production, and achieve natural-looking rejuvenation with minimal downtime.",
   },
 ];
 
@@ -118,7 +134,7 @@ export default function PdoThreadLiftsPage() {
             lifts
           </>
         }
-        description={"Lift, tighten, and redefine your facial contours with a minimally invasive PDO thread lift. Instant results plus long-term collagen stimulation - no surgery, no scarring."}
+        description={"Lift, tighten, and rejuvenate without surgery. A PDO thread lift provides an immediate lifting effect while stimulating your body's own collagen production - for a naturally refreshed, more youthful appearance."}
         gallery={[
           "/images/pdo-thread-lifts/pdo-thread-lifts-1.webp",
           "/images/pdo-thread-lifts/pdo-thread-lifts-2.webp",
@@ -129,12 +145,12 @@ export default function PdoThreadLiftsPage() {
 
       <OverviewBlock
         section={{
-          eyebrow: "Reverse the Signs of Aging",
+          eyebrow: "PDO Thread Lift",
           heading:
-            "Instant lift. Long-term collagen. Zero surgery.",
+            "Lift, tighten & rejuvenate without surgery",
           paragraphs: [
-            "A PDO thread lift is a minimally invasive, non-surgical procedure that lifts and tightens sagging skin using dissolvable polydioxanone (PDO) threads. The threads are placed under the skin to physically lift tissue and stimulate new collagen production over time.",
-            "Your face will appear fuller and smoother as soon as you leave the medical center - and the results continue to improve over the following two months as your body produces new collagen fibers. This treatment reduces sagging, redefines facial contours, and gives you a naturally youthful, lifted, and refreshed appearance.",
+            "As we age, collagen production declines and the supportive structures of the face begin to weaken. This can lead to sagging skin, jowls, loss of jawline definition, and drooping cheeks and brows.",
+            "A PDO Thread Lift is a minimally invasive procedure designed to lift and reposition sagging tissue while stimulating your body's natural collagen production. The result is a refreshed, more youthful appearance without the downtime of surgery.",
           ],
           image: "/images/pdo-thread-lifts/pdo-thread-lifts-1.webp",
           imageAspect: "landscape",
@@ -142,34 +158,58 @@ export default function PdoThreadLiftsPage() {
         }}
       />
 
-      <PillarsGrid
+      <OverviewBlock
         tone="cream"
-        eyebrow="What are the types of PDO threads?"
-        heading={"Three thread types - tailored to your goals"}
-        intro="Your provider selects the right combination of thread types for your specific concerns."
-        pillars={THREAD_TYPES}
+        reverse
+        section={{
+          eyebrow: "How does a PDO thread lift work?",
+          heading:
+            "Immediate lift plus a long collagen build",
+          paragraphs: [
+            "PDO (Polydioxanone) threads are medical-grade, absorbable sutures that are carefully placed beneath the skin to provide an immediate lifting effect.",
+            "Over the following months, the threads stimulate your body's natural healing response, encouraging the production of new collagen and elastin. Although the threads dissolve naturally, the collagen they create helps maintain a firmer, more youthful appearance long after they are gone.",
+          ],
+          image: "/images/pdo-thread-lifts/threadlift.jpg",
+          imageAspect: "landscape",
+        }}
       />
 
       <BenefitsList
-        eyebrow="Ideal candidates"
-        heading="Who is PDO right for?"
-        items={CANDIDATES}
+        eyebrow="What areas can be treated?"
+        heading="PDO thread lifts can effectively improve"
+        items={TREATABLE_AREAS}
         image="/images/pdo-thread-lifts/pdo-thread-lifts-2.webp"
         imageContain
       />
 
+      <PillarsGrid
+        eyebrow="Your PDO thread lift, step by step"
+        heading="What to expect during your appointment, recovery, and results"
+        intro="From consultation through the collagen build that continues for months, here's how a Revival PDO thread lift unfolds."
+        pillars={VISIT_STEPS}
+      />
+
+      <BenefitsList
+        eyebrow="Is a PDO thread lift right for you?"
+        heading="You may be a great candidate if you'd like to"
+        items={CANDIDATE_GOALS}
+        image="/images/pdo-thread-lifts/pdo-thread-lifts-3.png"
+        imageContain
+      />
+
       <OverviewBlock
+        tone="cream"
         reverse
         section={{
-          eyebrow: "What happens after PDO thread lifts?",
+          eyebrow: "Why choose Revival Health & Wellness?",
           heading:
-            "Mild swelling, immediate results, long-term collagen",
+            "Personalized plans that restore the underlying structures of the face",
           paragraphs: [
-            "After your PDO thread lift, you may experience mild swelling, bruising, and irritation around the treatment areas. To reduce these symptoms, you can use ice packs and over-the-counter pain relievers like Tylenol and Arnica. It’s also recommended to avoid strenuous physical activities and workouts for about 3 days following the procedure.",
-            "PDO thread lifts offer immediate results - your face will appear fuller and smoother as soon as you leave the medical center. However, the results will continue to improve over the next two months as your body produces new collagen fibers. While the PDO threads will be absorbed by your body after about 9 months, the results last longer due to the increased collagen reserves.",
+            "At Revival Health & Wellness, every treatment begins with a personalized consultation because no two faces age the same. We evaluate your skin quality, facial structure, collagen loss, and aesthetic goals to determine whether PDO threads - or another advanced treatment such as Everesse®, XERF®, EZ Gel, Sculptra®, or a combination approach - will provide the most natural, long-lasting results.",
+            "Our philosophy is simple: we don't believe in treating wrinkles alone. We restore the underlying support structures of the face to help you age confidently, naturally, and beautifully.",
           ],
-          image: "/images/pdo-thread-lifts/pdo-thread-lifts-3.png",
-          imageContain: true,
+          image: "/images/pdo-thread-lifts/Luxury-Living-in-Dubai-South-8-e1756238774520.png",
+          imageAspect: "landscape",
         }}
       />
 
@@ -178,10 +218,10 @@ export default function PdoThreadLiftsPage() {
       <RelatedServices
         items={[
           {
-            label: "Derma Filler",
-            href: "/derma-filler/",
+            label: "EZ Gel",
+            href: "/under-eye-treatment/",
             blurb:
-              "Restore volume alongside lifting - dermal fillers pair beautifully with thread lifts for complete rejuvenation.",
+              "Natural regenerative treatment using your body's own growth factors - pairs beautifully with thread lifts for full-face rejuvenation.",
           },
           {
             label: "Sculptra®",
@@ -190,10 +230,10 @@ export default function PdoThreadLiftsPage() {
               "Collagen-stimulating biostimulator that layers well with the collagen build from PDO threads.",
           },
           {
-            label: "Kybella®",
-            href: "/kybella/",
+            label: "Everesse RF Skin Tightening",
+            href: "/everesse-rf-skin-tightening-and-rejuvenation/",
             blurb:
-              "Refine your jawline and profile by targeting stubborn submental fat - the perfect complement to a thread lift.",
+              "Monopolar RF for deep collagen stimulation - a great non-invasive complement to PDO lifting.",
           },
         ]}
       />

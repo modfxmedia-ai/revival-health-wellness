@@ -10,6 +10,7 @@ import CTABanner from "@/components/ui/CTABanner";
 import {
   OverviewBlock,
   BenefitsList,
+  PillarsGrid,
   FAQSection,
   RelatedServices,
 } from "@/components/templates/HormoneSections";
@@ -33,6 +34,41 @@ const BENEFITS = [
   "Restores volume gently in the tear trough",
   "Rejuvenates the under-eye area without surgery",
   "Delivers a naturally refreshed, youthful appearance",
+];
+
+const EZ_GEL_BENEFITS = [
+  "Stimulate your body’s natural collagen production",
+  "Improve skin thickness and elasticity",
+  "Soften fine lines and crepey skin",
+  "Reduce the appearance of dark circles caused by thin skin",
+  "Restore subtle, natural-looking volume",
+  "Improve overall skin quality over time",
+];
+
+const EZ_GEL_CANDIDATES = [
+  "Refresh tired-looking eyes naturally",
+  "Improve under-eye hollowness",
+  "Reduce fine lines and crepey skin",
+  "Enhance skin quality without synthetic fillers",
+  "Support long-term collagen production",
+];
+
+const EZ_GEL_STEPS = [
+  {
+    title: "What to expect",
+    text: "Your appointment begins with a consultation to confirm EZ Gel is right for you. A small blood sample is collected and processed into your personalized EZ Gel, which your provider then carefully injects into the under-eye area using techniques designed for comfort and precision. The full visit typically takes 60–90 minutes.",
+    icon: "compass" as const,
+  },
+  {
+    title: "Recovery",
+    text: "Most patients experience mild swelling, redness, or bruising that resolves within several days. Because EZ Gel is made from your own blood, the risk of allergic reaction is extremely low.",
+    icon: "shieldCheck" as const,
+  },
+  {
+    title: "Results",
+    text: "Some improvement is visible as initial swelling resolves, but the true benefits build gradually over weeks and months as collagen remodels. For optimal rejuvenation we often recommend a series of 2–3 treatments, spaced 8–12 weeks apart.",
+    icon: "award" as const,
+  },
 ];
 
 const FAQS = [
@@ -141,6 +177,55 @@ export default function UnderEyeTreatmentPage() {
         heading="What patients notice"
         items={BENEFITS}
         image="/images/under-eye-treatment/under-eye-benefits.webp"
+      />
+
+      <OverviewBlock
+        section={{
+          eyebrow: "EZ Gel for Under-Eye Rejuvenation",
+          heading:
+            "Naturally refresh tired eyes with your body’s own regenerative proteins",
+          paragraphs: [
+            "The delicate under-eye area is often one of the first places to show signs of aging. As collagen decreases over time, the skin becomes thinner, fine lines develop, and volume loss can create hollowness and shadows that make you look tired - even when you’re well rested.",
+            "EZ Gel is a natural regenerative treatment that uses your body’s own growth factors and proteins to rejuvenate the under-eye area without synthetic fillers.",
+          ],
+          image: "/images/under-eye-treatment/Ez-Gel-undereyes.jpg",
+          imageAspect: "portrait",
+          imageContain: true,
+        }}
+      />
+
+      <OverviewBlock
+        tone="cream"
+        reverse
+        section={{
+          eyebrow: "How does EZ Gel work?",
+          heading:
+            "PRF-based regenerative gel drawn from your own blood",
+          paragraphs: [
+            "EZ Gel is created from a small sample of your own blood. Through a specialized process, platelet-rich fibrin (PRF) is transformed into a smooth, gel-like consistency that is rich in growth factors, fibrin, and regenerative proteins.",
+            "Unlike traditional dermal fillers, EZ Gel focuses on regenerating tissue rather than simply filling space - creating gradual, natural improvements.",
+            "When carefully placed beneath the eyes, EZ Gel works to:",
+          ],
+          bullets: EZ_GEL_BENEFITS,
+          image: "/images/under-eye-treatment/23128-dark-circles-under-eyes.jpg",
+          imageAspect: "landscape",
+        }}
+      />
+
+      <PillarsGrid
+        eyebrow="Your EZ Gel visit"
+        heading="What to expect, recovery, and results"
+        intro="From consultation to full collagen remodeling - here’s how an EZ Gel under-eye rejuvenation unfolds."
+        pillars={EZ_GEL_STEPS}
+      />
+
+      <BenefitsList
+        eyebrow="Is EZ Gel right for you?"
+        heading="An ideal option if you want to:"
+        items={EZ_GEL_CANDIDATES}
+        image="/images/under-eye-treatment/ez-gel-under-eye.jpg"
+        imageContain
+        footer="At Revival Health & Wellness, we customize every treatment plan to your unique anatomy and aesthetic goals. Our focus is on achieving refreshed, natural-looking results that help you look like the best version of yourself - not someone else."
       />
 
       <FAQSection faqs={FAQS} />

@@ -15,6 +15,22 @@ const nextConfig: NextConfig = {
     ],
   },
   poweredByHeader: false,
+  async redirects() {
+    return [
+      // Consolidated: the two standalone CoolPeel pages now live inside the
+      // main /co2-laser-treatments/ page (CoolPeel® vs. DEKA Tetra Pro).
+      {
+        source: "/coolpeel",
+        destination: "/co2-laser-treatments/",
+        permanent: true,
+      },
+      {
+        source: "/coolpeel-laser",
+        destination: "/co2-laser-treatments/",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

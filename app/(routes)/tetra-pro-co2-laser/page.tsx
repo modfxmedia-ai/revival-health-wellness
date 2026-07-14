@@ -14,10 +14,10 @@ import {
   RelatedServices,
 } from "@/components/templates/HormoneSections";
 
-const TITLE = "Tetra Pro CO2 Laser Treatments";
+const TITLE = "Deka Tetra Pro CO2 Laser Treatments";
 const PATH = "/tetra-pro-co2-laser/";
 const DESCRIPTION =
-  "Smooth your skin with the Tetra Pro CO2 laser. Revival Health and Wellness uses this precise technology to treat aging skin and large pores with total customization.";
+  "Smooth your skin with the Deka Tetra Pro CO2 laser. Revival Health and Wellness uses this precise technology to treat aging skin and large pores with total customization.";
 
 export const metadata = buildMetadata({
   title: TITLE,
@@ -44,12 +44,12 @@ const CANDIDATES = [
 
 const FAQS = [
   {
-    question: "What is the Tetra Pro CO2 laser?",
+    question: "What is the Deka Tetra Pro CO2 laser?",
     answer:
-      "The Tetra Pro is the most powerful and customizable CO2 resurfacing treatment available at Revival Health and Wellness. It targets deeper layers of the skin, repairing years of damage and stimulating collagen for lasting improvements in texture, tone, and firmness.",
+      "The Deka Tetra Pro is the most powerful and customizable CO2 resurfacing treatment available at Revival Health and Wellness. It targets deeper layers of the skin, repairing years of damage and stimulating collagen for lasting improvements in texture, tone, and firmness.",
   },
   {
-    question: "How long does a Tetra Pro treatment take?",
+    question: "How long does a Deka Tetra Pro treatment take?",
     answer:
       "Treatment time is 30–60 minutes depending on the area being treated and the intensity level selected by your provider.",
   },
@@ -81,7 +81,7 @@ export default function TetraProCo2LaserPage() {
             breadcrumbSchema([
               { name: "Home", path: "/" },
               { name: "Aesthetics", path: "/aesthetics/" },
-              { name: "Tetra Pro CO2 Laser", path: PATH },
+              { name: "Deka Tetra Pro CO2 Laser", path: PATH },
             ]),
             faqSchema(FAQS),
           ]),
@@ -89,16 +89,16 @@ export default function TetraProCo2LaserPage() {
       />
 
       <PageHero
-        eyebrow={"Aesthetics · Tetra Pro CO₂ Laser"}
+        eyebrow={"Aesthetics · Deka Tetra Pro CO₂ Laser"}
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Aesthetics", href: "/aesthetics/" },
-          { label: "Tetra Pro" },
+          { label: "Deka Tetra Pro" },
         ]}
         title={
           <>
             <span className="relative inline-block italic text-revival-gold">
-              Tetra Pro
+              Deka Tetra Pro
               <span
                 aria-hidden
                 className="absolute -bottom-2 left-0 h-[3px] w-full bg-gradient-to-r from-revival-gold to-transparent"
@@ -117,11 +117,11 @@ export default function TetraProCo2LaserPage() {
 
       <OverviewBlock
         section={{
-          eyebrow: "Benefits of Tetra Pro",
+          eyebrow: "Benefits of Deka Tetra Pro",
           heading: "Advanced Resurfacing. Transformative Results.",
           paragraphs: [
-            "For patients seeking dramatic rejuvenation, the Tetra Pro CO2 laser is the most powerful and customizable resurfacing treatment available at Revival Health and Wellness.",
-            "The Tetra Pro system allows us to target deeper layers of the skin, repairing years of damage and stimulating collagen for lasting improvements in texture, tone, and firmness.",
+            "For patients seeking dramatic rejuvenation, the Deka Tetra Pro CO2 laser is the most powerful and customizable resurfacing treatment available at Revival Health and Wellness.",
+            "The Deka Tetra Pro system allows us to target deeper layers of the skin, repairing years of damage and stimulating collagen for lasting improvements in texture, tone, and firmness.",
           ],
           image: "/images/tetra-pro-co2-laser/IMG_9766.jpg",
           bullets: BENEFITS,
@@ -133,7 +133,7 @@ export default function TetraProCo2LaserPage() {
         reverse
         section={{
           eyebrow: "In-treatment",
-          heading: "The Cartessa Tetra Pro platform",
+          heading: "The Cartessa Deka Tetra Pro platform",
           paragraphs: [
             "The same DEKA-powered CO2 platform used for CoolPeel®, dialed up for deeper, more transformative resurfacing. Fully customizable from a light refresh to intensive renewal.",
           ],
@@ -147,7 +147,7 @@ export default function TetraProCo2LaserPage() {
         reverse
         section={{
           eyebrow: "What to Expect",
-          heading: "Your Tetra Pro session, start to finish",
+          heading: "Your Deka Tetra Pro session, start to finish",
           paragraphs: [
             "Treatment time: 30–60 minutes. Comfort: numbing cream or anesthesia may be used depending on treatment depth.",
             "Downtime ranges from 3–10 days depending on intensity. Results appear as an immediate glow with progressive improvements as collagen rebuilds over 3–6 months.",
@@ -156,8 +156,8 @@ export default function TetraProCo2LaserPage() {
       />
 
       <BenefitsList
-        eyebrow="Is Tetra Pro Right for Me?"
-        heading="Tetra Pro is ideal for those who want:"
+        eyebrow="Is Deka Tetra Pro Right for Me?"
+        heading="Deka Tetra Pro is ideal for those who want:"
         items={CANDIDATES}
       />
 
@@ -166,29 +166,29 @@ export default function TetraProCo2LaserPage() {
       <RelatedServices
         items={[
           {
-            label: "CoolPeel® Laser",
-            href: "/coolpeel-laser/",
+            label: "CoolPeel®",
+            href: "/co2-laser-treatments/",
             blurb:
-              "The lighter cousin of Tetra Pro - same Cartessa CO2 platform with minimal downtime for a quick skin refresh.",
+              "The lighter cousin of Deka Tetra Pro - same Cartessa CO2 platform with minimal downtime for a quick skin refresh.",
           },
           {
             label: "CO2 Laser Treatments",
             href: "/co2-laser-treatments/",
             blurb:
-              "The complete overview of our CO2 laser offering - CoolPeel® vs. Tetra Pro side-by-side.",
+              "The complete overview of our CO2 laser offering - CoolPeel® vs. Deka Tetra Pro side-by-side.",
           },
           {
             label: "Everesse RF Skin Tightening",
             href: "/everesse-rf-skin-tightening-and-rejuvenation/",
             blurb:
-              "Pair Tetra Pro with monopolar RF for our exclusive Radiant Lift protocol - surface renewal plus deep tightening.",
+              "Pair Deka Tetra Pro with monopolar RF for our exclusive Radiant Lift protocol - surface renewal plus deep tightening.",
           },
         ]}
       />
 
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14 lg:px-8">
         <CTABanner
-          title="Book your Tetra Pro consultation"
+          title="Book your Deka Tetra Pro consultation"
           subtitle="Experience the ultimate in skin renewal. Schedule your consultation at Revival Health and Wellness today."
         />
       </div>
