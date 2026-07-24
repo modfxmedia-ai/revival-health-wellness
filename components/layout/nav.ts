@@ -135,7 +135,6 @@ export const PRIMARY_NAV: NavItem[] = [
     href: "/about-us/",
     children: [
       { label: "About Us", href: "/about-us/" },
-      { label: "Areas We Serve", href: "/areas-we-serve/" },
       { label: "Blogs", href: "/blogs/" },
       {
         label: "Lab Testing",
@@ -144,6 +143,7 @@ export const PRIMARY_NAV: NavItem[] = [
       },
       { label: "Patient Financing (Cherry)", href: "/cherry/" },
       { label: "Contact Us", href: "/contact-us/" },
+      { label: "Areas We Serve", href: "/areas-we-serve/" },
     ],
   },
 ];

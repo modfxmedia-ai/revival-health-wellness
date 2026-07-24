@@ -75,7 +75,7 @@ export default function ProviderSnippetSection() {
           <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-revival-gold via-revival-gold/40 to-transparent p-[1.5px] shadow-[0_30px_70px_-20px_rgba(0,0,0,0.35)]">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.9rem] bg-revival-dark">
               <Image
-                src="/images/about/team/sanaz-salmani.png"
+                src="/images/about/team/sanaz-homepage.png"
                 alt="Sanaz Salmani, Clinic Director at Revival Health & Wellness"
                 fill
                 sizes="(max-width: 1024px) 90vw, 420px"

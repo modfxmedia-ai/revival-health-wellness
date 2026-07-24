@@ -7,7 +7,8 @@ import {
 } from "@/lib/schema";
 import PageHero from "@/components/ui/PageHero";
 import CTABanner from "@/components/ui/CTABanner";
-import MotionShowcase from "@/components/motion/MotionShowcase";
+import VitaminBoostDetails from "@/components/weight-loss/VitaminBoostDetails";
+import WeightLossTestimonials from "@/components/weight-loss/WeightLossTestimonials";
 import {
   OverviewBlock,
   PillarsGrid,
@@ -162,20 +163,7 @@ export default function VitaminInjectionsPage() {
         image="/images/weight-loss/vitamin-injections-secondary.jpg"
       />
 
-      <MotionShowcase
-        eyebrow="Micronutrient Boost"
-        heading="One quick injection. Broad-spectrum benefit."
-        body="Concentrated vitamins, minerals, and antioxidants absorbed directly into your bloodstream-energy, immunity, recovery, and glow at once."
-        centerIcon="syringe"
-        centerLabel="Micronutrient Boost"
-        orbitLabels={["B12", "Vitamin D", "Glutathione", "Biotin"]}
-        cornerBadges={[
-          { icon: "zap", label: "Energy" },
-          { icon: "shieldCheck", label: "Immunity" },
-          { icon: "sparkles", label: "Glow" },
-        ]}
-        tone="dark"
-      />
+      <VitaminBoostDetails />
 
       <PillarsGrid
         tone="cream"
@@ -186,6 +174,8 @@ export default function VitaminInjectionsPage() {
       />
 
       <FAQSection faqs={FAQS} />
+
+      <WeightLossTestimonials />
 
       <RelatedServices
         items={[

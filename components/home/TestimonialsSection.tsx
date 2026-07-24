@@ -157,7 +157,13 @@ export default function TestimonialsSection() {
           </div>
 
           <div className="relative flex flex-col items-center gap-8 text-center sm:flex-row sm:justify-between sm:text-left">
-            <div className="flex items-center gap-5">
+            <a
+              href={REVIEWS.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Read our ${REVIEWS.count}+ Google reviews (rated ${REVIEWS.rating.toFixed(1)} out of 5)`}
+              className="group/reviews flex items-center gap-5 rounded-2xl outline-none transition-transform duration-300 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-revival-gold focus-visible:ring-offset-2 focus-visible:ring-offset-revival-dark"
+            >
               <motion.div
                 whileHover={{ rotate: 8, scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -187,22 +193,37 @@ export default function TestimonialsSection() {
                     ))}
                   </span>
                 </div>
-                <p className="mt-1 text-sm font-light text-revival-cream/60">
-                  Based on {REVIEWS.count}+ Google reviews
+                <p className="mt-1 inline-flex items-center gap-1 text-sm font-light text-revival-cream/60 transition-colors duration-300 group-hover/reviews:text-revival-gold">
+                  Read our {REVIEWS.count}+ Google reviews
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/reviews:translate-x-1" />
                 </p>
               </div>
-            </div>
-
-            <a
-              href={ZENOTI}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/btn relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-revival-gold to-[#8a5a2b] px-7 py-3.5 text-sm font-medium text-revival-dark shadow-lg transition-transform duration-300 hover:scale-105"
-            >
-              <span className="absolute inset-0 -translate-x-full bg-white/30 transition-transform duration-700 group-hover/btn:translate-x-full" />
-              <span className="relative">Book Your Free Consultation</span>
-              <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
             </a>
+
+            <div className="flex flex-col items-center gap-3 sm:flex-row">
+              <a
+                href={REVIEWS.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`See all ${REVIEWS.count}+ Google reviews for Revival Health & Wellness`}
+                className="group/gbtn relative inline-flex items-center gap-2 rounded-full border border-revival-gold/40 bg-white/5 px-6 py-3.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-revival-gold hover:bg-white/10 hover:scale-105"
+              >
+                <GoogleLogo className="h-4 w-4" />
+                <span>See Google Reviews</span>
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/gbtn:translate-x-1" />
+              </a>
+
+              <a
+                href={ZENOTI}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/btn relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-revival-gold to-[#8a5a2b] px-7 py-3.5 text-sm font-medium text-revival-dark shadow-lg transition-transform duration-300 hover:scale-105"
+              >
+                <span className="absolute inset-0 -translate-x-full bg-white/30 transition-transform duration-700 group-hover/btn:translate-x-full" />
+                <span className="relative">Book Your Free Consultation</span>
+                <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -210,9 +231,9 @@ export default function TestimonialsSection() {
   );
 }
 
-function GoogleLogo() {
+function GoogleLogo({ className = "h-9 w-9 shrink-0" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" className="h-9 w-9 shrink-0" aria-hidden>
+    <svg viewBox="0 0 24 24" className={className} aria-hidden>
       <path
         fill="#4285F4"
         d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1Z"

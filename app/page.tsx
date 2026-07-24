@@ -7,7 +7,7 @@ import PhilosophySection from "@/components/home/PhilosophySection";
 import SignatureSection from "@/components/home/SignatureSection";
 import BodyTransformSection from "@/components/home/BodyTransformSection";
 import PricingSection from "@/components/home/PricingSection";
-import StatsSection from "@/components/home/StatsSection";
+import FinancingSection from "@/components/home/FinancingSection";
 import WhyChooseSection from "@/components/home/WhyChooseSection";
 import GalleryCarousel from "@/components/home/GalleryCarousel";
 import BlogsSection from "@/components/home/BlogsSection";
@@ -38,7 +38,7 @@ export default function Home() {
       <SignatureSection />
       <BodyTransformSection />
       <ProviderSnippetSection />
-      <StatsSection />
+      <FinancingSection />
       <WhyChooseSection />
       <GalleryCarousel />
       <PricingSection />

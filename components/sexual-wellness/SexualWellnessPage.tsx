@@ -370,8 +370,8 @@ function OverviewSection({
                 <Image
                   src={section.image}
                   alt={section.imageAlt ?? section.heading}
-                  width={1200}
-                  height={982}
+                  width={section.imageWidth ?? 1200}
+                  height={section.imageHeight ?? 982}
                   sizes="(min-width: 1024px) 42vw, 100vw"
                   className="h-auto w-full object-contain"
                 />
@@ -1569,6 +1569,14 @@ export default function SexualWellnessPage({
         <SectionRenderer key={i} section={section} index={i} />
       ))}
 
+      {data.ctaTitle && data.ctaBeforeRelated ? (
+        <FinalCta
+          title={data.ctaTitle}
+          subtitle={data.ctaSubtitle ?? ""}
+          image={data.gallery[data.gallery.length - 1]}
+        />
+      ) : null}
+
       {data.relatedSlugs && data.relatedSlugs.length > 0 ? (
         <>
           <GoldDivider />
@@ -1579,7 +1587,7 @@ export default function SexualWellnessPage({
         </>
       ) : null}
 
-      {data.ctaTitle ? (
+      {data.ctaTitle && !data.ctaBeforeRelated ? (
         <FinalCta
           title={data.ctaTitle}
           subtitle={data.ctaSubtitle ?? ""}

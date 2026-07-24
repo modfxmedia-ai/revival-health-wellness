@@ -295,7 +295,7 @@ function TreatmentOverviewSection() {
         >
           <div className="relative aspect-[5/6]">
             <Image
-              src="/images/sexual-wellness/o-shot/o-shot-detail.jpeg"
+              src="/images/sexual-wellness/o-shot/o-shot-detail-v2.avif"
               alt="Close-up of PRP being prepared for the O-Shot procedure"
               fill
               sizes="(min-width: 1024px) 45vw, 100vw"

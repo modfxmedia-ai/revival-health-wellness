@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { MapPin, Phone, Printer, Clock, ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
@@ -107,34 +108,39 @@ const LEGITSCRIPT_HREF =
 /* ── Component ──────────────────────────────────────────────────────────── */
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isHomepage = pathname === "/";
+
   return (
     <footer className="bg-revival-dark text-revival-warm-white">
-      {/* Pre-footer CTA strip */}
-      <AnimatedSection
-        as="div"
-        variants={fadeInUp}
-        className="bg-revival-charcoal"
-      >
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 py-12 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
-          <div>
-            <h2 className="text-3xl text-revival-warm-white md:text-4xl">
-              Ready to Transform?
-            </h2>
-            <p className="mt-2 text-revival-warm-white/70">
-              Book your free consultation and start your revival today.
-            </p>
+      {/* Pre-footer CTA strip — homepage only */}
+      {isHomepage && (
+        <AnimatedSection
+          as="div"
+          variants={fadeInUp}
+          className="bg-revival-charcoal"
+        >
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 py-12 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
+            <div>
+              <h2 className="text-3xl text-revival-warm-white md:text-4xl">
+                Ready to Transform?
+              </h2>
+              <p className="mt-2 text-revival-warm-white/70">
+                Book your free consultation and start your revival today.
+              </p>
+            </div>
+            <a
+              href="https://revivalhealth.zenoti.com/webstorenew"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center gap-2 rounded-full bg-revival-gold px-7 py-3.5 text-sm font-medium text-revival-dark transition-transform duration-200 hover:scale-105 hover:bg-revival-gold-light"
+            >
+              Book Free Consultation
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
-          <a
-            href="https://revivalhealth.zenoti.com/webstorenew"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-revival-gold px-7 py-3.5 text-sm font-medium text-revival-dark transition-transform duration-200 hover:scale-105 hover:bg-revival-gold-light"
-          >
-            Book Free Consultation
-            <ArrowRight className="h-4 w-4" />
-          </a>
-        </div>
-      </AnimatedSection>
+        </AnimatedSection>
+      )}
 
       {/* Gold gradient top divider */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-revival-gold/60 to-transparent" />

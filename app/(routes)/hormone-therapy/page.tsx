@@ -7,6 +7,7 @@ import {
 } from "@/lib/schema";
 import PageHero from "@/components/ui/PageHero";
 import CTABanner from "@/components/ui/CTABanner";
+import HormoneStagesShowcase from "@/components/hormone/HormoneStagesShowcase";
 import {
   OverviewBlock,
   PillarsGrid,
@@ -99,28 +100,7 @@ export default function HormoneTherapyPage() {
         }}
       />
 
-      <PillarsGrid
-        eyebrow="Three Focused Programs"
-        heading="A hormone plan for every stage"
-        intro="Whether you're navigating perimenopause, feeling the effects of low testosterone, or looking to reclaim recovery and vitality, we have a dedicated program."
-        pillars={[
-          {
-            title: "Women's Hormone Therapy",
-            text: "Personalized care that eases menopause symptoms, stabilizes mood, and restores energy, sleep, and libido.",
-            icon: "heartPulse",
-          },
-          {
-            title: "Men's Hormone Therapy",
-            text: "Bio-identical testosterone therapy to rebuild strength, focus, drive, and confidence at any age.",
-            icon: "zap",
-          },
-          {
-            title: "Growth Hormone Optimization",
-            text: "Restore lean muscle, recovery, and metabolism by correcting adult growth hormone deficiency.",
-            icon: "scale",
-          },
-        ]}
-      />
+      <HormoneStagesShowcase />
 
       <OverviewBlock
         tone="dark"

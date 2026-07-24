@@ -24,7 +24,7 @@ export const metadata = buildMetadata({
   title: TITLE,
   description: DESCRIPTION,
   path: PATH,
-  images: ["/images/xeomin/XEOMIN-0A.jpg"],
+  images: ["/images/xeomin/xeomin-lifestyle.jpg"],
 });
 
 const WHY = [
@@ -119,9 +119,9 @@ export default function XeominPage() {
         }
         description="Reveal smoother skin with Xeomin injections. Precise, purified, and delivered by expert injectors for a naturally youthful, refreshed appearance."
         gallery={[
-          "/images/xeomin/xeomin-1.jpg",
-          "/images/xeomin/xeomin-3.jpeg",
-          "/images/xeomin/xeomin-2.webp",
+          "/images/xeomin/xeomin-precision.jpg",
+          "/images/xeomin/xeomin-procedure.jpg",
+          "/images/xeomin/xeomin-lifestyle.jpg",
         ]}
         compact
       />
@@ -135,7 +135,8 @@ export default function XeominPage() {
             "Xeomin® is an FDA-approved neurotoxin injectable used to temporarily reduce moderate-to-severe facial wrinkles. Its uniquely purified formula contains only the active ingredient - without unnecessary proteins - which is why it’s often called “smart toxin” technology.",
             "At Revival Health and Wellness, our expert injectors use Xeomin® to help you smooth frown lines, forehead creases, and dynamic wrinkles - while keeping your natural expressions perfectly intact.",
           ],
-          image: "/images/xeomin/xeomin-1.jpg",
+          image: "/images/xeomin/xeomin-procedure.jpg",
+          imageAspect: "square",
           imageContain: true,
         }}
       />
@@ -156,7 +157,7 @@ export default function XeominPage() {
           paragraphs: [
             "Our expert injectors combine medical precision with an aesthetic eye to make sure your Xeomin® results are natural - never frozen. Every treatment is tailored to your facial anatomy and cosmetic goals, so you leave feeling confident, radiant, and unmistakably yourself.",
           ],
-          image: "/images/xeomin/xeomin-3.jpeg",
+          image: "/images/xeomin/xeomin-radiance.avif",
           imageContain: true,
         }}
       />
@@ -165,9 +166,8 @@ export default function XeominPage() {
         eyebrow={"Why choose Xeomin®?"}
         heading={"Wrinkle-smoothing power that looks authentic - never frozen"}
         items={WHY}
-        image="/images/xeomin/xeomin-2.webp"
-        imageAspect="landscape"
-        imageContain
+        image="/images/xeomin/xeomin-lifestyle.jpg"
+        imageAspect="portrait"
       />
 
       <FAQSection faqs={FAQS} />

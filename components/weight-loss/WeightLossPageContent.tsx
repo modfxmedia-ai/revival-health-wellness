@@ -28,6 +28,7 @@ import {
 import PageHero from "@/components/ui/PageHero";
 import PortraitFrame from "@/components/ui/PortraitFrame";
 import WeightLossMotionGraphic from "./WeightLossMotionGraphic";
+import WeightLossTestimonials from "./WeightLossTestimonials";
 import { ZENOTI } from "@/lib/content/home";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -690,6 +691,9 @@ export default function WeightLossPageContent() {
           </div>
         </div>
       </motion.section>
+
+      {/* ── SECTION 7.5: Patient testimonials ──────────────────────────────── */}
+      <WeightLossTestimonials />
 
       {/* ── SECTION 8: Disclaimer ────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-revival-warm-white py-14">

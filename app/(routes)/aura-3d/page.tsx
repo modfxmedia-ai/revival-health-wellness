@@ -270,14 +270,16 @@ export default function Aura3DPage() {
           </div>
           <div className="relative overflow-hidden rounded-[2rem] border border-revival-gold/25 bg-black shadow-[0_50px_120px_-32px_rgba(201,169,110,0.35)]">
             <div className="relative pt-[56.25%]">
-              <iframe
-                src="https://www.youtube.com/embed/HU_QWLMeHWE?rel=0&modestbranding=1"
-                title="Aura 3D facial imaging overview"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 h-full w-full"
-              />
+              <video
+                src="/videos/aura-3d.mp4"
+                poster="/images/aura-3d/aura-3d-poster.png"
+                controls
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 h-full w-full object-cover"
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>

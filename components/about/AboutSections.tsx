@@ -35,7 +35,7 @@ export const ABOUT_INTRO = {
     "We believe in a comprehensive approach to wellness, focusing on revitalizing your mind, body, and spirit. Our dedicated team genuinely cares about your health and future, and we are committed to helping you lead a longer, happier, and healthier life.",
     "By offering comprehensive and effective treatments, we strive to deliver optimal results that truly transform your life. We specialize in weight loss, hormone replacement therapy, body contouring, and aesthetics.",
   ],
-  image: "/images/about/image1.jpeg",
+  image: "/images/about/team-storefront.png",
 };
 
 export type CoreValue = {
@@ -194,20 +194,20 @@ export function AboutIntroSection() {
         />
       </div>
 
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[360px_1fr] lg:gap-16 lg:px-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.94 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: EASE }}
-          className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-revival-cream shadow-2xl ring-1 ring-black/5 sm:aspect-square"
+          className="relative mx-auto aspect-[355/575] w-full max-w-[360px] overflow-hidden rounded-[2.5rem] bg-revival-cream shadow-2xl ring-1 ring-black/5 lg:mx-0"
         >
           <Image
             src={ABOUT_INTRO.image}
             alt="Revival Health & Wellness clinical team"
             fill
-            sizes="(max-width: 1024px) 100vw, 45vw"
-            className="object-cover object-bottom"
+            sizes="360px"
+            className="object-cover object-top"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/40 via-transparent to-transparent" />
           <div className="absolute bottom-6 left-6 inline-flex items-center gap-2 rounded-full border border-white/25 bg-revival-dark/40 px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.2em] text-white backdrop-blur-md">
@@ -501,23 +501,36 @@ export function VisionSection() {
             aria-hidden
             className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-[#8a5a2b]/30 blur-3xl"
           />
-          <div className="relative flex flex-col gap-8 lg:flex-row lg:items-start">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-revival-gold to-revival-gold-light text-revival-dark shadow-[0_10px_30px_-8px_rgba(201,169,110,0.7)]">
-              <Compass className="h-6 w-6" />
+          <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="flex flex-col gap-8 sm:flex-row sm:items-start">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-revival-gold to-revival-gold-light text-revival-dark shadow-[0_10px_30px_-8px_rgba(201,169,110,0.7)]">
+                <Compass className="h-6 w-6" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <span className="text-tagline text-xs text-revival-gold">
+                  {VISION.eyebrow}
+                </span>
+                <h2
+                  className="mt-3 font-heading font-medium leading-[1.1] text-white"
+                  style={{ fontSize: "clamp(1.75rem, 3vw, 2.6rem)" }}
+                >
+                  {VISION.title}
+                </h2>
+                <p className="mt-5 text-lg font-light leading-relaxed text-revival-cream/85">
+                  {VISION.body}
+                </p>
+              </div>
             </div>
-            <div className="min-w-0 flex-1">
-              <span className="text-tagline text-xs text-revival-gold">
-                {VISION.eyebrow}
-              </span>
-              <h2
-                className="mt-3 font-heading font-medium leading-[1.1] text-white"
-                style={{ fontSize: "clamp(1.75rem, 3vw, 2.6rem)" }}
-              >
-                {VISION.title}
-              </h2>
-              <p className="mt-5 text-lg font-light leading-relaxed text-revival-cream/85">
-                {VISION.body}
-              </p>
+
+            <div className="relative mx-auto aspect-[1086/1448] w-full max-w-[280px] overflow-hidden rounded-[1.75rem] ring-1 ring-white/10 lg:mx-0 lg:ml-auto">
+              <Image
+                src="/images/home/front-desk.png"
+                alt="Revival Health & Wellness front desk"
+                fill
+                sizes="280px"
+                className="object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-revival-dark/30 via-transparent to-transparent" />
             </div>
           </div>
         </motion.div>

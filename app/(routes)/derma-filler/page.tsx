@@ -8,6 +8,7 @@ import {
 } from "@/lib/schema";
 import PageHero from "@/components/ui/PageHero";
 import CTABanner from "@/components/ui/CTABanner";
+import BeforeAfterSlider from "@/components/derma-filler/BeforeAfterSlider";
 import {
   OverviewBlock,
   PillarsGrid,
@@ -180,25 +181,72 @@ export default function DermaFillerPage() {
         compact
       />
 
-      <OverviewBlock
-        section={{
-          eyebrow: "Juvéderm® Dermal Fillers at Revival",
-          heading:
-            "Sculpt. Plump. Restore - with precision.",
-          paragraphs: [
-            "At Revival Health and Wellness, we specialize in natural-looking facial rejuvenation using Juvéderm®, one of the most trusted names in hyaluronic acid (HA) dermal fillers.",
-            "Whether you’re looking to restore lost volume, define your features, or smooth away fine lines, Juvéderm offers a customizable solution tailored to your unique beauty. Our expert providers assess your skin, facial anatomy, and aesthetic goals to design a fully personalized plan.",
-          ],
-          image: "/images/derma-filler/derma-filler-1.jpg",
-          imageContain: true,
-        }}
-      />
+      <section className="relative overflow-clip bg-revival-warm-white py-14 sm:py-20 lg:py-28">
+        <span
+          aria-hidden
+          className="pointer-events-none absolute -left-32 top-16 h-96 w-96 rounded-full bg-revival-gold/10 blur-[140px]"
+        />
+        <span
+          aria-hidden
+          className="pointer-events-none absolute -right-32 bottom-16 h-96 w-96 rounded-full bg-revival-gold/10 blur-[140px]"
+        />
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:gap-16 lg:px-8">
+          {/* Left: interactive before/after slider inside a decorative frame */}
+          <div className="relative mx-auto w-full max-w-[540px] lg:mx-0">
+            {/* Rotating dashed accent */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -inset-5 rounded-[2rem] border border-dashed border-revival-gold/25"
+            />
+            {/* Gold gradient frame */}
+            <div className="relative overflow-hidden rounded-[1.85rem] bg-gradient-to-br from-revival-gold via-revival-gold/40 to-transparent p-[1.5px] shadow-[0_30px_70px_-25px_rgba(0,0,0,0.25)]">
+              <div className="rounded-[1.7rem] bg-revival-warm-white p-2">
+                <BeforeAfterSlider />
+              </div>
+            </div>
+            <p className="mt-5 text-center text-[0.65rem] uppercase tracking-[0.15em] text-revival-gold/80">
+              Drag the handle to reveal · real Revival patient
+            </p>
+          </div>
+
+          {/* Right: copy */}
+          <div className="max-w-xl lg:max-w-none">
+            <div className="mb-6 inline-flex items-center gap-3 text-tagline text-xs text-revival-gold">
+              <span className="h-px w-8 bg-revival-gold/50" />
+              Juvéderm® Dermal Fillers at Revival
+              <span className="h-px w-8 bg-revival-gold/50" />
+            </div>
+            <h2
+              className="font-heading font-medium leading-[1.1] text-revival-dark"
+              style={{ fontSize: "clamp(2rem, 3.6vw, 3rem)" }}
+            >
+              Sculpt. Plump. Restore —{" "}
+              <span className="italic text-revival-gold">with precision.</span>
+            </h2>
+            <div className="mt-8 space-y-6">
+              <p className="relative border-l-2 border-revival-gold/40 pl-5 text-lg font-light leading-[1.7] text-revival-charcoal/90 sm:text-xl sm:leading-[1.65]">
+                At Revival Health and Wellness, we specialize in natural-looking
+                facial rejuvenation using Juvéderm®, one of the most trusted
+                names in hyaluronic acid (HA) dermal fillers.
+              </p>
+              <p className="text-base font-light leading-relaxed text-revival-charcoal/80 sm:text-lg">
+                Whether you&rsquo;re looking to restore lost volume, define your
+                features, or smooth away fine lines, Juvéderm offers a
+                customizable solution tailored to your unique beauty. Our expert
+                providers assess your skin, facial anatomy, and aesthetic goals
+                to design a fully personalized plan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <BenefitsList
         eyebrow={"Where Juvéderm® shines"}
         heading="Common areas we treat"
         items={COMMON_AREAS}
         image="/images/derma-filler/derma-filler-1.webp"
+        imageAspect="square"
         imageContain
       />
 
@@ -231,7 +279,7 @@ export default function DermaFillerPage() {
             "Whether it’s defining your jawline, filling in smile lines, or adding soft volume to hollowed areas, Restylane delivers results that are both refined and lasting - elevating your beauty with each injection.",
           ],
           image: "/images/derma-filler/derma-filler-2.jpeg",
-          imageAspect: "landscape",
+          imageAspect: "portrait",
           imageContain: true,
         }}
       />

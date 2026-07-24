@@ -9,6 +9,7 @@ import {
 import PageHero from "@/components/ui/PageHero";
 import CTABanner from "@/components/ui/CTABanner";
 import Button from "@/components/ui/Button";
+import { ZENOTI } from "@/lib/content/home";
 import {
   OverviewBlock,
   FAQSection,
@@ -372,10 +373,10 @@ export default function Co2LaserTreatmentsPage() {
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-8">
           <figure className="relative mx-auto w-full max-w-md overflow-hidden rounded-[2rem] border border-revival-gold/20 bg-white shadow-xl lg:mx-0">
             <Image
-              src="/images/co2-laser-treatments/Image_20260225_164500_469.jpg"
+              src="/images/co2-laser-treatments/coolpeel-launch-announcement.png"
               alt="New at Revival Health & Wellness - CoolPeel CO₂ laser is now in the office"
-              width={1200}
-              height={1200}
+              width={874}
+              height={1164}
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="h-auto w-full object-contain"
               quality={92}
@@ -401,7 +402,7 @@ export default function Co2LaserTreatmentsPage() {
               Ask our medical team about our launch pricing during your consultation - we&apos;ll build the right CO₂ plan for your skin, lifestyle, and downtime.
             </p>
             <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <Button href="/contact-us/" variant="primary" size="lg">
+              <Button href={ZENOTI} external variant="primary" size="lg">
                 Book Your CoolPeel®
               </Button>
               <Button href="tel:+17029631154" variant="outline" size="lg">

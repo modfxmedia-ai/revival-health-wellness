@@ -8,6 +8,7 @@ import {
 import PageHero from "@/components/ui/PageHero";
 import CTABanner from "@/components/ui/CTABanner";
 import MotionShowcase from "@/components/motion/MotionShowcase";
+import WeightLossTestimonials from "@/components/weight-loss/WeightLossTestimonials";
 import {
   OverviewBlock,
   PillarsGrid,
@@ -138,7 +139,7 @@ export default function GLP1Page() {
             "GLP-1 (glucagon-like peptide-1) is a hormone your body naturally releases after eating. It tells the brain you're full, slows how quickly the stomach empties, and helps regulate insulin.",
             "GLP-1 medications amplify that natural signal-so appetite calms down, cravings ease up, and eating in a healthy calorie balance stops feeling like a fight against your own biology.",
           ],
-          image: "/images/weight-loss/glp-1-program.png",
+          image: "/images/weight-loss/glp-1-program-female.png",
         }}
       />
 
@@ -191,6 +192,8 @@ export default function GLP1Page() {
       />
 
       <FAQSection faqs={FAQS} />
+
+      <WeightLossTestimonials />
 
       <RelatedServices
         items={[

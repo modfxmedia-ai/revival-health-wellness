@@ -135,7 +135,8 @@ export default function PrpHairRestorationPage() {
             "Platelets act like our body’s natural first responders. When we get a cut or wound, platelets rush to the site to stop the bleeding and promote quick healing. This same “rescue team” can be used to awaken dormant hair follicles and stimulate new hair growth by encouraging inactive follicles to enter an active growth phase.",
             "During a standard PRP hair restoration session, a small amount of blood is drawn from a vein and placed in a device that separates the red blood cells from the plasma. The plasma - now rich with platelets and growth factors - is then injected into the scalp, where it begins the process of re-growing hair.",
           ],
-          image: "/images/prp-hair-restoration/prp-hair-loss-3.webp",
+          image: "/images/prp-hair-restoration/prp-rescue-team-scalp.png",
+          imageAspectClass: "aspect-[1238/822]",
         }}
       />
 
@@ -159,6 +160,8 @@ export default function PrpHairRestorationPage() {
           paragraphs: [
             "PRP hair injections allow you to resume your regular daily activities immediately after your appointment. However, some patients may experience minor side effects such as soreness, swelling, itching, or pinpoint bleeding at the injection sites. These effects are typically mild and subside quickly.",
           ],
+          image: "/images/prp-hair-restoration/prp-recovery-daily-life.png",
+          imageAspectClass: "aspect-[1230/816]",
         }}
       />
 

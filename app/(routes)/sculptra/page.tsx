@@ -117,7 +117,7 @@ export default function SculptraPage() {
             "Unlike traditional dermal fillers that provide immediate volume, Sculptra works gradually by stimulating your body’s own collagen production - helping you achieve results that look natural and last up to two years or more.",
           ],
           image: "/images/sculptra/sculptra-hero.png",
-          imageContain: true,
+          imageAspect: "landscape",
         }}
       />
 
@@ -140,6 +140,7 @@ export default function SculptraPage() {
         heading="A subtle transformation that builds over time"
         items={BENEFITS}
         image="/images/sculptra/sculptra-ae-3.png"
+        imageAspect="square"
         imageContain
       />
 

@@ -4,16 +4,31 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Check, Heart, Star, Award, type LucideIcon } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  Heart,
+  Star,
+  Award,
+  Quote,
+  type LucideIcon,
+} from "lucide-react";
 import { ABOUT, VALUES } from "@/lib/content/home";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
+
+type Testimonial = {
+  quote: string;
+  name: string;
+  treatment?: string;
+};
 
 type Pillar = {
   title: string;
   description: string;
   points: string[];
-  image: string;
+  image?: string;
+  testimonial?: Testimonial;
   icon: LucideIcon;
 };
 
@@ -39,7 +54,12 @@ const PILLARS: Pillar[] = [
       "Comfortable & private",
       "Tailored every visit",
     ],
-    image: "/images/home/Image_20250829_162858_851.jpeg",
+    testimonial: {
+      quote:
+        "There is no doubt about it, Radford and the whole team are top notch! They genuinely care that you're getting the results you want. When I express what I'm hoping to achieve, I always feel heard, understood and truly cared for. I'll be booking again very soon!",
+      name: "Jennifer Laluangphet",
+      treatment: "Personalized Care",
+    },
     icon: Star,
   },
   {
@@ -165,26 +185,108 @@ export default function AboutSection() {
             </AnimatePresence>
           </div>
 
-          {/* Image */}
+          {/* Image or testimonial */}
           <div className="relative h-[360px] overflow-hidden rounded-3xl ring-1 ring-white/10 lg:h-auto">
             <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1.02 }}
-                transition={{ duration: 0.6, ease: EASE }}
-                className="absolute inset-0"
-              >
-                <Image
-                  src={pillar.image}
-                  alt={pillar.title}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/50 via-transparent to-transparent" />
-              </motion.div>
+              {pillar.testimonial ? (
+                <motion.div
+                  key={`t-${active}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.55, ease: EASE }}
+                  className="absolute inset-0 flex flex-col justify-between overflow-hidden bg-gradient-to-br from-[#fdfaf3] via-white to-[#f5ebd8] p-8 lg:p-10"
+                >
+                  {/* Decorative gold aura */}
+                  <motion.div
+                    aria-hidden
+                    className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full blur-[100px]"
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(201,169,110,0.35), transparent 70%)",
+                    }}
+                    animate={{ scale: [1, 1.15, 1], opacity: [0.6, 0.9, 0.6] }}
+                    transition={{
+                      duration: 12,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  <motion.div
+                    aria-hidden
+                    className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full blur-[100px]"
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(138,90,43,0.22), transparent 70%)",
+                    }}
+                    animate={{ scale: [1.1, 1, 1.1], opacity: [0.5, 0.8, 0.5] }}
+                    transition={{
+                      duration: 14,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+
+                  <div className="relative">
+                    <Quote
+                      className="h-10 w-10 text-revival-gold/40"
+                      aria-hidden
+                    />
+                    <div className="mt-4 flex gap-1">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star
+                          key={i}
+                          className="h-4 w-4 fill-revival-gold text-revival-gold"
+                        />
+                      ))}
+                    </div>
+                    <blockquote
+                      className="mt-5 font-heading text-revival-dark/85"
+                      style={{ fontSize: "clamp(1.05rem, 1.6vw, 1.35rem)", lineHeight: 1.55 }}
+                    >
+                      &ldquo;{pillar.testimonial.quote}&rdquo;
+                    </blockquote>
+                  </div>
+
+                  <div className="relative mt-8 flex items-center gap-3 border-t border-revival-dark/10 pt-5">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-revival-gold to-[#8a5a2b] font-heading text-base font-medium text-white shadow-md">
+                      {pillar.testimonial.name
+                        .split(" ")
+                        .map((p) => p[0])
+                        .join("")
+                        .slice(0, 2)}
+                    </span>
+                    <div>
+                      <p className="font-medium text-revival-dark">
+                        {pillar.testimonial.name}
+                      </p>
+                      {pillar.testimonial.treatment && (
+                        <p className="text-xs font-light text-revival-gold">
+                          {pillar.testimonial.treatment} · Verified Google Review
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key={`i-${active}`}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.02 }}
+                  transition={{ duration: 0.6, ease: EASE }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={pillar.image!}
+                    alt={pillar.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/50 via-transparent to-transparent" />
+                </motion.div>
+              )}
             </AnimatePresence>
           </div>
         </div>

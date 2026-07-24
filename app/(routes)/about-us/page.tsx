@@ -55,8 +55,8 @@ export default function AboutUsPage() {
         description="Revival Health & Wellness is a Las Vegas center where modern medicine meets luxury care. Weight loss, hormone therapy, sexual wellness, and aesthetics-delivered by a team that treats you like family."
         secondary={{ label: "Meet Our Team", href: "#team" }}
         gallery={[
-          "/images/home/Image_20250829_162858_851.jpeg",
-          "/images/home/Image_20250829_162858_851.jpeg",
+          "/images/home/front-desk.png",
+          "/images/home/front-desk.png",
         ]}
       />
 

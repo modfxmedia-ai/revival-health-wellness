@@ -138,9 +138,24 @@ export default function UnderEyeTreatmentPage() {
         description="Revive tired, dull eyes. This advanced tear-trough treatment targets dark circles, puffiness, and fine lines to rejuvenate and brighten the under-eye area for a refreshed, well-rested look."
         gallery={[
           "/images/under-eye-treatment/23128-dark-circles-under-eyes.jpg",
-          "/images/under-eye-treatment/Eyes-3.jpg",
+          "/images/under-eye-treatment/Ez-Gel-undereyes.jpg",
         ]}
         compact
+      />
+
+      <OverviewBlock
+        section={{
+          eyebrow: "EZ Gel for Under-Eye Rejuvenation",
+          heading:
+            "Naturally refresh tired eyes with your body’s own regenerative proteins",
+          paragraphs: [
+            "The delicate under-eye area is often one of the first places to show signs of aging. As collagen decreases over time, the skin becomes thinner, fine lines develop, and volume loss can create hollowness and shadows that make you look tired - even when you’re well rested.",
+            "EZ Gel is a natural regenerative treatment that uses your body’s own growth factors and proteins to rejuvenate the under-eye area without synthetic fillers.",
+          ],
+          image: "/images/under-eye-treatment/Ez-Gel-undereyes.jpg",
+          imageAspect: "square",
+          imageContain: true,
+        }}
       />
 
       <OverviewBlock
@@ -177,21 +192,7 @@ export default function UnderEyeTreatmentPage() {
         heading="What patients notice"
         items={BENEFITS}
         image="/images/under-eye-treatment/under-eye-benefits.webp"
-      />
-
-      <OverviewBlock
-        section={{
-          eyebrow: "EZ Gel for Under-Eye Rejuvenation",
-          heading:
-            "Naturally refresh tired eyes with your body’s own regenerative proteins",
-          paragraphs: [
-            "The delicate under-eye area is often one of the first places to show signs of aging. As collagen decreases over time, the skin becomes thinner, fine lines develop, and volume loss can create hollowness and shadows that make you look tired - even when you’re well rested.",
-            "EZ Gel is a natural regenerative treatment that uses your body’s own growth factors and proteins to rejuvenate the under-eye area without synthetic fillers.",
-          ],
-          image: "/images/under-eye-treatment/Ez-Gel-undereyes.jpg",
-          imageAspect: "portrait",
-          imageContain: true,
-        }}
+        imageSize="small"
       />
 
       <OverviewBlock
@@ -224,6 +225,7 @@ export default function UnderEyeTreatmentPage() {
         heading="An ideal option if you want to:"
         items={EZ_GEL_CANDIDATES}
         image="/images/under-eye-treatment/ez-gel-under-eye.jpg"
+        imageAspect="square"
         imageContain
         footer="At Revival Health & Wellness, we customize every treatment plan to your unique anatomy and aesthetic goals. Our focus is on achieving refreshed, natural-looking results that help you look like the best version of yourself - not someone else."
       />

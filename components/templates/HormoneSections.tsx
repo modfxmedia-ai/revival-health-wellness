@@ -88,6 +88,13 @@ export type OverviewSection = {
   image?: string;
   /** Frame aspect for the image - default portrait 4:5. Use "landscape" for wide banner images (2:1 or wider) and "square" for 1:1 sources. */
   imageAspect?: "portrait" | "landscape" | "square";
+  /**
+   * Escape hatch for sources whose ratio doesn't fit the 3 preset buckets -
+   * a literal Tailwind aspect class (e.g. "aspect-[1230/816]") matching the
+   * image's native ratio exactly, so there's zero crop and zero letterboxing.
+   * Takes precedence over `imageAspect` when set.
+   */
+  imageAspectClass?: string;
   /** When true, renders the image with object-contain so the full source is visible (no cropping). Defaults to cover. */
   imageContain?: boolean;
   bullets?: string[];
@@ -286,7 +293,7 @@ export function OverviewBlock({
             >
               <AnimatedPortraitFrame
                 src={section.image}
-                aspect={aspectClass(section.imageAspect)}
+                aspect={section.imageAspectClass ?? aspectClass(section.imageAspect)}
                 cover={!section.imageContain}
               />
             </div>
@@ -294,7 +301,7 @@ export function OverviewBlock({
             <ParallaxFrame className={reverse ? "lg:order-2" : ""}>
               <AnimatedPortraitFrame
                 src={section.image}
-                aspect={aspectClass(section.imageAspect)}
+                aspect={section.imageAspectClass ?? aspectClass(section.imageAspect)}
                 cover={!section.imageContain}
               />
             </ParallaxFrame>
@@ -494,6 +501,7 @@ export function BenefitsList({
   imageContain = false,
   motionGraphic = false,
   stickyImage = false,
+  imageSize = "default",
   footer,
 }: {
   eyebrow?: string;
@@ -506,6 +514,8 @@ export function BenefitsList({
   motionGraphic?: boolean;
   /** Sticks the image column while the benefit chips column scrolls past. */
   stickyImage?: boolean;
+  /** "small" narrows the image column and caps its width, giving more room to the chips. */
+  imageSize?: "default" | "small";
   /** Optional closing paragraph rendered beneath the chip grid. */
   footer?: string;
 }) {
@@ -528,12 +538,20 @@ export function BenefitsList({
       <div
         className={
           "mx-auto grid max-w-7xl grid-cols-1 items-start gap-14 px-4 sm:px-6 lg:gap-20 lg:px-8 " +
-          (hasVisual ? "lg:grid-cols-[1.05fr_0.95fr]" : "")
+          (hasVisual
+            ? imageSize === "small"
+              ? "lg:grid-cols-[minmax(0,320px)_1fr]"
+              : "lg:grid-cols-[1.05fr_0.95fr]"
+            : "")
         }
       >
         {image ? (
           stickyImage ? (
-            <div className="lg:sticky lg:top-24 lg:order-1 lg:self-start">
+            <div
+              className={`lg:sticky lg:top-24 lg:order-1 lg:self-start ${
+                imageSize === "small" ? "lg:max-w-xs" : ""
+              }`}
+            >
               <AnimatedPortraitFrame
                 src={image}
                 aspect={aspectClass(imageAspect)}
@@ -541,7 +559,9 @@ export function BenefitsList({
               />
             </div>
           ) : (
-            <ParallaxFrame className="lg:order-1">
+            <ParallaxFrame
+              className={`lg:order-1 ${imageSize === "small" ? "lg:max-w-xs" : ""}`}
+            >
               <AnimatedPortraitFrame
                 src={image}
                 aspect={aspectClass(imageAspect)}

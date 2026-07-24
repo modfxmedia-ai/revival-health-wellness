@@ -153,8 +153,7 @@ export default function PdoThreadLiftsPage() {
             "A PDO Thread Lift is a minimally invasive procedure designed to lift and reposition sagging tissue while stimulating your body's natural collagen production. The result is a refreshed, more youthful appearance without the downtime of surgery.",
           ],
           image: "/images/pdo-thread-lifts/pdo-thread-lifts-1.webp",
-          imageAspect: "landscape",
-          imageContain: true,
+          imageAspect: "square",
         }}
       />
 
@@ -179,6 +178,7 @@ export default function PdoThreadLiftsPage() {
         heading="PDO thread lifts can effectively improve"
         items={TREATABLE_AREAS}
         image="/images/pdo-thread-lifts/pdo-thread-lifts-2.webp"
+        imageAspect="square"
         imageContain
       />
 

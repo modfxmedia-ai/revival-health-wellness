@@ -148,7 +148,7 @@ function IntroSection() {
                 aria-hidden
                 className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 group-hover:translate-x-full"
               />
-              <span className="relative">Book Virtual Visit</span>
+              <span className="relative">Book Your Virtual Consultation</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <Link

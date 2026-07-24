@@ -103,8 +103,8 @@ export const APPROACH = {
     },
   ],
   images: [
-    "/images/home/Image_20250829_162858_851.jpeg",
-    "/images/home/Image_20250829_162859_013.jpeg",
+    "/images/home/approach-1.jpg",
+    "/images/home/approach-2.jpg",
   ],
 };
 
@@ -181,7 +181,7 @@ export const GALLERY = [
   "/images/home/Image_20250829_162858_447.jpeg",
   "/images/home/Image_20250829_162858_558.jpeg",
   "/images/home/Image_20250829_162858_691.jpeg",
-  "/images/home/Image_20250829_162858_851.jpeg",
+  "/images/home/front-desk.png",
   "/images/home/Image_20250829_162859_013.jpeg",
   "/images/home/Image_20250829_162859_144.jpeg",
   "/images/home/Image_20250829_162859_344.jpeg",
@@ -237,6 +237,7 @@ export const REVIEWS = {
   rating: 5,
   count: 500,
   badge: "EXCELLENT",
+  url: "https://www.google.com/search?sca_esv=fd7ebb06f35fc00e&sxsrf=APpeQnuL-I_-lBw1ge665VuPAnqGXvzTdQ:1784906840638&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_-AnkztBfFgLHMd7rveTZWuMtGChJuI9gkIqQFSc8ELwW2NYYzhkA_c9FMEfHSGUuw_KAl-Q0YG-S8A5OK6Fq67AmeBwzVyNG2mY9TjsUicrNGef5w%3D%3D&q=Revival+Aesthetics+Reviews&sa=X&ved=2ahUKEwi7yMWR0OuVAxVCKvsDHaOMGXUQ0bkNegQIMxAH",
 };
 
 export type BlogPost = {

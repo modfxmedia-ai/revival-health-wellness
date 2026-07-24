@@ -7,6 +7,7 @@ import {
 } from "@/lib/schema";
 import PageHero from "@/components/ui/PageHero";
 import CTABanner from "@/components/ui/CTABanner";
+import WeightLossTestimonials from "@/components/weight-loss/WeightLossTestimonials";
 import {
   OverviewBlock,
   PillarsGrid,
@@ -253,6 +254,8 @@ export default function PhenterminePage() {
       </section>
 
       <FAQSection faqs={FAQS} />
+
+      <WeightLossTestimonials />
 
       <RelatedServices
         items={[

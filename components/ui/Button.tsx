@@ -8,6 +8,7 @@ type ButtonProps = {
   size?: "sm" | "md" | "lg";
   className?: string;
   type?: "button" | "submit" | "reset";
+  external?: boolean;
 };
 
 const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
@@ -33,6 +34,7 @@ export default function Button({
   size = "md",
   className,
   type = "button",
+  external = false,
 }: ButtonProps) {
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-revival-gold focus-visible:ring-offset-2",
@@ -43,7 +45,11 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
+      <Link
+        href={href}
+        className={classes}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      >
         {children}
       </Link>
     );

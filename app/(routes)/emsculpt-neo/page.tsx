@@ -7,6 +7,7 @@ import {
 } from "@/lib/schema";
 import PageHero from "@/components/ui/PageHero";
 import CTABanner from "@/components/ui/CTABanner";
+import { CheckCircle2 } from "lucide-react";
 import {
   OverviewBlock,
   PillarsGrid,
@@ -202,12 +203,60 @@ export default function EmsculptNeoPage() {
         </div>
       </section>
 
-      <BenefitsList
-        eyebrow="Key Benefits of Emsculpt NEO"
-        heading="Everything one machine can do for you"
-        items={KEY_BENEFITS}
-        image="/images/emsculpt-neo/Image_20250829_162859_144.jpeg"
-      />
+      {/* Key Benefits + video showcase */}
+      <section className="relative overflow-clip bg-revival-cream py-14 sm:py-20 lg:py-28">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1fr_1fr] lg:gap-16 lg:px-8">
+          <div>
+            <div className="mb-6 flex items-center gap-3">
+              <span className="h-px w-8 bg-gradient-to-r from-transparent via-revival-gold to-revival-gold/60 sm:w-12" />
+              <span className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-revival-gold sm:text-xs">
+                Key Benefits of Emsculpt NEO
+              </span>
+            </div>
+            <h2
+              className="font-heading font-light leading-[1.05] text-revival-dark"
+              style={{ fontSize: "clamp(2rem, 3.6vw, 3.15rem)", letterSpacing: "-0.01em" }}
+            >
+              Everything one machine can do for you
+            </h2>
+
+            <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+              {KEY_BENEFITS.map((it) => (
+                <li
+                  key={it}
+                  className="flex items-start gap-3 rounded-2xl bg-white px-4 py-4 text-sm text-revival-charcoal/85 shadow-sm ring-1 ring-revival-gold/10"
+                >
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-revival-gold to-revival-gold-light text-revival-dark">
+                    <CheckCircle2 className="h-3.5 w-3.5" />
+                  </span>
+                  <span className="pt-0.5">{it}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-center text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-revival-gold lg:text-left">
+              See it in action
+            </p>
+            <h3 className="mt-2 text-center font-heading text-2xl italic text-revival-dark sm:text-3xl lg:text-left">
+              Watch how Emsculpt NEO works
+            </h3>
+            <div className="relative mt-6 overflow-hidden rounded-[2rem] border border-revival-gold/25 bg-black shadow-[0_50px_120px_-32px_rgba(201,169,110,0.35)]">
+              <div className="relative pt-[56.25%]">
+                <iframe
+                  src={`https://www.youtube.com/embed/${YOUTUBE_ID}?rel=0&modestbranding=1`}
+                  title="Emsculpt NEO overview"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <PillarsGrid
         tone="cream"
@@ -247,40 +296,6 @@ export default function EmsculptNeoPage() {
         heading="Emsculpt NEO Functional Wellness is FDA-cleared to help with:"
         items={FDA_BENEFITS}
       />
-
-      {/* YouTube showcase */}
-      <section className="relative overflow-clip bg-revival-dark py-14 sm:py-20 lg:py-28">
-        <span
-          aria-hidden
-          className="pointer-events-none absolute -left-32 top-16 h-96 w-96 rounded-full bg-revival-gold/20 blur-[140px]"
-        />
-        <span
-          aria-hidden
-          className="pointer-events-none absolute -right-32 bottom-16 h-96 w-96 rounded-full bg-revival-gold/10 blur-[140px]"
-        />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 text-center">
-            <p className="text-tagline text-[0.7rem] text-revival-gold">
-              SEE IT IN ACTION
-            </p>
-            <h2 className="mt-3 font-heading text-3xl italic text-revival-warm-white sm:text-4xl lg:text-[2.75rem]">
-              Watch how Emsculpt NEO works
-            </h2>
-          </div>
-          <div className="relative overflow-hidden rounded-[2rem] border border-revival-gold/25 bg-black shadow-[0_50px_120px_-32px_rgba(201,169,110,0.35)]">
-            <div className="relative pt-[56.25%]">
-              <iframe
-                src={`https://www.youtube.com/embed/${YOUTUBE_ID}?rel=0&modestbranding=1`}
-                title="Emsculpt NEO overview"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 h-full w-full"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       <OverviewBlock
         section={{

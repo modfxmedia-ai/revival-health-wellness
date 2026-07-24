@@ -22,7 +22,7 @@ export const metadata = buildMetadata({
   title: TITLE,
   description: DESCRIPTION,
   path: PATH,
-  images: ["/images/scar-camouflage/SMC11.avif"],
+  images: ["/images/scar-camouflage/hand-before-after.jpg"],
 });
 
 const APPROACH = [
@@ -68,22 +68,69 @@ export default function ScarCamouflagePage() {
           </>
         }
         description={"Scar concealment & confidence restoration - because your skin should reflect how strong, radiant, and beautiful you truly are."}
-        gallery={["/images/scar-camouflage/SMC11.avif"]}
+        gallery={[
+          "/images/scar-camouflage/hand-before-after.jpg",
+          "/images/scar-camouflage/ear-before-after.jpg",
+        ]}
         compact
       />
 
-      <OverviewBlock
-        section={{
-          eyebrow: "Scar Concealment & Confidence Restoration",
-          heading:
-            "Because your skin should reflect how strong, radiant, and beautiful you truly are.",
-          paragraphs: [
-            "At Revival Health and Wellness, we understand that scars - whether from surgery, acne, or injury - can affect how you feel about yourself. While they’re part of your story, they don’t have to define you.",
-            "Our expert providers offer advanced, non-surgical treatments designed to minimize the appearance of scars, helping you restore your natural beauty and reclaim your confidence. Using cutting-edge technology and personalized care, we work with you to soften visible imperfections and improve your skin’s texture and tone.",
-          ],
-          image: "/images/scar-camouflage/SMC11.avif",
-        }}
-      />
+      {/* Scar Concealment & Confidence Restoration - image shown at native
+          resolution (source photo is low-res) so it never looks stretched
+          or blurry from being force-fit into a large frame. */}
+      <section className="relative overflow-clip bg-revival-warm-white py-14 sm:py-20 lg:py-28">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20 lg:px-8">
+          <div className="relative mx-auto w-full max-w-[420px] lg:mx-0">
+            <div className="relative overflow-hidden rounded-[2rem] bg-revival-cream p-3 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.2)] ring-1 ring-revival-gold/15">
+              <Image
+                src="/images/scar-camouflage/hand-before-after.jpg"
+                alt="Scar camouflage before and after - hand"
+                width={1000}
+                height={1000}
+                sizes="(min-width: 1024px) 420px, 100vw"
+                className="h-auto w-full rounded-[1.5rem] object-contain"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div className="mb-6">
+              <div className="flex items-center gap-3">
+                <span className="h-px w-8 bg-gradient-to-r from-transparent via-revival-gold to-revival-gold/60 sm:w-12" />
+                <span className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-revival-gold sm:text-xs">
+                  Scar Concealment &amp; Confidence Restoration
+                </span>
+              </div>
+            </div>
+            <h2
+              className="font-heading font-light leading-[1.05] text-revival-dark"
+              style={{
+                fontSize: "clamp(2rem, 3.6vw, 3.15rem)",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Because your skin should reflect how strong, radiant, and
+              beautiful you truly are.
+            </h2>
+            <div className="mt-8 space-y-6">
+              <p className="relative border-l-2 border-revival-gold/40 pl-5 text-lg font-light leading-[1.7] text-revival-charcoal/90 sm:text-xl sm:leading-[1.65]">
+                At Revival Health and Wellness, we understand that scars -
+                whether from surgery, acne, or injury - can affect how you
+                feel about yourself. While they’re part of your story, they
+                don’t have to define you.
+              </p>
+              <p className="text-base font-light leading-relaxed text-revival-charcoal/80 sm:text-lg">
+                Our expert providers offer advanced, non-surgical treatments
+                designed to minimize the appearance of scars, helping you
+                restore your natural beauty and reclaim your confidence.
+                Using cutting-edge technology and personalized care, we work
+                with you to soften visible imperfections and improve your
+                skin’s texture and tone.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <OverviewBlock
         tone="cream"
@@ -98,7 +145,8 @@ export default function ScarCamouflagePage() {
         }}
       />
 
-      {/* Featured animation from the live site */}
+      {/* Featured animation from the live site - shown at native resolution
+          (source gif is low-res) so it never looks stretched or blurry. */}
       <section className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-28">
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <div
@@ -135,15 +183,17 @@ export default function ScarCamouflagePage() {
               every part of the journey.
             </p>
           </div>
-          <div className="relative aspect-square overflow-hidden rounded-[2rem] shadow-[0_40px_120px_-32px_rgba(15,15,15,0.3)]">
-            <Image
-              src="/images/scar-camouflage/scar-camouflage-animation.gif"
-              alt="Scar camouflage before-and-after animation"
-              fill
-              sizes="(min-width: 1024px) 45vw, 100vw"
-              className="object-cover"
-              unoptimized
-            />
+          <div className="relative mx-auto w-full max-w-[340px] lg:mx-0">
+            <div className="relative overflow-hidden rounded-[2rem] bg-revival-cream p-3 shadow-[0_40px_120px_-32px_rgba(15,15,15,0.3)] ring-1 ring-revival-gold/15">
+              <Image
+                src="/images/scar-camouflage/ear-before-after.jpg"
+                alt="Scar camouflage before and after - ear and neck"
+                width={454}
+                height={640}
+                sizes="340px"
+                className="h-auto w-full rounded-[1.5rem] object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>

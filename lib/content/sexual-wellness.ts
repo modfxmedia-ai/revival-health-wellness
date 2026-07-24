@@ -15,6 +15,9 @@ export type SWSection =
       imageAlt?: string;
       /** When true, renders the image with `object-contain` on a neutral tile so the full photo is visible - no cropping. */
       imageContain?: boolean;
+      /** Actual pixel dimensions of `image`, used to size the contain box so it matches the photo's real aspect ratio (avoids letterbox bars). Defaults to 1200x982. */
+      imageWidth?: number;
+      imageHeight?: number;
       side?: "left" | "right";
       bullets?: string[];
     }
@@ -119,6 +122,8 @@ export type SWPage = {
   sections: SWSection[];
   ctaTitle?: string;
   ctaSubtitle?: string;
+  /** When true, renders the final CTA before the Related Treatments block. */
+  ctaBeforeRelated?: boolean;
   relatedSlugs?: string[];
   meta: {
     title: string;
@@ -166,6 +171,8 @@ export const SW_CONTENT: Record<string, SWPage> = {
         image: "/images/sexual-wellness/hub-parent.webp",
         imageAlt: "Revival sexual wellness - men and women",
         imageContain: true,
+        imageWidth: 1100,
+        imageHeight: 1440,
       },
       {
         kind: "options",
@@ -601,6 +608,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
     ctaTitle: "Interested in the P-Shot?",
     ctaSubtitle:
       "Book a free consultation to see if you're a candidate. All conversations are private and physician-led.",
+    ctaBeforeRelated: true,
     relatedSlugs: ["gainswave-tm", "priapus-toxin", "trimix", "men"],
     meta: {
       title: "P-Shot Treatment for Men | Revival Health & Wellness",
@@ -677,9 +685,11 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "During treatment, high-frequency acoustic waves are applied to the penis. This energy helps remove micro-plaque buildup that has been obstructing blood flow while also stimulating the creation of new blood vessels.",
           "Poor blood flow is a major contributor to erectile dysfunction, and GAINSWave™ effectively addresses this issue at the root. The enhanced blood flow leads to stronger, firmer, and longer-lasting erections.",
         ],
-        image: "/images/sexual-wellness/gainswave-tm/gainswave-tm-men-2.jpg",
+        image: "/images/sexual-wellness/gainswave-tm/gainswave-science.png",
         imageAlt: "GAINSWave™ mechanism of action",
         imageContain: true,
+        imageWidth: 1230,
+        imageHeight: 814,
         side: "right",
       },
       {
@@ -1137,6 +1147,8 @@ export const SW_CONTENT: Record<string, SWPage> = {
         image: "/images/sexual-wellness/priapus-toxin/priapus-toxin.jpg",
         imageAlt: "Priapus Toxin™ treatment overview",
         imageContain: true,
+        imageWidth: 1080,
+        imageHeight: 1080,
       },
       {
         kind: "overview",
@@ -1233,8 +1245,8 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "Erectile dysfunction (ED) is a common issue - affecting over 30 million men and nearly 70% of those aged 70 and above. Left untreated, ED can significantly impact a man's social, emotional, and physical well-being, potentially leading to conditions like low self-esteem, anxiety, and depression.",
           "Revival Health and Wellness proudly offers EMSELLA™ as part of our ED treatment options. EMSELLA™ is FDA-approved and non-invasive, designed to improve muscle strength and endurance to aid in better sexual performance. Unlike medications, surgery, or other invasive procedures, EMSELLA™ works by stimulating the pelvic floor muscles needed to achieve and maintain an erection naturally - without hormones or drugs.",
         ],
-        image: "/images/sexual-wellness/emsella/bella-paloma-emsella-clinic.jpg",
-        imageAlt: "EMSELLA HIFEM chair at a men's clinic",
+        image: "/images/sexual-wellness/emsella/emsella-ed-before-after.png",
+        imageAlt: "EMSELLA chair before-and-after result for a male patient",
       },
       {
         kind: "overview",

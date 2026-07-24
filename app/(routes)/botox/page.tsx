@@ -129,6 +129,7 @@ export default function BotoxPage() {
             "By working beneath the skin, Botox targets the source of your wrinkles, minimizing muscle activity to smooth and rejuvenate your skin. Even the most subtle changes can have a dramatic impact on how you look and feel.",
           ],
           image: "/images/botox/botox_injections_750-e1756236969540.webp",
+          imageAspect: "square",
           imageContain: true,
         }}
       />
@@ -143,7 +144,8 @@ export default function BotoxPage() {
             "Botox works by temporarily blocking the nerve signals that cause facial muscles to contract when we make expressions. This relaxation of the muscles leads to a significant reduction in the visibility of wrinkles. While the muscles are temporarily “frozen,” you’ll still be able to make natural facial expressions, provided you choose a skilled and experienced provider to administer the injections.",
             "It’s essential to select a medical professional who thoroughly understands the anatomy of the human face, the underlying facial muscles, the appropriate dosage for each area, and the precise technique for administering Botox. This ensures both effective results and the preservation of your natural expressions.",
           ],
-          image: "/images/botox/Luxury-Living-in-Dubai-South-8-e1756238774520.png",
+          image: "/images/botox/botox-overview-2.avif",
+          imageAspect: "landscape",
           imageContain: true,
         }}
       />
