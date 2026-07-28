@@ -6,6 +6,7 @@ import { organizationSchema, websiteSchema, jsonLd } from "@/lib/schema";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import StickyBookBar from "@/components/layout/StickyBookBar";
+import AccessibilityToolbarLoader from "@/components/layout/AccessibilityToolbarLoader";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -72,6 +73,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <StickyBookBar />
+        <AccessibilityToolbarLoader />
         <Script id="knock-knock-widget" strategy="afterInteractive">
           {`window.company_id = '6a44d224fb43c2761cd335f0';
 var newScript = document.createElement('script');

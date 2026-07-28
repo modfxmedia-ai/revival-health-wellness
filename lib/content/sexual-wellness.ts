@@ -1226,7 +1226,6 @@ export const SW_CONTENT: Record<string, SWPage> = {
     description:
       "An FDA-approved, non-invasive treatment designed to strengthen the pelvic floor muscles that support erectile function.",
     gallery: [
-      "/images/sexual-wellness/emsella/bella-paloma-emsella-clinic.jpg",
       "/images/sexual-wellness/emsella/emsella-chair-equipment.jpg",
       "/images/sexual-wellness/emsella/emsella-men-photo.jpg",
     ],

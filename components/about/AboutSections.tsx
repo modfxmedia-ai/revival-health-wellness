@@ -207,7 +207,9 @@ export function AboutIntroSection() {
               src={ABOUT_INTRO.image}
               alt="Revival Health & Wellness clinical team"
               fill
-              sizes="360px"
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 420px, 92vw"
+              quality={100}
+              priority
               className="object-contain"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/40 via-transparent to-transparent" />

@@ -139,7 +139,6 @@ export default function VitaminInjectionsPage() {
         }
         description="Increase your energy and wellness with concentrated vitamin, mineral, and antioxidant injections delivered by our medical team in Las Vegas."
         gallery={[
-          "/images/weight-loss/vitamin-injections-hero.jpg",
           "/images/weight-loss/vitamin-injections-secondary.jpg",
         ]}
       />
