@@ -152,7 +152,7 @@ export default function VitaminInjectionsPage() {
             "Oral supplements have to survive digestion before your body can use them. Vitamin injections skip that step entirely-delivering concentrated nutrients directly into your muscle for near-complete absorption.",
             "The result: faster energy, better immune support, and a more efficient way to correct real deficiencies alongside the rest of your health plan.",
           ],
-          image: "/images/weight-loss/vitamin-injections-hero.jpg",
+          image: "/images/weight-loss/vitamin-booster-img.webp",
         }}
       />
 

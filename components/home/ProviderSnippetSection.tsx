@@ -79,7 +79,7 @@ export default function ProviderSnippetSection() {
                 alt="Sanaz Salmani, Clinic Director at Revival Health & Wellness"
                 fill
                 sizes="(max-width: 1024px) 90vw, 420px"
-                className="object-cover object-top"
+                className="object-cover object-bottom"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/60 via-transparent to-transparent" />
               <div className="absolute inset-x-5 bottom-5 flex items-center justify-between rounded-full border border-white/15 bg-revival-dark/70 px-4 py-2 backdrop-blur-md">

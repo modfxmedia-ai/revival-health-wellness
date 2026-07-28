@@ -35,7 +35,7 @@ export const ABOUT_INTRO = {
     "We believe in a comprehensive approach to wellness, focusing on revitalizing your mind, body, and spirit. Our dedicated team genuinely cares about your health and future, and we are committed to helping you lead a longer, happier, and healthier life.",
     "By offering comprehensive and effective treatments, we strive to deliver optimal results that truly transform your life. We specialize in weight loss, hormone replacement therapy, body contouring, and aesthetics.",
   ],
-  image: "/images/about/team-storefront.png",
+  image: "/images/about/team-storefront-2.png",
 };
 
 export type CoreValue = {
@@ -200,16 +200,18 @@ export function AboutIntroSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: EASE }}
-          className="relative mx-auto aspect-[355/575] w-full max-w-[360px] overflow-hidden rounded-[2.5rem] bg-revival-cream shadow-2xl ring-1 ring-black/5 lg:mx-0"
+          className="relative mx-auto aspect-[992/1685] w-full max-w-[360px] overflow-hidden rounded-[2.5rem] bg-revival-cream p-2.5 shadow-2xl ring-1 ring-black/5 lg:mx-0"
         >
-          <Image
-            src={ABOUT_INTRO.image}
-            alt="Revival Health & Wellness clinical team"
-            fill
-            sizes="360px"
-            className="object-cover object-top"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/40 via-transparent to-transparent" />
+          <div className="relative h-full w-full overflow-hidden rounded-[2rem]">
+            <Image
+              src={ABOUT_INTRO.image}
+              alt="Revival Health & Wellness clinical team"
+              fill
+              sizes="360px"
+              className="object-contain"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/40 via-transparent to-transparent" />
+          </div>
           <div className="absolute bottom-6 left-6 inline-flex items-center gap-2 rounded-full border border-white/25 bg-revival-dark/40 px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.2em] text-white backdrop-blur-md">
             <Sparkles className="h-3 w-3 text-revival-gold" />
             Las Vegas · Est. 2020

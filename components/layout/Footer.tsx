@@ -112,7 +112,7 @@ export default function Footer() {
   const isHomepage = pathname === "/";
 
   return (
-    <footer className="bg-revival-dark text-revival-warm-white">
+    <footer id="site-footer" className="bg-revival-dark text-revival-warm-white">
       {/* Pre-footer CTA strip — homepage only */}
       {isHomepage && (
         <AnimatedSection

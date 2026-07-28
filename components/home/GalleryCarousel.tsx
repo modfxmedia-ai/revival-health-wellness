@@ -267,6 +267,23 @@ export default function GalleryCarousel() {
                   </motion.span>
                 </div>
 
+                {/* Persistent play/pause toggle (bottom-left) */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handlePlayToggle();
+                  }}
+                  aria-label={playing ? "Pause video" : "Play video"}
+                  className="absolute bottom-4 left-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-black/50 text-white backdrop-blur-md transition-all duration-300 hover:border-revival-gold hover:bg-black/70"
+                >
+                  {playing ? (
+                    <Pause className="h-5 w-5" />
+                  ) : (
+                    <Play className="ml-0.5 h-5 w-5" />
+                  )}
+                </button>
+
                 {/* Mute toggle (bottom-right) */}
                 <button
                   type="button"

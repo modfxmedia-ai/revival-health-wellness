@@ -11,6 +11,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 export default function StickyBookBar() {
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
+  const [overFooter, setOverFooter] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -22,11 +23,21 @@ export default function StickyBookBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const footer = document.getElementById("site-footer");
+    if (!footer) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setOverFooter(entry.isIntersecting),
+    );
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
   if (dismissed) return null;
 
   return (
     <AnimatePresence>
-      {visible ? (
+      {visible && !overFooter ? (
         <motion.div
           key="sticky-book"
           initial={{ y: 100, opacity: 0 }}

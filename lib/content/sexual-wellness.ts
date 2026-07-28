@@ -1228,7 +1228,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
     gallery: [
       "/images/sexual-wellness/emsella/bella-paloma-emsella-clinic.jpg",
       "/images/sexual-wellness/emsella/emsella-chair-equipment.jpg",
-      "/images/sexual-wellness/emsella/emsella-men.png",
+      "/images/sexual-wellness/emsella/emsella-men-photo.jpg",
     ],
     breadcrumbs: [
       { label: "Home", href: "/" },

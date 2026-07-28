@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { GripVertical } from "lucide-react";
 
-const BEFORE = "/images/derma-filler/before-after/before-hd.png";
-const AFTER = "/images/derma-filler/before-after/after-hd.png";
+const BEFORE = "/images/derma-filler/before-after/after-hd.png";
+const AFTER = "/images/derma-filler/before-after/before-hd.png";
 
 /**
  * Clean before/after comparison slider.
@@ -30,6 +30,7 @@ export default function BeforeAfterSlider() {
     const seq: Array<[number, number]> = [
       [100, 800], // hold on before
       [0, 1600], // sweep to fully after
+      [50, 900], // settle back to the middle
     ];
     let cancelled = false;
     let idx = 0;
