@@ -1,1 +1,7 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
+
+# Vercel's build does not fetch Git LFS content, so LFS-tracked video
+# files deploy as tiny pointer text files instead of real video and
+# fail to play in production. Exclude this file (well under GitHub's
+# 100MB push limit) so it's committed as a normal binary blob instead.
+public/videos/inside-revival.mp4 !filter !diff !merge -text
