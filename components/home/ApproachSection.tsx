@@ -15,7 +15,6 @@ export default function ApproachSection() {
     offset: ["start end", "end start"],
   });
   const y1 = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-  const y2 = useTransform(scrollYProgress, [0, 1], ["12%", "-12%"]);
   const ringRotate = useTransform(scrollYProgress, [0, 1], [0, 90]);
 
   return (
@@ -57,47 +56,23 @@ export default function ApproachSection() {
             className="absolute left-1/2 top-1/2 h-[115%] w-[115%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-revival-gold/30"
           />
 
-          {/* Main image */}
+          {/* Team image */}
           <motion.div
             style={{ y: y1 }}
             initial={{ opacity: 0, scale: 0.92 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.9, ease: EASE }}
-            className="absolute left-0 top-0 h-[72%] w-[64%] overflow-hidden rounded-3xl shadow-2xl ring-1 ring-black/5"
+            className="absolute inset-4 overflow-hidden rounded-3xl bg-white shadow-2xl ring-1 ring-black/5"
           >
             <Image
-              src={APPROACH.images[0]}
-              alt="A modern luxury wellness experience"
+              src={APPROACH.images[1]}
+              alt="Personalized care at Revival Health and Wellness"
               fill
-              sizes="(max-width: 1024px) 60vw, 30vw"
-              className="object-cover"
+              sizes="(max-width: 1024px) 80vw, 40vw"
+              className="object-contain"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-revival-gold/15 to-transparent mix-blend-soft-light" />
-          </motion.div>
-
-          {/* Secondary image with gentle float */}
-          <motion.div
-            style={{ y: y2 }}
-            initial={{ opacity: 0, scale: 0.92 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.9, ease: EASE, delay: 0.15 }}
-            className="absolute bottom-0 right-0 h-[64%] w-[60%] overflow-hidden rounded-3xl border-[6px] border-revival-warm-white shadow-2xl"
-          >
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={APPROACH.images[1]}
-                alt="Personalized care at Revival Health and Wellness"
-                fill
-                sizes="(max-width: 1024px) 58vw, 29vw"
-                className="object-cover"
-              />
-            </motion.div>
           </motion.div>
 
           {/* Floating glass stat badge */}

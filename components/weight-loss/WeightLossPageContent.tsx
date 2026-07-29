@@ -552,9 +552,10 @@ export default function WeightLossPageContent() {
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-start gap-12 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14 lg:px-8">
           <motion.div variants={fadeUp} className="hidden lg:block">
             <PortraitFrame
-              src="/images/weight-loss/weight-loss-approach.png"
-              alt="Personalized weight-loss consultation and body composition analysis"
+              src="/images/weight-loss/weight-loss-approach-consultation.png"
+              alt="Smiling woman celebrating weight-loss results, giving a thumbs up in jeans that are now too big"
               aspect="aspect-[3/4]"
+              cover
             />
           </motion.div>
 
