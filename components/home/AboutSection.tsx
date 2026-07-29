@@ -29,6 +29,7 @@ type Pillar = {
   points: string[];
   image?: string;
   imagePosition?: string;
+  video?: string;
   testimonial?: Testimonial;
   icon: LucideIcon;
 };
@@ -43,8 +44,7 @@ const PILLARS: Pillar[] = [
       "Dedicated care team",
       "Ongoing support",
     ],
-    image: "/images/home/client-team-emsculpt.png",
-    imagePosition: "object-top",
+    video: "mA7WVaUUAws",
     icon: Heart,
   },
   {
@@ -279,14 +279,27 @@ export default function AboutSection() {
                   transition={{ duration: 0.6, ease: EASE }}
                   className="absolute inset-0"
                 >
-                  <Image
-                    src={pillar.image!}
-                    alt={pillar.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className={`object-cover ${pillar.imagePosition ?? "object-center"}`}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/50 via-transparent to-transparent" />
+                  {pillar.video ? (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${pillar.video}?rel=0&modestbranding=1`}
+                      title={pillar.title}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 h-full w-full"
+                    />
+                  ) : (
+                    <>
+                      <Image
+                        src={pillar.image!}
+                        alt={pillar.title}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className={`object-cover ${pillar.imagePosition ?? "object-center"}`}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/50 via-transparent to-transparent" />
+                    </>
+                  )}
                 </motion.div>
               )}
             </AnimatePresence>
