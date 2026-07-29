@@ -28,6 +28,7 @@ type Pillar = {
   description: string;
   points: string[];
   image?: string;
+  imagePosition?: string;
   testimonial?: Testimonial;
   icon: LucideIcon;
 };
@@ -42,7 +43,8 @@ const PILLARS: Pillar[] = [
       "Dedicated care team",
       "Ongoing support",
     ],
-    image: "/images/home/Image_20250829_162859_144.jpeg",
+    image: "/images/home/client-team-emsculpt.png",
+    imagePosition: "object-top",
     icon: Heart,
   },
   {
@@ -282,7 +284,7 @@ export default function AboutSection() {
                     alt={pillar.title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
+                    className={`object-cover ${pillar.imagePosition ?? "object-center"}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-revival-dark/50 via-transparent to-transparent" />
                 </motion.div>

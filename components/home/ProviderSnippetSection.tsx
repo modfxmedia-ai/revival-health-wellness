@@ -8,7 +8,6 @@ import {
   Award,
   Dumbbell,
   HeartPulse,
-  Sparkles,
   Quote,
 } from "lucide-react";
 import { ZENOTI } from "@/lib/content/home";
@@ -105,11 +104,6 @@ export default function ProviderSnippetSection() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.9, ease: EASE, delay: 0.05 }}
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-revival-gold/40 bg-white/80 px-4 py-1.5 text-tagline text-xs text-revival-gold shadow-sm backdrop-blur">
-            <Sparkles className="h-3.5 w-3.5" />
-            Meet Your Provider
-          </span>
-
           <h2
             className="mt-6 font-heading font-medium leading-[1.08] text-revival-dark"
             style={{ fontSize: "clamp(2.1rem, 4vw, 3.4rem)" }}
