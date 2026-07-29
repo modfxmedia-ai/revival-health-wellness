@@ -63,7 +63,7 @@ export default function ApproachSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.9, ease: EASE }}
-            className="absolute inset-4 overflow-hidden rounded-3xl bg-white shadow-2xl ring-1 ring-black/5"
+            className="absolute inset-4 overflow-hidden rounded-3xl bg-revival-warm-white shadow-2xl ring-1 ring-black/5"
           >
             <Image
               src={APPROACH.images[1]}

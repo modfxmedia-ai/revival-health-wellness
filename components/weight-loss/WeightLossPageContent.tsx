@@ -550,7 +550,7 @@ export default function WeightLossPageContent() {
       >
         <AmbientOrbs light />
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-start gap-12 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14 lg:px-8">
-          <motion.div variants={fadeUp} className="hidden lg:block">
+          <motion.div variants={fadeUp}>
             <PortraitFrame
               src="/images/weight-loss/weight-loss-approach-consultation.png"
               alt="Smiling woman celebrating weight-loss results, giving a thumbs up in jeans that are now too big"
