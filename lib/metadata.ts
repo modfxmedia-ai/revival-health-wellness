@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const SITE = {
   name: "Revival Health & Wellness",
-  url: "https://revivalhealthandwellnessgroup.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://revivalhealthandwellnessgroup.com",
   description:
     "Revival Health and Wellness is a premier center specializing in weight loss, hormone replacement therapy, body contouring, and aesthetics in Las Vegas, NV.",
   locale: "en_US",
@@ -35,7 +35,7 @@ export function buildMetadata({
   title,
   description = SITE.description,
   path = "/",
-  images = ["/images/og-default.jpg"],
+  images = ["/images/home/approach-2.jpg"],
   noIndex = false,
   keywords,
 }: BuildMetadataInput): Metadata {

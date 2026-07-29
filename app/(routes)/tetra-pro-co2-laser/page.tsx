@@ -351,7 +351,7 @@ export default function TetraProCo2LaserPage() {
         items={[
           {
             label: "CoolPeel®",
-            href: "/coolpeel/",
+            href: "/co2-laser-treatments/",
             blurb:
               "The lighter cousin of Deka Tetra Pro - same Cartessa CO2 platform with minimal downtime for a quick skin refresh.",
           },

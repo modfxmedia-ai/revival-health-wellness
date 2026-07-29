@@ -66,7 +66,7 @@ export default function ApproachSection() {
             className="absolute inset-4 overflow-hidden rounded-3xl bg-revival-warm-white shadow-2xl ring-1 ring-black/5"
           >
             <Image
-              src={APPROACH.images[1]}
+              src={APPROACH.images[0]}
               alt="Personalized care at Revival Health and Wellness"
               fill
               sizes="(max-width: 1024px) 80vw, 40vw"

@@ -13,7 +13,7 @@ export function organizationSchema(): Json {
     "@id": `${SITE.url}/#business`,
     name: "Revival Health and Wellness",
     url: SITE.url,
-    logo: `${SITE.url}/images/revival-logo-dark.png`,
+    logo: `${SITE.url}/images/brand/revival-dark-logo.png`,
     description:
       "Premier weight loss, hormone therapy, and aesthetic services in Las Vegas, NV",
     telephone: SITE.phone,
@@ -109,7 +109,7 @@ export function geoBusinessSchema(input: {
     "@id": `${SITE.url}/#business`,
     name: "Revival Health and Wellness",
     url: new URL(path, SITE.url).toString(),
-    logo: `${SITE.url}/images/revival-logo-dark.png`,
+    logo: `${SITE.url}/images/brand/revival-dark-logo.png`,
     telephone: SITE.phone,
     priceRange: "$$",
     address: {
