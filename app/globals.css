@@ -106,3 +106,20 @@ h6 {
     scroll-behavior: auto;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Bottom-of-screen floating widgets (accessibility trigger + back-to-top
+   from public/accessibility/toolbar.css, and the third-party knock-knock
+   chat bubble) all pin themselves near the viewport's bottom edge. When the
+   <StickyBookBar /> "Now Booking" pill is on screen it toggles this class on
+   <body>; lift the other widgets clear of it so nothing overlaps.
+   ------------------------------------------------------------------------ */
+body.rvw-sticky-bar-visible .a11y-trigger,
+body.rvw-sticky-bar-visible .a11y-back-top {
+  bottom: calc(clamp(16px, 3vw, 28px) + 4.75rem) !important;
+}
+
+body.rvw-sticky-bar-visible #kka-chat-widget {
+  bottom: 5.5rem !important;
+}
+

@@ -18,9 +18,11 @@ const TAGLINES: Record<string, string> = {
   "Body Contouring": "Sculpt & define",
 };
 
-/** Bento spans, first card is the tall feature. */
+/** Bento spans, first card is the tall feature. Row-span applies at every
+ * breakpoint (not just lg) because the featured card's blurb + "Learn more"
+ * are always visible and need more vertical room than a single 230px row. */
 const SPANS = [
-  "lg:col-span-3 lg:row-span-2",
+  "row-span-2 lg:col-span-3",
   "lg:col-span-3",
   "lg:col-span-3",
   "sm:col-span-1 lg:col-span-2",
@@ -181,10 +183,10 @@ export default function ServicesGrid() {
 
                     {/* Learn more affordance - reveals on hover */}
                     <span
-                      className={`mt-0 flex items-center gap-1.5 overflow-hidden text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-revival-gold opacity-0 transition-all duration-500 ${
+                      className={`flex items-center gap-1.5 overflow-hidden text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-revival-gold opacity-0 transition-all duration-500 ${
                         featured
-                          ? "max-h-6 opacity-100"
-                          : "max-h-0 group-hover:mt-4 group-hover:max-h-6 group-hover:opacity-100"
+                          ? "mt-3 max-h-6 opacity-100"
+                          : "mt-0 max-h-0 group-hover:mt-4 group-hover:max-h-6 group-hover:opacity-100"
                       }`}
                     >
                       Learn more

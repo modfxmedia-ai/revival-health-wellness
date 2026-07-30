@@ -15,6 +15,7 @@ import {
   BenefitsList,
   FAQSection,
   RelatedServices,
+  VideoShowcase,
 } from "@/components/templates/HormoneSections";
 
 const TITLE = "GLP-1";
@@ -164,6 +165,14 @@ export default function GLP1Page() {
           { icon: "heartPulse", label: "Vitality" },
         ]}
         tone="dark"
+      />
+
+      <VideoShowcase
+        eyebrow="See it in action"
+        heading="Watch how GLP-1 works at Revival"
+        intro="A quick look at what to expect from a medically supervised GLP-1 program."
+        src="/videos/glp-1.mp4"
+        poster="/videos/glp-1-poster.jpg"
       />
 
       <OverviewBlock

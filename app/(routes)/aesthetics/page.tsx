@@ -110,6 +110,8 @@ export default function AestheticsPage() {
             icon: "target",
           },
         ]}
+        image="/images/aesthetics/microneedling-treatment-signature-injectables.webp"
+        imageAlt="Provider performing a microneedling treatment on a patient at Revival Health & Wellness"
       />
 
       {/* Service strip - mirrors the live aesthetics layout with each service's exact background image */}

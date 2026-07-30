@@ -82,14 +82,16 @@ export type SWSection =
       eyebrow?: string;
       heading?: string;
       intro?: string;
-      /** YouTube video ID (the part after `v=`). */
-      videoId: string;
-      /** Optional start time in seconds. */
+      /** YouTube video ID (the part after `v=`). Omit when using a self-hosted `src` instead. */
+      videoId?: string;
+      /** Optional start time in seconds (YouTube only). */
       start?: number;
       /** Caption / attribution line under the video. */
       caption?: string;
-      /** Poster override; defaults to YouTube's maxresdefault thumbnail. */
+      /** Poster override; defaults to YouTube's maxresdefault thumbnail when `videoId` is set. */
       poster?: string;
+      /** Path to a self-hosted mp4 under /public (e.g. "/videos/emsella-2.mp4"). Takes precedence over `videoId`. */
+      src?: string;
     };
 
 export type SWIcon =
@@ -1473,6 +1475,15 @@ export const SW_CONTENT: Record<string, SWPage> = {
         imageAlt: "GAINSWave™ For Her acoustic wave therapy",
       },
       {
+        kind: "video",
+        eyebrow: "See it in action",
+        heading: "Watch how GAINSWave™ For Her works",
+        intro:
+          "A quick look at what to expect from acoustic wave therapy at Revival.",
+        src: "/videos/gainswave-for-her.mp4",
+        poster: "/videos/gainswave-for-her-poster.jpg",
+      },
+      {
         kind: "bullets",
         eyebrow: "What it can do",
         heading: "GAINSWave™ For Her can",
@@ -1592,6 +1603,15 @@ export const SW_CONTENT: Record<string, SWPage> = {
         ],
         image: "/images/sexual-wellness/emsella-2/emsella-1.jpg",
         imageAlt: "EMSELLA HIFEM pelvic floor therapy for women",
+      },
+      {
+        kind: "video",
+        eyebrow: "See it in action",
+        heading: "Watch how EMSELLA™ works",
+        intro:
+          "A quick look at what to expect from an EMSELLA™ session at Revival.",
+        src: "/videos/emsella-2.mp4",
+        poster: "/videos/emsella-2-poster.jpg",
       },
       {
         kind: "overview",

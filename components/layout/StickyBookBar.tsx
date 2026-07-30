@@ -33,6 +33,17 @@ export default function StickyBookBar() {
     return () => observer.disconnect();
   }, []);
 
+  // Flag <body> while this bar is on screen so other bottom-fixed widgets
+  // (accessibility trigger/back-to-top, third-party chat bubble) can lift
+  // themselves clear of it instead of stacking on top of each other.
+  useEffect(() => {
+    const shouldFlag = visible && !overFooter && !dismissed;
+    document.body.classList.toggle("rvw-sticky-bar-visible", shouldFlag);
+    return () => {
+      document.body.classList.remove("rvw-sticky-bar-visible");
+    };
+  }, [visible, overFooter, dismissed]);
+
   if (dismissed) return null;
 
   return (

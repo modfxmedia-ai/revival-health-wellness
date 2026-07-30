@@ -21,6 +21,7 @@ import {
   Handshake,
   Heart,
   MapPin,
+  Pause,
   Phone,
   Pill,
   Play,
@@ -1354,12 +1355,25 @@ function VideoSection({
   section: Extract<SWSection, { kind: "video" }>;
 }) {
   const [playing, setPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const isLocal = !!section.src;
   const poster =
     section.poster ??
-    `https://i.ytimg.com/vi/${section.videoId}/maxresdefault.jpg`;
-  const src = `https://www.youtube.com/embed/${section.videoId}?autoplay=1&rel=0&modestbranding=1${
-    section.start ? `&start=${section.start}` : ""
-  }`;
+    (section.videoId
+      ? `https://i.ytimg.com/vi/${section.videoId}/maxresdefault.jpg`
+      : undefined);
+  const embedSrc = section.videoId
+    ? `https://www.youtube.com/embed/${section.videoId}?autoplay=1&rel=0&modestbranding=1${
+        section.start ? `&start=${section.start}` : ""
+      }`
+    : "";
+
+  const toggleLocal = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) v.play();
+    else v.pause();
+  };
 
   return (
     <section className="relative overflow-hidden bg-revival-dark py-20 text-revival-warm-white lg:py-24">
@@ -1419,9 +1433,61 @@ function VideoSection({
           {/* Framed player */}
           <div className="relative overflow-hidden rounded-[2rem] border border-revival-gold/25 bg-black shadow-[0_50px_120px_-32px_rgba(0,0,0,0.6)]">
             <div className="relative aspect-video w-full">
-              {playing ? (
+              {isLocal ? (
+                <div
+                  className="group absolute inset-0 h-full w-full cursor-pointer"
+                  onClick={toggleLocal}
+                >
+                  <video
+                    ref={videoRef}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    src={section.src}
+                    poster={poster}
+                    playsInline
+                    preload="metadata"
+                    onPlay={() => setPlaying(true)}
+                    onPause={() => setPlaying(false)}
+                    onEnded={() => setPlaying(false)}
+                  />
+
+                  {!playing && (
+                    <>
+                      <span
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40 transition-opacity duration-300 group-hover:from-black/50"
+                      />
+                      <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                        <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white/95 shadow-2xl transition-transform duration-300 group-hover:scale-110 sm:h-24 sm:w-24">
+                          <span
+                            aria-hidden
+                            className="absolute inset-0 rounded-full ring-2 ring-white/60 opacity-70 transition-transform duration-1000 group-hover:animate-ping"
+                          />
+                          <Play
+                            className="ml-1 h-8 w-8 fill-revival-dark text-revival-dark sm:h-10 sm:w-10"
+                            strokeWidth={0}
+                          />
+                        </span>
+                      </span>
+                    </>
+                  )}
+
+                  {playing && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleLocal();
+                      }}
+                      aria-label="Pause video"
+                      className="absolute bottom-4 left-4 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-black/50 text-white opacity-0 backdrop-blur-md transition-all duration-300 hover:border-revival-gold hover:bg-black/70 group-hover:opacity-100"
+                    >
+                      <Pause className="h-5 w-5" />
+                    </button>
+                  )}
+                </div>
+              ) : playing ? (
                 <iframe
-                  src={src}
+                  src={embedSrc}
                   title={section.heading ?? "Video"}
                   loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

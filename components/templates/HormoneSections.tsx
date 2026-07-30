@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -28,7 +28,9 @@ import {
   HeartPulse,
   Leaf,
   Moon,
+  Pause,
   Pill,
+  Play,
   Scale,
   ShieldCheck,
   Smile,
@@ -380,12 +382,17 @@ export function PillarsGrid({
   intro,
   pillars,
   tone = "light",
+  image,
+  imageAlt,
 }: {
   eyebrow?: string;
   heading: string;
   intro?: string;
   pillars: PillarBlock[];
   tone?: Tone;
+  /** Optional photo shown alongside the cards on large screens (right side). */
+  image?: string;
+  imageAlt?: string;
 }) {
   const bg =
     tone === "dark"
@@ -434,56 +441,217 @@ export function PillarsGrid({
           )}
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-          {pillars.map((p, i) => {
-            const Icon = ICONS[p.icon];
-            return (
-              <motion.article
-                key={p.title}
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, delay: i * 0.06, ease: EASE }}
-                className={`group relative overflow-hidden rounded-[1.75rem] border p-8 shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_80px_-30px_rgba(15,15,15,0.35)] ${cardBg}`}
-              >
-                {/* Gold hairline reveal on hover */}
-                <span
-                  aria-hidden
-                  className="absolute inset-x-8 top-0 h-px origin-left scale-x-0 bg-gradient-to-r from-revival-gold via-revival-gold/70 to-transparent transition-transform duration-500 group-hover:scale-x-100"
-                />
-
-                <div className="flex items-start justify-between gap-4">
-                  <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
-                      tone === "dark"
-                        ? "bg-revival-gold text-revival-dark"
-                        : "bg-revival-dark text-revival-gold"
-                    }`}
-                  >
-                    <Icon className="h-5 w-5" />
-                  </div>
+        <div
+          className={`mt-16 ${image ? "lg:grid lg:grid-cols-5 lg:items-stretch lg:gap-8" : ""}`}
+        >
+          <div
+            className={`grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-7 ${
+              image ? "lg:col-span-3 lg:grid-cols-1" : "lg:grid-cols-3"
+            }`}
+          >
+            {pillars.map((p, i) => {
+              const Icon = ICONS[p.icon];
+              return (
+                <motion.article
+                  key={p.title}
+                  initial={{ opacity: 0, y: 32 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.7, delay: i * 0.06, ease: EASE }}
+                  className={`group relative overflow-hidden rounded-[1.75rem] border p-8 shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_80px_-30px_rgba(15,15,15,0.35)] ${cardBg}`}
+                >
+                  {/* Gold hairline reveal on hover */}
                   <span
                     aria-hidden
-                    className="font-heading text-3xl italic leading-none text-revival-gold/50 sm:text-4xl"
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
+                    className="absolute inset-x-8 top-0 h-px origin-left scale-x-0 bg-gradient-to-r from-revival-gold via-revival-gold/70 to-transparent transition-transform duration-500 group-hover:scale-x-100"
+                  />
 
-                <h3
-                  className={`mt-6 font-heading text-xl leading-tight sm:text-2xl ${titleColor}`}
-                >
-                  {p.title}
-                </h3>
-                <p
-                  className={`mt-3 text-[0.95rem] font-light leading-relaxed ${bodyColor}`}
-                >
-                  {p.text}
-                </p>
-              </motion.article>
-            );
-          })}
+                  <div className="flex items-start justify-between gap-4">
+                    <div
+                      className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
+                        tone === "dark"
+                          ? "bg-revival-gold text-revival-dark"
+                          : "bg-revival-dark text-revival-gold"
+                      }`}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <span
+                      aria-hidden
+                      className="font-heading text-3xl italic leading-none text-revival-gold/50 sm:text-4xl"
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+
+                  <h3
+                    className={`mt-6 font-heading text-xl leading-tight sm:text-2xl ${titleColor}`}
+                  >
+                    {p.title}
+                  </h3>
+                  <p
+                    className={`mt-3 text-[0.95rem] font-light leading-relaxed ${bodyColor}`}
+                  >
+                    {p.text}
+                  </p>
+                </motion.article>
+              );
+            })}
+          </div>
+
+          {image && (
+            <motion.div
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: 0.18, ease: EASE }}
+              className="relative mt-8 lg:col-span-2 lg:mt-0"
+            >
+              <div className="relative h-72 w-full overflow-hidden rounded-[1.75rem] shadow-[0_30px_80px_-30px_rgba(15,15,15,0.35)] sm:h-96 lg:h-full lg:min-h-[520px]">
+                <Image
+                  src={image}
+                  alt={imageAlt ?? heading}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+                <div
+                  aria-hidden
+                  className={`absolute inset-0 bg-gradient-to-t ${
+                    tone === "dark" ? "from-revival-dark/60" : "from-black/30"
+                  } via-transparent to-transparent`}
+                />
+              </div>
+            </motion.div>
+          )}
         </div>
+      </div>
+    </section>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// VideoShowcase - self-hosted mp4 with a custom play/pause overlay.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export function VideoShowcase({
+  eyebrow,
+  heading,
+  intro,
+  src,
+  poster,
+  tone = "dark",
+}: {
+  eyebrow?: string;
+  heading: string;
+  intro?: string;
+  /** Path to a self-hosted mp4 under /public, e.g. "/videos/emsella-2.mp4". */
+  src: string;
+  /** Poster image shown before playback starts. */
+  poster?: string;
+  tone?: Tone;
+}) {
+  const [playing, setPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const bg =
+    tone === "dark"
+      ? "bg-revival-dark text-white"
+      : tone === "cream"
+        ? "bg-revival-cream"
+        : "bg-revival-warm-white";
+  const bodyColor =
+    tone === "dark" ? "text-revival-cream/75" : "text-revival-charcoal/75";
+
+  const toggle = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) v.play();
+    else v.pause();
+  };
+
+  return (
+    <section className={`relative overflow-hidden ${bg} py-14 sm:py-20 lg:py-28`}>
+      <AmbientOrbs tone={tone} />
+
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          {eyebrow && (
+            <div className="mb-6">
+              <EditorialEyebrow align="center">{eyebrow}</EditorialEyebrow>
+            </div>
+          )}
+          <EditorialHeading tone={tone} className="text-center">
+            {heading}
+          </EditorialHeading>
+          {intro && (
+            <p
+              className={`mx-auto mt-6 max-w-2xl text-base font-light leading-relaxed sm:text-lg ${bodyColor}`}
+            >
+              {intro}
+            </p>
+          )}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: EASE }}
+          className="relative mt-12 overflow-hidden rounded-[2rem] border border-revival-gold/25 bg-black shadow-[0_50px_120px_-32px_rgba(0,0,0,0.5)]"
+        >
+          <div
+            className="group relative aspect-video w-full cursor-pointer"
+            onClick={toggle}
+          >
+            <video
+              ref={videoRef}
+              className="absolute inset-0 h-full w-full object-cover"
+              src={src}
+              poster={poster}
+              playsInline
+              preload="metadata"
+              onPlay={() => setPlaying(true)}
+              onPause={() => setPlaying(false)}
+              onEnded={() => setPlaying(false)}
+            />
+
+            {!playing && (
+              <>
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/30 transition-opacity duration-300 group-hover:from-black/45"
+                />
+                <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                  <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-revival-gold text-revival-dark shadow-[0_20px_60px_-12px_rgba(201,169,110,0.6)] transition-transform duration-300 group-hover:scale-110 sm:h-24 sm:w-24">
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 animate-ping rounded-full bg-revival-gold/40"
+                    />
+                    <Play
+                      className="relative ml-1 h-8 w-8 fill-current sm:h-9 sm:w-9"
+                      strokeWidth={0}
+                    />
+                  </span>
+                </span>
+              </>
+            )}
+
+            {playing && (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggle();
+                }}
+                aria-label="Pause video"
+                className="absolute bottom-4 left-4 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-black/50 text-white opacity-0 backdrop-blur-md transition-all duration-300 hover:border-revival-gold hover:bg-black/70 group-hover:opacity-100"
+              >
+                <Pause className="h-5 w-5" />
+              </button>
+            )}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

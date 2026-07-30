@@ -12,6 +12,7 @@ import {
   BenefitsList,
   PillarsGrid,
   FAQSection,
+  VideoShowcase,
 } from "@/components/templates/HormoneSections";
 const TITLE = "Men's Hormone Therapy";
 const PATH = "/mens-hormone-therapy/";
@@ -151,6 +152,14 @@ export default function MensHormoneTherapyPage() {
             icon: "heartPulse",
           },
         ]}
+      />
+
+      <VideoShowcase
+        eyebrow="See it in action"
+        heading="Watch how testosterone therapy works at Revival"
+        intro="Hear directly from our team about what to expect from bio-identical testosterone therapy."
+        src="/videos/mens-hormone-therapy.mp4"
+        poster="/videos/mens-hormone-therapy-poster.jpg"
       />
 
       <BenefitsList
