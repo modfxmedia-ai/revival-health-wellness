@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   motion,
@@ -637,13 +638,94 @@ export function BenefitsList({
 // FAQSection - editorial accordion with serif numerals & hairline dividers.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export function FAQSection({ faqs }: { faqs: FAQ[] }) {
+export function FAQSection({
+  faqs,
+  image,
+  imageAlt,
+}: {
+  faqs: FAQ[];
+  image?: string;
+  imageAlt?: string;
+}) {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
   const orbY = useTransform(scrollYProgress, [0, 1], ["-30px", "30px"]);
+
+  const faqList = (
+    <div className="mt-14 space-y-2">
+      {faqs.map((f, i) => (
+        <details
+          key={f.question}
+          className="group rounded-2xl border border-revival-gold/15 bg-white px-6 py-5 shadow-sm transition-all duration-300 open:border-revival-gold/40 open:shadow-md sm:px-7 sm:py-6"
+        >
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-5">
+            <div className="flex items-baseline gap-4">
+              <span
+                aria-hidden
+                className="font-heading text-lg italic text-revival-gold/70 sm:text-xl"
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="font-heading text-base leading-snug text-revival-dark sm:text-lg">
+                {f.question}
+              </span>
+            </div>
+            <span
+              aria-hidden
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-revival-gold/15 text-revival-gold transition-transform duration-300 group-open:rotate-45"
+            >
+              <span className="text-xl leading-none">+</span>
+            </span>
+          </summary>
+          <p className="mt-5 border-t border-revival-gold/10 pt-5 text-sm font-light leading-relaxed text-revival-charcoal/80 sm:text-base sm:leading-[1.75]">
+            {f.answer}
+          </p>
+        </details>
+      ))}
+    </div>
+  );
+
+  if (image) {
+    return (
+      <section
+        ref={sectionRef}
+        className="relative overflow-clip bg-revival-warm-white py-14 sm:py-20 lg:py-28"
+      >
+        <AmbientOrbs parallax={orbY} />
+
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
+            <div>
+              <EditorialEyebrow>Frequently Asked</EditorialEyebrow>
+              <EditorialHeading className="mt-6">
+                Common questions, straight answers
+              </EditorialHeading>
+              {faqList}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl shadow-xl ring-1 ring-revival-gold/15 lg:sticky lg:top-28"
+            >
+              <Image
+                src={image}
+                alt={imageAlt ?? ""}
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section
@@ -662,37 +744,7 @@ export function FAQSection({ faqs }: { faqs: FAQ[] }) {
           </EditorialHeading>
         </div>
 
-        <div className="mt-14 space-y-2">
-          {faqs.map((f, i) => (
-            <details
-              key={f.question}
-              className="group rounded-2xl border border-revival-gold/15 bg-white px-6 py-5 shadow-sm transition-all duration-300 open:border-revival-gold/40 open:shadow-md sm:px-7 sm:py-6"
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-5">
-                <div className="flex items-baseline gap-4">
-                  <span
-                    aria-hidden
-                    className="font-heading text-lg italic text-revival-gold/70 sm:text-xl"
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="font-heading text-base leading-snug text-revival-dark sm:text-lg">
-                    {f.question}
-                  </span>
-                </div>
-                <span
-                  aria-hidden
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-revival-gold/15 text-revival-gold transition-transform duration-300 group-open:rotate-45"
-                >
-                  <span className="text-xl leading-none">+</span>
-                </span>
-              </summary>
-              <p className="mt-5 border-t border-revival-gold/10 pt-5 text-sm font-light leading-relaxed text-revival-charcoal/80 sm:text-base sm:leading-[1.75]">
-                {f.answer}
-              </p>
-            </details>
-          ))}
-        </div>
+        {faqList}
       </div>
     </section>
   );

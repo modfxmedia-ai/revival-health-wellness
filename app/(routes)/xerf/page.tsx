@@ -293,7 +293,7 @@ export default function XerfPage() {
               Real Revival patients through a series of Xerf sessions - photographed in-clinic, unedited.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+          <div className="mx-auto grid max-w-md grid-cols-1 gap-6 lg:gap-8">
             <figure className="relative overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
               <Image
                 src="/images/xerf/xerf-before-after.jpg"
@@ -305,32 +305,6 @@ export default function XerfPage() {
               />
               <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
                 Xerf · Before &amp; After
-              </figcaption>
-            </figure>
-            <figure className="relative overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
-              <Image
-                src="/images/xerf/image6.png"
-                alt="Xerf before and after - abdomen and waist, treatment session 4"
-                width={1080}
-                height={1080}
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="h-auto w-full object-contain"
-              />
-              <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
-                Xerf · Treatment session 4
-              </figcaption>
-            </figure>
-            <figure className="relative overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
-              <Image
-                src="/images/xerf/image7.png"
-                alt="Xerf before and after - abdomen, treatment session 6"
-                width={1080}
-                height={1080}
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="h-auto w-full object-contain"
-              />
-              <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
-                Xerf · Treatment session 6
               </figcaption>
             </figure>
           </div>
@@ -365,7 +339,11 @@ export default function XerfPage() {
         imageHeight={747}
       />
 
-      <FAQSection faqs={FAQS} />
+      <FAQSection
+        faqs={FAQS}
+        image="/images/xerf/xerf-rf-technology-diagram.jpeg"
+        imageAlt="XERF monopolar RF technology diagram showing shallow, middle, and deep tissue penetration"
+      />
 
       <RelatedServices
         items={[
