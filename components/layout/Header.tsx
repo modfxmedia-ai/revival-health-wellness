@@ -253,21 +253,21 @@ export default function Header() {
             </nav>
 
             {/* Right: icon phone + Book Now + mobile trigger */}
-            <div className="ml-auto flex shrink-0 items-center gap-2 xl:ml-0">
+            <div className="ml-auto flex shrink-0 items-center gap-1.5 xl:ml-0 xl:gap-2">
               <a
                 href={`tel:${PRIMARY_PHONE.replace(/[^\d]/g, "")}`}
                 aria-label={`Call ${PRIMARY_PHONE}`}
                 title={PRIMARY_PHONE}
-                className="group relative hidden h-10 w-10 items-center justify-center rounded-full border border-white/15 text-revival-gold transition-colors hover:border-revival-gold/50 hover:bg-white/[0.04] xl:inline-flex"
+                className="group relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-revival-gold transition-colors hover:border-revival-gold/50 hover:bg-white/[0.04] xl:h-10 xl:w-10"
               >
                 <span
                   aria-hidden
-                  className="absolute right-1.5 top-1.5 flex h-2 w-2"
+                  className="absolute right-1 top-1 flex h-1.5 w-1.5 xl:right-1.5 xl:top-1.5 xl:h-2 xl:w-2"
                 >
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-revival-gold/60" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-revival-gold" />
+                  <span className="relative inline-flex h-full w-full rounded-full bg-revival-gold" />
                 </span>
-                <Phone className="h-4 w-4" />
+                <Phone className="h-3.5 w-3.5 xl:h-4 xl:w-4" />
               </a>
 
               <Link
@@ -275,15 +275,15 @@ export default function Header() {
                 {...(CTA.external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
-                className="group relative hidden items-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-5 py-2.5 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-revival-dark shadow-[0_10px_28px_-10px_rgba(201,169,110,0.65)] transition-transform duration-300 hover:scale-[1.03] xl:inline-flex"
+                className="group relative inline-flex items-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-3.5 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-revival-dark shadow-[0_10px_28px_-10px_rgba(201,169,110,0.65)] transition-transform duration-300 hover:scale-[1.03] xl:px-5 xl:py-2.5 xl:text-[0.72rem] xl:tracking-[0.12em]"
               >
                 <span
                   aria-hidden
                   className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 group-hover:translate-x-full"
                 />
-                <CalendarCheck className="relative h-3.5 w-3.5" />
+                <CalendarCheck className="relative h-3 w-3 xl:h-3.5 xl:w-3.5" />
                 <span className="relative">Book Now</span>
-                <ArrowRight className="relative h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                <ArrowRight className="relative hidden h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 xl:block" />
               </Link>
 
               <div className="xl:hidden">

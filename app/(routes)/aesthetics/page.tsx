@@ -110,9 +110,31 @@ export default function AestheticsPage() {
             icon: "target",
           },
         ]}
-        image="/images/aesthetics/microneedling-treatment-signature-injectables.webp"
-        imageAlt="Provider performing a microneedling treatment on a patient at Revival Health & Wellness"
       />
+
+      {/* Full-width treatment photo - sized to the image's own aspect ratio so
+          nothing is cropped or letterboxed, sitting flush under the cards above. */}
+      <section className="relative bg-revival-warm-white pb-14 sm:pb-20 lg:pb-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-[2rem] shadow-[0_30px_80px_-30px_rgba(15,15,15,0.35)] ring-1 ring-revival-gold/15">
+            <Image
+              src="/images/aesthetics/microneedling-treatment-signature-injectables.webp"
+              alt="Provider performing a microneedling treatment on a patient at Revival Health & Wellness"
+              width={1536}
+              height={1024}
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="h-auto w-full"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent"
+            />
+            <p className="absolute bottom-5 left-5 right-5 text-sm font-light text-white/90 sm:bottom-7 sm:left-7 sm:right-7 sm:text-base">
+              Microneedling in session at Revival Health &amp; Wellness
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Service strip - mirrors the live aesthetics layout with each service's exact background image */}
       <section className="relative overflow-hidden bg-revival-warm-white py-14 sm:py-20 lg:py-28">

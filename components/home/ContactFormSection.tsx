@@ -1,42 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import Script from "next/script";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, Sparkles, Phone, Mail, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Sparkles, Phone, Mail, ShieldCheck } from "lucide-react";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-const TOPICS = [
-  "Weight Loss",
-  "Hormone Therapy",
-  "Sexual Wellness",
-  "Aesthetics",
-  "IV Hydration",
-  "Something else",
-];
-
 export default function ContactFormSection() {
-  const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">(
-    "idle",
-  );
-  const [topic, setTopic] = useState(TOPICS[0]);
-
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("loading");
-    const data = new FormData(e.currentTarget);
-    try {
-      // TODO: wire up to your backend / email service. Simulated success:
-      await new Promise((r) => setTimeout(r, 700));
-      void data;
-      setStatus("sent");
-      e.currentTarget.reset();
-      setTopic(TOPICS[0]);
-    } catch {
-      setStatus("error");
-    }
-  }
-
   return (
     <section
       id="ask-us"
@@ -123,174 +93,90 @@ export default function ContactFormSection() {
           </div>
         </motion.div>
 
-        {/* Right: form card */}
+        {/* Right: embedded lead form */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, ease: EASE, delay: 0.05 }}
-          className="relative rounded-[2rem] bg-white p-6 shadow-[0_28px_70px_-30px_rgba(0,0,0,0.35)] ring-1 ring-revival-gold/15 sm:p-8"
+          className="relative"
         >
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -inset-px rounded-[2rem] bg-gradient-to-br from-revival-gold/25 via-transparent to-transparent p-[1px] [mask:linear-gradient(#000,#000)_content-box,linear-gradient(#000,#000)] [mask-composite:exclude]"
-          />
-
-          <form onSubmit={onSubmit} className="relative space-y-5">
-            <div className="grid gap-5 sm:grid-cols-2">
-              <Field
-                label="First name"
-                name="firstName"
-                autoComplete="given-name"
-                required
-              />
-              <Field
-                label="Last name"
-                name="lastName"
-                autoComplete="family-name"
-                required
-              />
-            </div>
-
-            <div className="grid gap-5 sm:grid-cols-2">
-              <Field
-                label="Email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-              />
-              <Field
-                label="Phone"
-                name="phone"
-                type="tel"
-                autoComplete="tel"
-              />
-            </div>
-
-            <div>
-              <label className="mb-2 block text-xs font-medium uppercase tracking-[0.15em] text-revival-charcoal/70">
-                What can we help with?
-              </label>
-              <div className="flex flex-wrap gap-2">
-                {TOPICS.map((t) => {
-                  const selected = topic === t;
-                  return (
-                    <button
-                      key={t}
-                      type="button"
-                      onClick={() => setTopic(t)}
-                      className={
-                        "rounded-full px-4 py-2 text-xs font-medium transition-all duration-200 " +
-                        (selected
-                          ? "bg-revival-dark text-revival-gold-light shadow-sm"
-                          : "border border-revival-dark/10 bg-white text-revival-charcoal/70 hover:border-revival-gold/40 hover:text-revival-dark")
-                      }
-                    >
-                      {t}
-                    </button>
-                  );
-                })}
-              </div>
-              <input type="hidden" name="topic" value={topic} />
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="mb-2 block text-xs font-medium uppercase tracking-[0.15em] text-revival-charcoal/70"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                required
-                placeholder="Tell us about your goals or any questions you have…"
-                className="w-full resize-none rounded-2xl border border-revival-dark/10 bg-white px-4 py-3 text-sm text-revival-dark placeholder:text-revival-charcoal/40 focus:border-revival-gold focus:outline-none focus:ring-2 focus:ring-revival-gold/25"
-              />
-            </div>
-
-            <div className="flex items-start gap-3">
-              <input
-                id="consent"
-                name="consent"
-                type="checkbox"
-                required
-                className="mt-1 h-4 w-4 rounded border-revival-dark/20 text-revival-gold focus:ring-revival-gold"
-              />
-              <label
-                htmlFor="consent"
-                className="text-xs font-light leading-relaxed text-revival-charcoal/70"
-              >
-                I agree to be contacted by Revival Health &amp; Wellness regarding
-                my inquiry. Standard messaging rates may apply.
-              </label>
-            </div>
-
-            <button
-              type="submit"
-              disabled={status === "loading"}
-              className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-revival-dark shadow-[0_10px_30px_-10px_rgba(201,169,110,0.7)] transition-transform hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-70"
-            >
-              <span
+          {/* soft gradient frame */}
+          <div className="rounded-[2rem] bg-gradient-to-br from-revival-gold/50 via-revival-gold/15 to-transparent p-[1.5px] shadow-[0_28px_70px_-30px_rgba(0,0,0,0.35)]">
+            <div className="relative overflow-hidden rounded-[calc(2rem-1.5px)] bg-white">
+              {/* ambient corner glows */}
+              <div
                 aria-hidden
-                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+                className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-revival-gold/10 blur-3xl"
               />
-              {status === "sent" ? (
-                <>
-                  <CheckCircle2 className="relative h-4 w-4" />
-                  <span className="relative">Thanks-message sent!</span>
-                </>
-              ) : status === "loading" ? (
-                <span className="relative">Sending…</span>
-              ) : (
-                <>
-                  <Send className="relative h-4 w-4" />
-                  <span className="relative">Send Message</span>
-                </>
-              )}
-            </button>
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-[#8a5a2b]/10 blur-3xl"
+              />
 
-            {status === "error" ? (
-              <p className="text-sm text-red-600">
-                Something went wrong. Please call us or try again in a moment.
-              </p>
-            ) : null}
-          </form>
+              {/* shimmer sweep */}
+              <motion.div
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-revival-gold to-transparent"
+                animate={{ x: ["-100%", "100%"] }}
+                transition={{
+                  duration: 3.5,
+                  repeat: Infinity,
+                  repeatDelay: 2.5,
+                  ease: "easeInOut",
+                }}
+              />
+
+              {/* card header */}
+              <div className="relative flex items-center gap-3 px-6 pb-5 pt-7 sm:px-8 sm:pt-8">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-revival-gold to-revival-gold-light shadow-[0_8px_20px_-6px_rgba(201,169,110,0.6)]">
+                  <Mail className="h-5 w-5 text-revival-dark" />
+                </span>
+                <div>
+                  <p className="font-heading text-lg text-revival-dark">
+                    Send us a message
+                  </p>
+                  <p className="text-xs font-light text-revival-charcoal/60">
+                    We typically reply within 1 business day
+                  </p>
+                </div>
+              </div>
+              <div className="relative mx-6 h-px bg-gradient-to-r from-revival-gold/25 via-revival-gold/5 to-transparent sm:mx-8" />
+
+              <div
+                className="relative px-3 pb-3 pt-2 sm:px-4 sm:pb-4"
+                style={{ minHeight: 872 }}
+              >
+                <iframe
+                  src="https://api.leadconnectorhq.com/widget/form/5kiu25uwOWyGHXpsQZE5"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    minHeight: 872,
+                    border: "none",
+                    borderRadius: "16px",
+                  }}
+                  id="inline-5kiu25uwOWyGHXpsQZE5"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="Website Contact Us Form"
+                  data-height="872"
+                  data-layout-iframe-id="inline-5kiu25uwOWyGHXpsQZE5"
+                  data-form-id="5kiu25uwOWyGHXpsQZE5"
+                  title="Website Contact Us Form"
+                />
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
-    </section>
-  );
-}
 
-function Field({
-  label,
-  name,
-  type = "text",
-  autoComplete,
-  required,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  autoComplete?: string;
-  required?: boolean;
-}) {
-  return (
-    <label className="block">
-      <span className="mb-2 block text-xs font-medium uppercase tracking-[0.15em] text-revival-charcoal/70">
-        {label}
-        {required ? <span className="text-revival-gold"> *</span> : null}
-      </span>
-      <input
-        name={name}
-        type={type}
-        autoComplete={autoComplete}
-        required={required}
-        className="w-full rounded-2xl border border-revival-dark/10 bg-white px-4 py-3 text-sm text-revival-dark placeholder:text-revival-charcoal/40 focus:border-revival-gold focus:outline-none focus:ring-2 focus:ring-revival-gold/25"
-      />
-    </label>
+      <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
+    </section>
   );
 }

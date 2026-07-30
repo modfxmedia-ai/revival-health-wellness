@@ -55,7 +55,7 @@ export default function StickyBookBar() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.45, ease: EASE }}
-          className="fixed inset-x-0 bottom-0 z-40 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-6 sm:pb-5"
+          className="fixed inset-x-0 bottom-0 z-40 hidden px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] xl:block sm:px-6 sm:pb-5"
         >
           <div className="pointer-events-auto mx-auto flex max-w-4xl items-center gap-2 rounded-full border border-revival-gold/25 bg-revival-dark/95 py-2 pl-3 pr-2 shadow-[0_18px_50px_-16px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:gap-4 sm:py-2.5 sm:pl-5">
             <span className="relative hidden h-2 w-2 sm:inline-flex">
