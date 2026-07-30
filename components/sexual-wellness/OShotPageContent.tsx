@@ -194,7 +194,7 @@ function IntroSection() {
         >
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_40px_120px_-32px_rgba(15,15,15,0.35)]">
             <Image
-              src="/images/sexual-wellness/o-shot/o-shot-portrait.jpeg"
+              src="/images/sexual-wellness/o-shot/o-shot-intimate-wellness.jpeg"
               alt="A woman feeling confident and radiant after O-Shot treatment"
               fill
               sizes="(min-width: 1024px) 45vw, 100vw"
@@ -493,7 +493,7 @@ function MechanismSection() {
           className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[0_40px_120px_-32px_rgba(15,15,15,0.3)]"
         >
           <Image
-            src="/images/sexual-wellness/o-shot/o-shot-process.jpg"
+            src="/images/sexual-wellness/o-shot/o-shot-relaxed-recovery.jpg"
             alt="A relaxed patient during the O-Shot consultation"
             fill
             sizes="(min-width: 1024px) 40vw, 100vw"
@@ -742,9 +742,9 @@ export default function OShotPageContent() {
         description="A natural, safe, minimally invasive PRP treatment that boosts sexual pleasure and overall intimate health - using your own platelets."
         gallery={[
           "/images/sexual-wellness/o-shot/o-shot-banner.webp",
-          "/images/sexual-wellness/o-shot/o-shot-portrait.jpeg",
+          "/images/sexual-wellness/o-shot/o-shot-intimate-wellness.jpeg",
           "/images/sexual-wellness/o-shot/o-shot-detail.jpeg",
-          "/images/sexual-wellness/o-shot/o-shot-process.jpg",
+          "/images/sexual-wellness/o-shot/o-shot-relaxed-recovery.jpg",
         ]}
         compact
       />

@@ -13,7 +13,6 @@ import GalleryCarousel from "@/components/home/GalleryCarousel";
 import BlogsSection from "@/components/home/BlogsSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CTASection from "@/components/home/CTASection";
-import AboutSection from "@/components/home/AboutSection";
 import PlanOfferSection from "@/components/home/PlanOfferSection";
 import ProviderSnippetSection from "@/components/home/ProviderSnippetSection";
 import ContactFormSection from "@/components/home/ContactFormSection";
@@ -45,7 +44,6 @@ export default function Home() {
       <BlogsSection />
       <TestimonialsSection />
       <CTASection />
-      <AboutSection />
       <PlanOfferSection />
       <ContactFormSection />
       <MapSection />

@@ -382,7 +382,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
     gallery: [
       "/images/sexual-wellness/live/hub-women.png",
       "/images/sexual-wellness/sw-woman-confident.jpg",
-      "/images/sexual-wellness/sw-woman-wellness.jpg",
+      "/images/sexual-wellness/women-intimacy-embrace.avif",
     ],
     breadcrumbs: [
       { label: "Home", href: "/" },
@@ -412,21 +412,21 @@ export const SW_CONTENT: Record<string, SWPage> = {
             href: "/gainswavetm-for-her/",
             blurb:
               "GAINSWave™ For Her is a breakthrough, non-invasive treatment designed to enhance women's sexual wellness. Using gentle acoustic sound wave therapy, it stimulates blood flow, promotes new tissue growth, and increases sensitivity. Many women report improved arousal, greater intimacy, and relief from dryness or discomfort - all without surgery or downtime.",
-            image: "/images/sexual-wellness/sw-acoustic-wave.jpg",
+            image: "/images/sexual-wellness/gainswavetm-for-her/gainswavetm-for-her-1.jpg",
           },
           {
             title: "O-Shot",
             href: "/o-shot-tm/",
             blurb:
               "The O-Shot (Orgasm Shot®) is a revolutionary, non-surgical treatment designed to enhance women's sexual health and wellness. Using platelet-rich plasma (PRP) from your own blood, it helps regenerate tissue, improve blood flow, and increase sensitivity. Many women experience better intimacy, improved arousal, reduced dryness, and even relief from urinary incontinence.",
-            image: "/images/sexual-wellness/sw-lab-plasma.jpg",
+            image: "/images/sexual-wellness/o-shot/o-shot-banner.webp",
           },
           {
             title: "Emsella",
             href: "/emsella-2/",
             blurb:
               "EMSELLA is a breakthrough, non-invasive treatment that strengthens the pelvic floor and helps improve urinary incontinence. Using advanced HIFEM technology, EMSELLA delivers thousands of muscle contractions in just one session - far more than regular exercise can achieve. This quick and comfortable therapy helps both men and women regain bladder control, enhance confidence, and improve quality of life, all while remaining fully clothed.",
-            image: "/images/sexual-wellness/sw-clinic-modern.jpg",
+            image: "/images/sexual-wellness/emsella-2/emsella-4.webp",
           },
         ],
       },
@@ -438,7 +438,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "The O-Shot is an injectable treatment designed to address a range of sexual issues for women. Whether you're dealing with painful intercourse, vaginal dryness, or a low sex drive, these problems can significantly impact your sexual wellness.",
           "The O-Shot uses platelet-rich plasma (PRP) derived from your own blood to help alleviate these conditions. Most women who have tried the O-Shot report being very satisfied with the results.",
         ],
-        image: "/images/sexual-wellness/sw-lab-plasma.jpg",
+        image: "/images/sexual-wellness/women-wellness-model.webp",
         imageAlt: "Platelet-rich plasma preparation",
         bullets: [
           "Fast, convenient, and non-surgical treatments",
@@ -473,8 +473,8 @@ export const SW_CONTENT: Record<string, SWPage> = {
           "Platelet-rich plasma (PRP) is rich in healing proteins known as growth factors, which are naturally present in our blood. Medically, these growth factors have been effective in treating joint pain and aiding in hair restoration. When applied to sexual health, PRP has also shown significant effectiveness.",
           "When platelet-rich plasma is injected into the clitoris, labia, and G-spot, it enhances blood flow and promotes the growth of new, healthy tissue. This process stimulates the development of blood vessels and nerves in these areas - resulting in increased sensation due to the growth of additional nerve fibers.",
         ],
-        image: "/images/sexual-wellness/sw-woman-wellness.jpg",
-        imageAlt: "Woman relaxing at a wellness retreat",
+        image: "/images/sexual-wellness/o-shot-prp-injection.jpg",
+        imageAlt: "PRP injection being administered",
         side: "right",
       },
       {
@@ -1343,7 +1343,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
     description:
       "A natural, safe, minimally invasive PRP treatment that boosts sexual pleasure and overall intimate health.",
     gallery: [
-      "/images/sexual-wellness/sw-lab-plasma.jpg",
+      "/images/sexual-wellness/o-shot/o-shot-model-card.webp",
       "/images/sexual-wellness/sw-woman-wellness.jpg",
       "/images/sexual-wellness/sw-clinic-modern.jpg",
     ],

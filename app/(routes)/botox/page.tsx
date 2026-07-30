@@ -164,6 +164,8 @@ export default function BotoxPage() {
             "A typical Botox treatment takes about 15 minutes and requires no downtime, making it a convenient option for many. To ensure the best results, we will ask you to stop taking any blood thinners a week before your appointment.",
             "On the day of your treatment, we will cleanse your face and, if necessary, apply a topical numbing cream for your comfort. One of our licensed medical professionals will then administer the Botox using a very small needle. These injections will be carefully placed in the precise areas needed to address your specific concerns and achieve optimal results. After the Botox has been injected, we may ask you to make various facial expressions to help the Botox settle into the targeted areas effectively.",
           ],
+          image: "/images/botox/botox-injection-treatment.png",
+          imageAspect: "landscape",
         }}
       />
 

@@ -86,28 +86,18 @@ export const PRIMARY_NAV: NavItem[] = [
       { label: "Kybella", href: "/kybella/" },
       { label: "Sculptra", href: "/sculptra/" },
       {
-        label: "Body Contouring and Sculpting",
-        href: "/emsculpt-neo/",
-        children: [
-          { label: "ONDA Pro", href: "/octopro-onda/" },
-          {
-            label: "Everesse RF Skin Tightening",
-            href: "/everesse-rf-skin-tightening-and-rejuvenation/",
-          },
-          { label: "Emsculpt Neo", href: "/emsculpt-neo/" },
-          { label: "XERF", href: "/xerf/" },
-        ],
-      },
-      {
-        label: "Skin",
+        label: "Body Contouring, Sculpting and Skin",
         href: "/skin/",
         children: [
-          { label: "Skin Overview", href: "/skin/" },          { label: "ONDA Pro Cellulite Removal", href: "/octopro-onda/" },
+          { label: "Skin Overview", href: "/skin/" },
+          { label: "ONDA Pro Cellulite Removal", href: "/octopro-onda/" },
           {
             label: "Everesse RF Skin Tightening",
             href: "/everesse-rf-skin-tightening-and-rejuvenation/",
           },
-          { label: "XERF Skin, Sculpting & Lifting", href: "/xerf/" },          { label: "Microneedling", href: "/microneedling/" },
+          { label: "XERF Skin, Sculpting & Lifting", href: "/xerf/" },
+          { label: "Emsculpt Neo", href: "/emsculpt-neo/" },
+          { label: "Microneedling", href: "/microneedling/" },
           { label: "Under Eye Treatment", href: "/under-eye-treatment/" },
           { label: "PDO Thread Lifts", href: "/pdo-thread-lifts/" },
           { label: "Scar Camouflage", href: "/scar-camouflage/" },

@@ -262,6 +262,8 @@ export default function DermaFillerPage() {
         eyebrow="Why choose Revival for Dermal Fillers?"
         heading="Master injectors. Natural results. Luxury experience."
         items={WHY}
+        image="/images/derma-filler/man-in-need-of-dermal-fillers.jpeg"
+        imageAspect="landscape"
       />
 
       <BenefitsList
