@@ -83,6 +83,10 @@ export default function Header() {
       ? pathname === "/"
       : pathname.startsWith(href.replace(/\/$/, ""));
 
+  // Ads landing pages (/lp/*) render their own minimal, distraction-free
+  // chrome (see components/lp/LPHeader.tsx) instead of the full site nav.
+  if (pathname?.startsWith("/lp")) return null;
+
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       {/* ── Top utility bar: email · location · socials (collapses on scroll) ── */}

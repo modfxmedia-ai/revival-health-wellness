@@ -111,6 +111,10 @@ export default function Footer() {
   const pathname = usePathname();
   const isHomepage = pathname === "/";
 
+  // Ads landing pages (/lp/*) render their own minimal footer (see
+  // components/lp/LPFooter.tsx) instead of the full site footer.
+  if (pathname?.startsWith("/lp")) return null;
+
   return (
     <footer id="site-footer" className="bg-revival-dark text-revival-warm-white">
       {/* Pre-footer CTA strip — homepage only */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { CalendarCheck, Phone, X, ArrowRight } from "lucide-react";
 import { CTA } from "@/components/layout/nav";
@@ -9,6 +10,7 @@ const PHONE = "(702) 963-1154";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 export default function StickyBookBar() {
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [overFooter, setOverFooter] = useState(false);
@@ -44,7 +46,9 @@ export default function StickyBookBar() {
     };
   }, [visible, overFooter, dismissed]);
 
-  if (dismissed) return null;
+  // Ads landing pages (/lp/*) have their own dedicated CTA/form - don't
+  // stack the site-wide booking bar on top of it.
+  if (dismissed || pathname?.startsWith("/lp")) return null;
 
   return (
     <AnimatePresence>
