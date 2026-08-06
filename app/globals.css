@@ -108,6 +108,40 @@ h6 {
 }
 
 /* ---------------------------------------------------------------------------
+   Guaranteed on-mount reveal animation used by /lp/* landing pages when
+   framer-motion's `initial="hidden" animate="visible"` variants get stuck
+   at opacity 0 (a real, reproducible issue with Motion v12 + React 19 +
+   Next 16 Turbopack). CSS keyframes always fire on mount and cannot be
+   suppressed by framer state, so critical hero copy uses this instead.
+
+   Usage: add the `.lp-reveal` class and (optionally) set `--reveal-delay`
+   inline for staggered reveals.
+   ------------------------------------------------------------------------ */
+@keyframes lp-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lp-reveal {
+  animation: lp-reveal 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
    Bottom-of-screen floating widgets (accessibility trigger + back-to-top
    from public/accessibility/toolbar.css, and the third-party knock-knock
    chat bubble) all pin themselves near the viewport's bottom edge. When the

@@ -3,6 +3,7 @@ import { buildMetadata } from "@/lib/metadata";
 import LPHeader from "@/components/lp/LPHeader";
 import LPFooter from "@/components/lp/LPFooter";
 import ThankYouContent from "@/components/lp/ThankYouContent";
+import MapSection from "@/components/layout/MapSection";
 
 export const metadata: Metadata = buildMetadata({
   title: "Thank You",
@@ -16,6 +17,7 @@ export default function PLongThankYouPage() {
     <>
       <LPHeader />
       <ThankYouContent />
+      <MapSection />
       <LPFooter />
     </>
   );
