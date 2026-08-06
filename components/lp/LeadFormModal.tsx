@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useRouter } from "next/navigation";
 import Script from "next/script";
 import { X } from "lucide-react";
 
@@ -20,6 +21,11 @@ const FORM_NAME = "\uD83D\uDD35 P-long LP( Vercel)  FORM ";
  * AnimatePresence mount/unmount timing, which has proven unreliable in
  * this Next 16 + React 19 + Turbopack setup (multi-second delay before an
  * exit animation resolves and the element unmounts).
+ *
+ * On a successful form submission (detected via the LeadConnector iframe's
+ * postMessage events), the user is routed to the booking calendar page
+ * (/lp/p-long/book/) so a time slot can only be booked after the lead form
+ * has actually been filled out and submitted.
  */
 export default function LeadFormModal({
   open,
@@ -28,6 +34,8 @@ export default function LeadFormModal({
   open: boolean;
   onClose: () => void;
 }) {
+  const router = useRouter();
+
   useEffect(() => {
     if (!open) return;
     const onKeyDown = (e: KeyboardEvent) => {
@@ -41,6 +49,34 @@ export default function LeadFormModal({
       document.body.style.overflow = overflow;
     };
   }, [open, onClose]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onMessage = (e: MessageEvent) => {
+      const origin = e.origin || "";
+      const trusted =
+        origin.includes("leadconnectorhq.com") ||
+        origin.includes("msgsndr.com");
+      if (!trusted) return;
+
+      const raw =
+        typeof e.data === "string" ? e.data : JSON.stringify(e.data ?? "");
+      const s = raw.toLowerCase();
+
+      const isFormEvent = s.includes("form") || s.includes("submit");
+      const isSuccess =
+        s.includes("success") ||
+        s.includes("submitted") ||
+        s.includes("complete");
+
+      if (isFormEvent && isSuccess) {
+        onClose();
+        router.push("/lp/p-long/book/");
+      }
+    };
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, [open, onClose, router]);
 
   if (typeof document === "undefined") return null;
 

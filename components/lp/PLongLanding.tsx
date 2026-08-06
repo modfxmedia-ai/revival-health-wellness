@@ -221,7 +221,7 @@ const REASONS = [
 const CONCERNS = [
   {
     label: "Wanting more length",
-    image: "/images/sexual-wellness/p-long/p-long-hero.jpg",
+    image: "/images/lp-images/more-length.webp",
   },
   {
     label: "Wanting more girth",
@@ -233,7 +233,7 @@ const CONCERNS = [
   },
   {
     label: "Confidence in the bedroom",
-    image: "/images/sexual-wellness/sw-couple-embrace.jpg",
+    image: "/images/lp-images/confidence-in-bedroom.avif",
   },
   {
     label: "Post-Peyronie’s concerns",
@@ -241,7 +241,7 @@ const CONCERNS = [
   },
   {
     label: "Age-related decline",
-    image: "/images/sexual-wellness/sw-man-fitness.jpg",
+    image: "/images/lp-images/age-related-decline.avif",
   },
 ];
 
@@ -345,12 +345,13 @@ export default function PLongLanding() {
           <Gift className="h-3.5 w-3.5 shrink-0" />
           Limited Time &middot; New Patients Only
           <span className="hidden sm:inline">Claim your free consultation</span>
-          <Link
-            href="/lp/p-long/book/"
-            className="ml-1 underline decoration-2 underline-offset-2 hover:no-underline"
+          <button
+            type="button"
+            onClick={openModal}
+            className="ml-1 cursor-pointer underline decoration-2 underline-offset-2 hover:no-underline"
           >
             Book now &rarr;
-          </Link>
+          </button>
         </div>
       </div>
 
@@ -363,12 +364,12 @@ export default function PLongLanding() {
             Turbopack stack. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-25"
+          className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-45"
           style={{ backgroundImage: "url('/images/Xeomin/p-long.webp')" }}
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-revival-dark/80 via-revival-dark/60 to-revival-dark/90"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-revival-dark/60 via-revival-dark/40 to-revival-dark/70"
         />
         <motion.div
           aria-hidden
@@ -384,7 +385,7 @@ export default function PLongLanding() {
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.5)_100%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.35)_100%)]"
         />
 
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-8">
@@ -1287,12 +1288,16 @@ export default function PLongLanding() {
                 </button>
               </div>
               <div className="relative min-h-[280px] lg:min-h-[400px]">
-                <Image
-                  src="/images/Xeomin/p-long-about.png"
-                  alt="P-Long Protocol at Revival Health & Wellness"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
+                {/* Plain CSS background-image (not next/image) — matches the
+                    hero's approach. next/image's lazy-loaded <img> inside this
+                    whileInView-animated card has proven unreliable to actually
+                    load/paint in this stack; a CSS background always renders. */}
+                <div
+                  aria-hidden
+                  role="img"
+                  aria-label="P-Long Protocol at Revival Health & Wellness"
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: "url('/images/Xeomin/p-long-about.png')" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
