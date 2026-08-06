@@ -365,7 +365,7 @@ export default function PLongLanding() {
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-45"
-          style={{ backgroundImage: "url('/images/Xeomin/p-long.webp')" }}
+          style={{ backgroundImage: "url('/images/lp-images/hero-bg.webp')" }}
         />
         <div
           aria-hidden
@@ -1297,7 +1297,7 @@ export default function PLongLanding() {
                   role="img"
                   aria-label="P-Long Protocol at Revival Health & Wellness"
                   className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: "url('/images/Xeomin/p-long-about.png')" }}
+                  style={{ backgroundImage: "url('/images/lp-images/about-photo.png')" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
