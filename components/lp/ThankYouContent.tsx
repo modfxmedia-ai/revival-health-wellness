@@ -10,10 +10,10 @@ import {
   Star,
   UserCheck,
 } from "lucide-react";
-import { CLINICS, telHref } from "@/lib/content/clinics";
+import { telHref } from "@/lib/content/clinics";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
-const PHONE = CLINICS[0].phones[0];
+const PHONE = "+1 725-334-7214";
 
 const NEXT_STEPS = [
   {

@@ -11,10 +11,10 @@ import {
   ShieldCheck,
   Star,
 } from "lucide-react";
-import { CLINICS, telHref } from "@/lib/content/clinics";
+import { telHref } from "@/lib/content/clinics";
 
 const CALENDAR_ID = "DJzvMy6qqnReRTFdwcpC";
-const PHONE = CLINICS[0].phones[0];
+const PHONE = "+1 725-334-7214";
 
 /**
  * Client-side booking page for /lp/p-long/book/. Embeds the LeadConnector

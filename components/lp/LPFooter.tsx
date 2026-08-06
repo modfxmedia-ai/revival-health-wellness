@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { CLINICS, telHref } from "@/lib/content/clinics";
+import { telHref } from "@/lib/content/clinics";
+
+const LP_PHONE = "+1 725-334-7214";
 
 /**
  * Minimal ad-compliance footer for /lp/* landing pages: business identity,
@@ -16,9 +18,8 @@ export default function LPFooter() {
           Revival Health &amp; Wellness
         </p>
         <p>
-          {CLINICS[0].address} ·{" "}
-          <a href={telHref(CLINICS[0].phones[0])} className="hover:text-revival-gold">
-            {CLINICS[0].phones[0]}
+          <a href={telHref(LP_PHONE)} className="hover:text-revival-gold">
+            {LP_PHONE}
           </a>
         </p>
         <p className="text-revival-cream/50">

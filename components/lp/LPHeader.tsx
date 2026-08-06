@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { Phone } from "lucide-react";
-import { CLINICS, telHref } from "@/lib/content/clinics";
+import { telHref } from "@/lib/content/clinics";
 
-const PHONE = CLINICS[0].phones[0];
+const PHONE = "+1 725-334-7214";
 
 /**
  * Minimal, distraction-free header for /lp/* ad landing pages. No primary

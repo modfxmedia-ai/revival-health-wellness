@@ -45,12 +45,21 @@ function directionsUrl(address: string) {
   return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
 }
 
-export default function MapSection() {
+type MapSectionProps = {
+  /** Dark/black background variant (used on the /lp/* ad landing pages). */
+  dark?: boolean;
+};
+
+export default function MapSection({ dark = false }: MapSectionProps) {
   const [active, setActive] = useState(0);
   const loc = LOCATIONS[active];
 
   return (
-    <section className="relative overflow-hidden bg-revival-warm-white py-14 lg:py-16">
+    <section
+      className={`relative overflow-hidden py-14 lg:py-16 ${
+        dark ? "bg-revival-dark" : "bg-revival-warm-white"
+      }`}
+    >
       {/* drifting gold ambiance */}
       <motion.div
         aria-hidden
@@ -73,12 +82,16 @@ export default function MapSection() {
             transition={{ duration: 0.7, ease: EASE }}
             className="flex flex-col justify-center"
           >
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-revival-gold/30 bg-white/70 px-4 py-1.5 text-tagline text-xs text-revival-gold shadow-sm backdrop-blur">
+            <span
+              className={`inline-flex w-fit items-center gap-2 rounded-full border border-revival-gold/30 px-4 py-1.5 text-tagline text-xs text-revival-gold shadow-sm backdrop-blur ${
+                dark ? "bg-white/5" : "bg-white/70"
+              }`}
+            >
               <MapPin className="h-3.5 w-3.5" />
               Visit Us
             </span>
             <h2
-              className="mt-4 text-revival-dark"
+              className={dark ? "mt-4 text-white" : "mt-4 text-revival-dark"}
               style={{ fontSize: "clamp(1.8rem, 3vw, 2.6rem)", lineHeight: 1.1 }}
             >
               Two Las Vegas{" "}
@@ -97,8 +110,12 @@ export default function MapSection() {
                     onClick={() => setActive(i)}
                     className={`group relative flex w-full items-start gap-3 rounded-2xl border p-4 text-left transition-colors duration-300 ${
                       selected
-                        ? "border-revival-gold/40 bg-white shadow-lg"
-                        : "border-revival-dark/10 bg-white/50 hover:border-revival-gold/30 hover:bg-white/80"
+                        ? dark
+                          ? "border-revival-gold/40 bg-white/[0.06] shadow-lg"
+                          : "border-revival-gold/40 bg-white shadow-lg"
+                        : dark
+                          ? "border-white/10 bg-white/[0.03] hover:border-revival-gold/30 hover:bg-white/[0.06]"
+                          : "border-revival-dark/10 bg-white/50 hover:border-revival-gold/30 hover:bg-white/80"
                     }`}
                   >
                     {selected ? (
@@ -119,10 +136,18 @@ export default function MapSection() {
                       <MapPin className="h-4 w-4" />
                     </span>
                     <span className="min-w-0">
-                      <span className="block font-heading text-base font-medium text-revival-dark">
+                      <span
+                        className={`block font-heading text-base font-medium ${
+                          dark ? "text-white" : "text-revival-dark"
+                        }`}
+                      >
                         {l.name}
                       </span>
-                      <span className="mt-0.5 block text-sm font-light leading-snug text-revival-dark/60">
+                      <span
+                        className={`mt-0.5 block text-sm font-light leading-snug ${
+                          dark ? "text-revival-cream/70" : "text-revival-dark/60"
+                        }`}
+                      >
                         {l.address}
                       </span>
                       <a
@@ -144,9 +169,17 @@ export default function MapSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Get directions to ${loc.name} in your map app`}
-              className="group mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-revival-dark px-6 py-3 text-sm font-medium text-revival-warm-white transition-colors hover:bg-revival-charcoal"
+              className={`group mt-5 inline-flex w-fit items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-colors ${
+                dark
+                  ? "bg-gradient-to-r from-revival-gold to-revival-gold-light text-revival-dark hover:scale-[1.02]"
+                  : "bg-revival-dark text-revival-warm-white hover:bg-revival-charcoal"
+              }`}
             >
-              <Navigation className="h-4 w-4 text-revival-gold transition-transform duration-300 group-hover:rotate-45" />
+              <Navigation
+                className={`h-4 w-4 transition-transform duration-300 group-hover:rotate-45 ${
+                  dark ? "text-revival-dark" : "text-revival-gold"
+                }`}
+              />
               Get Directions
             </a>
           </motion.div>

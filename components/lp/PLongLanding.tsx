@@ -15,7 +15,6 @@ import {
   Handshake,
   HeartPulse,
   Lock,
-  MapPin,
   Minus,
   Phone,
   Play,
@@ -30,13 +29,12 @@ import {
   UserCheck,
   X,
 } from "lucide-react";
-import { CLINICS, telHref } from "@/lib/content/clinics";
+import { telHref } from "@/lib/content/clinics";
 import LeadFormModal from "@/components/lp/LeadFormModal";
 import MapSection from "@/components/layout/MapSection";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
-const PHONE = CLINICS[0].phones[0];
-const ADDRESS = CLINICS[0].address;
+const PHONE = "+1 725-334-7214";
 const YOUTUBE_ID = "ZiuqW8CYkuA";
 const CTA_LABEL = "Claim My Free Consultation";
 const CTA_SHORT = "Claim Free Consult";
@@ -58,12 +56,13 @@ const HERO_BULLETS = [
 ];
 
 const OFFER_ITEMS = [
-  { label: "Provider Consultation", price: "$250" },
-  { label: "Physical Evaluation", price: "$150" },
-  { label: "Personalized Protocol Plan", price: "$100" },
+  "Provider Consultation",
+  "Physical Evaluation",
+  "Personalized Protocol Plan",
 ];
 const OFFER_TOTAL = "$500";
 const OFFER_PRICE = "FREE";
+
 
 const STATS = [
   { value: "12+", label: "Years serving Las Vegas men" },
@@ -101,7 +100,7 @@ const INCLUDED = [
     title: "Personalized Protocol Plan",
     price: "$100",
     text: "A tailored 6-month P-Long® plan with realistic expectations, exact treatment cadence, and transparent pricing. Walk out with a real path forward.",
-    image: "/images/sexual-wellness/p-long/p-long-hero.jpg",
+    image: "/images/lp-images/Sovereign-Toronto-Penis-Enlargement-1.webp",
   },
 ];
 
@@ -270,17 +269,6 @@ const TESTIMONIALS = [
     city: "Summerlin, NV",
     tag: "Girth & performance",
   },
-];
-
-const AREAS = [
-  "Las Vegas",
-  "Henderson",
-  "Summerlin",
-  "North Las Vegas",
-  "Spring Valley",
-  "Green Valley",
-  "Enterprise",
-  "Paradise",
 ];
 
 const CREDENTIALS = [
@@ -464,7 +452,7 @@ export default function PLongLanding() {
               className="lp-reveal mt-4 text-xs text-revival-cream/50"
               style={{ ["--reveal-delay" as string]: "500ms" }}
             >
-              {ADDRESS} &middot; *Some restrictions apply. New patients only.
+              *Some restrictions apply. New patients only.
             </p>
           </div>
 
@@ -507,16 +495,11 @@ export default function PLongLanding() {
               <ul className="relative mt-6 space-y-3 border-y border-white/10 py-5">
                 {OFFER_ITEMS.map((item) => (
                   <li
-                    key={item.label}
-                    className="flex items-center justify-between text-sm"
+                    key={item}
+                    className="flex items-center gap-2 text-sm text-revival-cream/85"
                   >
-                    <span className="flex items-center gap-2 text-revival-cream/85">
-                      <CheckCircle2 className="h-4 w-4 shrink-0 text-revival-gold" />
-                      {item.label}
-                    </span>
-                    <span className="font-semibold text-revival-cream/60">
-                      {item.price}
-                    </span>
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-revival-gold" />
+                    {item}
                   </li>
                 ))}
               </ul>
@@ -660,7 +643,7 @@ export default function PLongLanding() {
                     className="group absolute inset-0 h-full w-full cursor-pointer"
                   >
                     <Image
-                      src="/images/sexual-wellness/p-long/p-long-hero.jpg"
+                      src="/images/lp-images/p-long-video-thumbnail.png"
                       alt="P-Long protocol at Revival Health & Wellness"
                       fill
                       sizes="(max-width: 1024px) 90vw, 40vw"
@@ -1659,83 +1642,8 @@ export default function PLongLanding() {
         </div>
       </section>
 
-      {/* ═══════════════════════ AREAS SERVED ═══════════════════════ */}
-      <section className="bg-revival-dark py-16 lg:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
-            <motion.div
-              variants={fadeContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-            >
-              <motion.span variants={fadeUp} className="text-tagline text-xs text-revival-gold">
-                Easy To Reach
-              </motion.span>
-              <motion.h2
-                variants={fadeUp}
-                className="mt-4 font-heading text-3xl leading-tight text-white sm:text-4xl"
-              >
-                Proudly serving Las Vegas & surrounding areas.
-              </motion.h2>
-              <motion.p variants={fadeUp} className="mt-4 text-sm font-light text-revival-cream/70">
-                Revival Health & Wellness is conveniently located in Las Vegas,
-                just minutes from these communities:
-              </motion.p>
-              <motion.ul
-                variants={fadeUp}
-                className="mt-6 flex flex-wrap gap-2"
-              >
-                {AREAS.map((a) => (
-                  <li
-                    key={a}
-                    className="rounded-full border border-revival-gold/30 bg-white/[0.03] px-4 py-1.5 text-xs font-semibold text-revival-cream/85"
-                  >
-                    {a}
-                  </li>
-                ))}
-              </motion.ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.8, ease: EASE }}
-              className="rounded-[1.5rem] border border-revival-gold/20 bg-white/[0.03] p-6 sm:p-8"
-            >
-              <p className="text-tagline text-xs text-revival-gold">
-                Revival Health & Wellness
-              </p>
-              <p className="mt-3 flex items-start gap-2 text-sm text-revival-cream/85">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-revival-gold" />
-                {ADDRESS}
-              </p>
-              <div className="mt-5 flex flex-wrap gap-3">
-                <a
-                  href={CLINICS[0].mapHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-revival-gold/40 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-revival-cream transition-colors hover:border-revival-gold hover:text-revival-gold"
-                >
-                  <MapPin className="h-4 w-4 text-revival-gold" />
-                  Get Directions
-                </a>
-                <a
-                  href={telHref(PHONE)}
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-revival-dark"
-                >
-                  <Phone className="h-4 w-4" />
-                  {PHONE}
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════ MAP / LOCATIONS ═══════════════════════ */}
-      <MapSection />
+      <MapSection dark />
 
       {/* ═══════════════════════ FINAL CTA ═══════════════════════ */}
       <section className="relative overflow-hidden bg-revival-dark py-16 lg:py-24">
