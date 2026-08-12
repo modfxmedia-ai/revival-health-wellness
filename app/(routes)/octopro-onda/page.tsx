@@ -13,6 +13,7 @@ import {
   FAQSection,
   RelatedServices,
 } from "@/components/templates/HormoneSections";
+import { OctoProVideoShowcase } from "@/components/templates/OctoProVideoShowcase";
 
 const TITLE = "OctoPro (ONDA) Body Contouring";
 const PATH = "/octopro-onda/";
@@ -282,6 +283,8 @@ export default function OctoProOndaPage() {
         intro="The OctoPro handpiece adjusts to the treatment area, letting your provider address stubborn fat across a wide range of body zones."
         pillars={TREATMENT_AREAS}
       />
+
+      <OctoProVideoShowcase />
 
       <FullImageBlock
         eyebrow="Who is a good candidate?"
