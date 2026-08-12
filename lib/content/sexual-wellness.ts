@@ -798,7 +798,7 @@ export const SW_CONTENT: Record<string, SWPage> = {
             sub: "in participants during study",
           },
           {
-            value: "32",
+            value: "576",
             label: "P-Long® patients",
             sub: "reported significant erectile function improvements",
           },

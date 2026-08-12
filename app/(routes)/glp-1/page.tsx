@@ -201,6 +201,16 @@ export default function GLP1Page() {
         items={CANDIDATES_BULLETS}
       />
 
+      <VideoShowcase
+        eyebrow="Track Real Results"
+        heading="STYKU 3D body scanning technology"
+        intro="Every visit includes a STYKU body scan, so you can see measurable changes in muscle, water, and fat-not just the number on the scale."
+        src="/videos/styku.mp4"
+        poster="/videos/styku-poster.jpg"
+        aspect="portrait"
+        tone="cream"
+      />
+
       <FAQSection faqs={FAQS} />
 
       <WeightLossTestimonials />

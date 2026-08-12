@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import {
   motion,
@@ -24,6 +24,8 @@ import {
   Pill,
   Syringe,
   Droplets,
+  Play,
+  Pause,
 } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import PortraitFrame from "@/components/ui/PortraitFrame";
@@ -222,6 +224,70 @@ function CountUp({
     <span ref={ref} className="tabular-nums">
       0{suffix}
     </span>
+  );
+}
+
+/** Self-hosted portrait mp4 (STYKU body scan) with a custom play/pause overlay. */
+function BodyScanVideo() {
+  const [playing, setPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggle = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) v.play();
+    else v.pause();
+  };
+
+  return (
+    <div
+      className="group relative mx-auto aspect-[9/16] w-full max-w-xs cursor-pointer overflow-hidden rounded-[2rem] border border-revival-gold/25 bg-black shadow-[0_50px_120px_-32px_rgba(0,0,0,0.5)] sm:max-w-sm"
+      onClick={toggle}
+    >
+      <video
+        ref={videoRef}
+        className="absolute inset-0 h-full w-full object-cover"
+        src="/videos/styku.mp4"
+        poster="/videos/styku-poster.jpg"
+        playsInline
+        preload="metadata"
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onEnded={() => setPlaying(false)}
+      />
+
+      {!playing && (
+        <>
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/30 transition-opacity duration-300 group-hover:from-black/45"
+          />
+          <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
+            <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-revival-gold text-revival-dark shadow-[0_20px_60px_-12px_rgba(201,169,110,0.6)] transition-transform duration-300 group-hover:scale-110">
+              <span
+                aria-hidden
+                className="absolute inset-0 animate-ping rounded-full bg-revival-gold/40"
+              />
+              <Play className="relative ml-1 h-8 w-8 fill-current" strokeWidth={0} />
+            </span>
+          </span>
+        </>
+      )}
+
+      {playing && (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            toggle();
+          }}
+          aria-label="Pause video"
+          className="absolute bottom-4 left-4 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-black/50 text-white opacity-0 backdrop-blur-md transition-all duration-300 hover:border-revival-gold hover:bg-black/70 group-hover:opacity-100"
+        >
+          <Pause className="h-5 w-5" />
+        </button>
+      )}
+    </div>
   );
 }
 
@@ -572,6 +638,26 @@ export default function WeightLossPageContent() {
           </div>
         </div>
       </motion.section>
+
+      {/* ── SECTION 5b: STYKU body-scan video ─────────────────────────────── */}
+      <section className="relative overflow-hidden bg-revival-cream py-16 lg:py-24">
+        <AmbientOrbs light />
+        <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:px-8">
+          <BodyScanVideo />
+
+          <div>
+            <SectionEyebrow tone="light">Track Real Results</SectionEyebrow>
+            <Heading tone="light">STYKU 3D body scanning technology</Heading>
+            <BodyCopy tone="light">
+              Every visit includes a STYKU body scan, so you can see
+              measurable changes in muscle, water, and fat-not just the
+              number on the scale. It&apos;s how we turn &quot;weekly progress
+              tracking&quot; into real, visual proof that your plan is
+              working.
+            </BodyCopy>
+          </div>
+        </div>
+      </section>
 
       {/* ── SECTION 6: Good Candidates (animated checklist) ──────────────── */}
       <motion.section

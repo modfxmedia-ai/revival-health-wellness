@@ -15,6 +15,7 @@ import {
   BenefitsList,
   FAQSection,
   RelatedServices,
+  VideoShowcase,
 } from "@/components/templates/HormoneSections";
 
 const TITLE = "Vitamin Injection";
@@ -170,6 +171,15 @@ export default function VitaminInjectionsPage() {
         heading="Vitamin booster options"
         intro="Choose the injection that fits your goal-or ask our team to recommend a combination based on your labs."
         pillars={BOOSTER_OPTIONS}
+      />
+
+      <VideoShowcase
+        eyebrow="Track Real Results"
+        heading="STYKU 3D body scanning technology"
+        intro="Every visit includes a STYKU body scan, so you can see measurable changes in muscle, water, and fat-not just the number on the scale."
+        src="/videos/styku.mp4"
+        poster="/videos/styku-poster.jpg"
+        aspect="portrait"
       />
 
       <FAQSection faqs={FAQS} />

@@ -541,6 +541,7 @@ export function VideoShowcase({
   src,
   poster,
   tone = "dark",
+  aspect = "video",
 }: {
   eyebrow?: string;
   heading: string;
@@ -550,9 +551,12 @@ export function VideoShowcase({
   /** Poster image shown before playback starts. */
   poster?: string;
   tone?: Tone;
+  /** "video" (16:9, full-width) or "portrait" (9:16, constrained width) for phone-recorded clips. */
+  aspect?: "video" | "portrait";
 }) {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const isPortrait = aspect === "portrait";
 
   const bg =
     tone === "dark"
@@ -598,10 +602,12 @@ export function VideoShowcase({
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, ease: EASE }}
-          className="relative mt-12 overflow-hidden rounded-[2rem] border border-revival-gold/25 bg-black shadow-[0_50px_120px_-32px_rgba(0,0,0,0.5)]"
+          className={`relative mt-12 overflow-hidden rounded-[2rem] border border-revival-gold/25 bg-black shadow-[0_50px_120px_-32px_rgba(0,0,0,0.5)] ${
+            isPortrait ? "mx-auto max-w-xs sm:max-w-sm" : ""
+          }`}
         >
           <div
-            className="group relative aspect-video w-full cursor-pointer"
+            className={`group relative w-full cursor-pointer ${isPortrait ? "aspect-[9/16]" : "aspect-video"}`}
             onClick={toggle}
           >
             <video
