@@ -5,3 +5,4 @@
 # fail to play in production. Exclude this file (well under GitHub's
 # 100MB push limit) so it's committed as a normal binary blob instead.
 public/videos/inside-revival.mp4 !filter !diff !merge -text
+public/videos/styku.mp4 !filter !diff !merge -text
