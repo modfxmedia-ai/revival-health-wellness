@@ -1186,7 +1186,7 @@ export const SERVICES: Service[] = [
     live: SHARED_LIVE,
   },
   {
-    slug: "octopro-onda",
+    slug: "onda-pro",
     name: "ONDA Pro Body Contouring",
     category: "Body Contouring",
     shortDescription: "Coolwaves microwave technology - non-invasive fat reduction, skin tightening, and cellulite improvement in one platform.",
@@ -1207,7 +1207,7 @@ export const SERVICES: Service[] = [
       { question: "How many sessions?", answer: "Typically 3-4 sessions spaced 2-4 weeks apart, personalized to your goals and treatment area." },
       { question: "Any downtime?", answer: "None. Mild pinkness in the treated area for a few hours; back to work and workouts immediately." },
     ],
-    pillarHref: "/octopro-onda/",
+    pillarHref: "/onda-pro/",
     heroImage: "/images/octopro-onda/octopro-machine.webp",
     live: SHARED_LIVE,
   },

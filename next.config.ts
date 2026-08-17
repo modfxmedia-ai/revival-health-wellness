@@ -30,6 +30,12 @@ const nextConfig: NextConfig = {
         destination: "/co2-laser-treatments/",
         permanent: true,
       },
+      // Renamed to match the ONDA Pro brand name.
+      {
+        source: "/octopro-onda",
+        destination: "/onda-pro/",
+        permanent: true,
+      },
     ];
   },
 };

@@ -37,7 +37,7 @@ const SUB_SERVICES = [
   "mens-hormone-therapy",
   "microneedling",
   "o-shot-tm",
-  "octopro-onda",
+  "onda-pro",
   "p-long",
   "p-shot-tm",
   "pdo-thread-lifts",
