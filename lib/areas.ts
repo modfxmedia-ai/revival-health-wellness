@@ -1187,22 +1187,22 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "octopro-onda",
-    name: "OctoPro (ONDA) Body Contouring",
+    name: "ONDA Pro Body Contouring",
     category: "Body Contouring",
     shortDescription: "Coolwaves microwave technology - non-invasive fat reduction, skin tightening, and cellulite improvement in one platform.",
     longDescription: [
-      "OctoPro is DEKA's next-generation body-contouring platform using proprietary Coolwaves microwave technology to selectively heat subcutaneous adipose tissue while protecting the surface of the skin.",
-      "At Revival Health and Wellness, OctoPro delivers measurable reduction in localized fat, visible skin tightening, and improvement in the appearance of cellulite - all without incisions, anesthesia, or downtime. Typically 3-4 sessions spaced 2-4 weeks apart.",
+      "ONDA Pro is DEKA's next-generation body-contouring platform using proprietary Coolwaves microwave technology to selectively heat subcutaneous adipose tissue while protecting the surface of the skin.",
+      "At Revival Health and Wellness, ONDA Pro delivers measurable reduction in localized fat, visible skin tightening, and improvement in the appearance of cellulite - all without incisions, anesthesia, or downtime. Typically 3-4 sessions spaced 2-4 weeks apart.",
     ],
     benefits: ["Non-invasive fat reduction and skin tightening in one", "Visible cellulite improvement", "No incisions, needles, or anesthesia", "Zero downtime - return to activity immediately", "Comfortable, well-tolerated sessions", "Works on abdomen, flanks, thighs, arms, bra-line"],
     processSteps: [
-      { title: "Consultation", text: "We identify target areas and confirm OctoPro is right for your goals." },
+      { title: "Consultation", text: "We identify target areas and confirm ONDA Pro is right for your goals." },
       { title: "Coolwaves session", text: "The handpiece is moved across the target area for 20-40 minutes; you'll feel warm massage-like sensation." },
       { title: "Series of sessions", text: "3-4 sessions spaced 2-4 weeks apart for meaningful results." },
       { title: "Progressive results", text: "Initial changes visible within a few weeks; optimal results build over 3-6 months." },
     ],
     faqs: [
-      { question: "How does OctoPro work?", answer: "Proprietary microwave energy heats subcutaneous fat cells to induce apoptosis (natural cell death); the body clears them over the following weeks." },
+      { question: "How does ONDA Pro work?", answer: "Proprietary microwave energy heats subcutaneous fat cells to induce apoptosis (natural cell death); the body clears them over the following weeks." },
       { question: "Is it comfortable?", answer: "Yes - warm, massage-like sensation. No numbing required, no post-treatment soreness." },
       { question: "How many sessions?", answer: "Typically 3-4 sessions spaced 2-4 weeks apart, personalized to your goals and treatment area." },
       { question: "Any downtime?", answer: "None. Mild pinkness in the treated area for a few hours; back to work and workouts immediately." },

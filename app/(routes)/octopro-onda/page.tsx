@@ -15,10 +15,10 @@ import {
 } from "@/components/templates/HormoneSections";
 import { OctoProVideoShowcase } from "@/components/templates/OctoProVideoShowcase";
 
-const TITLE = "OctoPro (ONDA) Body Contouring";
+const TITLE = "ONDA Pro Body Contouring";
 const PATH = "/octopro-onda/";
 const DESCRIPTION =
-  "Non-invasive body contouring with the OctoPro (ONDA) system in Las Vegas. Revival Health and Wellness uses microwave-based Coolwaves technology to reduce fat, tighten skin, and smooth cellulite.";
+  "Non-invasive body contouring with the ONDA Pro system in Las Vegas. Revival Health and Wellness uses microwave-based Coolwaves technology to reduce fat, tighten skin, and smooth cellulite.";
 
 export const metadata = buildMetadata({
   title: TITLE,
@@ -39,7 +39,7 @@ const KEY_BENEFITS = [
 const TREATMENT_AREAS = [
   {
     title: "Abdomen & Flanks",
-    text: "The most-requested zone - target stubborn belly fat and love handles that resist diet and exercise. OctoPro’s Coolwaves reach subcutaneous adipose tissue while protecting the skin.",
+    text: "The most-requested zone - target stubborn belly fat and love handles that resist diet and exercise. ONDA Pro’s Coolwaves reach subcutaneous adipose tissue while protecting the skin.",
     icon: "target" as const,
   },
   {
@@ -56,14 +56,14 @@ const TREATMENT_AREAS = [
 
 const FAQS = [
   {
-    question: "What is OctoPro (ONDA)?",
+    question: "What is ONDA Pro?",
     answer:
-      "OctoPro is a non-invasive body-contouring device by DEKA that uses Coolwaves - a proprietary microwave technology - to selectively heat subcutaneous fat cells while protecting the surface of the skin. In the same treatment, the residual thermal action stimulates dermal remodeling for skin tightening and cellulite improvement.",
+      "ONDA Pro is a non-invasive body-contouring device by DEKA that uses Coolwaves - a proprietary microwave technology - to selectively heat subcutaneous fat cells while protecting the surface of the skin. In the same treatment, the residual thermal action stimulates dermal remodeling for skin tightening and cellulite improvement.",
   },
   {
-    question: "What can OctoPro treat?",
+    question: "What can ONDA Pro treat?",
     answer:
-      "OctoPro is cleared for localized fat reduction, skin laxity, and cellulite - across the abdomen, flanks, thighs, buttocks, arms, and bra-line area. It’s particularly well-suited to patients seeking a non-surgical alternative to liposuction who also want a mild skin-tightening benefit.",
+      "ONDA Pro is cleared for localized fat reduction, skin laxity, and cellulite - across the abdomen, flanks, thighs, buttocks, arms, and bra-line area. It’s particularly well-suited to patients seeking a non-surgical alternative to liposuction who also want a mild skin-tightening benefit.",
   },
   {
     question: "How many sessions will I need?",
@@ -200,7 +200,7 @@ export default function OctoProOndaPage() {
             breadcrumbSchema([
               { name: "Home", path: "/" },
               { name: "Aesthetics", path: "/aesthetics/" },
-              { name: "OctoPro (ONDA)", path: PATH },
+              { name: "ONDA Pro", path: PATH },
             ]),
             faqSchema(FAQS),
           ]),
@@ -212,18 +212,18 @@ export default function OctoProOndaPage() {
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Aesthetics", href: "/aesthetics/" },
-          { label: "OctoPro (ONDA)" },
+          { label: "ONDA Pro" },
         ]}
         title={
           <>
             <span className="relative inline-block italic text-revival-gold">
-              OctoPro
+              ONDA
               <span
                 aria-hidden
                 className="absolute -bottom-2 left-0 h-[3px] w-full bg-gradient-to-r from-revival-gold to-transparent"
               />
             </span>{" "}
-            (ONDA)
+            Pro
           </>
         }
         description="Non-invasive fat reduction, skin tightening, and cellulite improvement - in one treatment. Powered by DEKA’s proprietary Coolwaves microwave technology."
@@ -236,14 +236,14 @@ export default function OctoProOndaPage() {
       />
 
       <FullImageBlock
-        eyebrow="Introducing the OctoPro Platform"
+        eyebrow="Introducing the ONDA Pro Platform"
         heading="Fat reduction. Skin tightening. Cellulite smoothing. In one session."
         paragraphs={[
-          "OctoPro is DEKA’s next-generation body-contouring platform, now available at Revival Health and Wellness. Using proprietary Coolwaves technology, it selectively heats subcutaneous adipose tissue while protecting the surface of the skin - a combination that’s difficult to achieve with laser or radiofrequency alone.",
+          "ONDA Pro is DEKA’s next-generation body-contouring platform, now available at Revival Health and Wellness. Using proprietary Coolwaves technology, it selectively heats subcutaneous adipose tissue while protecting the surface of the skin - a combination that’s difficult to achieve with laser or radiofrequency alone.",
           "The result: measurable reduction in localized fat, visible skin tightening, and improvement in the appearance of cellulite - without incisions, anesthesia, or downtime.",
         ]}
         image="/images/octopro-onda/octopro-machine.webp"
-        imageAlt="OctoPro (ONDA) body contouring device"
+        imageAlt="ONDA Pro body contouring device"
         imageWidth={3840}
         imageHeight={5760}
       />
@@ -251,36 +251,36 @@ export default function OctoProOndaPage() {
       <FullImageBlock
         tone="cream"
         reverse
-        eyebrow="How OctoPro Works"
+        eyebrow="How ONDA Pro Works"
         heading="Coolwaves - microwave energy, precisely delivered"
         paragraphs={[
-          "OctoPro delivers 2.45 GHz microwave energy through a proprietary handpiece designed to preferentially target adipose tissue. Fat cells absorb the energy and undergo apoptosis (natural cell death); the body then clears them through normal metabolic processes over the following weeks.",
-          "Because the same thermal action gently heats the dermis, patients also see collagen remodeling in the treated area - which is why OctoPro tightens skin and improves cellulite in the same session it reduces fat.",
+          "ONDA Pro delivers 2.45 GHz microwave energy through a proprietary handpiece designed to preferentially target adipose tissue. Fat cells absorb the energy and undergo apoptosis (natural cell death); the body then clears them through normal metabolic processes over the following weeks.",
+          "Because the same thermal action gently heats the dermis, patients also see collagen remodeling in the treated area - which is why ONDA Pro tightens skin and improves cellulite in the same session it reduces fat.",
         ]}
         image="/images/octopro-onda/octopro-onda-1.webp"
-        imageAlt="OctoPro treatment in progress"
+        imageAlt="ONDA Pro treatment in progress"
         imageWidth={2706}
         imageHeight={3607}
       />
 
       <FullImageBlock
         eyebrow="Key Benefits"
-        heading="Everything OctoPro delivers in one platform"
+        heading="Everything ONDA Pro delivers in one platform"
         paragraphs={[
           "One versatile handpiece system, calibrated to each treatment zone - abdomen, love handles, thighs, buttocks, arms, and bra-line. Every session is comfortable, quick, and downtime-free.",
         ]}
         bullets={KEY_BENEFITS}
         image="/images/octopro-onda/octopro-2.jpg"
-        imageAlt="OctoPro treatment session"
+        imageAlt="ONDA Pro treatment session"
         imageWidth={650}
         imageHeight={530}
       />
 
       <PillarsGrid
         tone="cream"
-        eyebrow="Where OctoPro Treats"
+        eyebrow="Where ONDA Pro Treats"
         heading="One device. Multiple body zones."
-        intro="The OctoPro handpiece adjusts to the treatment area, letting your provider address stubborn fat across a wide range of body zones."
+        intro="The ONDA Pro handpiece adjusts to the treatment area, letting your provider address stubborn fat across a wide range of body zones."
         pillars={TREATMENT_AREAS}
       />
 
@@ -290,12 +290,12 @@ export default function OctoProOndaPage() {
         eyebrow="Who is a good candidate?"
         heading="For patients seeking a non-surgical alternative to liposuction"
         paragraphs={[
-          "OctoPro is ideal for patients close to their goal weight who want to address localized pockets of stubborn fat, mild-to-moderate skin laxity, or cellulite - without the recovery of surgical liposuction.",
-          "During your complimentary consultation, our medical team will assess your goals, review your health history, and design a customized OctoPro protocol - or recommend the best combination of body-contouring options across our platform.",
-          "For patients seeking maximum transformation, our providers often layer OctoPro with Emsculpt NEO (to build muscle in the treated area) and Everesse RF (for deeper skin tightening). We’ll design the right combination for your goals.",
+          "ONDA Pro is ideal for patients close to their goal weight who want to address localized pockets of stubborn fat, mild-to-moderate skin laxity, or cellulite - without the recovery of surgical liposuction.",
+          "During your complimentary consultation, our medical team will assess your goals, review your health history, and design a customized ONDA Pro protocol - or recommend the best combination of body-contouring options across our platform.",
+          "For patients seeking maximum transformation, our providers often layer ONDA Pro with Emsculpt NEO (to build muscle in the treated area) and Everesse RF (for deeper skin tightening). We’ll design the right combination for your goals.",
         ]}
         image="/images/octopro-onda/octopro-4.jpeg"
-        imageAlt="OctoPro non-surgical body contouring candidate"
+        imageAlt="ONDA Pro non-surgical body contouring candidate"
         imageWidth={452}
         imageHeight={678}
         reverse
@@ -309,7 +309,7 @@ export default function OctoProOndaPage() {
             label: "Emsculpt NEO",
             href: "/emsculpt-neo/",
             blurb:
-              "Build muscle and burn fat with HIFEM + RF - the perfect complement to OctoPro’s fat-reduction focus.",
+              "Build muscle and burn fat with HIFEM + RF - the perfect complement to ONDA Pro’s fat-reduction focus.",
           },
           {
             label: "Everesse RF Skin Tightening",
@@ -329,7 +329,7 @@ export default function OctoProOndaPage() {
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14 lg:px-8">
         <CTABanner
           title="Reduce fat. Tighten skin. Smooth cellulite. Without surgery."
-          subtitle="Book a complimentary OctoPro consultation. Our medical team will assess your goals and design a personalized protocol."
+          subtitle="Book a complimentary ONDA Pro consultation. Our medical team will assess your goals and design a personalized protocol."
         />
       </div>
     </>

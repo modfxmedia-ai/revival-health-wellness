@@ -15,7 +15,7 @@ const VIDEOS = [
   {
     src: "/videos/octopro-onda-2.mp4",
     poster: "/videos/octopro-onda-2-poster.jpg",
-    label: "The OctoPro device",
+    label: "The ONDA Pro device",
   },
 ];
 
@@ -112,10 +112,10 @@ export function OctoProVideoShowcase() {
             <span className="h-px w-8 bg-gradient-to-l from-transparent via-revival-gold to-revival-gold/60" />
           </div>
           <h2 className="font-heading text-3xl leading-[1.1] tracking-[-0.015em] text-white sm:text-4xl lg:text-[2.75rem]">
-            Watch OctoPro in action
+            Watch ONDA Pro in action
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base font-light leading-relaxed text-revival-cream/75 sm:text-lg">
-            A closer look at the OctoPro (ONDA) device and what a real
+            A closer look at the ONDA Pro device and what a real
             treatment session looks like at Revival.
           </p>
         </div>

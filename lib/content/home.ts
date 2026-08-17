@@ -80,7 +80,7 @@ export const SERVICES: Service[] = [
     href: "/body-contouring/",
     image: "/images/services/emsculpt-neo.webp",
     blurb:
-      "Non-invasive sculpting and skin tightening, OctoPro (ONDA), Emsculpt NEO, and Everesse RF for a stronger, more defined silhouette.",
+      "Non-invasive sculpting and skin tightening, ONDA Pro, Emsculpt NEO, and Everesse RF for a stronger, more defined silhouette.",
   },
 ];
 
