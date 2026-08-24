@@ -43,10 +43,10 @@ fbq('track', 'PageView');`}
       <Script id="meta-pixel-lead" strategy="afterInteractive">
         {`fbq('track', 'Lead');`}
       </Script>
-      <LPHeader />
+      <LPHeader phone="+1 725-257-5596" />
       <XerfThankYouContent />
       <MapSection />
-      <LPFooter />
+      <LPFooter phone="+1 725-257-5596" />
     </>
   );
 }

@@ -43,9 +43,9 @@ fbq('track', 'PageView');`}
         />
       </noscript>
       {/* End Meta Pixel Code */}
-      <LPHeader />
+      <LPHeader phone="+1 725-257-5596" />
       <XerfOfferLanding />
-      <LPFooter />
+      <LPFooter phone="+1 725-257-5596" />
     </>
   );
 }
