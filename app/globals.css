@@ -142,6 +142,36 @@ h6 {
 }
 
 /* ---------------------------------------------------------------------------
+   Continuous auto-scrolling row (e.g. Google review cards). The track's
+   content is duplicated once in JSX so translateX(-50%) loops seamlessly.
+   Pauses on hover/focus so patients can actually read a card, and freezes
+   entirely under reduced-motion.
+   ------------------------------------------------------------------------ */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll var(--marquee-duration, 38s) linear infinite;
+}
+
+.marquee-track:hover,
+.marquee-track:focus-within {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
    Bottom-of-screen floating widgets (accessibility trigger + back-to-top
    from public/accessibility/toolbar.css, and the third-party knock-knock
    chat bubble) all pin themselves near the viewport's bottom edge. When the
