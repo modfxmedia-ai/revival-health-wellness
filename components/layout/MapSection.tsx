@@ -48,11 +48,18 @@ function directionsUrl(address: string) {
 type MapSectionProps = {
   /** Dark/black background variant (used on the /lp/* ad landing pages). */
   dark?: boolean;
+  /** Restrict to a single location (e.g. a treatment only offered at one clinic). */
+  only?: "henderson-sw" | "summerlin-nw";
 };
 
-export default function MapSection({ dark = false }: MapSectionProps) {
+export default function MapSection({ dark = false, only }: MapSectionProps) {
+  const locations = only
+    ? LOCATIONS.filter((l) =>
+        only === "summerlin-nw" ? l.name.includes("Summerlin") : l.name.includes("Henderson")
+      )
+    : LOCATIONS;
   const [active, setActive] = useState(0);
-  const loc = LOCATIONS[active];
+  const loc = locations[active];
 
   return (
     <section
@@ -94,14 +101,26 @@ export default function MapSection({ dark = false }: MapSectionProps) {
               className={dark ? "mt-4 text-white" : "mt-4 text-revival-dark"}
               style={{ fontSize: "clamp(1.8rem, 3vw, 2.6rem)", lineHeight: 1.1 }}
             >
-              Two Las Vegas{" "}
-              <span className="bg-gradient-to-r from-[#8a5a2b] via-revival-gold to-[#e8d5b0] bg-clip-text text-transparent">
-                locations
-              </span>
+              {only ? (
+                <>
+                  Visit our{" "}
+                  <span className="bg-gradient-to-r from-[#8a5a2b] via-revival-gold to-[#e8d5b0] bg-clip-text text-transparent">
+                    {loc.name}
+                  </span>{" "}
+                  location
+                </>
+              ) : (
+                <>
+                  Two Las Vegas{" "}
+                  <span className="bg-gradient-to-r from-[#8a5a2b] via-revival-gold to-[#e8d5b0] bg-clip-text text-transparent">
+                    locations
+                  </span>
+                </>
+              )}
             </h2>
 
             <div className="mt-6 space-y-3">
-              {LOCATIONS.map((l, i) => {
+              {locations.map((l, i) => {
                 const selected = i === active;
                 return (
                   <button

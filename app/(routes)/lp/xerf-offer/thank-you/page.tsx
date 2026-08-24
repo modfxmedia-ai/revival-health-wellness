@@ -45,7 +45,7 @@ fbq('track', 'PageView');`}
       </Script>
       <LPHeader phone="+1 725-257-5596" />
       <XerfThankYouContent />
-      <MapSection />
+      <MapSection only="summerlin-nw" />
       <LPFooter phone="+1 725-257-5596" />
     </>
   );

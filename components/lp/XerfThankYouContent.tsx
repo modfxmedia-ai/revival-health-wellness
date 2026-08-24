@@ -23,7 +23,7 @@ const NEXT_STEPS = [
   {
     icon: CalendarCheck,
     title: "Schedule your visit",
-    text: "We'll find an appointment time that works for your schedule at either of our two Las Vegas locations.",
+    text: "We'll find an appointment time that works for your schedule at our Summerlin/NW location.",
   },
   {
     icon: ScanFace,
