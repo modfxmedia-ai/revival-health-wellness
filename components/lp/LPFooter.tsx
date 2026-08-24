@@ -1,14 +1,18 @@
 import Link from "next/link";
 import { telHref } from "@/lib/content/clinics";
 
-const LP_PHONE = "+1 725-334-7214";
+const DEFAULT_LP_PHONE = "+1 725-334-7214";
 
 /**
  * Minimal ad-compliance footer for /lp/* landing pages: business identity,
  * NAP, and required legal links only - no full sitemap (keeps the page a
  * single conversion funnel).
  */
-export default function LPFooter() {
+export default function LPFooter({
+  phone = DEFAULT_LP_PHONE,
+}: {
+  phone?: string;
+}) {
   const year = new Date().getFullYear();
 
   return (
@@ -18,8 +22,8 @@ export default function LPFooter() {
           Revival Health &amp; Wellness
         </p>
         <p>
-          <a href={telHref(LP_PHONE)} className="hover:text-revival-gold">
-            {LP_PHONE}
+          <a href={telHref(phone)} className="hover:text-revival-gold">
+            {phone}
           </a>
         </p>
         <p className="text-revival-cream/50">

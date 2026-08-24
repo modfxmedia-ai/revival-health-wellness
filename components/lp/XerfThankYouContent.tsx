@@ -192,7 +192,7 @@ export default function XerfThankYouContent() {
         </div>
       </section>
 
-      <GoogleReviewsSection limit={3} />
+      <GoogleReviewsSection limit={3} treatment="XERF" />
     </>
   );
 }

@@ -4,14 +4,18 @@ import Image from "next/image";
 import { Phone } from "lucide-react";
 import { telHref } from "@/lib/content/clinics";
 
-const PHONE = "+1 725-334-7214";
+const DEFAULT_PHONE = "+1 725-334-7214";
 
 /**
  * Minimal, distraction-free header for /lp/* ad landing pages. No primary
  * nav, no dropdowns - just the logo (trust) and a one-tap call button, so
  * paid traffic stays focused on the single offer/form below.
  */
-export default function LPHeader() {
+export default function LPHeader({
+  phone = DEFAULT_PHONE,
+}: {
+  phone?: string;
+}) {
   return (
     <header className="sticky top-0 z-50 border-b border-revival-gold/15 bg-revival-dark/95 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
@@ -27,11 +31,11 @@ export default function LPHeader() {
         </span>
 
         <a
-          href={telHref(PHONE)}
+          href={telHref(phone)}
           className="group inline-flex h-10 items-center gap-2 rounded-full border border-revival-gold/40 px-4 text-sm font-semibold text-revival-cream transition-colors hover:border-revival-gold hover:text-revival-gold"
         >
           <Phone className="h-3.5 w-3.5 text-revival-gold" />
-          <span className="hidden sm:inline">{PHONE}</span>
+          <span className="hidden sm:inline">{phone}</span>
           <span className="sm:hidden">Call Now</span>
         </a>
       </div>

@@ -9,9 +9,9 @@ import XerfOfferLanding from "@/components/lp/XerfOfferLanding";
 // app/sitemap.ts and marked noindex so it never competes with the organic
 // /xerf/ service page in search.
 export const metadata: Metadata = buildMetadata({
-  title: "XERF Skin Tightening \u2014 Free Consultation",
+  title: "XERF Skin Tightening: Free Consultation",
   description:
-    "Lift, firm, and tighten your skin with XERF \u2014 no needles, no numbing, no downtime. Introductory pricing for the first 10 patients. Book your free consultation.",
+    "Lift, firm, and tighten your skin with XERF, no needles, no numbing, no downtime. Introductory pricing for the first 10 patients. Book your free consultation.",
   path: "/lp/xerf-offer/",
   noIndex: true,
 });

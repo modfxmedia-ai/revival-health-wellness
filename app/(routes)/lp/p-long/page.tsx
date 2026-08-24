@@ -9,9 +9,9 @@ import PLongLanding from "@/components/lp/PLongLanding";
 // app/sitemap.ts and marked noindex so it never competes with the organic
 // /p-long/ service page in search.
 export const metadata: Metadata = buildMetadata({
-  title: "P-Long\u00ae Protocol \u2014 Free Consultation",
+  title: "P-Long\u00ae Protocol: Free Consultation",
   description:
-    "Increase length and girth by up to a full inch \u2014 no surgery, no fillers. The first clinically proven P-Long\u00ae protocol. Book your free, confidential consultation.",
+    "Increase length and girth by up to a full inch, no surgery, no fillers. The first clinically proven P-Long\u00ae protocol. Book your free, confidential consultation.",
   path: "/lp/p-long/",
   noIndex: true,
 });

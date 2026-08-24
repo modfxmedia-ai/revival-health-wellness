@@ -930,7 +930,7 @@ export default function XerfOfferLanding() {
         </div>
       </section>
 
-      <GoogleReviewsSection />
+      <GoogleReviewsSection treatment="XERF" />
 
       {/* ═══════════════════════ LIMITED SPOTS ═══════════════════════ */}
       <section className="bg-white py-16 lg:py-24">

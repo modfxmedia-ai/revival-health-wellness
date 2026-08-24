@@ -228,6 +228,66 @@ export const TESTIMONIALS: Testimonial[] = [
     quote:
       "Hormone therapy here gave me my energy and confidence back. The staff is professional, discreet, and incredibly knowledgeable. Highly recommend.",
   },
+  {
+    name: "Michael R.",
+    treatment: "Emsella",
+    quote:
+      "Emsella was much easier than I expected. The sessions were comfortable, completely non-invasive, and I was able to get right back to my day afterward. After completing my treatment plan, I noticed better bladder control and more confidence in everyday life. The team at Revival made the whole experience comfortable and discreet.",
+  },
+  {
+    name: "Jennifer M.",
+    treatment: "Emsella",
+    quote:
+      "I had been dealing with bladder leaks when laughing, sneezing, and exercising, and it was starting to affect my confidence. Emsella was incredibly simple, I stayed fully clothed during the sessions and there was no downtime. Over the course of my treatments, I noticed a meaningful improvement. I'm so glad I decided to try it.",
+  },
+  {
+    name: "David T.",
+    treatment: "Emsella",
+    quote:
+      "I was a little hesitant to talk about pelvic floor issues at first, but everyone at Revival made me feel comfortable from the beginning. The Emsella treatments were quick and easy, and I started noticing improvements as I progressed through my sessions. I feel much more confident and in control now.",
+  },
+  {
+    name: "Amanda S.",
+    treatment: "Emsella",
+    quote:
+      "After having children, I thought occasional bladder leakage was something I just had to live with. Emsella changed my perspective. The treatment was comfortable, required no recovery time, and fit easily into my schedule. I've noticed a big difference in my confidence and pelvic floor control.",
+  },
+  {
+    name: "Chris P.",
+    treatment: "Emsella",
+    quote:
+      "My experience with Emsella at Revival Health & Wellness was excellent. The staff explained everything clearly and made a potentially awkward topic feel completely normal. The sessions were convenient and non-invasive, and I've been very happy with the improvement I've noticed. I would definitely recommend speaking with their team if you're considering Emsella.",
+  },
+  {
+    name: "Sarah M.",
+    treatment: "XERF",
+    quote:
+      "I'm so happy with my XERF treatments! I wanted my skin to look firmer and more refreshed without doing anything invasive. The treatment was comfortable, and I was able to go right back to my normal routine afterward. My skin looks smoother, tighter, and naturally refreshed.",
+  },
+  {
+    name: "Jessica R.",
+    treatment: "XERF",
+    quote:
+      "I started noticing some loose skin around my jawline and neck and decided to try XERF. The entire experience at Revival was amazing. There was no downtime, and over the following weeks I started noticing my skin looking firmer and more defined. I love how natural the results look!",
+  },
+  {
+    name: "Amanda L.",
+    treatment: "XERF",
+    quote:
+      "XERF has been one of my favorite aesthetic treatments. I wanted something that could improve the firmness of my skin without injections or surgery. The sessions were easy and comfortable, and my skin gradually started looking smoother and more youthful. I'm definitely coming back for more.",
+  },
+  {
+    name: "Michelle T.",
+    treatment: "XERF",
+    quote:
+      "I had XERF done to help with skin laxity, and I'm really impressed with the experience. The treatment was quick, comfortable, and required no recovery time. I've noticed my skin feels tighter and looks more refreshed without looking like I had anything 'done.' Exactly what I wanted.",
+  },
+  {
+    name: "Rachel K.",
+    treatment: "XERF",
+    quote:
+      "The team at Revival made my XERF experience so comfortable from beginning to end. They explained the treatment clearly and created a plan based on the areas I wanted to improve. I love that the results developed naturally instead of changing my appearance overnight. My skin looks firmer, smoother, and healthier.",
+  },
 ];
 
 export const REVIEWS = {

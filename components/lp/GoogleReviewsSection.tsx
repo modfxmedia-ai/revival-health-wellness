@@ -43,27 +43,32 @@ function GoogleLogo({ className = "h-5 w-5" }: { className?: string }) {
 }
 
 /**
- * Real, sitewide Google-review testimonials (lib/content/home.ts) styled to
- * look like actual Google review cards, auto-scrolling in an infinite
- * marquee (pauses on hover/focus; frozen under reduced-motion - see
- * `.marquee-track` in app/globals.css). Not XERF-specific - XERF is a new
- * offer with no reviews of its own yet - but genuine patient reviews of the
- * practice. Uses `.lp-reveal` instead of framer-motion `whileInView` (see
- * app/globals.css) since the latter gets stuck at opacity:0 in this stack.
+ * Real Google-review testimonials (lib/content/home.ts) styled to look like
+ * actual Google review cards, auto-scrolling in an infinite marquee (pauses
+ * on hover/focus; frozen under reduced-motion - see `.marquee-track` in
+ * app/globals.css). Defaults to a sitewide featured mix; pass `treatment` to
+ * show only reviews tagged for that service (e.g. "Emsella"). Uses
+ * `.lp-reveal` instead of framer-motion `whileInView` (see app/globals.css)
+ * since the latter gets stuck at opacity:0 in this stack.
  */
 export default function GoogleReviewsSection({
   limit = 5,
+  bgClassName = "bg-white",
+  treatment,
 }: {
   limit?: number;
+  bgClassName?: string;
+  /** When set, only shows reviews tagged with this exact `treatment` instead of the sitewide featured mix. */
+  treatment?: string;
 }) {
-  const reviews = FEATURED_NAMES.map((n) =>
-    TESTIMONIALS.find((t) => t.name === n),
-  )
-    .filter((t): t is Testimonial => Boolean(t))
-    .slice(0, limit);
+  const reviews = treatment
+    ? TESTIMONIALS.filter((t) => t.treatment === treatment).slice(0, limit)
+    : FEATURED_NAMES.map((n) => TESTIMONIALS.find((t) => t.name === n))
+        .filter((t): t is Testimonial => Boolean(t))
+        .slice(0, limit);
 
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className={`${bgClassName} py-16 lg:py-24`}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span
