@@ -86,7 +86,18 @@ const STEPS = [
   {
     title: "Reserve your $79 experience",
     time: "60 SECONDS",
-    text: `Reserve your $79 Weight Loss Experience online or call/text ${PHONE}. Only five introductory-priced appointments are available.`,
+    text: (
+      <>
+        Reserve your $79 Weight Loss Experience online or call/text{" "}
+        <a
+          href={telHref(PHONE)}
+          className="font-semibold text-revival-gold underline decoration-revival-gold/40 underline-offset-2 hover:text-revival-gold-light"
+        >
+          {PHONE}
+        </a>
+        . Only five introductory-priced appointments are available.
+      </>
+    ),
     icon: Phone,
   },
   {

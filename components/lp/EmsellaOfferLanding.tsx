@@ -77,7 +77,19 @@ const STEPS = [
   {
     title: "Book your free consultation",
     time: "60 SECONDS",
-    text: `Reserve your free consultation and $97 Emsella demo session online or call/text ${PHONE}. Spots are limited this month.`,
+    text: (
+      <>
+        Reserve your free consultation and $97 Emsella demo session online or
+        call/text{" "}
+        <a
+          href={telHref(PHONE)}
+          className="font-semibold text-revival-gold underline decoration-revival-gold/40 underline-offset-2 hover:text-revival-gold-light"
+        >
+          {PHONE}
+        </a>
+        . Spots are limited this month.
+      </>
+    ),
     icon: Phone,
   },
   {

@@ -86,7 +86,18 @@ const STEPS = [
   {
     title: "Book your free consultation",
     time: "60 SECONDS",
-    text: "Reserve your free XERF consultation online or call/text 725-257-5596. Only 10 introductory-pricing spots are available.",
+    text: (
+      <>
+        Reserve your free XERF consultation online or call/text{" "}
+        <a
+          href={telHref(PHONE)}
+          className="font-semibold text-revival-gold underline decoration-revival-gold/40 underline-offset-2 hover:text-revival-gold-light"
+        >
+          {PHONE}
+        </a>
+        . Only 10 introductory-pricing spots are available.
+      </>
+    ),
     icon: Phone,
   },
   {
