@@ -45,7 +45,7 @@ fbq('track', 'PageView');`}
       </Script>
       <LPHeader phone="+1 702-553-1754" />
       <EmsellaThankYouContent />
-      <MapSection />
+      <MapSection hidePhone />
       <LPFooter phone="+1 702-553-1754" />
     </>
   );

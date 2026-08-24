@@ -45,7 +45,7 @@ fbq('track', 'PageView');`}
       </Script>
       <LPHeader phone="+1 725-241-0010" />
       <WeightlossThankYouContent />
-      <MapSection />
+      <MapSection hidePhone />
       <LPFooter phone="+1 725-241-0010" />
     </>
   );

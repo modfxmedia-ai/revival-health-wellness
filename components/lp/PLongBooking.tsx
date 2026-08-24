@@ -228,7 +228,7 @@ export default function PLongBooking() {
       </section>
 
       {/* ═══════════════════════ MAP / LOCATIONS ═══════════════════════ */}
-      <MapSection dark />
+      <MapSection dark hidePhone />
 
       <Script
         src="https://link.msgsndr.com/js/form_embed.js"

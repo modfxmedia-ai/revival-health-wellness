@@ -17,7 +17,7 @@ export default function PLongThankYouPage() {
     <>
       <LPHeader />
       <ThankYouContent />
-      <MapSection />
+      <MapSection hidePhone />
       <LPFooter />
     </>
   );

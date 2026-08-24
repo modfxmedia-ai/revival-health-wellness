@@ -150,7 +150,7 @@ const REASONS = [
 const FAQS = [
   {
     q: "What is XERF?",
-    a: "XERF is a non-invasive skin tightening, lifting, and rejuvenation platform used on both the face and body. It stimulates the skin\u2019s own collagen and elastin production to firm, lift, and smooth over time - without incisions, injections, or downtime.",
+    a: "XERF is a non-invasive skin tightening, lifting, and rejuvenation platform used on both the face and body. It stimulates the skin's own collagen and elastin production to firm, lift, and smooth over time - without incisions, injections, or downtime.",
   },
   {
     q: "What can XERF treat?",
@@ -158,7 +158,7 @@ const FAQS = [
   },
   {
     q: "Does XERF hurt?",
-    a: "No. Sessions are comfortable - patients typically describe a warm, relaxing sensation. No numbing cream is required and there\u2019s no post-treatment soreness.",
+    a: "No. Sessions are comfortable - patients typically describe a warm, relaxing sensation. No numbing cream is required and there's no post-treatment soreness.",
   },
   {
     q: "Is there any downtime?",
@@ -172,7 +172,7 @@ const FAQS = [
     q: "How do I claim the introductory offer?",
     a: "This introductory offer, a free consultation plus a complimentary Aura 3D Facial Analysis, is limited to the first 10 patients. Click any \u201cClaim My Free Consultation\u201d button on this page or call/text " +
       PHONE +
-      " to reserve your spot before it\u2019s gone.",
+      " to reserve your spot before it's gone.",
   },
 ];
 
@@ -323,7 +323,7 @@ export default function XerfOfferLanding() {
             >
               XERF is the FDA-cleared, non-invasive skin tightening treatment
               now available at Revival Health and Wellness. It stimulates your
-              body\u2019s own collagen and elastin at multiple skin depths for a
+              body's own collagen and elastin at multiple skin depths for a
               firmer, smoother, more lifted look - with{" "}
               <span className="font-semibold text-revival-gold">zero downtime</span>.
             </p>
@@ -1056,7 +1056,7 @@ export default function XerfOfferLanding() {
       </section>
 
       {/* ═══════════════════════ MAP / LOCATIONS ═══════════════════════ */}
-      <MapSection dark only="summerlin-nw" />
+      <MapSection dark only="summerlin-nw" hidePhone />
 
       {/* ═══════════════════════ FINAL CTA ═══════════════════════ */}
       <section className="relative overflow-hidden bg-revival-dark py-16 lg:py-24">

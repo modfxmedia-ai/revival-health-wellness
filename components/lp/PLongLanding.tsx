@@ -1643,7 +1643,7 @@ export default function PLongLanding() {
       </section>
 
       {/* ═══════════════════════ MAP / LOCATIONS ═══════════════════════ */}
-      <MapSection dark />
+      <MapSection dark hidePhone />
 
       {/* ═══════════════════════ FINAL CTA ═══════════════════════ */}
       <section className="relative overflow-hidden bg-revival-dark py-16 lg:py-24">

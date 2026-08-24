@@ -50,9 +50,11 @@ type MapSectionProps = {
   dark?: boolean;
   /** Restrict to a single location (e.g. a treatment only offered at one clinic). */
   only?: "henderson-sw" | "summerlin-nw";
+  /** Hide the per-location phone number (used on /lp/* ad landing pages, which have their own CTA phone number). */
+  hidePhone?: boolean;
 };
 
-export default function MapSection({ dark = false, only }: MapSectionProps) {
+export default function MapSection({ dark = false, only, hidePhone = false }: MapSectionProps) {
   const locations = only
     ? LOCATIONS.filter((l) =>
         only === "summerlin-nw" ? l.name.includes("Summerlin") : l.name.includes("Henderson")
@@ -169,14 +171,16 @@ export default function MapSection({ dark = false, only }: MapSectionProps) {
                       >
                         {l.address}
                       </span>
-                      <a
-                        href={`tel:${l.phone.replace(/[^\d]/g, "")}`}
-                        onClick={(e) => e.stopPropagation()}
-                        className="mt-1.5 inline-flex items-center gap-1.5 text-sm font-medium text-revival-gold transition-colors hover:text-[#8a5a2b]"
-                      >
-                        <Phone className="h-3.5 w-3.5" />
-                        {l.phone}
-                      </a>
+                      {hidePhone ? null : (
+                        <a
+                          href={`tel:${l.phone.replace(/[^\d]/g, "")}`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="mt-1.5 inline-flex items-center gap-1.5 text-sm font-medium text-revival-gold transition-colors hover:text-[#8a5a2b]"
+                        >
+                          <Phone className="h-3.5 w-3.5" />
+                          {l.phone}
+                        </a>
+                      )}
                     </span>
                   </button>
                 );
