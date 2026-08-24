@@ -95,14 +95,14 @@ const STEPS = [
         >
           {PHONE}
         </a>
-        . Only five introductory-priced appointments are available.
+        . Only five introductory priced appointments are available.
       </>
     ),
     icon: Phone,
   },
   {
     title: "Complete your scan & consultation",
-    time: "IN-OFFICE",
+    time: "IN OFFICE",
     text: "Get a full Styku 3D body scan and a comprehensive consultation with our medical team, plus a complimentary Lipolean injection the same visit.",
     icon: Timer,
   },
@@ -127,13 +127,13 @@ const REASONS = [
   },
   {
     icon: Route,
-    title: "Personalized, not cookie-cutter",
-    text: "Your plan is built around your body, your goals, and your real life, including night-shift schedules and irregular hours.",
+    title: "Personalized, not cookie cutter",
+    text: "Your plan is built around your body, your goals, and your real life, including night shift schedules and irregular hours.",
   },
   {
     icon: Zap,
     title: "Pairs with GLP-1, Phentermine & vitamins",
-    text: "Your personalized plan can pair with GLP-1 therapy, Phentermine, or vitamin injections for deeper, longer-lasting support.",
+    text: "Your personalized plan can pair with GLP-1 therapy, Phentermine, or vitamin injections for deeper, longer lasting support.",
   },
   {
     icon: Lock,
@@ -154,7 +154,7 @@ const FAQS = [
   },
   {
     q: "What is a Styku 3D body scan?",
-    a: "Styku is a 3D body-scanning technology that measures body fat percentage, lean muscle mass, and circumference in minutes, giving you a complete picture of your body composition beyond what a scale alone can show.",
+    a: "Styku is a 3D body scanning technology that measures body fat percentage, lean muscle mass, and circumference in minutes, giving you a complete picture of your body composition beyond what a scale alone can show.",
   },
   {
     q: "Is the Lipolean injection really included?",
@@ -162,7 +162,7 @@ const FAQS = [
   },
   {
     q: "How is this different from a typical diet program?",
-    a: "There's no generic meal plan or one-size-fits-all approach. Our medical team looks at your actual body composition and health baseline, then builds a personalized plan around your goals and your real-life schedule.",
+    a: "There's no generic meal plan or one size fits all approach. Our medical team looks at your actual body composition and health baseline, then builds a personalized plan around your goals and your real life schedule.",
   },
   {
     q: "How many of these $79 appointments are available?",
@@ -332,7 +332,7 @@ export default function WeightlossOfferLanding() {
               measure body fat, lean muscle, and circumference, then builds a
               personalized plan around your body and your goals, with{" "}
               <span className="font-semibold text-revival-gold">
-                zero cookie-cutter diets
+                zero cookie cutter diets
               </span>
               .
             </p>
@@ -388,7 +388,16 @@ export default function WeightlossOfferLanding() {
             transition={{ duration: 0.9, ease: EASE, delay: 0.15 }}
             className="relative"
           >
-            <div className="relative overflow-hidden rounded-[2rem] border border-revival-gold/25 bg-gradient-to-br from-revival-charcoal via-revival-dark to-black p-6 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.7)] sm:p-8">
+            <div className="relative overflow-hidden rounded-[2rem] border border-revival-gold/25 p-6 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.7)] sm:p-8">
+              <Image
+                src="/images/weight-loss/weightloss-offer-card-bg.jpg"
+                alt=""
+                aria-hidden
+                fill
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-revival-charcoal/90 via-revival-dark/88 to-black/94" />
               <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-revival-gold/20 blur-3xl" />
               <div className="pointer-events-none absolute -left-16 -bottom-16 h-56 w-56 rounded-full bg-revival-gold/10 blur-3xl" />
 
@@ -615,7 +624,7 @@ export default function WeightlossOfferLanding() {
               A complete weight loss experience, a $250 value for $79.
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-5 text-base font-light leading-relaxed text-revival-charcoal/80">
-              This is not another cookie-cutter weight loss program. Your
+              This is not another cookie cutter weight loss program. Your
               visit includes a full body composition analysis and a
               personalized plan built by our medical team.
             </motion.p>
@@ -739,7 +748,7 @@ export default function WeightlossOfferLanding() {
               Three simple steps to real answers about your body.
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-4 text-sm font-light text-revival-charcoal/70">
-              No high-pressure sales pitch. No mystery fees. Just a clear path
+              No high pressure sales pitch. No mystery fees. Just a clear path
               from &ldquo;I&rsquo;m interested&rdquo; to a plan you can actually follow.
             </motion.p>
           </motion.div>
@@ -909,34 +918,19 @@ export default function WeightlossOfferLanding() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease: EASE }}
-            className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8"
+            className="mx-auto max-w-sm"
           >
-            <figure className="relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
-              <div className="relative aspect-square w-full">
-                <Image
-                  src="/images/weight-loss/weightloss-before-after-1-v2.png"
-                  alt="Revival Health & Wellness weight loss patient before and after, lost 26.3 pounds"
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-contain"
-                />
-              </div>
+            <figure className="relative overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
+              <Image
+                src="/images/weight-loss/weightloss-before-after-1-v2.png"
+                alt="Revival Health & Wellness weight loss patient before and after, lost 26.3 pounds"
+                width={1291}
+                height={1218}
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="h-auto w-full object-contain"
+              />
               <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
                 Real Revival Patient &middot; Lost 26.3 lbs
-              </figcaption>
-            </figure>
-            <figure className="relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
-              <div className="relative aspect-square w-full">
-                <Image
-                  src="/images/weight-loss/weightloss-before-after-2-v2.png"
-                  alt="Weight loss before and after transformation"
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-contain"
-                />
-              </div>
-              <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
-                Before &amp; After
               </figcaption>
             </figure>
           </motion.div>
@@ -962,7 +956,7 @@ export default function WeightlossOfferLanding() {
               variants={fadeUp}
               className="mx-auto mt-4 max-w-2xl font-heading text-3xl leading-tight text-white sm:text-4xl"
             >
-              Only 5 introductory-priced appointments available.
+              Only 5 introductory priced appointments available.
             </motion.h2>
             <motion.p
               variants={fadeUp}

@@ -45,10 +45,10 @@ const fadeContainer = {
 };
 
 const HERO_BULLETS = [
-  "FDA-cleared HIFEM\u00ae technology",
+  "FDA cleared HIFEM\u00ae technology",
   "Fully clothed, zero downtime",
   "For men & women",
-  "~30 minutes per session",
+  "30 minutes per session",
 ];
 
 const OFFER_ITEMS = [
@@ -65,11 +65,11 @@ const STATS = [
 ];
 
 const KEY_BENEFITS = [
-  "Non-invasive, no surgery, no medication",
+  "Noninvasive, no surgery, no medication",
   "95% patient satisfaction",
   "Fully clothed, comfortable sessions",
   "Zero downtime, return to your day immediately",
-  "FDA-cleared HIFEM\u00ae technology",
+  "FDA cleared HIFEM\u00ae technology",
   "Effective for both men and women",
 ];
 
@@ -94,7 +94,7 @@ const STEPS = [
   },
   {
     title: "Try your $97 demo session",
-    time: "IN-OFFICE",
+    time: "IN OFFICE",
     text: "Experience a real Emsella session in the chair, fully clothed, about 30 minutes, zero downtime.",
     icon: Timer,
   },
@@ -109,8 +109,8 @@ const STEPS = [
 const REASONS = [
   {
     icon: Award,
-    title: "FDA-cleared technology",
-    text: "Emsella uses High-Intensity Focused Electromagnetic (HIFEM\u00ae) technology, cleared for pelvic floor strengthening in both men and women.",
+    title: "FDA cleared technology",
+    text: "Emsella uses High Intensity Focused Electromagnetic (HIFEM\u00ae) technology, cleared for pelvic floor strengthening in both men and women.",
   },
   {
     icon: UserCheck,
@@ -125,7 +125,7 @@ const REASONS = [
   {
     icon: Zap,
     title: "11,000 contractions per session",
-    text: "Each 30-minute session delivers the equivalent of thousands of Kegel exercises, far more than you could ever do on your own.",
+    text: "Each 30 minute session delivers the equivalent of thousands of Kegel exercises, far more than you could ever do on your own.",
   },
   {
     icon: Lock,
@@ -142,11 +142,11 @@ const REASONS = [
 const FAQS = [
   {
     q: "What is Emsella?",
-    a: "Emsella is an FDA-cleared, non-invasive treatment that uses High-Intensity Focused Electromagnetic (HIFEM\u00ae) technology to deliver thousands of Kegel-like muscle contractions in a single session, strengthening the pelvic floor for both men and women.",
+    a: "Emsella is an FDA cleared, noninvasive treatment that uses High Intensity Focused Electromagnetic (HIFEM\u00ae) technology to deliver thousands of Kegel like muscle contractions in a single session, strengthening the pelvic floor for both men and women.",
   },
   {
     q: "Is Emsella for men or women?",
-    a: "Both. Emsella is FDA-approved for men and women. For women, it's used to treat stress and urge urinary incontinence and restore pelvic floor strength (including postpartum). For men, it strengthens the pelvic floor muscles that support erectile function and sexual performance.",
+    a: "Both. Emsella is FDA approved for men and women. For women, it's used to treat stress and urge urinary incontinence and restore pelvic floor strength (including postpartum). For men, it strengthens the pelvic floor muscles that support erectile function and sexual performance.",
   },
   {
     q: "Does it hurt?",
@@ -308,7 +308,7 @@ export default function EmsellaOfferLanding() {
                 ["--reveal-delay" as string]: "100ms",
               }}
             >
-              Stop the leaks. Strengthen your pelvic floor -{" "}
+              Stop the leaks. Strengthen your pelvic floor,{" "}
               <span className="bg-gradient-to-r from-revival-gold to-revival-gold-light bg-clip-text italic text-transparent">
                 for men &amp; women.
               </span>
@@ -318,9 +318,9 @@ export default function EmsellaOfferLanding() {
               className="lp-reveal mt-5 max-w-xl text-base font-light leading-relaxed text-revival-cream/80 sm:text-lg"
               style={{ ["--reveal-delay" as string]: "200ms" }}
             >
-              Emsella is the FDA-cleared, non-invasive HIFEM® chair now
+              Emsella is the FDA cleared, noninvasive HIFEM® chair now
               available at Revival Health and Wellness. It delivers 11,000
-              Kegel-like contractions in a single 30-minute session,
+              Kegel like contractions in a single 30 minute session,
               strengthening the pelvic floor to treat incontinence in women
               and support erectile function in men, with{" "}
               <span className="font-semibold text-revival-gold">zero downtime</span>.
@@ -500,7 +500,7 @@ export default function EmsellaOfferLanding() {
             >
               <Image
                 src="/images/sexual-wellness/emsella-offer/emsella-for-women.png"
-                alt="Emsella for Women: improves urinary incontinence, supports pelvic floor strength & tone, enhances intimate wellness & confidence, non-invasive, quick & convenient"
+                alt="Emsella for Women: improves urinary incontinence, supports pelvic floor strength & tone, enhances intimate wellness & confidence, noninvasive, quick & convenient"
                 width={1369}
                 height={1149}
                 sizes="(min-width: 1024px) 45vw, 100vw"
@@ -514,7 +514,7 @@ export default function EmsellaOfferLanding() {
             >
               <Image
                 src="/images/sexual-wellness/emsella-offer/emsella-for-men.png"
-                alt="Emsella for Men: improves urinary incontinence, supports sexual health & performance, strengthens pelvic floor muscles, non-invasive, quick & convenient"
+                alt="Emsella for Men: improves urinary incontinence, supports sexual health & performance, strengthens pelvic floor muscles, noninvasive, quick & convenient"
                 width={1328}
                 height={1184}
                 sizes="(min-width: 1024px) 45vw, 100vw"
@@ -564,7 +564,7 @@ export default function EmsellaOfferLanding() {
               Rebuild pelvic floor strength without surgery or downtime.
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-5 text-base font-light leading-relaxed text-revival-charcoal/80">
-              One chair, one 30-minute session, thousands of contractions.
+              One chair, one 30 minute session, thousands of contractions.
               Emsella is calibrated for your goals, whether that&apos;s
               stopping leaks or supporting sexual performance.
             </motion.p>
@@ -621,9 +621,9 @@ export default function EmsellaOfferLanding() {
                 variants={fadeUp}
                 className="mt-5 text-base font-light leading-relaxed text-revival-cream/75"
               >
-                Emsella uses High-Intensity Focused Electromagnetic (HIFEM®)
-                technology to induce thousands of Kegel-like pelvic floor
-                muscle contractions in a single session, re-educating and
+                Emsella uses High Intensity Focused Electromagnetic (HIFEM®)
+                technology to induce thousands of Kegel like pelvic floor
+                muscle contractions in a single session, retraining and
                 strengthening muscles that regular exercise can&apos;t reach on
                 its own.
               </motion.p>
@@ -685,7 +685,7 @@ export default function EmsellaOfferLanding() {
               Three simple steps to a stronger pelvic floor.
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-4 text-sm font-light text-revival-charcoal/70">
-              No high-pressure sales pitch. No mystery fees. Just a clear path
+              No high pressure sales pitch. No mystery fees. Just a clear path
               from &ldquo;I&rsquo;m interested&rdquo; to real results.
             </motion.p>
           </motion.div>
@@ -829,64 +829,6 @@ export default function EmsellaOfferLanding() {
         </div>
       </section>
 
-      {/* ═══════════════════════ BEFORE / AFTER ═══════════════════════ */}
-      <section className="relative overflow-clip bg-white py-14 sm:py-20 lg:py-24">
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: EASE }}
-            className="mb-12 text-center"
-          >
-            <p className="text-tagline text-[0.7rem] text-revival-gold">
-              REAL RESULTS &middot; BEFORE &amp; AFTER
-            </p>
-            <h2 className="mt-3 font-heading text-3xl italic text-revival-dark sm:text-4xl lg:text-[2.75rem]">
-              A stronger, more supported pelvic floor for both.
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base font-light leading-relaxed text-revival-charcoal/80 sm:text-lg">
-              What a strengthened pelvic floor can look and feel like after a
-              course of Emsella sessions, for men and women.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.8, ease: EASE }}
-            className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8"
-          >
-            <figure className="relative overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
-              <Image
-                src="/images/sexual-wellness/emsella-offer/women-before-after-2.png"
-                alt="Emsella before and after for women, showing improved pelvic floor support"
-                width={1536}
-                height={1024}
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="h-auto w-full object-contain"
-              />
-              <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
-                Emsella For Women &middot; Before &amp; After
-              </figcaption>
-            </figure>
-            <figure className="relative overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
-              <Image
-                src="/images/sexual-wellness/emsella-offer/men-before-after-2.png"
-                alt="Emsella before and after for men, showing improved pelvic floor support"
-                width={1536}
-                height={1024}
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="h-auto w-full object-contain"
-              />
-              <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
-                Emsella For Men &middot; Before &amp; After
-              </figcaption>
-            </figure>
-          </motion.div>
-        </div>
-      </section>
-
       <GoogleReviewsSection bgClassName="bg-revival-warm-white" treatment="Emsella" />
 
       {/* ═══════════════════════ LIMITED SPOTS ═══════════════════════ */}
@@ -913,7 +855,7 @@ export default function EmsellaOfferLanding() {
               className="mx-auto mt-4 max-w-xl text-sm font-light leading-relaxed text-revival-cream/75"
             >
               Your free consultation and $97 Emsella demo session come with
-              zero obligation, just a real, fully-clothed session in the
+              zero obligation, just a real, fully clothed session in the
               chair to see how it feels.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-8">

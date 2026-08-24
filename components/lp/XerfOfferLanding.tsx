@@ -48,7 +48,7 @@ const HERO_BULLETS = [
   "No needles, no numbing, no downtime",
   "Boosts collagen & elastin naturally",
   "Works on face, neck, jawline & body",
-  "FDA-cleared radiofrequency technology",
+  "FDA cleared radiofrequency technology",
 ];
 
 const OFFER_ITEMS = [
@@ -59,7 +59,7 @@ const OFFER_ITEMS = [
 
 const STATS = [
   { value: "5.0★", label: "Average patient rating" },
-  { value: "500+", label: "Five-star reviews" },
+  { value: "500+", label: "Five star reviews" },
   { value: "0", label: "Needles or downtime" },
   { value: "FDA", label: "Cleared technology" },
 ];
@@ -77,9 +77,9 @@ const KEY_BENEFITS = [
   "Visible lifting and tightening on face, neck & body",
   "Improved skin tone, texture, and firmness",
   "Reduced fine lines and early wrinkles",
-  "Long-term collagen and elastin stimulation",
-  "Comfortable sessions - no numbing required",
-  "Zero downtime - return to your day immediately",
+  "Long term collagen and elastin stimulation",
+  "Comfortable sessions, no numbing required",
+  "Zero downtime, return to your day immediately",
 ];
 
 const STEPS = [
@@ -95,14 +95,14 @@ const STEPS = [
         >
           {PHONE}
         </a>
-        . Only 10 introductory-pricing spots are available.
+        . Only 10 introductory pricing spots are available.
       </>
     ),
     icon: Phone,
   },
   {
     title: "Aura 3D Facial Analysis",
-    time: "IN-OFFICE",
+    time: "IN OFFICE",
     text: "Your visit starts with our advanced Aura 3D Facial Analysis, so we can build a treatment plan customized to your skin.",
     icon: ScanFace,
   },
@@ -117,8 +117,8 @@ const STEPS = [
 const REASONS = [
   {
     icon: Award,
-    title: "FDA-cleared technology",
-    text: "XERF is a next-generation, dual-frequency radiofrequency platform - cleared for skin tightening and rejuvenation.",
+    title: "FDA cleared technology",
+    text: "XERF is a next generation, dual frequency radiofrequency platform cleared for skin tightening and rejuvenation.",
   },
   {
     icon: UserCheck,
@@ -128,12 +128,12 @@ const REASONS = [
   {
     icon: Shield,
     title: "No volume, no \u201cpillow face\u201d",
-    text: "XERF works underneath the skin to rebuild your own collagen. Nothing is injected or added - the lift comes from your own structure.",
+    text: "XERF works underneath the skin to rebuild your own collagen. Nothing is injected or added. The lift comes from your own structure.",
   },
   {
     icon: Zap,
     title: "Calibrated to your skin",
-    text: "Multiple depth and intensity levels let your provider precisely target your unique skin biology for predictable, natural-looking results.",
+    text: "Multiple depth and intensity levels let your provider precisely target your unique skin biology for predictable, natural looking results.",
   },
   {
     icon: Lock,
@@ -143,30 +143,30 @@ const REASONS = [
   {
     icon: Sparkles,
     title: "Aura 3D Facial Analysis included",
-    text: "Every consultation starts with an advanced 3D skin analysis, so your plan is built around your actual skin - not guesswork.",
+    text: "Every consultation starts with an advanced 3D skin analysis, so your plan is built around your actual skin, not guesswork.",
   },
 ];
 
 const FAQS = [
   {
     q: "What is XERF?",
-    a: "XERF is a non-invasive skin tightening, lifting, and rejuvenation platform used on both the face and body. It stimulates the skin's own collagen and elastin production to firm, lift, and smooth over time - without incisions, injections, or downtime.",
+    a: "XERF is a noninvasive skin tightening, lifting, and rejuvenation platform used on both the face and body. It stimulates the skin's own collagen and elastin production to firm, lift, and smooth over time, without incisions, injections, or downtime.",
   },
   {
     q: "What can XERF treat?",
-    a: "XERF is used for skin laxity and early signs of aging - including a soft jawline, neck crepiness (\u201cturkey neck\u201d), loose skin on the abdomen or arms, fine lines, and general loss of firmness.",
+    a: "XERF is used for skin laxity and early signs of aging, including a soft jawline, neck crepiness (\u201cturkey neck\u201d), loose skin on the abdomen or arms, fine lines, and general loss of firmness.",
   },
   {
     q: "Does XERF hurt?",
-    a: "No. Sessions are comfortable - patients typically describe a warm, relaxing sensation. No numbing cream is required and there's no post-treatment soreness.",
+    a: "No. Sessions are comfortable, and patients typically describe a warm, relaxing sensation. No numbing cream is required and there's no post treatment soreness.",
   },
   {
     q: "Is there any downtime?",
-    a: "None. XERF is a lunch-break treatment - you can return to work, exercise, and normal skincare immediately afterward.",
+    a: "None. XERF is a lunch break treatment. You can return to work, exercise, and normal skincare immediately afterward.",
   },
   {
     q: "How is this different from filler?",
-    a: "Filler adds volume. XERF adds none - it heats the deep support layers of your skin so your own collagen rebuilds, tightening and lifting from your own structure instead of filling you up.",
+    a: "Filler adds volume. XERF adds none. It heats the deep support layers of your skin so your own collagen rebuilds, tightening and lifting from your own structure instead of filling you up.",
   },
   {
     q: "How do I claim the introductory offer?",
@@ -311,7 +311,7 @@ export default function XerfOfferLanding() {
                 ["--reveal-delay" as string]: "100ms",
               }}
             >
-              Lift, firm & tighten -{" "}
+              Lift, firm & tighten,{" "}
               <span className="bg-gradient-to-r from-revival-gold to-revival-gold-light bg-clip-text italic text-transparent">
                 no needles, no downtime.
               </span>
@@ -321,10 +321,10 @@ export default function XerfOfferLanding() {
               className="lp-reveal mt-5 max-w-xl text-base font-light leading-relaxed text-revival-cream/80 sm:text-lg"
               style={{ ["--reveal-delay" as string]: "200ms" }}
             >
-              XERF is the FDA-cleared, non-invasive skin tightening treatment
+              XERF is the FDA cleared, noninvasive skin tightening treatment
               now available at Revival Health and Wellness. It stimulates your
               body's own collagen and elastin at multiple skin depths for a
-              firmer, smoother, more lifted look - with{" "}
+              firmer, smoother, more lifted look, with{" "}
               <span className="font-semibold text-revival-gold">zero downtime</span>.
             </p>
 
@@ -380,7 +380,16 @@ export default function XerfOfferLanding() {
             transition={{ duration: 0.9, ease: EASE, delay: 0.15 }}
             className="relative"
           >
-            <div className="relative overflow-hidden rounded-[2rem] border border-revival-gold/25 bg-gradient-to-br from-revival-charcoal via-revival-dark to-black p-6 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.7)] sm:p-8">
+            <div className="relative overflow-hidden rounded-[2rem] border border-revival-gold/25 p-6 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.7)] sm:p-8">
+              <Image
+                src="/images/xerf/xerf-offer-card-bg.avif"
+                alt=""
+                aria-hidden
+                fill
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-revival-charcoal/75 via-revival-dark/65 to-black/80" />
               <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-revival-gold/20 blur-3xl" />
               <div className="pointer-events-none absolute -left-16 -bottom-16 h-56 w-56 rounded-full bg-revival-gold/10 blur-3xl" />
 
@@ -404,7 +413,7 @@ export default function XerfOfferLanding() {
                   Consultation &amp; Aura 3D Analysis
                 </p>
                 <p className="mt-1 text-xs text-revival-cream/55">
-                  Plus special pre-launch pricing on treatment
+                  Plus special prelaunch pricing on treatment
                 </p>
               </div>
 
@@ -448,7 +457,7 @@ export default function XerfOfferLanding() {
           </span>
           <span className="flex items-center gap-1.5">
             <ShieldCheck className="h-3.5 w-3.5 text-revival-gold" />
-            FDA-cleared technology
+            FDA cleared technology
           </span>
           <span className="flex items-center gap-1.5">
             <Lock className="h-3.5 w-3.5 text-revival-gold" />
@@ -493,7 +502,7 @@ export default function XerfOfferLanding() {
               className="lp-reveal mt-4 font-heading text-3xl leading-tight text-white sm:text-4xl"
               style={{ "--reveal-delay": "100ms" } as React.CSSProperties}
             >
-              If any of these sound like you, this visit was built for you.
+              Any of these sound like you? This visit was built for you.
             </h2>
           </div>
 
@@ -559,12 +568,12 @@ export default function XerfOfferLanding() {
               variants={fadeUp}
               className="mt-4 font-heading text-3xl leading-tight text-revival-dark sm:text-4xl lg:text-[2.75rem]"
             >
-              Lift, firm, and rejuvenate - without needles or downtime.
+              Lift, firm, and rejuvenate, without needles or downtime.
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-5 text-base font-light leading-relaxed text-revival-charcoal/80">
-              One versatile platform, calibrated to your treatment zone - face,
+              One versatile platform, calibrated to your treatment zone: face,
               neck, décolletage, or body. Every session is comfortable, quick,
-              and downtime-free.
+              and downtime free.
             </motion.p>
             <motion.ul variants={fadeUp} className="mt-8 grid gap-3 sm:grid-cols-2">
               {KEY_BENEFITS.map((b, i) => (
@@ -619,8 +628,8 @@ export default function XerfOfferLanding() {
                 variants={fadeUp}
                 className="mt-5 text-base font-light leading-relaxed text-revival-cream/75"
               >
-                XERF is needle-free radiofrequency that works underneath the
-                skin - heating the deep support layers so your own collagen
+                XERF is needle free radiofrequency that works underneath the
+                skin, heating the deep support layers so your own collagen
                 rebuilds. No volume is added. The lift comes from your own
                 structure, not from filling you up.
               </motion.p>
@@ -628,10 +637,10 @@ export default function XerfOfferLanding() {
                 variants={fadeUp}
                 className="mt-4 text-base font-light leading-relaxed text-revival-cream/75"
               >
-                This state-of-the-art device offers different depth and
+                This state of the art device offers different depth and
                 intensity levels, so it can be precisely calibrated to your
-                unique skin biology - for predictable results, reduced
-                unnecessary thermal stress, and gradual, natural-looking
+                unique skin biology for predictable results, reduced
+                unnecessary thermal stress, and gradual, natural looking
                 tightening over time.
               </motion.p>
               <motion.div variants={fadeUp} className="mt-8">
@@ -686,7 +695,7 @@ export default function XerfOfferLanding() {
               className="lp-reveal mt-5 text-base font-light leading-relaxed text-revival-charcoal/80"
               style={{ "--reveal-delay": "200ms" } as React.CSSProperties}
             >
-              No actors, no stock footage - real XERF sessions filmed inside
+              No actors, no stock footage: real XERF sessions filmed inside
               our Las Vegas clinic.
             </p>
           </div>
@@ -701,7 +710,7 @@ export default function XerfOfferLanding() {
                 poster="/videos/xerf-offer-treatment-1-poster.jpg"
               />
               <p className="mt-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal/60">
-                Non-Surgical Lift
+                Nonsurgical Lift
               </p>
             </div>
             <div
@@ -734,10 +743,10 @@ export default function XerfOfferLanding() {
               REAL RESULTS · BEFORE &amp; AFTER
             </p>
             <h2 className="mt-3 font-heading text-3xl italic text-revival-dark sm:text-4xl lg:text-[2.75rem]">
-              Visible lift. Firmer skin. Same you - better.
+              Visible lift. Firmer skin. Same you, only better.
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-base font-light leading-relaxed text-revival-charcoal/80 sm:text-lg">
-              Real Revival patients through a series of XERF sessions - photographed in-clinic, unedited.
+              Real Revival patients through a series of XERF sessions, photographed in clinic, unedited.
             </p>
           </motion.div>
           <motion.div
@@ -748,27 +757,29 @@ export default function XerfOfferLanding() {
             className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8"
           >
             <figure className="relative overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
-              <Image
-                src="/images/xerf/xerf-before-after.jpg"
-                alt="XERF treatment before and after comparison"
-                width={962}
-                height={802}
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="h-auto w-full object-contain"
-              />
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src="/images/xerf/xerf-before-after.jpg"
+                  alt="XERF treatment before and after comparison"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
               <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
                 XERF · Before &amp; After
               </figcaption>
             </figure>
             <figure className="relative overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
-              <Image
-                src="/images/xerf/xerf-before-after-2.png"
-                alt="XERF treatment before and after comparison, patient two"
-                width={1461}
-                height={1076}
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="h-auto w-full object-contain"
-              />
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src="/images/xerf/xerf-before-after-2.png"
+                  alt="XERF treatment before and after comparison, patient two"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
               <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
                 XERF · Before &amp; After
               </figcaption>
@@ -797,7 +808,7 @@ export default function XerfOfferLanding() {
               Three simple steps to tighter, firmer skin.
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-4 text-sm font-light text-revival-charcoal/70">
-              No high-pressure sales pitch. No mystery fees. Just a clear path
+              No high pressure sales pitch. No mystery fees. Just a clear path
               from &ldquo;I&rsquo;m interested&rdquo; to visibly tighter skin.
             </motion.p>
           </motion.div>
@@ -966,7 +977,7 @@ export default function XerfOfferLanding() {
               variants={fadeUp}
               className="mx-auto mt-4 max-w-xl text-sm font-light leading-relaxed text-revival-cream/75"
             >
-              Once those spots are filled, this pre-launch pricing goes away.
+              Once those spots are filled, this prelaunch pricing goes away.
               Your free consultation and Aura 3D Facial Analysis take about 45
               minutes and come with zero obligation.
             </motion.p>
