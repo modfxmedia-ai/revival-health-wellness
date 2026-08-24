@@ -700,7 +700,7 @@ export default function XerfOfferLanding() {
             </p>
           </div>
 
-          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-10 sm:grid-cols-2">
+          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-10 sm:grid-cols-3">
             <div
               className="lp-reveal"
               style={{ "--reveal-delay": "250ms" } as React.CSSProperties}
@@ -723,6 +723,18 @@ export default function XerfOfferLanding() {
               />
               <p className="mt-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal/60">
                 Inside The Treatment Room
+              </p>
+            </div>
+            <div
+              className="lp-reveal"
+              style={{ "--reveal-delay": "450ms" } as React.CSSProperties}
+            >
+              <PortraitVideoCard
+                src="/videos/xerf-offer-testimonial.mp4"
+                poster="/videos/xerf-offer-testimonial-poster.jpg"
+              />
+              <p className="mt-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal/60">
+                Real Patient Treatment
               </p>
             </div>
           </div>
