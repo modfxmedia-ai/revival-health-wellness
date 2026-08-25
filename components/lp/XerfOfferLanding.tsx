@@ -24,7 +24,7 @@ import {
   Zap,
 } from "lucide-react";
 import { telHref } from "@/lib/content/clinics";
-import { TEAM } from "@/components/about/AboutSections";
+
 import XerfLeadFormModal from "@/components/lp/XerfLeadFormModal";
 import GoogleReviewsSection from "@/components/lp/GoogleReviewsSection";
 import MapSection from "@/components/layout/MapSection";
@@ -33,7 +33,6 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 const PHONE = "+1 725-257-5596";
 const CTA_LABEL = "Claim My Free Consultation";
 const CTA_SHORT = "Free Consult";
-const PROVIDER = TEAM.find((m) => m.name === "Sanaz Salmani")!;
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -89,7 +88,7 @@ const STEPS = [
         >
           {PHONE}
         </a>
-        . Only 10 introductory pricing spots are available.
+        . Only 10 pricing spots are available.
       </>
     ),
     icon: Phone,
@@ -132,7 +131,7 @@ const REASONS = [
   {
     icon: Lock,
     title: "No pressure, no contracts",
-    text: "Free consultation. Transparent, introductory pricing for the first 10 patients. You decide when you're ready.",
+    text: "Free consultation. Transparent pricing for the first 10 patients. You decide when you're ready.",
   },
   {
     icon: Sparkles,
@@ -163,8 +162,8 @@ const FAQS = [
     a: "Filler adds volume. XERF adds none. It heats the deep support layers of your skin so your own collagen rebuilds, tightening and lifting from your own structure instead of filling you up.",
   },
   {
-    q: "How do I claim the introductory offer?",
-    a: "This introductory offer, a free consultation plus a complimentary Aura 3D Facial Analysis, is limited to the first 10 patients. Click any \u201cClaim My Free Consultation\u201d button on this page or call/text " +
+    q: "How do I claim the offer?",
+    a: "This offer, a free consultation plus a complimentary Aura 3D Facial Analysis, is limited to the first 10 patients. Click any \u201cClaim My Free Consultation\u201d button on this page or call/text " +
       PHONE +
       " to reserve your spot before it's gone.",
   },
@@ -241,7 +240,7 @@ function OfferBadge({ className = "" }: { className?: string }) {
       className={`inline-flex items-center gap-1.5 rounded-full border border-revival-gold/50 bg-revival-dark/80 px-3.5 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-revival-gold shadow-[0_10px_28px_-10px_rgba(201,169,110,0.6)] ${className}`}
     >
       <Gift className="h-3 w-3" />
-      Introductory Pricing &middot; First 10 Patients
+      Pricing &middot; First 10 Patients
     </span>
   );
 }
@@ -258,7 +257,7 @@ export default function XerfOfferLanding() {
       <div className="sticky top-16 z-40 overflow-hidden border-b border-revival-gold/25 bg-gradient-to-r from-revival-gold to-revival-gold-light py-2 text-revival-dark">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-2 gap-y-1 px-4 text-center text-xs font-semibold uppercase tracking-[0.08em] sm:text-sm">
           <Gift className="h-3.5 w-3.5 shrink-0" />
-          Introductory Pricing &middot; First 10 Patients Only
+          First 10 Patients Only
           <span className="hidden sm:inline">Claim your free consultation</span>
           <button
             type="button"
@@ -295,9 +294,22 @@ export default function XerfOfferLanding() {
               this stack (see globals.css for details).
               mobile order-1 / desktop col-1 row-1 */}
           <div className="order-1 text-center lg:order-none lg:col-start-1 lg:row-start-1 lg:text-left">
-            <div className="lp-reveal" style={{ "--reveal-delay": "0ms" } as React.CSSProperties}>
-              <OfferBadge />
-            </div>
+            <motion.div
+              initial={{ scale: 0, rotate: -12 }}
+              animate={{ scale: 1, rotate: -8 }}
+              transition={{ type: "spring", stiffness: 260, damping: 15, delay: 0.7 }}
+              className="relative mx-auto h-16 w-16 lg:mx-0"
+            >
+              <span className="absolute inset-0 animate-ping rounded-full bg-revival-gold/40" />
+              <div className="relative flex h-16 w-16 flex-col items-center justify-center rounded-full bg-gradient-to-br from-revival-gold to-revival-gold-light text-center shadow-[0_25px_60px_-10px_rgba(201,169,110,0.85)] ring-4 ring-revival-dark">
+                <span className="font-heading text-base leading-none text-revival-dark">
+                  First 10
+                </span>
+                <span className="mt-1 text-[0.5rem] font-semibold uppercase tracking-[0.1em] text-revival-dark/80">
+                  Patients
+                </span>
+              </div>
+            </motion.div>
 
             <h1
               className="lp-reveal mt-5 font-heading leading-[1.03] text-white"
@@ -342,27 +354,10 @@ export default function XerfOfferLanding() {
           {/* RIGHT: Video. mobile order-2 / desktop col-2 spanning all rows */}
           <div className="relative order-2 flex flex-col items-center gap-8 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-3">
             <motion.div
-              initial={{ scale: 0, rotate: -12 }}
-              animate={{ scale: 1, rotate: -8 }}
-              transition={{ type: "spring", stiffness: 260, damping: 15, delay: 0.7 }}
-              className="absolute -top-5 right-2 z-10 sm:-right-4 sm:-top-6"
-            >
-              <span className="absolute inset-0 animate-ping rounded-full bg-revival-gold/40" />
-              <div className="relative flex h-20 w-20 flex-col items-center justify-center rounded-full bg-gradient-to-br from-revival-gold to-revival-gold-light text-center shadow-[0_25px_60px_-10px_rgba(201,169,110,0.85)] ring-4 ring-revival-dark sm:h-24 sm:w-24">
-                <span className="font-heading text-xl leading-none text-revival-dark sm:text-2xl">
-                  First 10
-                </span>
-                <span className="mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.1em] text-revival-dark/80">
-                  Patients
-                </span>
-              </div>
-            </motion.div>
-
-            <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
-              className="w-full max-w-[300px]"
+              className="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]"
             >
               <PortraitVideoCard
                 src="/videos/xerf-offer-symptoms.mp4"
@@ -419,7 +414,7 @@ export default function XerfOfferLanding() {
               className="lp-reveal mt-4 text-xs text-revival-cream/50"
               style={{ ["--reveal-delay" as string]: "500ms" }}
             >
-              *Introductory pricing limited to the first 10 patients. New patients only.
+              *Pricing limited to the first 10 patients. New patients only.
             </p>
           </div>
         </div>
@@ -472,41 +467,93 @@ export default function XerfOfferLanding() {
       <section className="bg-revival-dark py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
+            <h2
+              className="lp-reveal font-heading text-3xl leading-tight text-white sm:text-4xl"
+              style={{ "--reveal-delay": "100ms" } as React.CSSProperties}
+            >
+              Recognize any of these? You&rsquo;re exactly who XERF was made for.
+            </h2>
+            <div
+              className="lp-reveal mt-6"
+              style={{ "--reveal-delay": "150ms" } as React.CSSProperties}
+            >
+              <button
+                type="button"
+                onClick={openModal}
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.7)] transition-transform duration-300 hover:scale-[1.03]"
+              >
+                Book Your Free Consultation
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2">
+            {SYMPTOMS.map((item, i) => (
+              <div
+                key={item}
+                className="lp-reveal flex items-start justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-center"
+                style={{ "--reveal-delay": `${150 + i * 60}ms` } as React.CSSProperties}
+              >
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-revival-gold" />
+                <p className="text-sm font-light leading-relaxed text-revival-cream/85">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ SEE XERF IN ACTION ═══════════════════════ */}
+      <section className="bg-white py-16 lg:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
             <span
               className="lp-reveal text-tagline text-xs text-revival-gold"
               style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
             >
-              Built For You If&hellip;
+              Real Treatment Footage
             </span>
             <h2
-              className="lp-reveal mt-4 font-heading text-3xl leading-tight text-white sm:text-4xl"
+              className="lp-reveal mt-4 font-heading text-3xl leading-tight text-revival-dark sm:text-4xl"
               style={{ "--reveal-delay": "100ms" } as React.CSSProperties}
             >
-              Any of these sound like you? This visit was built for you.
+              See XERF in action, inside our treatment room.
             </h2>
+            <p
+              className="lp-reveal mt-5 text-base font-light leading-relaxed text-revival-charcoal/80"
+              style={{ "--reveal-delay": "200ms" } as React.CSSProperties}
+            >
+              No actors, no stock footage: real XERF sessions filmed inside
+              our Las Vegas clinic.
+            </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:gap-12">
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {SYMPTOMS.map((item, i) => (
-                <div
-                  key={item}
-                  className="lp-reveal flex items-start justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-center lg:justify-start lg:text-left"
-                  style={{ "--reveal-delay": `${150 + i * 60}ms` } as React.CSSProperties}
-                >
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-revival-gold" />
-                  <p className="text-sm font-light leading-relaxed text-revival-cream/85">
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="lp-reveal" style={{ "--reveal-delay": "200ms" } as React.CSSProperties}>
+          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-10 sm:grid-cols-2">
+            <div
+              className="lp-reveal"
+              style={{ "--reveal-delay": "250ms" } as React.CSSProperties}
+            >
               <PortraitVideoCard
-                src="/videos/xerf-offer-testimonial.mp4"
-                poster="/videos/xerf-offer-testimonial-poster.jpg"
+                src="/videos/xerf-offer-treatment-1.mp4"
+                poster="/videos/xerf-offer-treatment-1-poster.jpg"
               />
+              <p className="mt-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal/60">
+                Nonsurgical Lift
+              </p>
+            </div>
+            <div
+              className="lp-reveal"
+              style={{ "--reveal-delay": "350ms" } as React.CSSProperties}
+            >
+              <PortraitVideoCard
+                src="/videos/xerf-offer-treatment-2.mp4"
+                poster="/videos/xerf-offer-treatment-2-poster.jpg"
+              />
+              <p className="mt-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal/60">
+                Inside The Treatment Room
+              </p>
             </div>
           </div>
         </div>
@@ -656,60 +703,6 @@ export default function XerfOfferLanding() {
         </div>
       </section>
 
-      {/* ═══════════════════════ SEE XERF IN ACTION ═══════════════════════ */}
-      <section className="bg-white py-16 lg:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <span
-              className="lp-reveal text-tagline text-xs text-revival-gold"
-              style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
-            >
-              Real Treatment Footage
-            </span>
-            <h2
-              className="lp-reveal mt-4 font-heading text-3xl leading-tight text-revival-dark sm:text-4xl"
-              style={{ "--reveal-delay": "100ms" } as React.CSSProperties}
-            >
-              See XERF in action, inside our treatment room.
-            </h2>
-            <p
-              className="lp-reveal mt-5 text-base font-light leading-relaxed text-revival-charcoal/80"
-              style={{ "--reveal-delay": "200ms" } as React.CSSProperties}
-            >
-              No actors, no stock footage: real XERF sessions filmed inside
-              our Las Vegas clinic.
-            </p>
-          </div>
-
-          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-10 sm:grid-cols-2">
-            <div
-              className="lp-reveal"
-              style={{ "--reveal-delay": "250ms" } as React.CSSProperties}
-            >
-              <PortraitVideoCard
-                src="/videos/xerf-offer-treatment-1.mp4"
-                poster="/videos/xerf-offer-treatment-1-poster.jpg"
-              />
-              <p className="mt-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal/60">
-                Nonsurgical Lift
-              </p>
-            </div>
-            <div
-              className="lp-reveal"
-              style={{ "--reveal-delay": "350ms" } as React.CSSProperties}
-            >
-              <PortraitVideoCard
-                src="/videos/xerf-offer-treatment-2.mp4"
-                poster="/videos/xerf-offer-treatment-2-poster.jpg"
-              />
-              <p className="mt-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal/60">
-                Inside The Treatment Room
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════ BEFORE / AFTER ═══════════════════════ */}
       <section className="relative overflow-clip bg-revival-warm-white py-14 sm:py-20 lg:py-24">
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -788,10 +781,6 @@ export default function XerfOfferLanding() {
             >
               Three simple steps to tighter, firmer skin.
             </motion.h2>
-            <motion.p variants={fadeUp} className="mt-4 text-sm font-light text-revival-charcoal/70">
-              No high pressure sales pitch. No mystery fees. Just a clear path
-              from &ldquo;I&rsquo;m interested&rdquo; to visibly tighter skin.
-            </motion.p>
           </motion.div>
 
           <motion.div
@@ -878,61 +867,6 @@ export default function XerfOfferLanding() {
         </div>
       </section>
 
-      {/* ═══════════════════════ MEET THE TEAM ═══════════════════════ */}
-      <section className="bg-revival-dark py-16 lg:py-24">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:px-8">
-          <div
-            className="lp-reveal relative mx-auto w-full max-w-xs lg:max-w-none"
-            style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
-          >
-            <div className="relative overflow-hidden rounded-[2rem] border border-revival-gold/20 bg-white/[0.03] shadow-[0_40px_100px_-30px_rgba(0,0,0,0.6)]">
-              <Image
-                src={PROVIDER.image}
-                alt={`${PROVIDER.name}, ${PROVIDER.role} at Revival Health & Wellness`}
-                width={650}
-                height={723}
-                sizes="(min-width: 1024px) 35vw, 80vw"
-                className="h-auto w-full object-cover"
-              />
-            </div>
-          </div>
-
-          <div className="text-center lg:text-left">
-            <span
-              className="lp-reveal text-tagline text-xs text-revival-gold"
-              style={{ "--reveal-delay": "100ms" } as React.CSSProperties}
-            >
-              Meet The Team
-            </span>
-            <h2
-              className="lp-reveal mt-4 font-heading text-3xl leading-tight text-white sm:text-4xl"
-              style={{ "--reveal-delay": "200ms" } as React.CSSProperties}
-            >
-              {PROVIDER.name}, {PROVIDER.role}
-            </h2>
-            <p
-              className="lp-reveal mt-5 text-base font-light leading-relaxed text-revival-cream/75"
-              style={{ "--reveal-delay": "300ms" } as React.CSSProperties}
-            >
-              {PROVIDER.bio}
-            </p>
-            <div
-              className="lp-reveal mt-8"
-              style={{ "--reveal-delay": "400ms" } as React.CSSProperties}
-            >
-              <button
-                type="button"
-                onClick={openModal}
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.7)] transition-transform duration-300 hover:scale-[1.03]"
-              >
-                Book Your Consultation With {PROVIDER.name.split(" ")[0]}
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <GoogleReviewsSection treatment="XERF" />
 
       {/* ═══════════════════════ LIMITED SPOTS ═══════════════════════ */}
@@ -952,7 +886,7 @@ export default function XerfOfferLanding() {
               variants={fadeUp}
               className="mx-auto mt-4 max-w-2xl font-heading text-3xl leading-tight text-white sm:text-4xl"
             >
-              Introductory pricing is capped at the first 10 patients.
+              Pricing is capped at the first 10 patients.
             </motion.h2>
             <motion.p
               variants={fadeUp}
@@ -1080,7 +1014,7 @@ export default function XerfOfferLanding() {
           </h2>
           <p className="mt-5 text-base font-light leading-relaxed text-revival-cream/80 sm:text-lg">
             A free consultation plus a complimentary Aura 3D Facial Analysis,
-            limited to the first 10 patients at introductory pricing. No
+            limited to the first 10 patients. No
             needles, no numbing, no downtime.
           </p>
 
@@ -1107,7 +1041,7 @@ export default function XerfOfferLanding() {
               <MapPin className="h-3.5 w-3.5" />
               Summerlin/NW
             </span>
-            <span>*Introductory pricing limited to the first 10 patients.</span>
+            <span>*Pricing limited to the first 10 patients.</span>
           </p>
         </motion.div>
       </section>
