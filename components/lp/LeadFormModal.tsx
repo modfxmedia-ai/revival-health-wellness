@@ -23,9 +23,9 @@ const FORM_NAME = "\uD83D\uDD35 P-long LP( Vercel)  FORM ";
  * exit animation resolves and the element unmounts).
  *
  * On a successful form submission (detected via the LeadConnector iframe's
- * postMessage events), the user is routed to the booking calendar page
- * (/lp/p-long/book/) so a time slot can only be booked after the lead form
- * has actually been filled out and submitted.
+ * postMessage events), the user is routed to the thank-you page
+ * (/lp/p-long/thank-you/), which includes a "Book My Appointment Now"
+ * button linking out to the Zenoti booking widget.
  */
 export default function LeadFormModal({
   open,
@@ -71,7 +71,7 @@ export default function LeadFormModal({
 
       if (isFormEvent && isSuccess) {
         onClose();
-        router.push("/lp/p-long/book/");
+        router.push("/lp/p-long/thank-you/");
       }
     };
     window.addEventListener("message", onMessage);
