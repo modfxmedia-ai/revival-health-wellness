@@ -234,17 +234,6 @@ function PortraitVideoCard({ src, poster }: { src: string; poster: string }) {
   );
 }
 
-function OfferBadge({ className = "" }: { className?: string }) {
-  return (
-    <span
-      className={`inline-flex items-center gap-1.5 rounded-full border border-revival-gold/50 bg-revival-dark/80 px-3.5 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-revival-gold shadow-[0_10px_28px_-10px_rgba(201,169,110,0.6)] ${className}`}
-    >
-      <Gift className="h-3 w-3" />
-      Pricing &middot; First 10 Patients
-    </span>
-  );
-}
-
 export default function XerfOfferLanding() {
   const [modalOpen, setModalOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -1005,7 +994,6 @@ export default function XerfOfferLanding() {
           transition={{ duration: 0.8, ease: EASE }}
           className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8"
         >
-          <OfferBadge className="mx-auto" />
           <h2 className="mt-5 font-heading text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
             Your skin, lifted.{" "}
             <span className="bg-gradient-to-r from-revival-gold to-revival-gold-light bg-clip-text italic text-transparent">
