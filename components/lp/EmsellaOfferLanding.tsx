@@ -1004,7 +1004,7 @@ export default function EmsellaOfferLanding() {
           <h2 className="mt-5 font-heading text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
             Stronger pelvic floor.{" "}
             <span className="bg-gradient-to-r from-revival-gold to-revival-gold-light bg-clip-text italic text-transparent">
-              For men &amp; women.
+              For men &amp; women, also great for sexual wellness!
             </span>
           </h2>
           <p className="mt-5 text-base font-light leading-relaxed text-revival-cream/80 sm:text-lg">
