@@ -13,6 +13,8 @@ import GoogleReviewsSection from "@/components/lp/GoogleReviewsSection";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const PHONE = "+1 725-257-5596";
+const BOOKING_URL =
+  "https://revivalhealth.zenoti.com/webstoreNew/services/2227b344-503a-4b8c-bdcf-314448f38e2f";
 
 const NEXT_STEPS = [
   {
@@ -127,11 +129,23 @@ export default function XerfThankYouContent() {
             className="mt-12"
           >
             <p className="text-sm text-revival-cream/60">
+              Want to lock in your visit right now?
+            </p>
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.7)] transition-transform hover:scale-[1.04]"
+            >
+              <CalendarCheck className="h-4 w-4" />
+              Book My Appointment Now
+            </a>
+            <p className="mt-6 text-sm text-revival-cream/60">
               Need to reach us sooner? Call or text us directly:
             </p>
             <a
               href={telHref(PHONE)}
-              className="mt-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.7)] transition-transform hover:scale-[1.04]"
+              className="mt-3 inline-flex items-center gap-2 rounded-full border border-revival-gold/40 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-revival-gold transition-colors hover:bg-revival-gold/10"
             >
               <Phone className="h-4 w-4" />
               {PHONE}

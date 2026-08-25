@@ -51,12 +51,6 @@ const HERO_BULLETS = [
   "FDA cleared radiofrequency technology",
 ];
 
-const OFFER_ITEMS = [
-  "Free Consultation",
-  "Complimentary Aura 3D Facial Analysis",
-  "Personalized XERF Treatment Plan",
-];
-
 const STATS = [
   { value: "5.0★", label: "Average patient rating" },
   { value: "500+", label: "Five star reviews" },
@@ -244,7 +238,7 @@ function PortraitVideoCard({ src, poster }: { src: string; poster: string }) {
 function OfferBadge({ className = "" }: { className?: string }) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border border-revival-gold/40 bg-revival-gold/10 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-revival-gold ${className}`}
+      className={`inline-flex items-center gap-1.5 rounded-full border border-revival-gold/50 bg-revival-dark/80 px-3.5 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-revival-gold shadow-[0_10px_28px_-10px_rgba(201,169,110,0.6)] ${className}`}
     >
       <Gift className="h-3 w-3" />
       Introductory Pricing &middot; First 10 Patients
@@ -299,7 +293,7 @@ export default function XerfOfferLanding() {
           {/* LEFT: Copy, uses plain CSS keyframe `.lp-reveal` reveal instead
               of framer-motion variants, which have proven unreliable in
               this stack (see globals.css for details). */}
-          <div>
+          <div className="text-center lg:text-left">
             <div className="lp-reveal" style={{ "--reveal-delay": "0ms" } as React.CSSProperties}>
               <OfferBadge />
             </div>
@@ -318,7 +312,7 @@ export default function XerfOfferLanding() {
             </h1>
 
             <p
-              className="lp-reveal mt-5 max-w-xl text-base font-light leading-relaxed text-revival-cream/80 sm:text-lg"
+              className="lp-reveal mx-auto mt-5 max-w-xl text-base font-light leading-relaxed text-revival-cream/80 sm:text-lg lg:mx-0"
               style={{ ["--reveal-delay" as string]: "200ms" }}
             >
               XERF is the FDA cleared, noninvasive skin tightening treatment
@@ -335,7 +329,7 @@ export default function XerfOfferLanding() {
               {HERO_BULLETS.map((b) => (
                 <li
                   key={b}
-                  className="flex items-center gap-2 text-sm font-medium text-revival-cream/90"
+                  className="flex items-center justify-center gap-2 text-sm font-medium text-revival-cream/90 lg:justify-start"
                 >
                   <CheckCircle2 className="h-4 w-4 shrink-0 text-revival-gold" />
                   {b}
@@ -344,7 +338,26 @@ export default function XerfOfferLanding() {
             </ul>
 
             <div
-              className="lp-reveal mt-8 flex flex-wrap items-center gap-3"
+              className="lp-reveal mt-6 flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-revival-gold/30 bg-revival-gold/10 px-5 py-4 text-center lg:justify-start lg:text-left"
+              style={{ ["--reveal-delay" as string]: "350ms" }}
+            >
+              <span className="font-heading text-5xl leading-none text-white sm:text-6xl">
+                <span className="bg-gradient-to-b from-white to-revival-gold-light bg-clip-text text-transparent">
+                  FREE
+                </span>
+              </span>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.12em] text-revival-cream/90">
+                  Consultation &amp; Aura 3D Analysis
+                </p>
+                <p className="mt-1 text-xs text-revival-gold">
+                  First 10 patients only &middot; personalized XERF treatment plan included
+                </p>
+              </div>
+            </div>
+
+            <div
+              className="lp-reveal mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start"
               style={{ ["--reveal-delay" as string]: "400ms" }}
             >
               <button
@@ -373,75 +386,37 @@ export default function XerfOfferLanding() {
             </p>
           </div>
 
-          {/* RIGHT: Offer card */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: EASE, delay: 0.15 }}
-            className="relative"
-          >
-            <div className="relative overflow-hidden rounded-[2rem] border border-revival-gold/25 p-6 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.7)] sm:p-8">
-              <Image
-                src="/images/xerf/xerf-offer-card-bg.avif"
-                alt=""
-                aria-hidden
-                fill
-                sizes="(min-width: 1024px) 40vw, 90vw"
-                className="object-cover"
+          {/* RIGHT: Video + offer card */}
+          <div className="relative flex flex-col items-center gap-8">
+            <motion.div
+              initial={{ scale: 0, rotate: -12 }}
+              animate={{ scale: 1, rotate: -8 }}
+              transition={{ type: "spring", stiffness: 260, damping: 15, delay: 0.7 }}
+              className="absolute -top-5 right-2 z-10 sm:-right-4 sm:-top-6"
+            >
+              <span className="absolute inset-0 animate-ping rounded-full bg-revival-gold/40" />
+              <div className="relative flex h-20 w-20 flex-col items-center justify-center rounded-full bg-gradient-to-br from-revival-gold to-revival-gold-light text-center shadow-[0_25px_60px_-10px_rgba(201,169,110,0.85)] ring-4 ring-revival-dark sm:h-24 sm:w-24">
+                <span className="font-heading text-xl leading-none text-revival-dark sm:text-2xl">
+                  First 10
+                </span>
+                <span className="mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.1em] text-revival-dark/80">
+                  Patients
+                </span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
+              className="w-full max-w-[300px]"
+            >
+              <PortraitVideoCard
+                src="/videos/xerf-offer-symptoms.mp4"
+                poster="/videos/xerf-offer-symptoms-poster.jpg"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-revival-charcoal/75 via-revival-dark/65 to-black/80" />
-              <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-revival-gold/20 blur-3xl" />
-              <div className="pointer-events-none absolute -left-16 -bottom-16 h-56 w-56 rounded-full bg-revival-gold/10 blur-3xl" />
-
-              <div className="relative flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-revival-gold/40 bg-revival-gold/10 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-revival-gold">
-                  <Sparkles className="h-3 w-3" />
-                  XERF Introductory Offer
-                </span>
-                <span className="rounded-full bg-revival-gold/15 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-revival-gold">
-                  First 10 Only
-                </span>
-              </div>
-
-              <div className="relative mt-6 text-center">
-                <p className="font-heading text-[3.5rem] leading-none text-white sm:text-[4.5rem]">
-                  <span className="bg-gradient-to-b from-white to-revival-gold-light bg-clip-text text-transparent">
-                    FREE
-                  </span>
-                </p>
-                <p className="mt-1 text-sm font-semibold uppercase tracking-[0.14em] text-revival-cream/85">
-                  Consultation &amp; Aura 3D Analysis
-                </p>
-                <p className="mt-1 text-xs text-revival-cream/55">
-                  Plus special prelaunch pricing on treatment
-                </p>
-              </div>
-
-              <ul className="relative mt-6 space-y-3 border-y border-white/10 py-5">
-                {OFFER_ITEMS.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-center gap-2 text-sm text-revival-cream/85"
-                  >
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-revival-gold" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <button
-                type="button"
-                onClick={openModal}
-                className="group relative mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.75)] transition-transform duration-300 hover:scale-[1.02]"
-              >
-                Reserve My Spot
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-              </button>
-              <p className="mt-3 text-center text-[0.7rem] uppercase tracking-[0.14em] text-revival-cream/50">
-                Only 10 spots &middot; Book today
-              </p>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Trust strip */}
@@ -511,7 +486,7 @@ export default function XerfOfferLanding() {
               {SYMPTOMS.map((item, i) => (
                 <div
                   key={item}
-                  className="lp-reveal flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4"
+                  className="lp-reveal flex items-start justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-center lg:justify-start lg:text-left"
                   style={{ "--reveal-delay": `${150 + i * 60}ms` } as React.CSSProperties}
                 >
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-revival-gold" />
@@ -524,8 +499,8 @@ export default function XerfOfferLanding() {
 
             <div className="lp-reveal" style={{ "--reveal-delay": "200ms" } as React.CSSProperties}>
               <PortraitVideoCard
-                src="/videos/xerf-offer-symptoms.mp4"
-                poster="/videos/xerf-offer-symptoms-poster.jpg"
+                src="/videos/xerf-offer-testimonial.mp4"
+                poster="/videos/xerf-offer-testimonial-poster.jpg"
               />
             </div>
           </div>
@@ -559,7 +534,7 @@ export default function XerfOfferLanding() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="order-1 lg:order-2"
+            className="order-1 text-center lg:order-2 lg:text-left"
           >
             <motion.span variants={fadeUp} className="text-tagline text-xs text-revival-gold">
               Key Benefits of XERF
@@ -579,7 +554,7 @@ export default function XerfOfferLanding() {
               {KEY_BENEFITS.map((b, i) => (
                 <li
                   key={b}
-                  className="flex items-start gap-3 text-sm text-revival-charcoal/80 sm:text-[0.95rem]"
+                  className="flex items-start justify-center gap-3 text-sm text-revival-charcoal/80 sm:text-[0.95rem] lg:justify-start"
                 >
                   <span
                     aria-hidden
@@ -614,6 +589,7 @@ export default function XerfOfferLanding() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
+              className="text-center lg:text-left"
             >
               <motion.span variants={fadeUp} className="text-tagline text-xs text-revival-gold">
                 How XERF Works
@@ -700,7 +676,7 @@ export default function XerfOfferLanding() {
             </p>
           </div>
 
-          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-10 sm:grid-cols-3">
+          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-10 sm:grid-cols-2">
             <div
               className="lp-reveal"
               style={{ "--reveal-delay": "250ms" } as React.CSSProperties}
@@ -723,18 +699,6 @@ export default function XerfOfferLanding() {
               />
               <p className="mt-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal/60">
                 Inside The Treatment Room
-              </p>
-            </div>
-            <div
-              className="lp-reveal"
-              style={{ "--reveal-delay": "450ms" } as React.CSSProperties}
-            >
-              <PortraitVideoCard
-                src="/videos/xerf-offer-testimonial.mp4"
-                poster="/videos/xerf-offer-testimonial-poster.jpg"
-              />
-              <p className="mt-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal/60">
-                Real Patient Treatment
               </p>
             </div>
           </div>
@@ -836,7 +800,7 @@ export default function XerfOfferLanding() {
               <motion.div
                 key={s.title}
                 variants={fadeUp}
-                className="relative rounded-[1.5rem] border border-revival-gold/15 bg-revival-warm-white p-7"
+                className="relative rounded-[1.5rem] border border-revival-gold/15 bg-revival-warm-white p-7 text-center lg:text-left"
               >
                 <div className="flex items-center justify-between">
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-revival-gold to-revival-gold-light font-heading text-lg font-semibold text-revival-dark">
@@ -892,7 +856,7 @@ export default function XerfOfferLanding() {
               <motion.div
                 key={r.title}
                 variants={fadeUp}
-                className="rounded-[1.25rem] border border-revival-gold/15 bg-white p-6 transition-shadow duration-300 hover:shadow-md"
+                className="rounded-[1.25rem] border border-revival-gold/15 bg-white p-6 text-center transition-shadow duration-300 hover:shadow-md lg:text-left"
               >
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-revival-gold/10">
                   <r.icon className="h-5 w-5 text-revival-gold" />
@@ -928,7 +892,7 @@ export default function XerfOfferLanding() {
             </div>
           </div>
 
-          <div>
+          <div className="text-center lg:text-left">
             <span
               className="lp-reveal text-tagline text-xs text-revival-gold"
               style={{ "--reveal-delay": "100ms" } as React.CSSProperties}

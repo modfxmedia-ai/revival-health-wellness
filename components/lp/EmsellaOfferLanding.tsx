@@ -51,12 +51,6 @@ const HERO_BULLETS = [
   "30 minutes per session",
 ];
 
-const OFFER_ITEMS = [
-  "Free Consultation",
-  "$97 Emsella Demo Session",
-  "Personalized Treatment Plan",
-];
-
 const STATS = [
   { value: "11,000", label: "Contractions per session" },
   { value: "64%", label: "Avg. incontinence improvement" },
@@ -71,6 +65,20 @@ const KEY_BENEFITS = [
   "Zero downtime, return to your day immediately",
   "FDA cleared HIFEM\u00ae technology",
   "Effective for both men and women",
+];
+
+const FOR_WOMEN_POINTS = [
+  "Improves urinary incontinence",
+  "Supports pelvic floor strength & tone",
+  "Enhances intimate wellness & confidence",
+  "Non-invasive, quick & convenient",
+];
+
+const FOR_MEN_POINTS = [
+  "Improves urinary incontinence",
+  "Supports sexual health & performance",
+  "Strengthens pelvic floor muscles",
+  "Non-invasive, quick & convenient",
 ];
 
 const STEPS = [
@@ -296,7 +304,7 @@ export default function EmsellaOfferLanding() {
         />
 
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-8">
-          <div>
+          <div className="text-center lg:text-left">
             <div className="lp-reveal" style={{ "--reveal-delay": "0ms" } as React.CSSProperties}>
               <OfferBadge />
             </div>
@@ -315,7 +323,7 @@ export default function EmsellaOfferLanding() {
             </h1>
 
             <p
-              className="lp-reveal mt-5 max-w-xl text-base font-light leading-relaxed text-revival-cream/80 sm:text-lg"
+              className="lp-reveal mx-auto mt-5 max-w-xl text-base font-light leading-relaxed text-revival-cream/80 sm:text-lg lg:mx-0"
               style={{ ["--reveal-delay" as string]: "200ms" }}
             >
               Emsella is the FDA cleared, noninvasive HIFEM® chair now
@@ -333,7 +341,7 @@ export default function EmsellaOfferLanding() {
               {HERO_BULLETS.map((b) => (
                 <li
                   key={b}
-                  className="flex items-center gap-2 text-sm font-medium text-revival-cream/90"
+                  className="flex items-center justify-center gap-2 text-sm font-medium text-revival-cream/90 lg:justify-start"
                 >
                   <CheckCircle2 className="h-4 w-4 shrink-0 text-revival-gold" />
                   {b}
@@ -342,7 +350,7 @@ export default function EmsellaOfferLanding() {
             </ul>
 
             <div
-              className="lp-reveal mt-8 flex flex-wrap items-center gap-3"
+              className="lp-reveal mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start"
               style={{ ["--reveal-delay" as string]: "400ms" }}
             >
               <button
@@ -371,65 +379,45 @@ export default function EmsellaOfferLanding() {
             </p>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: EASE, delay: 0.15 }}
-            className="relative"
-          >
-            <div className="relative overflow-hidden rounded-[2rem] border border-revival-gold/25 bg-gradient-to-br from-revival-charcoal via-revival-dark to-black p-6 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.7)] sm:p-8">
-              <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-revival-gold/20 blur-3xl" />
-              <div className="pointer-events-none absolute -left-16 -bottom-16 h-56 w-56 rounded-full bg-revival-gold/10 blur-3xl" />
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
+            >
+              <VideoCard
+                src="/videos/emsella-2.mp4"
+                poster="/videos/emsella-2-poster.jpg"
+              />
+              <p className="mt-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-cream/50">
+                Watch An Emsella Session
+              </p>
+            </motion.div>
 
-              <div className="relative flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-revival-gold/40 bg-revival-gold/10 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-revival-gold">
-                  <Sparkles className="h-3 w-3" />
-                  Emsella Introductory Offer
-                </span>
-                <span className="rounded-full bg-revival-gold/15 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-revival-gold">
-                  Limited Time
-                </span>
-              </div>
-
-              <div className="relative mt-6 text-center">
-                <p className="font-heading text-[3.5rem] leading-none text-white sm:text-[4.5rem]">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: EASE, delay: 0.35 }}
+              className="relative mt-8"
+            >
+              <div className="flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-revival-gold/30 bg-revival-gold/10 px-5 py-4 text-center lg:justify-start lg:text-left">
+                <span className="font-heading text-5xl leading-none text-white sm:text-6xl">
                   <span className="bg-gradient-to-b from-white to-revival-gold-light bg-clip-text text-transparent">
                     $97
                   </span>
-                </p>
-                <p className="mt-1 text-sm font-semibold uppercase tracking-[0.14em] text-revival-cream/85">
-                  Consultation &amp; Demo Session
-                </p>
-                <p className="mt-1 text-xs text-revival-cream/55">
-                  Free consultation + demo session just $97
-                </p>
+                </span>
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.12em] text-revival-cream/90">
+                    <span className="mr-2 text-revival-cream/40 line-through">$250 value</span>
+                    Consultation &amp; Demo Session
+                  </p>
+                  <p className="mt-1 text-xs text-revival-gold">
+                    Limited time &middot; free consultation + $97 Emsella demo session
+                  </p>
+                </div>
               </div>
-
-              <ul className="relative mt-6 space-y-3 border-y border-white/10 py-5">
-                {OFFER_ITEMS.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-center gap-2 text-sm text-revival-cream/85"
-                  >
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-revival-gold" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <button
-                type="button"
-                onClick={openModal}
-                className="group relative mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.75)] transition-transform duration-300 hover:scale-[1.02]"
-              >
-                Reserve My Spot
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-              </button>
-              <p className="mt-3 text-center text-[0.7rem] uppercase tracking-[0.14em] text-revival-cream/50">
-                Limited spots &middot; Book today
-              </p>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
 
         <motion.div
@@ -477,8 +465,8 @@ export default function EmsellaOfferLanding() {
 
       {/* ═══════════════════════ FOR WOMEN / FOR MEN ═══════════════════════ */}
       <section className="bg-revival-dark py-16 lg:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+          <div className="text-center lg:text-left">
             <span
               className="lp-reveal text-tagline text-xs text-revival-gold"
               style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
@@ -491,35 +479,74 @@ export default function EmsellaOfferLanding() {
             >
               Emsella works differently for women and men. Here&apos;s how.
             </h2>
-          </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-            <div
-              className="lp-reveal overflow-hidden rounded-[1.75rem] border border-white/10 bg-white"
-              style={{ "--reveal-delay": "150ms" } as React.CSSProperties}
-            >
-              <Image
-                src="/images/sexual-wellness/emsella-offer/emsella-for-women.png"
-                alt="Emsella for Women: improves urinary incontinence, supports pelvic floor strength & tone, enhances intimate wellness & confidence, noninvasive, quick & convenient"
-                width={1369}
-                height={1149}
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="h-auto w-full"
-              />
+            <div className="mt-8 grid gap-8 sm:grid-cols-2">
+              <div
+                className="lp-reveal"
+                style={{ "--reveal-delay": "200ms" } as React.CSSProperties}
+              >
+                <h3 className="font-heading text-lg text-revival-gold">Emsella for Women</h3>
+                <ul className="mt-4 space-y-3">
+                  {FOR_WOMEN_POINTS.map((p) => (
+                    <li
+                      key={p}
+                      className="flex items-start justify-center gap-2 text-sm text-revival-cream/85 lg:justify-start"
+                    >
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-revival-gold" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div
+                className="lp-reveal"
+                style={{ "--reveal-delay": "300ms" } as React.CSSProperties}
+              >
+                <h3 className="font-heading text-lg text-revival-gold">Emsella for Men</h3>
+                <ul className="mt-4 space-y-3">
+                  {FOR_MEN_POINTS.map((p) => (
+                    <li
+                      key={p}
+                      className="flex items-start justify-center gap-2 text-sm text-revival-cream/85 lg:justify-start"
+                    >
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-revival-gold" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             <div
-              className="lp-reveal overflow-hidden rounded-[1.75rem] border border-white/10 bg-white"
-              style={{ "--reveal-delay": "250ms" } as React.CSSProperties}
+              className="lp-reveal mt-10"
+              style={{ "--reveal-delay": "400ms" } as React.CSSProperties}
             >
-              <Image
-                src="/images/sexual-wellness/emsella-offer/emsella-for-men.png"
-                alt="Emsella for Men: improves urinary incontinence, supports sexual health & performance, strengthens pelvic floor muscles, noninvasive, quick & convenient"
-                width={1328}
-                height={1184}
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="h-auto w-full"
-              />
+              <button
+                type="button"
+                onClick={openModal}
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.7)] transition-transform duration-300 hover:scale-[1.03]"
+              >
+                {CTA_LABEL}
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+
+          <div
+            className="lp-reveal relative mx-auto w-full max-w-sm lg:mx-0"
+            style={{ "--reveal-delay": "150ms" } as React.CSSProperties}
+          >
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.6)]">
+              <div className="relative aspect-[4/5]">
+                <Image
+                  src="/images/sexual-wellness/emsella-offer/emsella-for-both-2.png"
+                  alt="Emsella HIFEM treatment for women and men at Revival Health & Wellness"
+                  fill
+                  sizes="(min-width: 1024px) 28vw, 80vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -552,7 +579,7 @@ export default function EmsellaOfferLanding() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="order-1 lg:order-2"
+            className="order-1 text-center lg:order-2 lg:text-left"
           >
             <motion.span variants={fadeUp} className="text-tagline text-xs text-revival-gold">
               Key Benefits of Emsella
@@ -572,7 +599,7 @@ export default function EmsellaOfferLanding() {
               {KEY_BENEFITS.map((b, i) => (
                 <li
                   key={b}
-                  className="flex items-start gap-3 text-sm text-revival-charcoal/80 sm:text-[0.95rem]"
+                  className="flex items-start justify-center gap-3 text-sm text-revival-charcoal/80 sm:text-[0.95rem] lg:justify-start"
                 >
                   <span
                     aria-hidden
@@ -600,67 +627,68 @@ export default function EmsellaOfferLanding() {
 
       {/* ═══════════════════════ HOW IT WORKS + VIDEO ═══════════════════════ */}
       <section className="bg-revival-dark py-16 lg:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
-            <motion.div
-              variants={fadeContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+          <motion.div
+            variants={fadeContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="text-center lg:text-left"
+          >
+            <motion.span variants={fadeUp} className="text-tagline text-xs text-revival-gold">
+              How Emsella Works
+            </motion.span>
+            <motion.h2
+              variants={fadeUp}
+              className="mt-4 font-heading text-3xl leading-tight text-white sm:text-4xl lg:text-[2.75rem]"
             >
-              <motion.span variants={fadeUp} className="text-tagline text-xs text-revival-gold">
-                How Emsella Works
-              </motion.span>
-              <motion.h2
-                variants={fadeUp}
-                className="mt-4 font-heading text-3xl leading-tight text-white sm:text-4xl lg:text-[2.75rem]"
+              HIFEM® technology: thousands of contractions, zero effort.
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="mt-5 text-base font-light leading-relaxed text-revival-cream/75"
+            >
+              Emsella uses High Intensity Focused Electromagnetic (HIFEM®)
+              technology to induce thousands of Kegel like pelvic floor
+              muscle contractions in a single session, retraining and
+              strengthening muscles that regular exercise can&apos;t reach on
+              its own.
+            </motion.p>
+            <motion.p
+              variants={fadeUp}
+              className="mt-4 text-base font-light leading-relaxed text-revival-cream/75"
+            >
+              You stay fully clothed and seated in the chair for the entire
+              session. There&apos;s no pain, no numbing, and no downtime,
+              just walk in, sit down, and let the chair do the work.
+            </motion.p>
+            <motion.div variants={fadeUp} className="mt-8">
+              <button
+                type="button"
+                onClick={openModal}
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.7)] transition-transform duration-300 hover:scale-[1.03]"
               >
-                HIFEM® technology: thousands of contractions, zero effort.
-              </motion.h2>
-              <motion.p
-                variants={fadeUp}
-                className="mt-5 text-base font-light leading-relaxed text-revival-cream/75"
-              >
-                Emsella uses High Intensity Focused Electromagnetic (HIFEM®)
-                technology to induce thousands of Kegel like pelvic floor
-                muscle contractions in a single session, retraining and
-                strengthening muscles that regular exercise can&apos;t reach on
-                its own.
-              </motion.p>
-              <motion.p
-                variants={fadeUp}
-                className="mt-4 text-base font-light leading-relaxed text-revival-cream/75"
-              >
-                You stay fully clothed and seated in the chair for the entire
-                session. There&apos;s no pain, no numbing, and no downtime,
-                just walk in, sit down, and let the chair do the work.
-              </motion.p>
-              <motion.div variants={fadeUp} className="mt-8">
-                <button
-                  type="button"
-                  onClick={openModal}
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.7)] transition-transform duration-300 hover:scale-[1.03]"
-                >
-                  Start My Free Consultation
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </motion.div>
+                Start My Free Consultation
+                <ArrowRight className="h-4 w-4" />
+              </button>
             </motion.div>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.94 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.9, ease: EASE }}
-            >
-              <VideoCard
-                src="/videos/emsella-2.mp4"
-                poster="/videos/emsella-2-poster.jpg"
-              />
-              <p className="mt-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-cream/50">
-                Watch An Emsella Session
-              </p>
-            </motion.div>
+          <div
+            className="lp-reveal relative mx-auto w-full max-w-sm lg:mx-0"
+            style={{ "--reveal-delay": "150ms" } as React.CSSProperties}
+          >
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.6)]">
+              <div className="relative aspect-[3/4]">
+                <Image
+                  src="/images/sexual-wellness/emsella-offer/emsella-how-it-works.png"
+                  alt="How the Emsella HIFEM chair works at Revival Health & Wellness"
+                  fill
+                  sizes="(min-width: 1024px) 28vw, 80vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -701,7 +729,7 @@ export default function EmsellaOfferLanding() {
               <motion.div
                 key={s.title}
                 variants={fadeUp}
-                className="relative rounded-[1.5rem] border border-revival-gold/15 bg-revival-warm-white p-7"
+                className="relative rounded-[1.5rem] border border-revival-gold/15 bg-revival-warm-white p-7 text-center lg:text-left"
               >
                 <div className="flex items-center justify-between">
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-revival-gold to-revival-gold-light font-heading text-lg font-semibold text-revival-dark">
@@ -757,7 +785,7 @@ export default function EmsellaOfferLanding() {
               <motion.div
                 key={r.title}
                 variants={fadeUp}
-                className="rounded-[1.25rem] border border-revival-gold/15 bg-white p-6 transition-shadow duration-300 hover:shadow-md"
+                className="rounded-[1.25rem] border border-revival-gold/15 bg-white p-6 text-center transition-shadow duration-300 hover:shadow-md lg:text-left"
               >
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-revival-gold/10">
                   <r.icon className="h-5 w-5 text-revival-gold" />
@@ -793,7 +821,7 @@ export default function EmsellaOfferLanding() {
             </div>
           </div>
 
-          <div>
+          <div className="text-center lg:text-left">
             <span
               className="lp-reveal text-tagline text-xs text-revival-gold"
               style={{ "--reveal-delay": "100ms" } as React.CSSProperties}
