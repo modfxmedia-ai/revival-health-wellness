@@ -96,7 +96,7 @@ export default function EmsellaThankYouContent() {
                 transition: { staggerChildren: 0.12, delayChildren: 0.3 },
               },
             }}
-            className="mt-12 grid grid-cols-1 gap-5 text-left sm:grid-cols-3"
+            className="mt-12 grid grid-cols-1 gap-5 text-center sm:grid-cols-3 lg:text-left"
           >
             {NEXT_STEPS.map((step) => (
               <motion.div
@@ -194,7 +194,7 @@ export default function EmsellaThankYouContent() {
                     transition: { duration: 0.6, ease: EASE },
                   },
                 }}
-                className="flex items-start gap-3 rounded-2xl border border-revival-gold/15 bg-white px-5 py-4"
+                className="flex items-start justify-center gap-3 rounded-2xl border border-revival-gold/15 bg-white px-5 py-4 lg:justify-start"
               >
                 <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-revival-gold" />
                 <p className="text-sm font-light leading-relaxed text-revival-charcoal/80">
