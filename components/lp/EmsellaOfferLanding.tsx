@@ -303,8 +303,9 @@ export default function EmsellaOfferLanding() {
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.35)_100%)]"
         />
 
-        <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-8">
-          <div className="text-center lg:text-left">
+        <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:grid-rows-[auto_auto] lg:gap-x-12 lg:gap-y-6 lg:px-8">
+          {/* mobile order-1 / desktop col-1 row-1: heading copy */}
+          <div className="order-1 text-center lg:order-none lg:col-start-1 lg:row-start-1 lg:text-left">
             <div className="lp-reveal" style={{ "--reveal-delay": "0ms" } as React.CSSProperties}>
               <OfferBadge />
             </div>
@@ -348,38 +349,10 @@ export default function EmsellaOfferLanding() {
                 </li>
               ))}
             </ul>
-
-            <div
-              className="lp-reveal mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start"
-              style={{ ["--reveal-delay" as string]: "400ms" }}
-            >
-              <button
-                type="button"
-                onClick={openModal}
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.7)] transition-transform duration-300 hover:scale-[1.03]"
-              >
-                <Gift className="h-4 w-4" />
-                {CTA_LABEL}
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-              </button>
-              <a
-                href={telHref(PHONE)}
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3.5 text-sm font-medium text-revival-cream/90 transition-colors hover:border-revival-gold hover:text-revival-gold"
-              >
-                <Phone className="h-4 w-4 text-revival-gold" />
-                {PHONE}
-              </a>
-            </div>
-
-            <p
-              className="lp-reveal mt-4 text-xs text-revival-cream/50"
-              style={{ ["--reveal-delay" as string]: "500ms" }}
-            >
-              *$97 demo session offer available for a limited time. New patients only.
-            </p>
           </div>
 
-          <div>
+          {/* mobile order-2 / desktop col-2 spanning both rows: video + offer card */}
+          <div className="order-2 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-2">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -417,6 +390,38 @@ export default function EmsellaOfferLanding() {
                 </div>
               </div>
             </motion.div>
+          </div>
+
+          {/* mobile order-3 / desktop col-1 row-2: CTA buttons + disclaimer */}
+          <div className="order-3 text-center lg:order-none lg:col-start-1 lg:row-start-2 lg:text-left">
+            <div
+              className="lp-reveal flex flex-wrap items-center justify-center gap-3 lg:justify-start"
+              style={{ ["--reveal-delay" as string]: "400ms" }}
+            >
+              <button
+                type="button"
+                onClick={openModal}
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.7)] transition-transform duration-300 hover:scale-[1.03]"
+              >
+                <Gift className="h-4 w-4" />
+                {CTA_LABEL}
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+              </button>
+              <a
+                href={telHref(PHONE)}
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3.5 text-sm font-medium text-revival-cream/90 transition-colors hover:border-revival-gold hover:text-revival-gold"
+              >
+                <Phone className="h-4 w-4 text-revival-gold" />
+                {PHONE}
+              </a>
+            </div>
+
+            <p
+              className="lp-reveal mt-4 text-xs text-revival-cream/50"
+              style={{ ["--reveal-delay" as string]: "500ms" }}
+            >
+              *$97 demo session offer available for a limited time. New patients only.
+            </p>
           </div>
         </div>
 
