@@ -57,7 +57,6 @@ const HERO_BULLETS = [
 
 const STATS = [
   { value: "500+", label: "Patients served" },
-  { value: "16 lbs", label: "Average weight loss" },
   { value: "12 wks", label: "Typical program" },
   { value: "98%", label: "Would recommend" },
 ];
@@ -82,11 +81,12 @@ const STEPS = [
         Reserve your $79 Weight Loss Experience online or call/text{" "}
         <a
           href={telHref(PHONE)}
+          onClick={(e) => e.stopPropagation()}
           className="font-semibold text-revival-gold underline decoration-revival-gold/40 underline-offset-2 hover:text-revival-gold-light"
         >
           {PHONE}
         </a>
-        . Only five introductory priced appointments are available.
+        . Only five appointments are available at this price.
       </>
     ),
     icon: Phone,
@@ -98,16 +98,16 @@ const STEPS = [
     icon: Timer,
   },
   {
-    title: "Start your personalized plan",
-    time: "SAME VISIT",
-    text: "Leave with a custom weight loss and wellness plan built around your body, your goals, and your real schedule.",
-    icon: Sparkles,
-  },
-  {
     title: "Complimentary Lipolean injection",
     time: "INCLUDED",
     text: "Every visit includes a complimentary Lipolean Fat Burner Injection, a $250 value, to support your metabolism and energy from day one.",
     icon: Syringe,
+  },
+  {
+    title: "Start your personalized plan",
+    time: "SAME VISIT",
+    text: "Leave with a custom weight loss and wellness plan built around your body, your goals, and your real schedule.",
+    icon: Sparkles,
   },
 ];
 
@@ -158,7 +158,7 @@ const REASONS = [
   {
     icon: Lock,
     title: "No pressure, no contracts",
-    text: "A transparent $79 introductory offer with zero obligation. You decide if and when you're ready to continue.",
+    text: "A transparent $79 offer with zero obligation. You decide if and when you're ready to continue.",
   },
   {
     icon: MapPin,
@@ -186,7 +186,7 @@ const FAQS = [
   },
   {
     q: "How many of these $79 appointments are available?",
-    a: "This introductory offer is limited to the first five new patients who click and schedule. Choose our Summerlin or Henderson area location to secure your spot.",
+    a: "This offer is limited to the first five new patients who click and schedule. Choose our Summerlin or Henderson area location to secure your spot.",
   },
   {
     q: "How do I claim the $79 offer?",
@@ -381,20 +381,17 @@ export default function WeightlossOfferLanding() {
             transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
             className="order-2 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-2"
           >
-            <div className="relative overflow-hidden rounded-[2rem] border border-revival-gold/25 bg-black shadow-[0_40px_100px_-30px_rgba(0,0,0,0.7)]">
-              <div className="relative pt-[56.25%]">
-                <iframe
-                  src="https://www.youtube.com/embed/bM3oJ3KsgxI?start=5&rel=0&modestbranding=1"
-                  title="Medical weight loss at Revival Health & Wellness"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 h-full w-full"
-                />
-              </div>
-            </div>
+            <VideoCard
+              src="/videos/styku.mp4"
+              poster="/videos/styku-poster.jpg"
+              aspect="aspect-[9/16]"
+              className="max-w-xs sm:max-w-sm"
+            />
+          </motion.div>
 
-            <div className="mt-5 flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-revival-gold/30 bg-revival-gold/10 px-5 py-4 text-center lg:justify-start lg:text-left">
+          {/* mobile order-3 / desktop col-1 row-2: offer card + CTA buttons + disclaimer */}
+          <div className="order-3 text-center lg:order-none lg:col-start-1 lg:row-start-2 lg:text-left">
+            <div className="mb-5 flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-revival-gold/30 bg-revival-gold/10 px-5 py-4 text-center lg:justify-start lg:text-left">
               <span className="font-heading text-5xl leading-none text-white sm:text-6xl">
                 <span className="bg-gradient-to-b from-white to-revival-gold-light bg-clip-text text-transparent">
                   $79
@@ -410,10 +407,7 @@ export default function WeightlossOfferLanding() {
                 </p>
               </div>
             </div>
-          </motion.div>
 
-          {/* mobile order-3 / desktop col-1 row-2: CTA buttons + disclaimer */}
-          <div className="order-3 text-center lg:order-none lg:col-start-1 lg:row-start-2 lg:text-left">
             <div
               className="lp-reveal flex flex-wrap items-center justify-center gap-3 lg:justify-start"
               style={{ ["--reveal-delay" as string]: "400ms" }}
@@ -440,7 +434,7 @@ export default function WeightlossOfferLanding() {
               className="lp-reveal mt-4 text-xs text-revival-cream/50"
               style={{ ["--reveal-delay" as string]: "500ms" }}
             >
-              *$79 introductory offer available for the first 5 new patients. Limited appointments.
+              *$79 offer available for the first 5 new patients. Limited appointments.
             </p>
           </div>
         </div>
@@ -472,7 +466,7 @@ export default function WeightlossOfferLanding() {
 
       {/* ═══════════════════════ BIG STATS ═══════════════════════ */}
       <section className="bg-revival-warm-white py-12 lg:py-16">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-8 px-4 text-center sm:grid-cols-4 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-x-6 gap-y-8 px-4 text-center sm:grid-cols-3 sm:px-6 lg:px-8">
           {STATS.map((s) => (
             <div key={s.label}>
               <p className="font-heading text-4xl text-revival-dark sm:text-5xl">
@@ -485,77 +479,6 @@ export default function WeightlossOfferLanding() {
               </p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ═══════════════════════ HOW IT WORKS + VIDEO ═══════════════════════ */}
-      <section className="bg-revival-dark py-16 lg:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
-            <motion.div
-              variants={fadeContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-              className="text-center lg:text-left"
-            >
-              <motion.span variants={fadeUp} className="text-tagline text-xs text-revival-gold">
-                How It Works
-              </motion.span>
-              <motion.h2
-                variants={fadeUp}
-                className="mt-4 font-heading text-3xl leading-tight text-white sm:text-4xl lg:text-[2.75rem]"
-              >
-                Styku 3D body scanning: real data, not guesswork.
-              </motion.h2>
-              <motion.p
-                variants={fadeUp}
-                className="mt-5 text-base font-light leading-relaxed text-revival-cream/75"
-              >
-                Every visit includes a Styku body scan, so you can see
-                measurable changes in muscle, water, and fat, not just the
-                number on the scale. It cannot show how much body fat has
-                changed, whether lean muscle has increased, or why progress
-                may have stalled, so we measure it directly instead.
-              </motion.p>
-              <motion.p
-                variants={fadeUp}
-                className="mt-4 text-base font-light leading-relaxed text-revival-cream/75"
-              >
-                Your provider reviews the results with you during your
-                consultation, then builds a personalized weight loss and
-                wellness plan around what&apos;s actually happening inside
-                your body.
-              </motion.p>
-              <motion.div variants={fadeUp} className="mt-8">
-                <button
-                  type="button"
-                  onClick={openModal}
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.7)] transition-transform duration-300 hover:scale-[1.03]"
-                >
-                  Start My $79 Experience
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.94 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.9, ease: EASE }}
-            >
-              <VideoCard
-                src="/videos/styku.mp4"
-                poster="/videos/styku-poster.jpg"
-                aspect="aspect-[9/16]"
-                className="max-w-xs sm:max-w-sm"
-              />
-              <p className="mt-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-cream/50">
-                See The Styku 3D Body Scan
-              </p>
-            </motion.div>
-          </div>
         </div>
       </section>
 
@@ -633,84 +556,21 @@ export default function WeightlossOfferLanding() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease: EASE }}
-            className="mx-auto w-full max-w-xs overflow-hidden rounded-[2rem] border border-revival-gold/15 shadow-[0_40px_100px_-32px_rgba(15,15,15,0.2)] lg:max-w-none"
+            className="mx-auto w-full max-w-xs lg:max-w-none"
           >
-            <Image
-              src="/images/weight-loss/weight-loss-safety-photo-2.png"
-              alt="Revival Health & Wellness provider holding a Styku 3D body scan tablet"
-              width={1023}
-              height={1537}
-              sizes="(min-width: 1024px) 35vw, 60vw"
-              className="h-auto w-full object-cover"
-            />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════ WHAT'S INCLUDED + IMAGE ═══════════════════════ */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
-          <div className="lp-reveal relative order-2 lg:order-1">
-            <div className="relative overflow-hidden rounded-[2rem] shadow-[0_50px_120px_-32px_rgba(15,15,15,0.25)]">
-              <div className="relative aspect-[2/3]">
-                <Image
-                  src="/images/weight-loss/weightloss-included-photo.png"
-                  alt="Weight loss patient at Revival Health & Wellness"
-                  fill
-                  sizes="(min-width: 1024px) 45vw, 90vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          <motion.div
-            variants={fadeContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="order-1 text-center lg:order-2 lg:text-left"
-          >
-            <motion.span variants={fadeUp} className="text-tagline text-xs text-revival-gold">
-              What&apos;s Included
-            </motion.span>
-            <motion.h2
-              variants={fadeUp}
-              className="mt-4 font-heading text-3xl leading-tight text-revival-dark sm:text-4xl lg:text-[2.75rem]"
-            >
-              A complete weight loss experience, a $250 value for $79.
-            </motion.h2>
-            <motion.p variants={fadeUp} className="mt-5 text-base font-light leading-relaxed text-revival-charcoal/80">
-              This is not another cookie cutter weight loss program. Your
-              visit includes a full body composition analysis and a
-              personalized plan built by our medical team.
-            </motion.p>
-            <motion.ul variants={fadeUp} className="mt-8 grid gap-3 sm:grid-cols-2">
-              {INCLUDED_ITEMS.map((b, i) => (
-                <li
-                  key={b}
-                  className="flex items-start justify-center gap-3 text-sm text-revival-charcoal/80 sm:text-[0.95rem] lg:justify-start"
-                >
-                  <span
-                    aria-hidden
-                    className="mt-1 font-heading text-xs italic text-revival-gold"
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span>{b}</span>
-                </li>
-              ))}
-            </motion.ul>
-            <motion.div variants={fadeUp} className="mt-8">
-              <button
-                type="button"
-                onClick={openModal}
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.7)] transition-transform duration-300 hover:scale-[1.03]"
-              >
-                {CTA_LABEL}
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </motion.div>
+            <figure className="overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
+              <Image
+                src="/images/weight-loss/weightloss-before-after-1-v2.png"
+                alt="Revival Health & Wellness weight loss patient before and after, lost 26.3 pounds"
+                width={1291}
+                height={1218}
+                sizes="(min-width: 1024px) 35vw, 60vw"
+                className="h-auto w-full object-contain"
+              />
+              <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
+                Real Revival Patient &middot; Lost 26.3 lbs
+              </figcaption>
+            </figure>
           </motion.div>
         </div>
       </section>
@@ -789,6 +649,74 @@ export default function WeightlossOfferLanding() {
         </div>
       </section>
 
+      {/* ═══════════════════════ WHAT'S INCLUDED + IMAGE ═══════════════════════ */}
+      <section className="bg-white py-16 lg:py-24">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+          <div className="lp-reveal relative order-2 lg:order-1">
+            <div className="relative overflow-hidden rounded-[2rem] shadow-[0_50px_120px_-32px_rgba(15,15,15,0.25)]">
+              <div className="relative aspect-[2/3]">
+                <Image
+                  src="/images/weight-loss/weightloss-included-photo.png"
+                  alt="Weight loss patient at Revival Health & Wellness"
+                  fill
+                  sizes="(min-width: 1024px) 45vw, 90vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <motion.div
+            variants={fadeContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="order-1 text-center lg:order-2 lg:text-left"
+          >
+            <motion.span variants={fadeUp} className="text-tagline text-xs text-revival-gold">
+              What&apos;s Included
+            </motion.span>
+            <motion.h2
+              variants={fadeUp}
+              className="mt-4 font-heading text-3xl leading-tight text-revival-dark sm:text-4xl lg:text-[2.75rem]"
+            >
+              A complete weight loss experience, a $250 value for $79.
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mt-5 text-base font-light leading-relaxed text-revival-charcoal/80">
+              This is not another cookie cutter weight loss program. Your
+              visit includes a full body composition analysis and a
+              personalized plan built by our medical team.
+            </motion.p>
+            <motion.ul variants={fadeUp} className="mt-8 grid gap-3 sm:grid-cols-2">
+              {INCLUDED_ITEMS.map((b, i) => (
+                <li
+                  key={b}
+                  className="flex items-start justify-center gap-3 text-sm text-revival-charcoal/80 sm:text-[0.95rem] lg:justify-start"
+                >
+                  <span
+                    aria-hidden
+                    className="mt-1 font-heading text-xs italic text-revival-gold"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </motion.ul>
+            <motion.div variants={fadeUp} className="mt-8">
+              <button
+                type="button"
+                onClick={openModal}
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-revival-gold to-revival-gold-light px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-revival-dark shadow-[0_14px_36px_-14px_rgba(201,169,110,0.7)] transition-transform duration-300 hover:scale-[1.03]"
+              >
+                {CTA_LABEL}
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ═══════════════════════ HOW IT WORKS: STEPS ═══════════════════════ */}
       <section className="bg-white py-16 lg:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -808,10 +736,6 @@ export default function WeightlossOfferLanding() {
             >
               Four simple steps to real answers about your body.
             </motion.h2>
-            <motion.p variants={fadeUp} className="mt-4 text-sm font-light text-revival-charcoal/70">
-              No high pressure sales pitch. No mystery fees. Just a clear path
-              from &ldquo;I&rsquo;m interested&rdquo; to a plan you can actually follow.
-            </motion.p>
           </motion.div>
 
           <motion.div
@@ -825,7 +749,10 @@ export default function WeightlossOfferLanding() {
               <motion.div
                 key={s.title}
                 variants={fadeUp}
-                className="relative rounded-[1.5rem] border border-revival-gold/15 bg-revival-warm-white p-7 text-center lg:text-left"
+                onClick={i === 0 ? openModal : undefined}
+                className={`relative rounded-[1.5rem] border border-revival-gold/15 bg-revival-warm-white p-7 text-center lg:text-left ${
+                  i === 0 ? "cursor-pointer transition-shadow duration-300 hover:shadow-md" : ""
+                }`}
               >
                 <div className="flex items-center justify-between">
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-revival-gold to-revival-gold-light font-heading text-lg font-semibold text-revival-dark">
@@ -894,51 +821,6 @@ export default function WeightlossOfferLanding() {
                 </p>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════ BEFORE / AFTER ═══════════════════════ */}
-      <section className="relative overflow-clip bg-white py-14 sm:py-20 lg:py-24">
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: EASE }}
-            className="mb-12 text-center"
-          >
-            <p className="text-tagline text-[0.7rem] text-revival-gold">
-              REAL RESULTS &middot; BEFORE &amp; AFTER
-            </p>
-            <h2 className="mt-3 font-heading text-3xl italic text-revival-dark sm:text-4xl lg:text-[2.75rem]">
-              Real patients. Real transformations.
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base font-light leading-relaxed text-revival-charcoal/80 sm:text-lg">
-              A look at what a personalized weight loss plan can do, built
-              around your body, your goals, and your schedule.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.8, ease: EASE }}
-            className="mx-auto max-w-sm"
-          >
-            <figure className="relative overflow-hidden rounded-[1.75rem] border border-revival-gold/20 bg-white shadow-xl">
-              <Image
-                src="/images/weight-loss/weightloss-before-after-1-v2.png"
-                alt="Revival Health & Wellness weight loss patient before and after, lost 26.3 pounds"
-                width={1291}
-                height={1218}
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="h-auto w-full object-contain"
-              />
-              <figcaption className="border-t border-revival-gold/15 bg-revival-warm-white px-4 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-charcoal">
-                Real Revival Patient &middot; Lost 26.3 lbs
-              </figcaption>
-            </figure>
           </motion.div>
         </div>
       </section>
