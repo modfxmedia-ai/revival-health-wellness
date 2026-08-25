@@ -111,7 +111,7 @@ export default function WeightlossThankYouContent() {
                 }}
                 className="rounded-2xl border border-revival-gold/20 bg-white/[0.03] p-6"
               >
-                <step.icon className="h-6 w-6 text-revival-gold" />
+                <step.icon className="mx-auto h-6 w-6 text-revival-gold lg:mx-0" />
                 <h3 className="mt-4 font-heading text-lg text-white">
                   {step.title}
                 </h3>

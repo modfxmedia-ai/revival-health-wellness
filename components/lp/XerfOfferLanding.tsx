@@ -289,7 +289,7 @@ export default function XerfOfferLanding() {
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.35)_100%)]"
         />
 
-        <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:grid-rows-[auto_auto] lg:gap-x-12 lg:gap-y-6 lg:px-8">
+        <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:grid-rows-[auto_auto_auto] lg:gap-x-12 lg:gap-y-6 lg:px-8">
           {/* LEFT: Copy, uses plain CSS keyframe `.lp-reveal` reveal instead
               of framer-motion variants, which have proven unreliable in
               this stack (see globals.css for details).
@@ -337,29 +337,10 @@ export default function XerfOfferLanding() {
                 </li>
               ))}
             </ul>
-
-            <div
-              className="lp-reveal mt-6 flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-revival-gold/30 bg-revival-gold/10 px-5 py-4 text-center lg:justify-start lg:text-left"
-              style={{ ["--reveal-delay" as string]: "350ms" }}
-            >
-              <span className="font-heading text-5xl leading-none text-white sm:text-6xl">
-                <span className="bg-gradient-to-b from-white to-revival-gold-light bg-clip-text text-transparent">
-                  FREE
-                </span>
-              </span>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.12em] text-revival-cream/90">
-                  Consultation &amp; Aura 3D Analysis
-                </p>
-                <p className="mt-1 text-xs text-revival-gold">
-                  First 10 patients only &middot; personalized XERF treatment plan included
-                </p>
-              </div>
-            </div>
           </div>
 
-          {/* RIGHT: Video. mobile order-2 / desktop col-2 spanning both rows */}
-          <div className="relative order-2 flex flex-col items-center gap-8 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-2">
+          {/* RIGHT: Video. mobile order-2 / desktop col-2 spanning all rows */}
+          <div className="relative order-2 flex flex-col items-center gap-8 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-3">
             <motion.div
               initial={{ scale: 0, rotate: -12 }}
               animate={{ scale: 1, rotate: -8 }}
@@ -390,8 +371,28 @@ export default function XerfOfferLanding() {
             </motion.div>
           </div>
 
-          {/* mobile order-3 / desktop col-1 row-2: CTA buttons + disclaimer */}
-          <div className="order-3 text-center lg:order-none lg:col-start-1 lg:row-start-2 lg:text-left">
+          {/* mobile order-3 / desktop col-1 row-2: offer card */}
+          <div
+            className="lp-reveal order-3 mt-6 flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-revival-gold/30 bg-revival-gold/10 px-5 py-4 text-center lg:order-none lg:col-start-1 lg:row-start-2 lg:mt-0 lg:justify-start lg:text-left"
+            style={{ ["--reveal-delay" as string]: "350ms" }}
+          >
+            <span className="font-heading text-5xl leading-none text-white sm:text-6xl">
+              <span className="bg-gradient-to-b from-white to-revival-gold-light bg-clip-text text-transparent">
+                FREE
+              </span>
+            </span>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.12em] text-revival-cream/90">
+                Consultation &amp; Aura 3D Analysis
+              </p>
+              <p className="mt-1 text-xs text-revival-gold">
+                First 10 patients only &middot; personalized XERF treatment plan included
+              </p>
+            </div>
+          </div>
+
+          {/* mobile order-4 / desktop col-1 row-3: CTA buttons + disclaimer */}
+          <div className="order-4 text-center lg:order-none lg:col-start-1 lg:row-start-3 lg:text-left">
             <div
               className="lp-reveal flex flex-wrap items-center justify-center gap-3 lg:justify-start"
               style={{ ["--reveal-delay" as string]: "400ms" }}
