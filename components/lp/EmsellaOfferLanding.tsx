@@ -319,7 +319,7 @@ export default function EmsellaOfferLanding() {
             >
               Stop the leaks. Strengthen your pelvic floor,{" "}
               <span className="bg-gradient-to-r from-revival-gold to-revival-gold-light bg-clip-text italic text-transparent">
-                for men &amp; women.
+                for men &amp; women, also great for sexual wellness!
               </span>
             </h1>
 
@@ -362,7 +362,7 @@ export default function EmsellaOfferLanding() {
                 src="/videos/emsella-2.mp4"
                 poster="/videos/emsella-2-poster.jpg"
               />
-              <p className="mt-4 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-cream/50">
+              <p className="mt-4 animate-pulse text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-revival-gold">
                 Watch An Emsella Session
               </p>
             </motion.div>

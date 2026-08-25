@@ -283,23 +283,6 @@ export default function XerfOfferLanding() {
               this stack (see globals.css for details).
               mobile order-1 / desktop col-1 row-1 */}
           <div className="order-1 text-center lg:order-none lg:col-start-1 lg:row-start-1 lg:text-left">
-            <motion.div
-              initial={{ scale: 0, rotate: -12 }}
-              animate={{ scale: 1, rotate: -8 }}
-              transition={{ type: "spring", stiffness: 260, damping: 15, delay: 0.7 }}
-              className="relative mx-auto h-16 w-16 lg:mx-0"
-            >
-              <span className="absolute inset-0 animate-ping rounded-full bg-revival-gold/40" />
-              <div className="relative flex h-16 w-16 flex-col items-center justify-center rounded-full bg-gradient-to-br from-revival-gold to-revival-gold-light text-center shadow-[0_25px_60px_-10px_rgba(201,169,110,0.85)] ring-4 ring-revival-dark">
-                <span className="font-heading text-base leading-none text-revival-dark">
-                  First 10
-                </span>
-                <span className="mt-1 text-[0.5rem] font-semibold uppercase tracking-[0.1em] text-revival-dark/80">
-                  Patients
-                </span>
-              </div>
-            </motion.div>
-
             <h1
               className="lp-reveal mt-5 font-heading leading-[1.03] text-white"
               style={{
@@ -346,12 +329,29 @@ export default function XerfOfferLanding() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
-              className="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]"
+              className="relative w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]"
             >
               <PortraitVideoCard
                 src="/videos/xerf-offer-symptoms.mp4"
                 poster="/videos/xerf-offer-symptoms-poster.jpg"
               />
+
+              <motion.div
+                initial={{ scale: 0, rotate: -12 }}
+                animate={{ scale: 1, rotate: -8 }}
+                transition={{ type: "spring", stiffness: 260, damping: 15, delay: 0.7 }}
+                className="absolute -top-5 right-2 z-10 sm:-right-4 sm:-top-6"
+              >
+                <span className="absolute inset-0 animate-ping rounded-full bg-revival-gold/40" />
+                <div className="relative flex h-20 w-20 flex-col items-center justify-center rounded-full bg-gradient-to-br from-revival-gold to-revival-gold-light text-center shadow-[0_25px_60px_-10px_rgba(201,169,110,0.85)] ring-4 ring-revival-dark sm:h-24 sm:w-24">
+                  <span className="font-heading text-xl leading-none text-revival-dark sm:text-2xl">
+                    First 10
+                  </span>
+                  <span className="mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.1em] text-revival-dark/80">
+                    Patients
+                  </span>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
 
