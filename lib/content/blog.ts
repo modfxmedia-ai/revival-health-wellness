@@ -83,7 +83,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Semaglutide vs. Tirzepatide in Las Vegas: How to Choose",
     excerpt: "Compare GLP-1 and GIP/GLP-1 weight loss meds and learn how semaglutide in Las Vegas fits your goals, timeline, and budget",
     category: "Weight Loss",
-    date: "2026-08-24",
+    date: "2026-08-25",
     readMinutes: 7,
     cover: "/images/blog/semaglutide-vs-tirzepatide-options-in-las-vegas.webp",
     author: DEFAULT_AUTHOR,
