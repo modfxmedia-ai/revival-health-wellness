@@ -39,10 +39,10 @@ export default function PrivacyPolicyPage() {
         <p>
           For privacy questions, contact{" "}
           <a
-            href="mailto:hello@revivalhealthandwellnessgroup.com"
+            href="mailto:Southwest@revivalhealthandwellnessgroup.com"
             className="text-revival-gold"
           >
-            hello@revivalhealthandwellnessgroup.com
+            Southwest@revivalhealthandwellnessgroup.com
           </a>
           .
         </p>
