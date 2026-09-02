@@ -10,6 +10,7 @@ import {
   ExternalLink,
   Phone,
   ArrowRight,
+  Mail,
   MapPin,
   CalendarCheck,
 } from "lucide-react";
@@ -24,6 +25,7 @@ import MobileMenu from "./MobileMenu";
 import { cn } from "@/lib/utils";
 
 const LUXURY_EASE = [0.22, 1, 0.36, 1] as const;
+const EMAIL = "Southwest@revivalhealthandwellnessgroup.com";
 
 const LOCATIONS = [
   { label: "Henderson / SW", phone: "(702) 963-1154" },
@@ -106,7 +108,19 @@ export default function Header() {
               transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
             />
             <div className="relative mx-auto flex h-10 max-w-7xl flex-nowrap items-center justify-between gap-4 whitespace-nowrap px-4 sm:px-6 lg:gap-6 lg:px-8">
-              {/* Left: dual-location phone chips */}
+              {/* Left: email */}
+              <div className="flex items-center gap-5 whitespace-nowrap text-[0.68rem] font-medium uppercase tracking-[0.1em] lg:text-[0.7rem] lg:tracking-[0.12em]">
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="group inline-flex items-center gap-2 whitespace-nowrap text-revival-warm-white/75 transition-colors hover:text-revival-gold"
+                >
+                  <Mail className="h-3.5 w-3.5 shrink-0 text-revival-gold" />
+                  <span className="hidden xl:inline">{EMAIL}</span>
+                  <span className="xl:hidden">Email Us</span>
+                </a>
+              </div>
+
+              {/* Center: dual-location phone chips */}
               <ul className="hidden items-center gap-3 whitespace-nowrap text-[0.66rem] font-semibold uppercase tracking-[0.08em] md:flex lg:gap-5 lg:text-[0.7rem] lg:tracking-[0.12em]">
                 {LOCATIONS.map((loc) => (
                   <li key={loc.phone} className="whitespace-nowrap">
