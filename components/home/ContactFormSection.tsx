@@ -2,7 +2,7 @@
 
 import Script from "next/script";
 import { motion } from "framer-motion";
-import { CheckCircle2, Sparkles, Phone, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Sparkles, Phone, Send, ShieldCheck } from "lucide-react";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -122,7 +122,7 @@ export default function ContactFormSection() {
               {/* card header */}
               <div className="relative flex items-center gap-3 px-6 pb-5 pt-7 sm:px-8 sm:pt-8">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-revival-gold to-revival-gold-light shadow-[0_8px_20px_-6px_rgba(201,169,110,0.6)]">
-                  <Mail className="h-5 w-5 text-revival-dark" />
+                  <Send className="h-5 w-5 text-revival-dark" />
                 </span>
                 <div>
                   <p className="font-heading text-lg text-revival-dark">
