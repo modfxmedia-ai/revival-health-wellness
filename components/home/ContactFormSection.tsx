@@ -2,7 +2,7 @@
 
 import Script from "next/script";
 import { motion } from "framer-motion";
-import { CheckCircle2, Sparkles, Phone, Mail, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Sparkles, Phone, ShieldCheck } from "lucide-react";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -81,14 +81,6 @@ export default function ContactFormSection() {
             >
               <Phone className="h-4 w-4 text-revival-gold" />
               (702) 963-1154
-            </a>
-            <span aria-hidden className="hidden h-4 w-px bg-revival-dark/15 sm:block" />
-            <a
-              href="mailto:info@revivalhealthandwellnessgroup.com"
-              className="inline-flex items-center gap-2 text-sm font-medium text-revival-dark transition-colors hover:text-revival-gold"
-            >
-              <Mail className="h-4 w-4 text-revival-gold" />
-              info@revivalhealthandwellnessgroup.com
             </a>
           </div>
         </motion.div>

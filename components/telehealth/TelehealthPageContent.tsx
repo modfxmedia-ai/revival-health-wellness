@@ -12,7 +12,6 @@ import {
   FlaskConical,
   HeartPulse,
   Lock,
-  Mail,
   MapPin,
   MessageSquare,
   Pill,
@@ -967,10 +966,6 @@ function FinalCta() {
             variants={fadeUp}
             className="mt-10 flex flex-wrap gap-4 text-sm text-revival-warm-white/70"
           >
-            <li className="inline-flex items-center gap-2">
-              <Mail className="h-4 w-4 text-revival-gold" />
-              info@revivalhealthandwellnessgroup.com
-            </li>
             <li className="inline-flex items-center gap-2">
               <MapPin className="h-4 w-4 text-revival-gold" />
               Two Las Vegas Locations
